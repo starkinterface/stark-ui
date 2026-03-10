@@ -1,0 +1,45 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+
+  /** These settings are automatically used from .editorconfig */
+
+  // "printWidth": max_line_length >> 80,
+  // "useTabs": indent_style >> false (use space),
+  // "tabWidth": indent_size >> 2,
+  // "endOfLine": end_of_line >> "lf",
+  // "insertFinalNewline": insert_final_newline >> true,
+
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "jsxSingleQuote": false,
+  "proseWrap": "preserve",
+  "semi": false,
+  "singleQuote": false,
+  "trailingComma": "es5",
+  "quoteProps": "as-needed",
+  "sortPackageJson": {
+    "sortScripts": true
+  },
+  "sortTailwindcss": {
+    "stylesheet": "./packages/theme-stark/src/entrypoint.css",
+    "attributes": ["className"],
+    "functions": ["cx", "tv"]
+  },
+  "sortImports": {
+    "groups": [
+      ["value-builtin"],
+      ["value-internal"],
+      ["value-external"],
+      ["value-parent", "value-sibling", "value-index"],
+      { "newlinesBetween": true },
+      ["named-type-internal"],
+      ["named-type-external"],
+      ["named-type-parent", "named-type-sibling", "named-type-index"]
+    ],
+    "internalPattern": ["@stark-ui/", "@stark-loader/", "#/", "@/"],
+    "newlinesBetween": false,
+    "sortSideEffects": false,
+    "customGroups": []
+  }
+}

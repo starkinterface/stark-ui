@@ -1,0 +1,60 @@
+{
+  "name": "@stark-ui/react",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/starkinterface/stark-ui",
+    "directory": "packages/react"
+  },
+  "files": [
+    "dist",
+    "!dist/**/examples",
+    "!dist/**/*.stories.*"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./src/index.ts",
+        "default": "./src/index.ts"
+      }
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@ark-ui/react": "catalog:",
+    "@stark-ui/classes": "workspace:*",
+    "@stark-ui/react-style-context": "workspace:*"
+  },
+  "devDependencies": {
+    "@stark-ui/tsconfig": "workspace:*",
+    "@storybook/react-vite": "catalog:storybook",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  }
+}

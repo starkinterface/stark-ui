@@ -1,0 +1,58 @@
+{
+  "name": "@stark-ui/theme-stark",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/starkinterface/stark-ui",
+    "directory": "packages/theme-stark"
+  },
+  "style": "./src/index.css",
+  "files": [
+    "dist",
+    "src",
+    "!src/entrypoint.css"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./src/index.css",
+  "exports": {
+    ".": {
+      "style": "./src/index.css",
+      "default": "./src/index.css"
+    },
+    "./schemes/*": {
+      "style": "./src/base/schemes/*.css",
+      "default": "./src/base/schemes/*.css"
+    },
+    "./css": {
+      "style": "./dist/stark.min.css",
+      "default": "./dist/stark.min.css"
+    },
+    "./css/schemes/*": {
+      "style": "./dist/schemes/*.min.css",
+      "default": "./dist/schemes/*.min.css"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@stark-ui/scripts": "workspace:*",
+    "@stark-ui/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "tsx": "catalog:"
+  },
+  "peerDependencies": {
+    "tailwindcss": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  }
+}

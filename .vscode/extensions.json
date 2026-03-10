@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    // Linting / Formatting
+    "oxc.oxc-vscode",
+    "editorconfig.editorconfig",
+    "bradlc.vscode-tailwindcss",
+
+    // Comments
+    "gruntfuggly.todo-tree",
+
+    // MDX Authoring
+    "unifiedjs.vscode-mdx",
+
+    // Frameworks
+    "vue.volar"
+  ]
+}

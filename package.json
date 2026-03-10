@@ -1,0 +1,55 @@
+{
+  "name": "stark-ui",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Enji Kusnadi",
+    "email": "me@enji.dev",
+    "url": "https://enji.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/starkinterface/stark-ui"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "turbo build --filter=./packages/*",
+    "build:storybook": "turbo build --filter=./apps/storybook/*",
+    "changeset": "changeset",
+    "changeset:release": "changeset publish",
+    "changeset:version": "changeset version",
+    "dev:react": "turbo dev --filter=./apps/storybook/react",
+    "dev:vue": "turbo dev --filter=./apps/storybook/vue",
+    "prepare": "husky",
+    "standard": "ultracite check",
+    "standard:fix": "ultracite fix",
+    "test": "turbo test",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "catalog:",
+    "@changesets/cli": "catalog:",
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "husky": "catalog:",
+    "lint-staged": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "turbo": "^2.8.14",
+    "typescript": "catalog:",
+    "ultracite": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": ">=10.x",
+      "onFail": "warn"
+    },
+    "runtime": {
+      "name": "node",
+      "version": ">=25.x",
+      "onFail": "warn"
+    }
+  },
+  "packageManager": "pnpm@10.30.3"
+}

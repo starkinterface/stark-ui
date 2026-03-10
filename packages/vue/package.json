@@ -1,0 +1,57 @@
+{
+  "name": "@stark-ui/vue",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/starkinterface/stark-ui",
+    "directory": "packages/vue"
+  },
+  "files": [
+    "dist",
+    "!dist/**/examples",
+    "!dist/**/*.stories.*"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./src/index.ts",
+        "default": "./src/index.ts"
+      }
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "vue-tsc"
+  },
+  "dependencies": {
+    "@ark-ui/vue": "catalog:",
+    "@stark-ui/classes": "workspace:*",
+    "@vueuse/core": "catalog:"
+  },
+  "devDependencies": {
+    "@stark-ui/tsconfig": "workspace:*",
+    "@storybook/vue3-vite": "catalog:storybook",
+    "@vitejs/plugin-vue": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:",
+    "vue": "catalog:",
+    "vue-tsc": "catalog:"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  }
+}

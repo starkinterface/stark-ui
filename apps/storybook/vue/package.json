@@ -1,0 +1,27 @@
+{
+  "name": "@stark-ui/vue-storybook",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "storybook build",
+    "dev": "storybook dev -p 6104",
+    "typecheck": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@stark-ui/theme-stark": "workspace:*",
+    "@stark-ui/tsconfig": "workspace:*",
+    "@storybook/addon-a11y": "catalog:storybook",
+    "@storybook/addon-themes": "catalog:storybook",
+    "@storybook/vue3-vite": "catalog:storybook",
+    "@tailwindcss/vite": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "storybook": "catalog:storybook",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vue": "catalog:"
+  }
+}

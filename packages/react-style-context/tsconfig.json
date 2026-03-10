@@ -1,0 +1,7 @@
+{
+  "extends": "@stark-ui/tsconfig/react.json",
+  "compilerOptions": {
+    "types": ["vitest/globals"]
+  },
+  "include": ["src", "__tests__"]
+}
