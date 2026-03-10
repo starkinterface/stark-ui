@@ -38,7 +38,7 @@ git clone https://github.com/starkinterface/stark-ui.git
 pnpm install
 
 # 3. Spin up the dev server for the framework you want to work on!
-pnpm dev:react  # (or pnpm dev:vue, pnpm dev:vanilla)
+pnpm dev:react  # or pnpm dev:vue
 ```
 
 ### Before Submitting a PR
