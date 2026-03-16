@@ -1,22 +1,23 @@
-import type { Dict } from "@/types"
+// oxlint-disable max-statements
+import type { Props } from "@/types"
 
-const splitVariantProps = (
-  props: Dict,
-  variantKeys?: string[]
-): [variantProps: Dict, restProps: Dict] => {
+const splitVariantProps = <T extends Props, K extends keyof T>(
+  props: T,
+  variantKeys?: (K | string | number)[]
+): [variantProps: Pick<T, K>, restProps: Omit<T, K>] => {
   if (!variantKeys || variantKeys.length === 0) {
-    return [{}, props]
+    return [{} as Pick<T, K>, props as Omit<T, K>]
   }
 
-  const variantProps = {} as Dict
-  const restProps = {} as Dict
+  const variantProps = {} as Pick<T, K>
+  const restProps = {} as Omit<T, K>
   const variantKeySet = new Set(variantKeys)
 
   for (const [key, value] of Object.entries(props)) {
     if (variantKeySet.has(key)) {
-      variantProps[key] = value
+      ;(variantProps as Props)[key] = value
     } else {
-      restProps[key] = value
+      ;(restProps as Props)[key] = value
     }
   }
 

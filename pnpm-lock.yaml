@@ -331,10 +331,13 @@ importers:
 
   packages/react-style-context:
     dependencies:
-      clsx:
+      tailwind-variants:
         specifier: 'catalog:'
-        version: 2.1.1
+        version: 3.2.2(tailwindcss@4.2.1)
     devDependencies:
+      '@ark-ui/react':
+        specifier: 'catalog:'
+        version: 5.34.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@stark-ui/tsconfig':
         specifier: workspace:*
         version: link:../../internal/tsconfig

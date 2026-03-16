@@ -1,1 +1,2 @@
-export type Dict = Record<string, unknown>
+export * from "./shared"
+export * from "./style-context"

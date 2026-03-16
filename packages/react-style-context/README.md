@@ -7,19 +7,19 @@ import { popoverClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
 import { Popover as ArkPopover } from "@ark-ui/react/popover"
 
-const { withRootProvider, withContext } = createStyleContext(popoverClasses)
+const { withProvider, withSlot } = createStyleContext(popoverClasses)
 
-const PopoverRoot = withRootProvider(ArkPopover.Root)
-const PopoverRootProvider = withRootProvider(ArkPopover.RootProvider)
-const PopoverAnchor = withContext(ArkPopover.Anchor, "anchor")
-const PopoverArrow = withContext(ArkPopover.Arrow, "arrow")
-const PopoverArrowTip = withContext(ArkPopover.ArrowTip, "arrowTip")
-const PopoverCloseTrigger = withContext(ArkPopover.CloseTrigger, "closeTrigger")
-const PopoverContent = withContext(ArkPopover.Content, "content")
-const PopoverDescription = withContext(ArkPopover.Description, "description")
-const PopoverPositioner = withContext(ArkPopover.Positioner, "positioner")
-const PopoverTitle = withContext(ArkPopover.Title, "title")
-const PopoverTrigger = withContext(ArkPopover.Trigger, "trigger")
+const PopoverRoot = withProvider(ArkPopover.Root)
+const PopoverRootProvider = withProvider(ArkPopover.RootProvider)
+const PopoverAnchor = withSlot(ArkPopover.Anchor, "anchor")
+const PopoverArrow = withSlot(ArkPopover.Arrow, "arrow")
+const PopoverArrowTip = withSlot(ArkPopover.ArrowTip, "arrowTip")
+const PopoverCloseTrigger = withSlot(ArkPopover.CloseTrigger, "closeTrigger")
+const PopoverContent = withSlot(ArkPopover.Content, "content")
+const PopoverDescription = withSlot(ArkPopover.Description, "description")
+const PopoverPositioner = withSlot(ArkPopover.Positioner, "positioner")
+const PopoverTitle = withSlot(ArkPopover.Title, "title")
+const PopoverTrigger = withSlot(ArkPopover.Trigger, "trigger")
 ```
 
 ## Features
@@ -27,7 +27,7 @@ const PopoverTrigger = withContext(ArkPopover.Trigger, "trigger")
 - `defaultProps` support
 
   ```tsx
-  const PopoverRoot = withRootProvider(ArkPopover.Root, {
+  const PopoverRoot = withProvider(ArkPopover.Root, {
     defaultProps: {
       lazyMount: true,
       unmountOnExit: true,
