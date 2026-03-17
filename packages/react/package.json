@@ -38,15 +38,16 @@
   },
   "dependencies": {
     "@ark-ui/react": "catalog:",
+    "@stark-loader/react": "catalog:",
     "@stark-ui/classes": "workspace:*",
     "@stark-ui/react-style-context": "workspace:*"
   },
   "devDependencies": {
     "@stark-ui/tsconfig": "workspace:*",
-    "@storybook/react-vite": "catalog:storybook",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "catalog:",
+    "lucide-react": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "typescript": "catalog:",
@@ -54,6 +55,7 @@
     "vite-plugin-dts": "catalog:"
   },
   "peerDependencies": {
+    "@stark-loader/react": ">=0.3.0",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
   }

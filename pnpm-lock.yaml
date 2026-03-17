@@ -24,6 +24,9 @@ catalogs:
     '@commitlint/config-conventional':
       specifier: ^20.5.0
       version: 20.5.0
+    '@stark-loader/react':
+      specifier: ^0.3.0
+      version: 0.3.0
     '@tailwindcss/vite':
       specifier: ^4.2.1
       version: 4.2.1
@@ -66,6 +69,9 @@ catalogs:
     lint-staged:
       specifier: ^16.4.0
       version: 16.4.0
+    lucide-react:
+      specifier: ^0.577.0
+      version: 0.577.0
     oxfmt:
       specifier: ^0.41.0
       version: 0.41.0
@@ -291,6 +297,9 @@ importers:
       '@ark-ui/react':
         specifier: 'catalog:'
         version: 5.34.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@stark-loader/react':
+        specifier: 'catalog:'
+        version: 0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@stark-ui/classes':
         specifier: workspace:*
         version: link:../classes
@@ -301,9 +310,6 @@ importers:
       '@stark-ui/tsconfig':
         specifier: workspace:*
         version: link:../../internal/tsconfig
-      '@storybook/react-vite':
-        specifier: catalog:storybook
-        version: 10.2.19(esbuild@0.27.4)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.59.0)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@2.8.8)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)(vite@7.3.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)(yaml@2.8.2))
       '@types/react':
         specifier: 'catalog:'
         version: 19.2.14
@@ -313,6 +319,9 @@ importers:
       '@vitejs/plugin-react':
         specifier: 'catalog:'
         version: 5.2.0(vite@7.3.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)(yaml@2.8.2))
+      lucide-react:
+        specifier: 'catalog:'
+        version: 0.577.0(react@19.2.4)
       react:
         specifier: 'catalog:'
         version: 19.2.4
@@ -1475,6 +1484,12 @@ packages:
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
+  '@stark-loader/react@0.3.0':
+    resolution: {integrity: sha512-QCi2zAENaJKSPIlphlE24HhctYYCdYEZGM3BThwni+clC4Dilz/nKsZ+zCtpQTOYrlpN3YVw1gPCEiqESLUfGw==}
+    peerDependencies:
+      react: '>=19.0.0'
+      react-dom: '>=19.0.0'
 
   '@storybook/addon-a11y@10.2.19':
     resolution: {integrity: sha512-SJGf1ghCoRVlwyiRwz5GiHuNvu7C5iCDNIRJW8WGOJlnoQa3rYaY7WJ/8a/eT9N8buIscL9AYWudhh5zsI1W3g==}
@@ -3246,6 +3261,11 @@ packages:
     resolution: {integrity: sha512-MhWWlVnuab1RG5/zMRRcVGXZLCXrZTgfwMikgzCegsPnG62yDQo5JnqKkrK4jO5iKqDAZGItAqN5CtKBCBWRUA==}
     engines: {node: '>=16.14'}
 
+  lucide-react@0.577.0:
+    resolution: {integrity: sha512-4LjoFv2eEPwYDPg/CUdBJQSDfPyzXCRrVW1X7jrx/trgxnxkHFjnVZINbzvzxjN70dxychOfg+FTYwBiS3pQ5A==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
@@ -4114,8 +4134,8 @@ packages:
   vue-component-type-helpers@2.2.12:
     resolution: {integrity: sha512-YbGqHZ5/eW4SnkPNR44mKVc6ZKQoRs/Rux1sxC6rdwXb4qpbOSYfDr9DsTHolOTGmIKgM9j141mZbBeg05R1pw==}
 
-  vue-component-type-helpers@3.2.5:
-    resolution: {integrity: sha512-tkvNr+bU8+xD/onAThIe7CHFvOJ/BO6XCOrxMzeytJq40nTfpGDJuVjyCM8ccGZKfAbGk2YfuZyDMXM56qheZQ==}
+  vue-component-type-helpers@3.2.6:
+    resolution: {integrity: sha512-O02tnvIfOQVmnvoWwuSydwRoHjZVt8UEBR+2p4rT35p8GAy5VTlWP8o5qXfJR/GWCN0nVZoYWsVUvx2jwgdBmQ==}
 
   vue-docgen-api@4.79.2:
     resolution: {integrity: sha512-n9ENAcs+40awPZMsas7STqjkZiVlIjxIKgiJr5rSohDP0/JCrD9VtlzNojafsA1MChm/hz2h3PDtUedx3lbgfA==}
@@ -5301,6 +5321,11 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
+  '@stark-loader/react@0.3.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
   '@storybook/addon-a11y@10.2.19(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@2.8.8)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))':
     dependencies:
       '@storybook/global': 5.0.0
@@ -5402,7 +5427,7 @@ snapshots:
       storybook: 10.2.19(@testing-library/dom@10.4.1)(prettier@2.8.8)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       type-fest: 2.19.0
       vue: 3.5.30(typescript@5.9.3)
-      vue-component-type-helpers: 3.2.5
+      vue-component-type-helpers: 3.2.6
 
   '@swc/helpers@0.5.19':
     dependencies:
@@ -7412,6 +7437,10 @@ snapshots:
 
   lru-cache@8.0.5: {}
 
+  lucide-react@0.577.0(react@19.2.4):
+    dependencies:
+      react: 19.2.4
+
   lz-string@1.5.0: {}
 
   magic-string@0.30.21:
@@ -8282,7 +8311,7 @@ snapshots:
 
   vue-component-type-helpers@2.2.12: {}
 
-  vue-component-type-helpers@3.2.5: {}
+  vue-component-type-helpers@3.2.6: {}
 
   vue-docgen-api@4.79.2(vue@3.5.30(typescript@5.9.3)):
     dependencies:

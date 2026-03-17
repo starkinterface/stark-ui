@@ -6,6 +6,7 @@ packages:
 catalog:
   "@ark-ui/react": ^5.34.1
   "@ark-ui/vue": ^5.34.1
+  "@stark-loader/react": ^0.3.0
   "@changesets/changelog-github": ^0.6.0
   "@changesets/cli": ^2.30.0
   "@commitlint/cli": ^20.5.0
@@ -24,6 +25,7 @@ catalog:
   husky: ^9.1.7
   jsdom: ^29.0.0
   lint-staged: ^16.4.0
+  lucide-react: ^0.577.0
   oxfmt: ^0.41.0
   oxlint: ^1.56.0
   react: ^19.2.4
