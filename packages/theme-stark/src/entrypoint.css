@@ -1,8 +1,8 @@
 /* ----------------------------------------------------------------------------
- * Stark Theme — Entrypoint
+ * Stark theme entrypoint
  *
- * This file is used by the build script/config reference only.
- * Build @source inline directives are injected programmatically by @stark-ui/scripts.
+ * This file is used for reference only. It's used in .vscode/settings.json and
+ * .oxfmtrc.json to provide the tailwindcss path for the theme.
  * ---------------------------------------------------------------------------- */
 @import "tailwindcss";
 @import "./index.css";

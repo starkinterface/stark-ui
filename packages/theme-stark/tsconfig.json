@@ -1,4 +1,0 @@
-{
-  "extends": "@stark-ui/tsconfig/base.json",
-  "include": ["scripts"]
-}

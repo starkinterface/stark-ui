@@ -9,7 +9,6 @@
   },
   "style": "./src/index.css",
   "files": [
-    "dist",
     "src",
     "!src/entrypoint.css"
   ],
@@ -27,32 +26,12 @@
       "style": "./src/base/schemes/*.css",
       "default": "./src/base/schemes/*.css"
     },
-    "./css": {
-      "style": "./dist/stark.min.css",
-      "default": "./dist/stark.min.css"
-    },
-    "./css/schemes/*": {
-      "style": "./dist/schemes/*.min.css",
-      "default": "./dist/schemes/*.min.css"
-    },
     "./package.json": "./package.json"
   },
-  "scripts": {
-    "build": "tsx scripts/build.ts",
-    "typecheck": "tsc"
-  },
   "devDependencies": {
-    "@stark-ui/scripts": "workspace:*",
-    "@stark-ui/tsconfig": "workspace:*",
-    "@types/node": "catalog:",
-    "tsx": "catalog:"
+    "@stark-ui/tsconfig": "workspace:*"
   },
   "peerDependencies": {
     "tailwindcss": "catalog:"
-  },
-  "peerDependenciesMeta": {
-    "tailwindcss": {
-      "optional": true
-    }
   }
 }
