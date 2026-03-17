@@ -1,0 +1,16 @@
+/* ----------------------------------------------------------------------------
+ * Custom variants
+ * ---------------------------------------------------------------------------- */
+@custom-variant white (&:is(:root:not([data-scheme]) *, [data-scheme="white"] *));
+@custom-variant black (&:is([data-scheme="black"] *));
+@custom-variant loading (&:is([data-loading]));
+@custom-variant icon-start (&:where([data-icon="inline-start"]));
+@custom-variant icon-end (&:where([data-icon="inline-end"]));
+
+/* ----------------------------------------------------------------------------
+ * Custom child selector variants
+ *
+ * e.g: icon:size-4 would target the icon child of the element.
+ * ---------------------------------------------------------------------------- */
+@custom-variant icon (& :where(svg:not([data-type="loader"]), .icon));
+@custom-variant loader (& :where([data-type="loader"]));

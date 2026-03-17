@@ -1,0 +1,125 @@
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+
+  --color-background-accent: var(--background-accent);
+  --color-foreground-accent: var(--foreground-accent);
+
+  --color-background-primary: var(--background-primary);
+  --color-foreground-primary: var(--foreground-primary);
+
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground-secondary: var(--foreground-secondary);
+
+  --color-background-danger: var(--background-danger);
+  --color-foreground-danger: var(--foreground-danger);
+
+  --color-background-inactive: var(--background-inactive);
+  --color-foreground-inactive: var(--foreground-inactive);
+
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-decoration: var(--decoration);
+  --color-ring: var(--ring);
+
+  /* ----------------------------------------------------------------------------
+   * Derived Colors
+   * ---------------------------------------------------------------------------- */
+  --color-background-accent-hover: color-mix(
+    in oklab,
+    --theme(--color-background-accent) 88%,
+    --theme(--color-foreground)
+  );
+
+  --color-background-primary-hover: color-mix(
+    in oklab,
+    --theme(--color-background-primary) 72%,
+    --theme(--color-foreground-primary)
+  );
+
+  --color-background-secondary-hover: color-mix(
+    in oklab,
+    --theme(--color-background-secondary) 88%,
+    --theme(--color-foreground-secondary)
+  );
+
+  --color-background-danger-hover: color-mix(
+    in oklab,
+    --theme(--color-background-danger) 88%,
+    --theme(--color-foreground-danger)
+  );
+
+  --color-background-danger-soft: color-mix(
+    in oklab,
+    --theme(--color-background-danger) 24%,
+    transparent
+  );
+  --color-foreground-danger-soft: color-mix(
+    in oklab,
+    --theme(--color-background-danger) 64%,
+    --theme(--color-foreground)
+  );
+  --color-background-danger-soft-hover: color-mix(
+    in oklab,
+    --theme(--color-background-danger) 36%,
+    transparent
+  );
+
+  --opacity-decoration-corners-blur: 36%;
+  --opacity-disabled: 56%;
+
+  --background-image-pattern-slash: repeating-linear-gradient(
+    -45deg,
+    var(--color-decoration) 0,
+    var(--color-decoration) 1px,
+    transparent 0,
+    transparent 50%
+  );
+
+  --background-image-pattern-dotted: radial-gradient(
+    var(--color-decoration) 1px,
+    transparent 0
+  );
+
+  --background-image-pattern-line-dashed-horizontal: repeating-linear-gradient(
+    to right,
+    var(--color-decoration) 0,
+    var(--color-decoration) 6px,
+    transparent 6px,
+    transparent 10px
+  );
+
+  --background-image-pattern-line-dashed-vertical: repeating-linear-gradient(
+    to bottom,
+    var(--color-decoration) 0,
+    var(--color-decoration) 6px,
+    transparent 6px,
+    transparent 10px
+  );
+
+  --animate-pattern-slash-moving: pattern-slash-moving 320ms linear infinite;
+  --animate-text-scramble: text-scramble 160ms steps(1, end);
+
+  @keyframes pattern-slash-moving {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 6px 0;
+    }
+  }
+
+  @keyframes text-scramble {
+    0%,
+    50% {
+      color: var(--color-scrambled);
+      content: var(--c1);
+    }
+    50%,
+    100% {
+      color: var(--color-base);
+      content: var(--c2);
+    }
+  }
+}

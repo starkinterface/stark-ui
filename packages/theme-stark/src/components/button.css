@@ -1,0 +1,305 @@
+@layer components {
+  .button {
+    @apply relative inline-flex shrink-0 appearance-none items-center justify-center rounded-none border border-transparent py-0 align-middle font-mono font-medium whitespace-nowrap uppercase;
+    @apply transition-[color,background-color,border-color,translate] duration-100 ease-out;
+    @apply outline-none select-none;
+
+    @variant active {
+      @apply translate-y-px;
+    }
+
+    @variant focus-visible {
+      @apply ring-2 ring-ring ring-offset-1 ring-offset-background outline-none;
+    }
+
+    @variant loading {
+      @variant loader {
+        @apply absolute inset-auto text-foreground-muted;
+      }
+    }
+  }
+
+  /* ----------------------------------------------------------------------------
+   * Default Variants
+   * ---------------------------------------------------------------------------- */
+  :where(.button) {
+    @apply button--primary;
+    @apply button--md;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Loading
+ * ---------------------------------------------------------------------------- */
+@utility button--loading {
+  @apply relative;
+}
+
+/* ----------------------------------------------------------------------------
+ * Variants
+ * ---------------------------------------------------------------------------- */
+
+@utility button--primary {
+  @apply bg-background-primary text-foreground-primary;
+  @apply hover:not-disabled:not-loading:bg-background-primary-hover;
+
+  @variant disabled {
+    @apply bg-background-inactive text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-background-inactive text-transparent;
+  }
+
+  @variant focus-visible {
+    @variant not-loading {
+      @apply ring-ring/72;
+    }
+  }
+}
+
+@utility button--secondary {
+  @apply bg-background-secondary text-foreground-secondary;
+  @apply hover:not-disabled:not-loading:bg-background-secondary-hover;
+
+  @variant disabled {
+    @apply bg-background-inactive text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-background-inactive text-transparent;
+  }
+
+  @variant focus-visible {
+    @variant not-loading {
+      @apply border-ring ring-ring/56;
+    }
+  }
+}
+
+@utility button--ghost {
+  @apply bg-transparent text-foreground;
+  @apply hover:not-disabled:not-loading:bg-background-secondary;
+
+  @variant disabled {
+    @apply bg-transparent text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-transparent text-transparent;
+  }
+
+  @variant focus-visible {
+    @variant not-loading {
+      @apply border-ring ring-ring/56;
+    }
+  }
+}
+
+@utility button--outline {
+  @apply border border-border bg-transparent text-foreground;
+  @apply hover:not-disabled:not-loading:bg-background-secondary;
+
+  @variant disabled {
+    @apply border-background-inactive bg-transparent text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply border-background-inactive bg-transparent text-transparent;
+  }
+
+  @variant focus-visible {
+    @variant not-loading {
+      @apply border-ring ring-ring/56;
+    }
+  }
+}
+
+@utility button--accent {
+  @apply bg-background-accent text-foreground-accent;
+  @apply hover:not-disabled:not-loading:bg-background-accent-hover;
+
+  @variant disabled {
+    @apply bg-background-inactive text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-background-inactive text-transparent;
+  }
+
+  @variant focus-visible {
+    @variant not-loading {
+      @apply ring-background-accent/48;
+    }
+  }
+}
+
+@utility button--danger {
+  @apply bg-background-danger text-foreground-danger;
+  @apply hover:not-disabled:not-loading:bg-background-danger-hover;
+
+  @variant disabled {
+    @apply bg-background-inactive text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-background-inactive text-transparent;
+  }
+
+  @variant focus-visible {
+    @variant not-loading {
+      @apply ring-foreground-danger-soft/56;
+    }
+  }
+}
+
+@utility button--danger-soft {
+  @apply bg-background-danger-soft text-foreground-danger-soft;
+  @apply hover:not-disabled:not-loading:bg-background-danger-soft-hover;
+
+  @variant disabled {
+    @apply bg-background-inactive text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-background-inactive text-transparent;
+  }
+
+  @variant focus-visible {
+    @variant not-loading {
+      @apply border-background-danger-soft ring-foreground-danger-soft/56;
+    }
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Sizes
+ * ---------------------------------------------------------------------------- */
+
+@utility button--xs {
+  @apply h-6 min-w-6 gap-1 px-2 text-xs;
+
+  @variant has-icon-start {
+    @apply ps-1.5;
+  }
+
+  @variant has-icon-end {
+    @apply pe-1.5;
+  }
+
+  @variant icon {
+    @apply size-3;
+  }
+
+  @variant loader {
+    @apply size-3;
+  }
+}
+
+@utility button--sm {
+  @apply h-7 min-w-7 gap-1.5 px-2 text-xs;
+
+  @variant has-icon-start {
+    @apply ps-1.75;
+  }
+
+  @variant has-icon-end {
+    @apply pe-1.75;
+  }
+
+  @variant icon {
+    @apply size-3.5;
+  }
+
+  @variant loader {
+    @apply size-3.5;
+  }
+}
+
+@utility button--md {
+  @apply h-8 min-w-8 gap-1.5 px-3 text-sm;
+
+  @variant has-icon-start {
+    @apply ps-2.5;
+  }
+
+  @variant has-icon-end {
+    @apply pe-2.5;
+  }
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
+
+@utility button--lg {
+  @apply h-9 min-w-9 gap-2 px-4 text-sm;
+
+  @variant has-icon-start {
+    @apply ps-3.5;
+  }
+
+  @variant has-icon-end {
+    @apply pe-3.5;
+  }
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
+
+@utility button--icon-xs {
+  @apply size-6 min-w-6 px-0;
+
+  @variant icon {
+    @apply size-3;
+  }
+
+  @variant loader {
+    @apply size-3;
+  }
+}
+
+@utility button--icon-sm {
+  @apply size-7 min-w-7 px-0;
+
+  @variant icon {
+    @apply size-3.5;
+  }
+
+  @variant loader {
+    @apply size-3.5;
+  }
+}
+
+@utility button--icon-md {
+  @apply size-8 min-w-8 px-0;
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
+
+@utility button--icon-lg {
+  @apply size-9 min-w-9 px-0;
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
