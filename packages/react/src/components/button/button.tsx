@@ -27,7 +27,7 @@ const Button = ({
       type="button"
       {...restProps}
       data-loading={attrValue(loading)}
-      disabled={loading}
+      disabled={loading || restProps.disabled}
       className={unstyled ? className : cx(baseClass, className)}
     >
       {children}
