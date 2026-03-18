@@ -1,5 +1,5 @@
 // oxlint-disable max-statements
-import type { Props } from "@/types"
+import type { Props } from "./../types"
 
 const splitVariantProps = <T extends Props, K extends keyof T>(
   props: T,

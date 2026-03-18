@@ -1,8 +1,13 @@
 "use client"
 
-import { createContext } from "@/create-context"
-import { splitVariantProps, mergeProps, resolveClassName } from "@/utils"
+import { createContext } from "./create-context"
+import { splitVariantProps, mergeProps, resolveClassName } from "./utils"
 
+import type {
+  ComponentPropsWithoutRef,
+  ComponentPropsWithRef,
+  ElementType,
+} from "react"
 import type {
   Dict,
   Slots,
@@ -14,12 +19,7 @@ import type {
   WithProviderSlotOptions,
   WithSlotOptions,
   UnstyledProp,
-} from "@/types"
-import type {
-  ComponentPropsWithoutRef,
-  ComponentPropsWithRef,
-  ElementType,
-} from "react"
+} from "./types"
 
 const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
   classes: Classes<VariantProps, S>,

@@ -1,6 +1,6 @@
-import { Button } from "@/components/button"
 import { RingLoader } from "@stark-loader/react"
 import { useState } from "react"
+import { Button } from "./../button"
 
 export default function Loading() {
   const [loading] = useState(true)

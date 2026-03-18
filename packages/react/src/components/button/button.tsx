@@ -1,6 +1,6 @@
-import { attrValue } from "@/utils"
 import { buttonClasses, cx } from "@stark-ui/classes"
 import { ark } from "@ark-ui/react/factory"
+import { attrValue } from "./../../utils"
 
 import type { ButtonVariantProps } from "@stark-ui/classes"
 import type { UnstyledProp } from "@stark-ui/react-style-context"

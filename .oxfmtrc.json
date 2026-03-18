@@ -37,7 +37,7 @@
       ["named-type-external"],
       ["named-type-parent", "named-type-sibling", "named-type-index"]
     ],
-    "internalPattern": ["@stark-ui/", "@stark-loader/", "#/", "@/"],
+    "internalPattern": ["@stark-ui/", "@stark-loader/"],
     "newlinesBetween": false,
     "sortSideEffects": false,
     "customGroups": []

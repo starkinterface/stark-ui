@@ -1,5 +1,5 @@
-import { createContext } from "@/create-context"
 import { render } from "@testing-library/react"
+import { createContext } from "./../src/create-context"
 
 describe("createContext()", () => {
   it("throws formatted error when used outside provider", () => {
