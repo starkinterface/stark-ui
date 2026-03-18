@@ -1,3 +1,4 @@
+import { Button } from "./../button"
 import {
   BotIcon,
   ArchiveXIcon,
@@ -5,7 +6,6 @@ import {
   ZapIcon,
   CircleArrowRightIcon,
 } from "lucide-react"
-import { Button } from "./../button"
 
 export default function WithIcon() {
   return (

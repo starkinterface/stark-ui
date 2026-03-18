@@ -4,11 +4,6 @@ import { createContext } from "./create-context"
 import { splitVariantProps, mergeProps, resolveClassName } from "./utils"
 
 import type {
-  ComponentPropsWithoutRef,
-  ComponentPropsWithRef,
-  ElementType,
-} from "react"
-import type {
   Dict,
   Slots,
   Classes,
@@ -20,6 +15,11 @@ import type {
   WithSlotOptions,
   UnstyledProp,
 } from "./types"
+import type {
+  ComponentPropsWithoutRef,
+  ComponentPropsWithRef,
+  ElementType,
+} from "react"
 
 const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
   classes: Classes<VariantProps, S>,

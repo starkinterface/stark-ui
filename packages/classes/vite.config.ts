@@ -1,7 +1,7 @@
 import { resolve } from "node:path"
+import pkg from "./package.json" with { type: "json" }
 import { defineConfig } from "vite"
 import dts from "vite-plugin-dts"
-import pkg from "./package.json" with { type: "json" }
 
 const root = import.meta.dirname
 
