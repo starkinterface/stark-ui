@@ -35,9 +35,6 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    alias: {
-      "#": root,
-      "@": resolve(root, "src"),
-    },
+    tsconfigPaths: true,
   },
 })
