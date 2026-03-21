@@ -1,0 +1,17 @@
+@layer components {
+  .switch {
+    @apply inline-flex items-center;
+  }
+
+  .switch-control {
+    @apply w-6 bg-white p-px;
+  }
+
+  .switch-thumb {
+    @apply flex size-3 bg-red-500 transition;
+
+    @variant data-[state=checked] {
+      @apply translate-x-2.5 bg-blue-500;
+    }
+  }
+}
