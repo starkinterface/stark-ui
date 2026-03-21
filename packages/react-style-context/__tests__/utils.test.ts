@@ -1,4 +1,4 @@
-import { mergeProps, splitVariantProps } from "./../src/utils"
+import { mergeProps, splitVariantProps } from "../src/utils"
 
 describe("splitVariantProps()", () => {
   it("returns all props as rest when variant keys are undefined", () => {

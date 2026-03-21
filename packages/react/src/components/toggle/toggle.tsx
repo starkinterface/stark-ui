@@ -1,4 +1,4 @@
-import { attrValue } from "./../../utils"
+import { attrValue } from "../../utils"
 import { toggleClasses, cx } from "@stark-ui/classes"
 import { Toggle as ArkToggle } from "@ark-ui/react/toggle"
 

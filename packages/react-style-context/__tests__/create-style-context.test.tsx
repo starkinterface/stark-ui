@@ -1,4 +1,4 @@
-import { createStyleContext } from "./../src/create-style-context"
+import { createStyleContext } from "../src/create-style-context"
 import { render, screen } from "@testing-library/react"
 import { forwardRef } from "react"
 import { tv } from "tailwind-variants/lite"

@@ -1,8 +1,8 @@
 {
-  "$schema": "./../../node_modules/oxlint/configuration_schema.json",
+  "$schema": "../../node_modules/oxlint/configuration_schema.json",
   "extends": [
-    "./../../.oxlintrc.json",
-    "./../../node_modules/ultracite/config/oxlint/vue/.oxlintrc.json"
+    "../../.oxlintrc.json",
+    "../../node_modules/ultracite/config/oxlint/vue/.oxlintrc.json"
   ],
   "rules": {
     "vue/define-props-destructuring": "allow"

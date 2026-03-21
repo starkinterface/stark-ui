@@ -7,5 +7,5 @@ export default defineMain({
     disableWhatsNewNotifications: true,
   },
   framework: "@storybook/vue3-vite",
-  stories: ["./../../../../packages/vue/src/components/**/*.stories.ts"],
+  stories: ["../../../../packages/vue/src/components/**/*.stories.ts"],
 })

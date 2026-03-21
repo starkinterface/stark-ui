@@ -1,6 +1,6 @@
 import { cx } from "tailwind-variants/lite"
 
-import type { SlotFn } from "./../types"
+import type { SlotFn } from "../types"
 
 /**
  * Returns the slot className unless `unstyled` is true, in which case

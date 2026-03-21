@@ -1,4 +1,4 @@
-import { createContext } from "./../src/create-context"
+import { createContext } from "../src/create-context"
 import { render } from "@testing-library/react"
 
 describe("createContext()", () => {

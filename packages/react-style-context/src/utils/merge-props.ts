@@ -1,7 +1,7 @@
 // oxlint-disable max-statements
 import { cx } from "tailwind-variants/lite"
 
-import type { Props } from "./../types"
+import type { Props } from "../types"
 
 /**
  * Shallowly merges multiple props objects with left-to-right precedence.

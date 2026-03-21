@@ -7,5 +7,5 @@ export default defineMain({
     disableWhatsNewNotifications: true,
   },
   framework: "@storybook/react-vite",
-  stories: ["./../../../../packages/react/src/components/**/*.stories.tsx"],
+  stories: ["../../../../packages/react/src/components/**/*.stories.tsx"],
 })

@@ -1,4 +1,4 @@
-import { attrValue } from "./../../utils"
+import { attrValue } from "../../utils"
 import { buttonClasses, cx } from "@stark-ui/classes"
 import { ark } from "@ark-ui/react/factory"
 
