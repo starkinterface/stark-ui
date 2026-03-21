@@ -1,4 +1,4 @@
-import { Button } from "../button"
+import { Button } from "../"
 
 export default function Basic() {
   return <Button>Button</Button>

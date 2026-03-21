@@ -1,4 +1,4 @@
-import { Button } from "../button"
+import { Button } from "../"
 import { RingLoader } from "@stark-loader/react"
 import { useState } from "react"
 
