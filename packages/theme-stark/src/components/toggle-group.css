@@ -1,0 +1,13 @@
+@layer components {
+  .toggle-group {
+    @apply flex items-center gap-2;
+  }
+
+  .toggle-group-item {
+    @apply bg-red-400;
+
+    @variant aria-checked {
+      @apply bg-blue-500;
+    }
+  }
+}
