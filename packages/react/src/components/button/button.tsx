@@ -26,6 +26,7 @@ const Button = ({
     <ark.button
       type="button"
       {...restProps}
+      data-button={attrValue(true)}
       data-loading={attrValue(loading)}
       disabled={loading || restProps.disabled}
       className={unstyled ? className : cx(baseClass, className)}
