@@ -1,0 +1,9 @@
+@layer components {
+  .toggle {
+    @apply bg-red-400;
+
+    @variant aria-pressed {
+      @apply bg-blue-500;
+    }
+  }
+}
