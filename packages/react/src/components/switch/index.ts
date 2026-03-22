@@ -11,7 +11,7 @@ export type {
   SwitchControlProps,
   SwitchHiddenInputProps,
   SwitchLabelProps,
-  SwitchProps,
+  SwitchRootProps,
   SwitchRootProviderProps,
   SwitchThumbProps,
 } from "./switch"

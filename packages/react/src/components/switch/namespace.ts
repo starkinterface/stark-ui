@@ -11,7 +11,7 @@ export type {
   SwitchControlProps as ControlProps,
   SwitchHiddenInputProps as HiddenInputProps,
   SwitchLabelProps as LabelProps,
-  SwitchProps as RootProps,
+  SwitchRootProps as RootProps,
   SwitchRootProviderProps as RootProviderProps,
   SwitchThumbProps as ThumbProps,
 } from "./switch"

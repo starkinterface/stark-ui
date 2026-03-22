@@ -15,7 +15,7 @@ const SwitchHiddenInput = withSlot(ArkSwitch.HiddenInput, "hiddenInput")
 const SwitchLabel = withSlot(ArkSwitch.Label, "label")
 const SwitchThumb = withSlot(ArkSwitch.Thumb, "thumb")
 
-type SwitchProps = ComponentProps<typeof SwitchRoot>
+type SwitchRootProps = ComponentProps<typeof SwitchRoot>
 type SwitchRootProviderProps = ComponentProps<typeof SwitchRootProvider>
 type SwitchControlProps = ComponentProps<typeof SwitchControl>
 type SwitchHiddenInputProps = ComponentProps<typeof SwitchHiddenInput>
@@ -31,7 +31,7 @@ export {
   SwitchThumb,
 }
 export type {
-  SwitchProps,
+  SwitchRootProps,
   SwitchRootProviderProps,
   SwitchControlProps,
   SwitchHiddenInputProps,
