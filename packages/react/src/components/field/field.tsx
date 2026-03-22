@@ -1,6 +1,6 @@
 import { fieldClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
-import { Field as ArkField } from "@ark-ui/react/Field"
+import { Field as ArkField } from "@ark-ui/react/field"
 
 import type { ComponentProps } from "react"
 
