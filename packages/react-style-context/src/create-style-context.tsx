@@ -19,7 +19,27 @@ import type {
   ComponentPropsWithoutRef,
   ComponentPropsWithRef,
   ElementType,
+  JSX,
+  RefAttributes,
 } from "react"
+
+type ProviderProps<
+  T extends ElementType,
+  VariantProps,
+> = ComponentPropsWithoutRef<T> & Partial<VariantProps> & UnstyledProp
+
+type ProviderSlotProps<
+  T extends ElementType,
+  VariantProps,
+> = ComponentPropsWithRef<T> &
+  Partial<VariantProps> &
+  UnstyledProp & { className?: string | undefined }
+
+type SlotProps<T extends ElementType> = ComponentPropsWithRef<T> &
+  UnstyledProp & { className?: string | undefined }
+
+type StyledComponent<P> = (props: P) => JSX.Element
+type StyledRefComponent<E, P> = (props: P & RefAttributes<E>) => JSX.Element
 
 const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
   classes: Classes<VariantProps, S>,
@@ -41,7 +61,9 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
    *
    * @returns {object} An object with `restProps`, `slots`, and `unstyled`.
    */
-  const useSplitProviderProps = <T extends Dict & VariantProps & UnstyledProp>(
+  const useSplitProviderProps = <
+    T extends Dict & Partial<VariantProps> & UnstyledProp,
+  >(
     providerProps: T
   ) => {
     const [variantProps, props] = splitVariantProps(
@@ -49,7 +71,7 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
       classes.variantKeys
     )
 
-    const slots = classes(variantProps)
+    const slots = classes(variantProps as VariantProps)
 
     const { unstyled, ...restProps } = props as Omit<T, keyof VariantProps> &
       UnstyledProp
@@ -65,12 +87,20 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
    *
    * @returns {Function} A component that provides style and unstyled context to its children.
    */
-  const withProvider = <T extends ElementType>(
+  function withProvider<P>(
+    Component: ElementType,
+    options?: WithProviderOptions<ElementType>
+  ): StyledComponent<P>
+  function withProvider<T extends ElementType>(
     Component: T,
     options?: WithProviderOptions<T>
-  ) => {
+  ): StyledComponent<ProviderProps<T, VariantProps>>
+  function withProvider(
+    Component: ElementType,
+    options?: WithProviderOptions<ElementType>
+  ) {
     const StyledComponent = (
-      props: ComponentPropsWithoutRef<T> & Partial<VariantProps> & UnstyledProp
+      props: Dict & Partial<VariantProps> & UnstyledProp
     ) => {
       const SuperComponent = Component as ElementType
       const { restProps, slots, unstyled } = useSplitProviderProps(props)
@@ -98,13 +128,23 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
    *
    * @returns {Function} A component that provides style and unstyled context to its children.
    */
-  const withProviderSlot = <T extends ElementType>(
+  function withProviderSlot<E, P>(
+    Component: ElementType,
+    slot: keyof S,
+    options?: WithProviderSlotOptions<ElementType>
+  ): StyledRefComponent<E, P>
+  function withProviderSlot<T extends ElementType>(
     Component: T,
     slot: keyof S,
     options?: WithProviderSlotOptions<T>
-  ) => {
+  ): StyledComponent<ProviderSlotProps<T, VariantProps>>
+  function withProviderSlot(
+    Component: ElementType,
+    slot: keyof S,
+    options?: WithProviderSlotOptions<ElementType>
+  ) {
     const StyledComponent = (
-      props: ComponentPropsWithRef<T> &
+      props: Dict &
         Partial<VariantProps> &
         UnstyledProp & {
           className?: string | undefined
@@ -116,8 +156,9 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
       const defaultProps = options?.defaultProps ?? {}
       const mergedProps = mergeProps(defaultProps, restProps)
 
-      const { className, ...otherProps } =
-        mergedProps as ComponentPropsWithRef<T> & { className?: string }
+      const { className, ...otherProps } = mergedProps as Dict & {
+        className?: string
+      }
 
       return (
         <StyleProvider value={{ slots }}>
@@ -143,14 +184,23 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
    *
    * @returns {Function} A styled slot component.
    */
-  const withSlot = <T extends ElementType>(
+  function withSlot<E, P>(
+    Component: ElementType,
+    slot: keyof S,
+    options?: WithSlotOptions<ElementType>
+  ): StyledRefComponent<E, P>
+  function withSlot<T extends ElementType>(
     Component: T,
     slot: keyof S,
     options?: WithSlotOptions<T>
-  ) => {
+  ): StyledComponent<SlotProps<T>>
+  function withSlot(
+    Component: ElementType,
+    slot: keyof S,
+    options?: WithSlotOptions<ElementType>
+  ) {
     const StyledComponent = (
-      props: ComponentPropsWithRef<T> &
-        UnstyledProp & { className?: string | undefined }
+      props: Dict & UnstyledProp & { className?: string | undefined }
     ) => {
       const SuperComponent = Component as ElementType
       const { slots } = useStyle()
