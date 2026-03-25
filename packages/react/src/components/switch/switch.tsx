@@ -2,25 +2,88 @@ import { switchClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
 import { Switch as ArkSwitch } from "@ark-ui/react/switch"
 
-import type { ComponentProps } from "react"
+import type { SwitchVariantProps } from "@stark-ui/classes"
+import type { UnstyledProp } from "@stark-ui/react-style-context"
+import type { Assign } from "@ark-ui/react"
 
 const { withProviderSlot, withSlot } = createStyleContext(switchClasses, {
   name: "Switch",
 })
 
-const SwitchRoot = withProviderSlot(ArkSwitch.Root, "root")
-const SwitchRootProvider = withProviderSlot(ArkSwitch.RootProvider, "root")
-const SwitchControl = withSlot(ArkSwitch.Control, "control")
-const SwitchHiddenInput = withSlot(ArkSwitch.HiddenInput, "hiddenInput")
-const SwitchLabel = withSlot(ArkSwitch.Label, "label")
-const SwitchThumb = withSlot(ArkSwitch.Thumb, "thumb")
+///////////////////////////////////////////////////////////////////////////////
+/// RootProvider
 
-type SwitchRootProps = ComponentProps<typeof SwitchRoot>
-type SwitchRootProviderProps = ComponentProps<typeof SwitchRootProvider>
-type SwitchControlProps = ComponentProps<typeof SwitchControl>
-type SwitchHiddenInputProps = ComponentProps<typeof SwitchHiddenInput>
-type SwitchLabelProps = ComponentProps<typeof SwitchLabel>
-type SwitchThumbProps = ComponentProps<typeof SwitchThumb>
+type SwitchRootProviderBaseProps = Assign<
+  ArkSwitch.RootProviderBaseProps,
+  SwitchVariantProps
+> &
+  UnstyledProp
+
+type SwitchRootProviderProps = Assign<
+  ArkSwitch.RootProviderProps,
+  SwitchRootProviderBaseProps
+>
+
+const SwitchRootProvider = withProviderSlot<
+  HTMLLabelElement,
+  SwitchRootProviderProps
+>(ArkSwitch.RootProvider, "root")
+
+///////////////////////////////////////////////////////////////////////////////
+/// Root
+
+type SwitchRootBaseProps = Assign<ArkSwitch.RootBaseProps, SwitchVariantProps> &
+  UnstyledProp
+
+type SwitchRootProps = Assign<ArkSwitch.RootProps, SwitchRootBaseProps>
+
+const SwitchRoot = withProviderSlot<HTMLLabelElement, SwitchRootProps>(
+  ArkSwitch.Root,
+  "root"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Control
+
+type SwitchControlProps = Assign<ArkSwitch.ControlProps, UnstyledProp>
+
+const SwitchControl = withSlot<HTMLSpanElement, SwitchControlProps>(
+  ArkSwitch.Control,
+  "control"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// HiddenInput
+
+type SwitchHiddenInputProps = Assign<ArkSwitch.HiddenInputProps, UnstyledProp>
+
+const SwitchHiddenInput = withSlot<HTMLInputElement, SwitchHiddenInputProps>(
+  ArkSwitch.HiddenInput,
+  "hiddenInput"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Label
+
+type SwitchLabelProps = Assign<ArkSwitch.LabelProps, UnstyledProp>
+
+const SwitchLabel = withSlot<HTMLSpanElement, SwitchLabelProps>(
+  ArkSwitch.Label,
+  "label"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Thumb
+
+type SwitchThumbProps = Assign<ArkSwitch.ThumbProps, UnstyledProp>
+
+const SwitchThumb = withSlot<HTMLSpanElement, SwitchThumbProps>(
+  ArkSwitch.Thumb,
+  "thumb"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Exports
 
 export {
   SwitchRoot,

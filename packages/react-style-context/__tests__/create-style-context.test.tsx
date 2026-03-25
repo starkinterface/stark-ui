@@ -3,6 +3,8 @@ import { render, screen } from "@testing-library/react"
 import { forwardRef } from "react"
 import { tv } from "tailwind-variants/lite"
 
+import type { ComponentProps, ReactNode } from "react"
+
 const classes = tv({
   defaultVariants: {
     size: "sm",
@@ -25,26 +27,62 @@ const classes = tv({
   },
 })
 
-const Root = forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
-  (props, ref) => <div {...props} ref={ref} />
-)
+interface SizeVariantProps {
+  size?: "sm" | "lg"
+}
+
+type StyledRootProps = ComponentProps<"div"> &
+  SizeVariantProps & {
+    unstyled?: boolean
+  }
+
+type StyledLabelProps = ComponentProps<"span"> & {
+  unstyled?: boolean
+}
+
+type StyledHeadlessRootProps = {
+  children?: ReactNode
+} & SizeVariantProps & {
+    unstyled?: boolean
+  }
+
+const Root = forwardRef<HTMLDivElement, ComponentProps<"div">>((props, ref) => (
+  <div {...props} ref={ref} />
+))
 Root.displayName = "Root"
 
-const Label = forwardRef<HTMLSpanElement, React.ComponentProps<"span">>(
+const Label = forwardRef<HTMLSpanElement, ComponentProps<"span">>(
   (props, ref) => <span {...props} ref={ref} />
 )
 Label.displayName = "Label"
 
-const HeadlessRoot = (props: { children?: React.ReactNode }) => (
+const HeadlessRoot = (props: { children?: ReactNode }) => (
   <div data-testid="headless">{props.children}</div>
 )
+
+const createTestStyleContext = () => {
+  const { withSlot, withProvider, withProviderSlot } =
+    createStyleContext(classes)
+
+  const StyledRoot = withProviderSlot<HTMLDivElement, StyledRootProps>(
+    Root,
+    "root"
+  )
+
+  const StyledLabel = withSlot<HTMLSpanElement, StyledLabelProps>(
+    Label,
+    "label"
+  )
+
+  const RootProvider = withProvider<StyledHeadlessRootProps>(HeadlessRoot)
+
+  return { RootProvider, StyledLabel, StyledRoot }
+}
 
 describe("createStyleContext()", () => {
   describe("withProviderSlot and withSlot", () => {
     it("applies slot classes", () => {
-      const { withSlot, withProviderSlot } = createStyleContext(classes)
-      const StyledRoot = withProviderSlot(Root, "root")
-      const StyledLabel = withSlot(Label, "label")
+      const { StyledLabel, StyledRoot } = createTestStyleContext()
 
       render(
         <StyledRoot data-testid="root" size="sm">
@@ -57,9 +95,7 @@ describe("createStyleContext()", () => {
     })
 
     it("applies variant classes", () => {
-      const { withSlot, withProviderSlot } = createStyleContext(classes)
-      const StyledRoot = withProviderSlot(Root, "root")
-      const StyledLabel = withSlot(Label, "label")
+      const { StyledLabel, StyledRoot } = createTestStyleContext()
 
       render(
         <StyledRoot data-testid="root" size="lg">
@@ -72,9 +108,7 @@ describe("createStyleContext()", () => {
     })
 
     it("merges custom className with slot class", () => {
-      const { withSlot, withProviderSlot } = createStyleContext(classes)
-      const StyledRoot = withProviderSlot(Root, "root")
-      const StyledLabel = withSlot(Label, "label")
+      const { StyledLabel, StyledRoot } = createTestStyleContext()
 
       render(
         <StyledRoot className="extra-root" data-testid="root">
@@ -92,9 +126,7 @@ describe("createStyleContext()", () => {
     })
 
     it("suppresses slot classes when unstyled", () => {
-      const { withSlot, withProviderSlot } = createStyleContext(classes)
-      const StyledRoot = withProviderSlot(Root, "root")
-      const StyledLabel = withSlot(Label, "label")
+      const { StyledLabel, StyledRoot } = createTestStyleContext()
 
       render(
         <StyledRoot className="custom" data-testid="root" unstyled>
@@ -108,9 +140,7 @@ describe("createStyleContext()", () => {
     })
 
     it("allows per-child unstyled override", () => {
-      const { withSlot, withProviderSlot } = createStyleContext(classes)
-      const StyledRoot = withProviderSlot(Root, "root")
-      const StyledLabel = withSlot(Label, "label")
+      const { StyledLabel, StyledRoot } = createTestStyleContext()
 
       render(
         <StyledRoot data-testid="root">
@@ -126,9 +156,7 @@ describe("createStyleContext()", () => {
 
   describe("withProvider()", () => {
     it("provides context without classes on itself", () => {
-      const { withSlot, withProvider } = createStyleContext(classes)
-      const RootProvider = withProvider(HeadlessRoot)
-      const StyledLabel = withSlot(Label, "label")
+      const { RootProvider, StyledLabel } = createTestStyleContext()
 
       render(
         <RootProvider size="lg">
@@ -142,8 +170,7 @@ describe("createStyleContext()", () => {
 
   describe("withSlot() outside provider", () => {
     it("throws without a provider", () => {
-      const { withSlot } = createStyleContext(classes)
-      const StyledLabel = withSlot(Label, "label")
+      const { StyledLabel } = createTestStyleContext()
 
       expect(() => render(<StyledLabel data-testid="label" />)).toThrow(
         /must be used within/

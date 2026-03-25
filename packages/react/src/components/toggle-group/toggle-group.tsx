@@ -2,24 +2,64 @@ import { toggleGroupClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
 import { ToggleGroup as ArkToggleGroup } from "@ark-ui/react/toggle-group"
 
-import type { ComponentProps } from "react"
+import type { ToggleGroupVariantProps } from "@stark-ui/classes"
+import type { UnstyledProp } from "@stark-ui/react-style-context"
+import type { Assign } from "@ark-ui/react"
 
 const { withProviderSlot, withSlot } = createStyleContext(toggleGroupClasses, {
   name: "ToggleGroup",
 })
 
-const ToggleGroupRoot = withProviderSlot(ArkToggleGroup.Root, "root")
-const ToggleGroupRootProvider = withProviderSlot(
-  ArkToggleGroup.RootProvider,
+///////////////////////////////////////////////////////////////////////////////
+/// RootProvider
+
+type ToggleGroupRootProviderBaseProps = Assign<
+  ArkToggleGroup.RootProviderBaseProps,
+  ToggleGroupVariantProps
+> &
+  UnstyledProp
+
+type ToggleGroupRootProviderProps = Assign<
+  ArkToggleGroup.RootProviderProps,
+  ToggleGroupRootProviderBaseProps
+>
+
+const ToggleGroupRootProvider = withProviderSlot<
+  HTMLDivElement,
+  ToggleGroupRootProviderProps
+>(ArkToggleGroup.RootProvider, "root")
+
+///////////////////////////////////////////////////////////////////////////////
+/// Root
+
+type ToggleGroupRootBaseProps = Assign<
+  ArkToggleGroup.RootBaseProps,
+  ToggleGroupVariantProps
+> &
+  UnstyledProp
+
+type ToggleGroupProps = Assign<
+  ArkToggleGroup.RootProps,
+  ToggleGroupRootBaseProps
+>
+
+const ToggleGroupRoot = withProviderSlot<HTMLDivElement, ToggleGroupProps>(
+  ArkToggleGroup.Root,
   "root"
 )
-const ToggleGroupItem = withSlot(ArkToggleGroup.Item, "item")
 
-type ToggleGroupProps = ComponentProps<typeof ToggleGroupRoot>
-type ToggleGroupRootProviderProps = ComponentProps<
-  typeof ToggleGroupRootProvider
->
-type ToggleGroupItemProps = ComponentProps<typeof ToggleGroupItem>
+///////////////////////////////////////////////////////////////////////////////
+/// Item
+
+type ToggleGroupItemProps = Assign<ArkToggleGroup.ItemProps, UnstyledProp>
+
+const ToggleGroupItem = withSlot<HTMLButtonElement, ToggleGroupItemProps>(
+  ArkToggleGroup.Item,
+  "item"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Exports
 
 export { ToggleGroupRoot, ToggleGroupRootProvider, ToggleGroupItem }
 export type {

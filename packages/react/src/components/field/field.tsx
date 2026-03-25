@@ -2,29 +2,108 @@ import { fieldClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
 import { Field as ArkField } from "@ark-ui/react/field"
 
-import type { ComponentProps } from "react"
+import type { FieldVariantProps } from "@stark-ui/classes"
+import type { UnstyledProp } from "@stark-ui/react-style-context"
+import type { Assign } from "@ark-ui/react"
 
 const { withProviderSlot, withSlot } = createStyleContext(fieldClasses, {
   name: "Field",
 })
 
-const FieldRoot = withProviderSlot(ArkField.Root, "root")
-const FieldRootProvider = withProviderSlot(ArkField.RootProvider, "root")
-const FieldLabel = withSlot(ArkField.Label, "label")
-const FieldInput = withSlot(ArkField.Input, "input")
-const FieldSelect = withSlot(ArkField.Select, "select")
-const FieldTextarea = withSlot(ArkField.Textarea, "textarea")
-const FieldErrorText = withSlot(ArkField.ErrorText, "errorText")
-const FieldHelperText = withSlot(ArkField.HelperText, "helperText")
+///////////////////////////////////////////////////////////////////////////////
+/// RootProvider
 
-type FieldRootProps = ComponentProps<typeof FieldRoot>
-type FieldRootProviderProps = ComponentProps<typeof FieldRootProvider>
-type FieldLabelProps = ComponentProps<typeof FieldLabel>
-type FieldInputProps = ComponentProps<typeof FieldInput>
-type FieldSelectProps = ComponentProps<typeof FieldSelect>
-type FieldTextareaProps = ComponentProps<typeof FieldTextarea>
-type FieldErrorTextProps = ComponentProps<typeof FieldErrorText>
-type FieldHelperTextProps = ComponentProps<typeof FieldHelperText>
+type FieldRootProviderBaseProps = Assign<
+  ArkField.RootProviderBaseProps,
+  FieldVariantProps
+> &
+  UnstyledProp
+
+type FieldRootProviderProps = Assign<
+  ArkField.RootProviderProps,
+  FieldRootProviderBaseProps
+>
+
+const FieldRootProvider = withProviderSlot<
+  HTMLDivElement,
+  FieldRootProviderProps
+>(ArkField.RootProvider, "root")
+
+///////////////////////////////////////////////////////////////////////////////
+/// Root
+
+type FieldRootBaseProps = Assign<ArkField.RootBaseProps, FieldVariantProps> &
+  UnstyledProp
+
+type FieldRootProps = Assign<ArkField.RootProps, FieldRootBaseProps>
+
+const FieldRoot = withProviderSlot<HTMLDivElement, FieldRootProps>(
+  ArkField.Root,
+  "root"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Label
+
+type FieldLabelProps = Assign<ArkField.LabelProps, UnstyledProp>
+
+const FieldLabel = withSlot<HTMLLabelElement, FieldLabelProps>(
+  ArkField.Label,
+  "label"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Input
+
+type FieldInputProps = Assign<ArkField.InputProps, UnstyledProp>
+
+const FieldInput = withSlot<HTMLInputElement, FieldInputProps>(
+  ArkField.Input,
+  "input"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Select
+
+type FieldSelectProps = Assign<ArkField.SelectProps, UnstyledProp>
+
+const FieldSelect = withSlot<HTMLSelectElement, FieldSelectProps>(
+  ArkField.Select,
+  "select"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Textarea
+
+type FieldTextareaProps = Assign<ArkField.TextareaProps, UnstyledProp>
+
+const FieldTextarea = withSlot<HTMLTextAreaElement, FieldTextareaProps>(
+  ArkField.Textarea,
+  "textarea"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// ErrorText
+
+type FieldErrorTextProps = Assign<ArkField.ErrorTextProps, UnstyledProp>
+
+const FieldErrorText = withSlot<HTMLSpanElement, FieldErrorTextProps>(
+  ArkField.ErrorText,
+  "errorText"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// HelperText
+
+type FieldHelperTextProps = Assign<ArkField.HelperTextProps, UnstyledProp>
+
+const FieldHelperText = withSlot<HTMLSpanElement, FieldHelperTextProps>(
+  ArkField.HelperText,
+  "helperText"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Exports
 
 export {
   FieldRoot,
