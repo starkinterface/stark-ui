@@ -1,0 +1,13 @@
+@layer components {
+  .select {
+    @apply inline-flex flex-col;
+  }
+
+  .select-control {
+    @apply inline-flex border;
+  }
+
+  .select-item {
+    @apply flex items-center justify-between;
+  }
+}
