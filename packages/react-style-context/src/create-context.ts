@@ -11,7 +11,7 @@ const createContext = <T>(contextName = "Component") => {
 
     if (context === null) {
       throw new Error(
-        `<${slotName} /> must be used within <${contextName}Root />.`
+        `<${slotName} /> must be used within <${contextName}Root /> or <${contextName}RootProvider />.`
       )
     }
 
