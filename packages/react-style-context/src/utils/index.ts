@@ -1,3 +1,7 @@
 export * from "./split-props"
 export * from "./merge-props"
 export * from "./resolve-class-name"
+export * from "./display-name"
+export * from "./config"
+export * from "./provider-props"
+export * from "./slot"

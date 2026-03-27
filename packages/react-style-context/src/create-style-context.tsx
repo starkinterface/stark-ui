@@ -1,13 +1,26 @@
 "use client"
 
 import { createContext } from "./create-context"
-import { splitVariantProps, mergeProps, resolveClassName } from "./utils"
+import {
+  resolveClassName,
+  getSlotFn,
+  getElementTypeName,
+  getSlotComponentName,
+  setDisplayName,
+  validateStyleConfig,
+  mergeWithDefaultProps,
+  splitProviderPropsWithDefaults,
+} from "./utils"
 
 import type {
   Dict,
   Slots,
   Classes,
   CreateStyleContextConfig,
+  ProviderInputProps,
+  SlotClassNameProp,
+  StyledComponent,
+  StyledRefComponent,
   StyleContextValue,
   UnstyledContextValue,
   WithProviderOptions,
@@ -15,77 +28,59 @@ import type {
   WithSlotOptions,
   UnstyledProp,
 } from "./types"
-import type { ElementType, JSX, RefAttributes } from "react"
-
-type StyledComponent<P> = (props: P) => JSX.Element
-type StyledRefComponent<E, P> = (props: P & RefAttributes<E>) => JSX.Element
+import type { ElementType, RefAttributes } from "react"
 
 const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
   classes: Classes<VariantProps, S>,
-  config?: CreateStyleContextConfig
+  config: CreateStyleContextConfig
 ) => {
-  const [StyleProvider, useStyle] = createContext<StyleContextValue<S>>(
-    config?.name
-  )
+  const validatedConfig = validateStyleConfig(config)
+  const scopeName = validatedConfig.name
 
-  const [UnstyledProvider, useUnstyled] = createContext<UnstyledContextValue>(
-    config?.name
-  )
+  const [StyleProvider, useStyle] =
+    createContext<StyleContextValue<S>>(scopeName)
 
-  /**
-   * Splits variant props, computes slot styles, and extracts the `unstyled` flag
-   * from the combined provider props.
-   *
-   * @param {T} providerProps - The full props including variant keys and `unstyled`.
-   *
-   * @returns {object} An object with `restProps`, `slots`, and `unstyled`.
-   */
-  const useSplitProviderProps = <
-    T extends Dict & Partial<VariantProps> & UnstyledProp,
-  >(
-    providerProps: T
-  ) => {
-    const [variantProps, props] = splitVariantProps(
-      providerProps,
-      classes.variantKeys
-    )
+  const [UnstyledProvider, useUnstyled] =
+    createContext<UnstyledContextValue>(scopeName)
 
-    const slots = classes(variantProps as VariantProps)
-
-    const { unstyled, ...restProps } = props as Omit<T, keyof VariantProps> &
-      UnstyledProp
-
-    return { restProps, slots, unstyled }
-  }
+  const { variantKeys } = classes
+  const variantKeySet =
+    variantKeys && variantKeys.length > 0 ? new Set(variantKeys) : undefined
 
   /**
    * Creates the root component that **DOES NOT RENDER an underlying DOM element**.
    *
    * @param {ElementType} Component - The base component to render.
-   * @param {WithProviderOptions<ElementType>} [options] - Optional default props.
+   * @param {WithProviderOptions<P>} [options] - Optional default props.
    *
    * @returns {Function} A component that provides style and unstyled context to its children.
    */
-  const withProvider = <P,>(
-    Component: ElementType,
-    options?: WithProviderOptions<ElementType>
+  const withProvider = <P, T extends ElementType = ElementType>(
+    Component: T,
+    options?: WithProviderOptions<P>
   ): StyledComponent<P> => {
-    const StyledComponent = ((
-      props: Dict & Partial<VariantProps> & UnstyledProp
-    ) => {
+    const StyledComponent = ((props: P) => {
       const SuperComponent = Component as ElementType
-      const { restProps, slots, unstyled } = useSplitProviderProps(props)
-      const defaultProps = options?.defaultProps ?? {}
-      const mergedProps = mergeProps(defaultProps, restProps) as Dict
+      const { restProps, slots, unstyled } = splitProviderPropsWithDefaults(
+        classes,
+        props as unknown as ProviderInputProps<VariantProps>,
+        variantKeys,
+        variantKeySet,
+        options?.defaultProps as Dict | undefined
+      )
 
       return (
         <StyleProvider value={{ slots }}>
           <UnstyledProvider value={{ unstyled }}>
-            <SuperComponent {...mergedProps} />
+            <SuperComponent {...(restProps as Dict)} />
           </UnstyledProvider>
         </StyleProvider>
       )
     }) as StyledComponent<P>
+    setDisplayName(
+      StyledComponent,
+      `${scopeName}.Provider(${getElementTypeName(Component)})`
+    )
 
     return StyledComponent
   }
@@ -95,43 +90,40 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
    *
    * @param {ElementType} Component - The base component to render.
    * @param {keyof S} slot - The slot key to apply className from.
-   * @param {WithProviderSlotOptions<ElementType>} [options] - Optional default props.
+   * @param {WithProviderSlotOptions<P>} [options] - Optional default props.
    *
    * @returns {Function} A component that provides style and unstyled context to its children.
    */
-  const withProviderSlot = <E, P>(
-    Component: ElementType,
+  const withProviderSlot = <E, P, T extends ElementType = ElementType>(
+    Component: T,
     slot: keyof S,
-    options?: WithProviderSlotOptions<ElementType>
+    options?: WithProviderSlotOptions<P>
   ): StyledRefComponent<E, P> => {
-    const StyledComponent = ((
-      props: Dict &
-        Partial<VariantProps> &
-        UnstyledProp & {
-          className?: string | undefined
-        }
-    ) => {
+    const slotComponentName = `${scopeName}.${String(slot)}`
+    const StyledComponent = ((props: P & RefAttributes<E>) => {
       const SuperComponent = Component as ElementType
-      const { restProps, slots, unstyled } = useSplitProviderProps(props)
-
-      const defaultProps = options?.defaultProps ?? {}
-      const mergedProps = mergeProps(defaultProps, restProps)
-
-      const { className, ...otherProps } = mergedProps as Dict & {
-        className?: string
-      }
+      const { restProps, slots, unstyled } = splitProviderPropsWithDefaults(
+        classes,
+        props as unknown as ProviderInputProps<VariantProps>,
+        variantKeys,
+        variantKeySet,
+        options?.defaultProps as Dict | undefined
+      )
+      const { className, ...otherProps } = restProps as Dict & SlotClassNameProp
+      const slotFn = getSlotFn(slots, slot, slotComponentName)
 
       return (
         <StyleProvider value={{ slots }}>
           <UnstyledProvider value={{ unstyled }}>
             <SuperComponent
               {...otherProps}
-              className={resolveClassName(slots[slot], className, unstyled)}
+              className={resolveClassName(slotFn, className, unstyled)}
             />
           </UnstyledProvider>
         </StyleProvider>
       )
     }) as StyledRefComponent<E, P>
+    setDisplayName(StyledComponent, slotComponentName)
 
     return StyledComponent
   }
@@ -141,34 +133,38 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
    *
    * @param {ElementType} Component - The base component to render.
    * @param {keyof S} slot - The slot key to apply className from.
-   * @param {WithSlotOptions<ElementType>} [options] - Optional default props.
+   * @param {WithSlotOptions<P>} [options] - Optional default props.
    *
    * @returns {Function} A styled slot component.
    */
-  const withSlot = <E, P>(
-    Component: ElementType,
+  const withSlot = <E, P, T extends ElementType = ElementType>(
+    Component: T,
     slot: keyof S,
-    options?: WithSlotOptions<ElementType>
+    options?: WithSlotOptions<P>
   ): StyledRefComponent<E, P> => {
-    const StyledComponent = ((
-      props: Dict & UnstyledProp & { className?: string | undefined }
-    ) => {
+    const slotComponentName = getSlotComponentName(scopeName, slot)
+    const StyledComponent = ((props: P & RefAttributes<E>) => {
       const SuperComponent = Component as ElementType
-      const { slots } = useStyle()
-      const { unstyled: providerUnstyled } = useUnstyled()
-      const { unstyled, className, ...restProps } = props
-
-      const defaultProps = options?.defaultProps ?? {}
-      const mergedProps = mergeProps(defaultProps, restProps)
+      const { slots } = useStyle(slotComponentName)
+      const { unstyled: providerUnstyled } = useUnstyled(slotComponentName)
+      const mergedProps = mergeWithDefaultProps(
+        props as unknown as Dict,
+        options?.defaultProps as Dict | undefined
+      )
+      const { className, unstyled, ...otherProps } = mergedProps as Dict &
+        SlotClassNameProp &
+        UnstyledProp
+      const slotFn = getSlotFn(slots, slot, slotComponentName)
       const isUnstyled = unstyled ?? providerUnstyled
 
       return (
         <SuperComponent
-          {...mergedProps}
-          className={resolveClassName(slots[slot], className, isUnstyled)}
+          {...otherProps}
+          className={resolveClassName(slotFn, className, isUnstyled)}
         />
       )
     }) as StyledRefComponent<E, P>
+    setDisplayName(StyledComponent, `${scopeName}.${String(slot)}`)
 
     return StyledComponent
   }

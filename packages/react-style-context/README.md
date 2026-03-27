@@ -6,28 +6,38 @@ React HOCs that provide an ergonomic way to style compound components with `tail
 import { popoverClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
 import { Popover as ArkPopover } from "@ark-ui/react/popover"
+import type { Assign } from "@ark-ui/react"
+import type { UnstyledProp } from "@stark-ui/react-style-context"
 
-const { withProvider, withSlot } = createStyleContext(popoverClasses)
+const { withProvider, withSlot } = createStyleContext(popoverClasses, {
+  name: "Popover",
+})
 
-const PopoverRoot = withProvider(ArkPopover.Root)
-const PopoverRootProvider = withProvider(ArkPopover.RootProvider)
-const PopoverAnchor = withSlot(ArkPopover.Anchor, "anchor")
-const PopoverArrow = withSlot(ArkPopover.Arrow, "arrow")
-const PopoverArrowTip = withSlot(ArkPopover.ArrowTip, "arrowTip")
-const PopoverCloseTrigger = withSlot(ArkPopover.CloseTrigger, "closeTrigger")
-const PopoverContent = withSlot(ArkPopover.Content, "content")
-const PopoverDescription = withSlot(ArkPopover.Description, "description")
-const PopoverPositioner = withSlot(ArkPopover.Positioner, "positioner")
-const PopoverTitle = withSlot(ArkPopover.Title, "title")
-const PopoverTrigger = withSlot(ArkPopover.Trigger, "trigger")
+type PopoverRootProps = Assign<ArkPopover.RootProps, UnstyledProp>
+type PopoverTriggerProps = Assign<ArkPopover.TriggerProps, UnstyledProp>
+type PopoverContentProps = Assign<ArkPopover.ContentProps, UnstyledProp>
+
+const PopoverRoot = withProvider<PopoverRootProps>(ArkPopover.Root)
+const PopoverTrigger = withSlot<HTMLButtonElement, PopoverTriggerProps>(
+  ArkPopover.Trigger,
+  "trigger"
+)
+const PopoverContent = withSlot<HTMLDivElement, PopoverContentProps>(
+  ArkPopover.Content,
+  "content"
+)
 ```
+
+`name` is required and must start with an uppercase letter (for example, `"Popover"`).
+`withProvider`, `withProviderSlot`, and `withSlot` use explicit typing
+(`withProvider<Props>(...)`, `withSlot<Element, Props>(...)`).
 
 ## Features
 
 - `defaultProps` support
 
   ```tsx
-  const PopoverRoot = withProvider(ArkPopover.Root, {
+  const PopoverRoot = withProvider<PopoverRootProps>(ArkPopover.Root, {
     defaultProps: {
       lazyMount: true,
       unmountOnExit: true,

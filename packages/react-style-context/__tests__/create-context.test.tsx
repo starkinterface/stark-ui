@@ -29,4 +29,21 @@ describe("createContext()", () => {
       "<PopoverTrigger /> must be used within <PopoverRoot />"
     )
   })
+
+  it("allows falsey context values", () => {
+    const [Context, useContext] = createContext<number>("Counter")
+
+    const Consumer = () => {
+      const value = useContext("CounterRoot")
+      return <span>{value}</span>
+    }
+
+    const { getByText } = render(
+      <Context.Provider value={0}>
+        <Consumer />
+      </Context.Provider>
+    )
+
+    expect(getByText("0")).toBeInTheDocument()
+  })
 })

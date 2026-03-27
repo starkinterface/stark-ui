@@ -9,7 +9,7 @@ const createContext = <T>(contextName = "Component") => {
   const useContext = (slotName = "Component"): T => {
     const context = useReactContext(Context)
 
-    if (!context) {
+    if (context === null) {
       throw new Error(
         `<${slotName} /> must be used within <${contextName}Root />.`
       )
