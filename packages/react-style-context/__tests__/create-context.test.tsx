@@ -12,7 +12,7 @@ describe("createContext()", () => {
     }
 
     expect(() => render(<BadConsumer />)).toThrow(
-      "<Component /> must be used within <ComponentRoot />"
+      /^<Component \/> must be used within <ComponentRoot \/> or <ComponentRootProvider \/>\.$/
     )
   })
 
@@ -26,7 +26,7 @@ describe("createContext()", () => {
     }
 
     expect(() => render(<BadConsumer />)).toThrow(
-      "<PopoverTrigger /> must be used within <PopoverRoot />"
+      /^<PopoverTrigger \/> must be used within <PopoverRoot \/> or <PopoverRootProvider \/>\.$/
     )
   })
 

@@ -428,7 +428,7 @@ describe("createStyleContext()", () => {
       )
 
       expect(() => render(<BrokenRoot data-testid="root" />)).toThrow(
-        'could not resolve slot "missing"'
+        /^`createStyleContext` could not resolve slot "missing" for <Popover.missing \/>\. Ensure the slot exists in your tv\(\) slots config\.$/
       )
     })
   })
@@ -505,7 +505,7 @@ describe("createStyleContext()", () => {
       const { StyledLabel } = createTestStyleContext()
 
       expect(() => render(<StyledLabel data-testid="label" />)).toThrow(
-        /must be used within/
+        /^<PopoverLabel \/> must be used within <PopoverRoot \/> or <PopoverRootProvider \/>\.$/
       )
     })
 
@@ -519,7 +519,7 @@ describe("createStyleContext()", () => {
       )
 
       expect(() => render(<StyledLabel data-testid="label" />)).toThrow(
-        "<PopoverLabel /> must be used within <PopoverRoot />"
+        /^<PopoverLabel \/> must be used within <PopoverRoot \/> or <PopoverRootProvider \/>\.$/
       )
     })
 
@@ -531,7 +531,7 @@ describe("createStyleContext()", () => {
       )
 
       expect(() => render(<StyledLabel data-testid="label" />)).toThrow(
-        "<ComponentLabel /> must be used within <ComponentRoot />"
+        /^<ComponentLabel \/> must be used within <ComponentRoot \/> or <ComponentRootProvider \/>\.$/
       )
     })
 
@@ -545,7 +545,9 @@ describe("createStyleContext()", () => {
 
       expect(() =>
         render(<StyledLabel data-testid="label" ref={callbackRef} />)
-      ).toThrow(/must be used within/)
+      ).toThrow(
+        /^<PopoverLabel \/> must be used within <PopoverRoot \/> or <PopoverRootProvider \/>\.$/
+      )
       expect(refCalls).toStrictEqual([])
     })
   })
@@ -565,7 +567,7 @@ describe("createStyleContext()", () => {
       )
 
       expect(() => render(<StyledRoot data-testid="root" />)).toThrow(
-        "`createStyleContext` expected `classes` to return a slots object."
+        /^`createStyleContext` expected `classes` to return a slots object\.$/
       )
     })
   })
