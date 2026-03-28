@@ -2,6 +2,7 @@ packages:
   - packages/*
   - internal/*
   - apps/storybook/*
+  - apps/*
 
 catalog:
   "@ark-ui/react": ^5.35.0
@@ -11,6 +12,7 @@ catalog:
   "@commitlint/cli": ^20.5.0
   "@commitlint/config-conventional": ^20.5.0
   "@stark-loader/react": ^0.3.0
+  "@tailwindcss/postcss": ^4.2.2
   "@tailwindcss/vite": ^4.2.2
   "@testing-library/jest-dom": ^6.9.1
   "@testing-library/react": ^16.3.2
@@ -26,6 +28,7 @@ catalog:
   jsdom: ^29.0.1
   lint-staged: ^16.4.0
   lucide-react: ^1.7.0
+  next: ^16.2.1
   oxfmt: ^0.42.0
   oxlint: ^1.57.0
   react: ^19.2.4
@@ -54,3 +57,5 @@ cleanupUnusedCatalogs: true
 onlyBuiltDependencies:
   - "@parcel/watcher"
   - esbuild
+  - sharp
+  - unrs-resolver

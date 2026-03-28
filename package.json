@@ -20,6 +20,7 @@
     "changeset:version": "changeset version",
     "dev:react": "turbo dev --filter=./apps/storybook/react",
     "dev:vue": "turbo dev --filter=./apps/storybook/vue",
+    "dev:www": "turbo dev --filter=./apps/www",
     "prepare": "husky",
     "standard": "ultracite check",
     "standard:fix": "ultracite fix",
@@ -35,7 +36,7 @@
     "lint-staged": "catalog:",
     "oxfmt": "catalog:",
     "oxlint": "catalog:",
-    "turbo": "^2.8.20",
+    "turbo": "^2.8.21",
     "typescript": "catalog:",
     "ultracite": "catalog:"
   },
