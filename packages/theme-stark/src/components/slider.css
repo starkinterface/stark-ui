@@ -1,0 +1,33 @@
+@layer components {
+  .slider {
+    @apply inline-flex w-full max-w-sm flex-col gap-2;
+  }
+
+  .slider-control {
+    @apply relative flex items-center py-1;
+  }
+
+  .slider-track {
+    @apply relative h-2 w-full overflow-hidden rounded-full border;
+  }
+
+  .slider-range {
+    @apply absolute h-full bg-black;
+  }
+
+  .slider-thumb {
+    @apply flex size-4 items-center justify-center rounded-full border bg-white;
+  }
+
+  .slider-marker-group {
+    @apply flex w-full justify-between text-xs;
+  }
+
+  .slider-marker {
+    @apply text-current;
+  }
+
+  .slider-dragging-indicator {
+    @apply inline-flex rounded border bg-white px-2 py-1 text-xs;
+  }
+}

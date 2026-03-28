@@ -1,0 +1,31 @@
+export {
+  SliderContext as Context,
+  SliderControl as Control,
+  SliderDraggingIndicator as DraggingIndicator,
+  SliderHiddenInput as HiddenInput,
+  SliderLabel as Label,
+  SliderMarker as Marker,
+  SliderMarkerGroup as MarkerGroup,
+  SliderRange as Range,
+  SliderRoot as Root,
+  SliderRootProvider as RootProvider,
+  SliderThumb as Thumb,
+  SliderTrack as Track,
+  SliderValueText as ValueText,
+} from "./slider"
+
+export type {
+  SliderContextProps as ContextProps,
+  SliderControlProps as ControlProps,
+  SliderDraggingIndicatorProps as DraggingIndicatorProps,
+  SliderHiddenInputProps as HiddenInputProps,
+  SliderLabelProps as LabelProps,
+  SliderMarkerGroupProps as MarkerGroupProps,
+  SliderMarkerProps as MarkerProps,
+  SliderRangeProps as RangeProps,
+  SliderRootProps as RootProps,
+  SliderRootProviderProps as RootProviderProps,
+  SliderThumbProps as ThumbProps,
+  SliderTrackProps as TrackProps,
+  SliderValueTextProps as ValueTextProps,
+} from "./slider"
