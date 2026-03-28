@@ -15,6 +15,7 @@
   "scripts": {
     "build": "turbo build --filter=./packages/*",
     "build:storybook": "turbo build --filter=./apps/storybook/*",
+    "build:www": "turbo build --filter=./apps/www",
     "changeset": "changeset",
     "changeset:release": "changeset publish",
     "changeset:version": "changeset version",
