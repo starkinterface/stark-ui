@@ -1,9 +1,13 @@
 @layer components {
   .toggle {
-    @apply bg-red-400;
+    @apply inline-flex size-10 items-center justify-center rounded-md border transition;
 
-    @variant aria-pressed {
-      @apply bg-blue-500;
+    @variant data-[state=on] {
+      @apply bg-black text-white;
     }
+  }
+
+  .toggle-indicator {
+    @apply inline-flex items-center justify-center;
   }
 }

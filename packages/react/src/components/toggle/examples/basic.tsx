@@ -1,10 +1,12 @@
 import { Toggle } from "../"
-import { Heart } from "lucide-react"
+import { HeartIcon } from "lucide-react"
 
 export default function Basic() {
   return (
-    <Toggle>
-      <Heart />
-    </Toggle>
+    <Toggle.Root aria-label="Toggle favorite">
+      <Toggle.Indicator fallback={<HeartIcon className="size-4" />}>
+        <HeartIcon className="size-4 fill-current" />
+      </Toggle.Indicator>
+    </Toggle.Root>
   )
 }

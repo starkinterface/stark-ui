@@ -1,34 +1,47 @@
-import { attrValue } from "../../utils"
-import { toggleClasses, cx } from "@stark-ui/classes"
+import { toggleClasses } from "@stark-ui/classes"
+import { createStyleContext } from "@stark-ui/react-style-context"
 import { Toggle as ArkToggle } from "@ark-ui/react/toggle"
 
 import type { ToggleVariantProps } from "@stark-ui/classes"
 import type { UnstyledProp } from "@stark-ui/react-style-context"
-import type { ToggleRootProps } from "@ark-ui/react/toggle"
+import type { Assign } from "@ark-ui/react"
 
-interface ToggleProps
-  extends ToggleVariantProps, ToggleRootProps, UnstyledProp {}
+const { withProviderSlot, withSlot } = createStyleContext(toggleClasses, {
+  name: "Toggle",
+})
 
-const Toggle = ({
-  className,
-  unstyled,
-  children,
-  ...restProps
-}: ToggleProps) => {
-  const baseClass = toggleClasses()
+///////////////////////////////////////////////////////////////////////////////
+/// Root
 
-  return (
-    <ArkToggle.Root
-      {...restProps}
-      data-toggle={attrValue(true)}
-      data-part={null}
-      data-scope={null}
-      className={unstyled ? className : cx(baseClass, className)}
-    >
-      {children}
-    </ArkToggle.Root>
-  )
-}
+type ToggleRootBaseProps = Assign<ArkToggle.RootBaseProps, ToggleVariantProps> &
+  UnstyledProp
 
-export { Toggle }
-export type { ToggleProps }
+type ToggleRootProps = Assign<ArkToggle.RootProps, ToggleRootBaseProps>
+
+const ToggleRoot = withProviderSlot<HTMLButtonElement, ToggleRootProps>(
+  ArkToggle.Root,
+  "root"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Indicator
+
+type ToggleIndicatorProps = Assign<ArkToggle.IndicatorProps, UnstyledProp>
+
+const ToggleIndicator = withSlot<HTMLDivElement, ToggleIndicatorProps>(
+  ArkToggle.Indicator,
+  "indicator"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Context
+
+type ToggleContextProps = ArkToggle.ContextProps
+
+const ToggleContext = ArkToggle.Context
+
+///////////////////////////////////////////////////////////////////////////////
+/// Exports
+
+export { ToggleContext, ToggleIndicator, ToggleRoot }
+export type { ToggleContextProps, ToggleIndicatorProps, ToggleRootProps }
