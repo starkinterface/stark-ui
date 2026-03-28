@@ -1,0 +1,30 @@
+@layer components {
+  .number-input {
+    @apply inline-flex flex-col;
+  }
+
+  .number-input-control {
+    @apply inline-flex items-center border;
+  }
+
+  .number-input-input {
+    @apply min-w-0 flex-1 px-2 py-1;
+  }
+
+  .number-input-decrement-trigger,
+  .number-input-increment-trigger {
+    @apply inline-flex size-8 items-center justify-center;
+  }
+
+  .number-input-decrement-trigger {
+    @apply border-r;
+  }
+
+  .number-input-increment-trigger {
+    @apply border-l;
+  }
+
+  .number-input-scrubber {
+    @apply inline-flex cursor-ew-resize items-center justify-center select-none;
+  }
+}
