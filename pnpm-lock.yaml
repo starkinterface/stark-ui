@@ -146,6 +146,11 @@ catalogs:
       specifier: ^10.3.3
       version: 10.3.3
 
+patchedDependencies:
+  next-themes@0.4.6:
+    hash: 9c3b8b055b719ed0b383b543be970b8387827a6533e4c2383eef622cf07babc2
+    path: patches/next-themes@0.4.6.patch
+
 importers:
 
   .:
@@ -287,7 +292,7 @@ importers:
         version: 16.2.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       next-themes:
         specifier: 'catalog:'
-        version: 0.4.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        version: 0.4.6(patch_hash=9c3b8b055b719ed0b383b543be970b8387827a6533e4c2383eef622cf07babc2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react:
         specifier: 'catalog:'
         version: 19.2.4
@@ -8096,7 +8101,7 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  next-themes@0.4.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  next-themes@0.4.6(patch_hash=9c3b8b055b719ed0b383b543be970b8387827a6533e4c2383eef622cf07babc2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
