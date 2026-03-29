@@ -8,6 +8,7 @@ export type {
   ToggleGroupItemProps,
   ToggleGroupProps,
   ToggleGroupRootProviderProps,
+  ValueChangeDetails,
 } from "./toggle-group"
 
 export * as ToggleGroup from "./namespace"

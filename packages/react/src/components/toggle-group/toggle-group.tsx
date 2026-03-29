@@ -58,6 +58,8 @@ const ToggleGroupItem = withSlot<HTMLButtonElement, ToggleGroupItemProps>(
   "item"
 )
 
+type ValueChangeDetails = ArkToggleGroup.ValueChangeDetails
+
 ///////////////////////////////////////////////////////////////////////////////
 /// Exports
 
@@ -66,4 +68,5 @@ export type {
   ToggleGroupProps,
   ToggleGroupRootProviderProps,
   ToggleGroupItemProps,
+  ValueChangeDetails,
 }
