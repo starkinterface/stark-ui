@@ -12,7 +12,8 @@
     "@stark-ui/react-storybook",
     "@stark-ui/vue-storybook",
     "@stark-ui/scripts",
-    "@stark-ui/tsconfig"
+    "@stark-ui/tsconfig",
+    "@stark-ui/www"
   ],
   "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
     "onlyUpdatePeerDependentsWhenOutOfRange": true
