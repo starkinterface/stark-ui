@@ -19,6 +19,7 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
+    "@stark-ui/tsconfig": "workspace:*",
     "@tailwindcss/postcss": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
