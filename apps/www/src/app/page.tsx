@@ -1,7 +1,7 @@
-export default function Home() {
+export default function Page() {
   return (
     <div className="flex flex-1 items-center justify-center">
-      <main>Under Construction</main>
+      Under Construction
     </div>
   )
 }

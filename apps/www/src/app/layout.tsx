@@ -1,9 +1,10 @@
-import SchemeSwitch from "./scheme-switch"
+import Footer from "@/components/layout/footer"
+import Navigation from "@/components/layout/navigation"
+import Provider from "@/components/provider"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { ThemeProvider } from "next-themes"
 import { Geist, Geist_Mono } from "next/font/google"
-import "./globals.css"
+import "@/styles/globals.css"
 import type { Metadata } from "next"
 
 const geistSans = Geist({
@@ -28,27 +29,27 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      suppressHydrationWarning
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="flex min-h-full flex-col">
-        <ThemeProvider
-          storageKey="theme"
-          defaultTheme="system"
-          themes={["white", "black"]}
-          attribute="data-scheme"
-          value={{
-            dark: "black",
-            light: "white",
-          }}
-        >
-          <nav className="flex items-center justify-between p-4">
-            <div />
-            <SchemeSwitch />
-          </nav>
-          {children}
-        </ThemeProvider>
+      <body>
+        <Provider>
+          <div className="flex min-h-dvh flex-col">
+            <header className="p-4">
+              <nav>
+                <Navigation />
+              </nav>
+            </header>
+
+            <main className="flex flex-1 flex-col p-4">{children}</main>
+
+            <footer className="p-4">
+              <Footer />
+            </footer>
+          </div>
+        </Provider>
+
         <Analytics />
         <SpeedInsights />
       </body>
