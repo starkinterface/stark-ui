@@ -58,7 +58,7 @@
   // Tailwind CSS
   "tailwindCSS.classFunctions": ["cva", "cx", "cn"],
   "tailwindCSS.experimental.configFile": {
-    "packages/theme-stark/src/entrypoint.css": ["packages/**"]
+    "packages/theme-stark/src/entrypoint.css": ["packages/**", "apps/**"]
   },
 
   // Handle with Tailwind CSS
