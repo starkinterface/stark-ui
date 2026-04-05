@@ -24,8 +24,8 @@
 /* ----------------------------------------------------------------------------
  * Schemes
  *
- * White scheme (default: see :root in ./base/schemes/white.css)
- * Black scheme
+ * Black scheme (default: see :root in ./base/schemes/black.css)
+ * White scheme
  * ---------------------------------------------------------------------------- */
-@import "./base/schemes/white.css" layer(theme);
 @import "./base/schemes/black.css" layer(theme);
+@import "./base/schemes/white.css" layer(theme);
