@@ -1,8 +1,9 @@
 @import "tailwindcss";
 @import "@stark-ui/theme-stark";
 
-html {
-  scrollbar-width: thin;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import "./theme.css";
+@import "./base.css";
+@import "./utilities.css";
+@import "./variants.css";
+
+@source "../../../../packages/classes/src/**";

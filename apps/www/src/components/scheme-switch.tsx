@@ -1,9 +1,9 @@
 "use client"
 
 import { ToggleGroup } from "@stark-ui/react"
-import { LaptopMinimal, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useCallback, useEffect, useState } from "react"
+import { LuLaptopMinimal, LuMoon, LuSun } from "react-icons/lu"
 
 export default function SchemeSwitch() {
   const { theme, setTheme } = useTheme()
@@ -33,13 +33,13 @@ export default function SchemeSwitch() {
       onValueChange={handleSelectionChange}
     >
       <ToggleGroup.Item value="system">
-        <LaptopMinimal /> System
+        <LuLaptopMinimal /> System
       </ToggleGroup.Item>
       <ToggleGroup.Item value="dark">
-        <Moon /> Dark
+        <LuMoon /> Dark
       </ToggleGroup.Item>
       <ToggleGroup.Item value="light">
-        <Sun /> Light
+        <LuSun /> Light
       </ToggleGroup.Item>
     </ToggleGroup.Root>
   )

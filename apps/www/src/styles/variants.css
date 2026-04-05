@@ -1,0 +1,2 @@
+@custom-variant banner-visible (:where([data-banner-visible]) &);
+@custom-variant banner-hidden (:where([data-banner-hidden]) &);

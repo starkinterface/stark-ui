@@ -1,0 +1,76 @@
+@theme {
+  --spacing-content: 100%;
+  --spacing-content-offset: --spacing(16);
+  --spacing-content-padding: --spacing(4);
+  --spacing-container-margin: --spacing(4);
+
+  --spacing-sidebar: 100%;
+  --spacing-toc: --spacing(4);
+  --spacing-banner: --spacing(10);
+  --spacing-banner-hidden: --spacing(2);
+  --spacing-navigation: --spacing(16);
+
+  --z-index-navigation: 24;
+  --z-index-toc: 19;
+  --z-index-banner: 25;
+  --z-index-background: -1;
+
+  --background-image-pattern-line-dashed-horizontal: repeating-linear-gradient(
+    to right,
+    var(--color-decoration) 0,
+    var(--color-decoration) 6px,
+    transparent 6px,
+    transparent 10px
+  );
+
+  --background-image-pattern-line-dashed-vertical: repeating-linear-gradient(
+    to bottom,
+    var(--color-decoration) 0,
+    var(--color-decoration) 6px,
+    transparent 6px,
+    transparent 10px
+  );
+}
+
+@theme inline {
+  --color-decoration: var(--decoration);
+}
+
+@layer theme {
+  [data-scheme="white"] {
+    --decoration: oklch(0.88 0 0);
+  }
+
+  [data-scheme="black"] {
+    --decoration: oklch(0.22 0 0);
+  }
+}
+
+@layer theme {
+  :root,
+  :host {
+    @variant sm {
+      --spacing-container-margin: --spacing(8);
+      --spacing-content-padding: --spacing(6);
+    }
+
+    @variant md {
+      --spacing-content-padding: --spacing(8);
+      --spacing-toc: calc(var(--spacing-content-padding) * 2 + --spacing(8));
+    }
+
+    @variant lg {
+      --spacing-sidebar: --spacing(64);
+      --spacing-toc: --spacing(4);
+    }
+
+    @variant xl {
+      --spacing-sidebar: --spacing(80);
+      --spacing-toc: --spacing(64);
+    }
+
+    @variant 2xl {
+      --spacing-content: --spacing(384);
+    }
+  }
+}

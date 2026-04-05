@@ -1,0 +1,7 @@
+@layer base {
+  html {
+    scrollbar-width: thin;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
