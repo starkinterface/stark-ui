@@ -1,9 +1,8 @@
 import { Button } from "../"
 import { RingLoader } from "@stark-loader/react"
-import { useState } from "react"
 
 export default function Loading() {
-  const [loading] = useState(true)
+  const loading = true
 
   return (
     <div className="flex gap-2">
