@@ -24,7 +24,7 @@
   "sortTailwindcss": {
     "stylesheet": "./packages/theme-stark/src/entrypoint.css",
     "attributes": ["className"],
-    "functions": ["cx", "tv"]
+    "functions": ["cx", "cn", "tv"]
   },
   "sortImports": {
     "groups": [

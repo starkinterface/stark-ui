@@ -56,7 +56,7 @@
   },
 
   // Tailwind CSS
-  "tailwindCSS.classFunctions": ["cva", "cx", "cn"],
+  "tailwindCSS.classFunctions": ["cx", "cn", "tv"],
   "tailwindCSS.experimental.configFile": {
     "packages/theme-stark/src/entrypoint.css": ["packages/**", "apps/**"]
   },
