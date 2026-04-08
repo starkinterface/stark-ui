@@ -44,7 +44,7 @@ const styles = tv({
       "content-container z-navigation pointer-events-none absolute inset-0",
     navigationDesktop: "hidden h-full md:block",
     navigationMobile: "h-full md:hidden",
-    root: "flex min-h-screen flex-col",
+    root: "flex min-h-dvh flex-col",
   },
 })
 
