@@ -1,5 +1,5 @@
 import { LogoIcon, Wordmark } from "@/components/brand"
-import SchemeSwitch from "@/components/scheme-switch"
+import SchemeSwitcher from "@/components/scheme-switcher"
 import Link from "next/link"
 
 export default function Navigation() {
@@ -10,7 +10,7 @@ export default function Navigation() {
         <Wordmark aria-hidden className="h-4" />
         <span className="sr-only">Stark UI</span>
       </Link>
-      <SchemeSwitch />
+      <SchemeSwitcher />
     </div>
   )
 }

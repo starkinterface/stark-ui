@@ -4,13 +4,12 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
       storageKey="theme"
-      defaultTheme="system"
-      themes={["white", "black"]}
+      defaultTheme="black"
+      enableSystem={false}
+      disableTransitionOnChange
+      themes={["black", "white"]}
       attribute="data-scheme"
-      value={{
-        dark: "black",
-        light: "white",
-      }}
+      enableColorScheme={false}
     >
       {children}
     </ThemeProvider>
