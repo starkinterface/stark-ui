@@ -13,15 +13,9 @@ const { withProviderSlot, withSlot } = createStyleContext(sliderClasses, {
 ///////////////////////////////////////////////////////////////////////////////
 /// RootProvider
 
-type SliderRootProviderBaseProps = Assign<
-  ArkSlider.RootProviderBaseProps,
-  SliderVariantProps
-> &
-  UnstyledProp
-
 type SliderRootProviderProps = Assign<
   ArkSlider.RootProviderProps,
-  SliderRootProviderBaseProps
+  SliderVariantProps & UnstyledProp
 >
 
 const SliderRootProvider = withProviderSlot<
@@ -32,10 +26,10 @@ const SliderRootProvider = withProviderSlot<
 ///////////////////////////////////////////////////////////////////////////////
 /// Root
 
-type SliderRootBaseProps = Assign<ArkSlider.RootBaseProps, SliderVariantProps> &
-  UnstyledProp
-
-type SliderRootProps = Assign<ArkSlider.RootProps, SliderRootBaseProps>
+type SliderRootProps = Assign<
+  ArkSlider.RootProps,
+  SliderVariantProps & UnstyledProp
+>
 
 const SliderRoot = withProviderSlot<HTMLDivElement, SliderRootProps>(
   ArkSlider.Root,

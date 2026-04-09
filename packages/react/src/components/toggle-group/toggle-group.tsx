@@ -13,15 +13,9 @@ const { withProviderSlot, withSlot } = createStyleContext(toggleGroupClasses, {
 ///////////////////////////////////////////////////////////////////////////////
 /// RootProvider
 
-type ToggleGroupRootProviderBaseProps = Assign<
-  ArkToggleGroup.RootProviderBaseProps,
-  ToggleGroupVariantProps
-> &
-  UnstyledProp
-
 type ToggleGroupRootProviderProps = Assign<
   ArkToggleGroup.RootProviderProps,
-  ToggleGroupRootProviderBaseProps
+  ToggleGroupVariantProps & UnstyledProp
 >
 
 const ToggleGroupRootProvider = withProviderSlot<
@@ -32,15 +26,9 @@ const ToggleGroupRootProvider = withProviderSlot<
 ///////////////////////////////////////////////////////////////////////////////
 /// Root
 
-type ToggleGroupRootBaseProps = Assign<
-  ArkToggleGroup.RootBaseProps,
-  ToggleGroupVariantProps
-> &
-  UnstyledProp
-
 type ToggleGroupProps = Assign<
   ArkToggleGroup.RootProps,
-  ToggleGroupRootBaseProps
+  ToggleGroupVariantProps & UnstyledProp
 >
 
 const ToggleGroupRoot = withProviderSlot<HTMLDivElement, ToggleGroupProps>(

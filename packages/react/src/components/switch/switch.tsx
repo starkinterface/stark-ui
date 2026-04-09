@@ -13,15 +13,9 @@ const { withProviderSlot, withSlot } = createStyleContext(switchClasses, {
 ///////////////////////////////////////////////////////////////////////////////
 /// RootProvider
 
-type SwitchRootProviderBaseProps = Assign<
-  ArkSwitch.RootProviderBaseProps,
-  SwitchVariantProps
-> &
-  UnstyledProp
-
 type SwitchRootProviderProps = Assign<
   ArkSwitch.RootProviderProps,
-  SwitchRootProviderBaseProps
+  SwitchVariantProps & UnstyledProp
 >
 
 const SwitchRootProvider = withProviderSlot<
@@ -32,10 +26,10 @@ const SwitchRootProvider = withProviderSlot<
 ///////////////////////////////////////////////////////////////////////////////
 /// Root
 
-type SwitchRootBaseProps = Assign<ArkSwitch.RootBaseProps, SwitchVariantProps> &
-  UnstyledProp
-
-type SwitchRootProps = Assign<ArkSwitch.RootProps, SwitchRootBaseProps>
+type SwitchRootProps = Assign<
+  ArkSwitch.RootProps,
+  SwitchVariantProps & UnstyledProp
+>
 
 const SwitchRoot = withProviderSlot<HTMLLabelElement, SwitchRootProps>(
   ArkSwitch.Root,

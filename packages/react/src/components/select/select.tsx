@@ -14,11 +14,8 @@ const { withProviderSlot, withSlot } = createStyleContext(selectClasses, {
 ///////////////////////////////////////////////////////////////////////////////
 /// RootProvider
 
-type SelectRootProviderBaseProps<T extends CollectionItem = CollectionItem> =
-  Assign<ArkSelect.RootProviderBaseProps<T>, SelectVariantProps> & UnstyledProp
-
 type SelectRootProviderProps<T extends CollectionItem = CollectionItem> =
-  Assign<ArkSelect.RootProviderProps<T>, SelectRootProviderBaseProps<T>>
+  Assign<ArkSelect.RootProviderProps<T>, SelectVariantProps & UnstyledProp>
 
 type SelectRootProviderComponent = <T extends CollectionItem>(
   props: SelectRootProviderProps<T> & RefAttributes<HTMLDivElement>
@@ -32,15 +29,9 @@ const SelectRootProvider = withProviderSlot<
 ///////////////////////////////////////////////////////////////////////////////
 /// Root
 
-type SelectRootBaseProps<T extends CollectionItem = CollectionItem> = Assign<
-  ArkSelect.RootBaseProps<T>,
-  SelectVariantProps
-> &
-  UnstyledProp
-
 type SelectRootProps<T extends CollectionItem = CollectionItem> = Assign<
   ArkSelect.RootProps<T>,
-  SelectRootBaseProps<T>
+  SelectVariantProps & UnstyledProp
 >
 
 type SelectRootComponent = <T extends CollectionItem>(

@@ -13,15 +13,9 @@ const { withProviderSlot, withSlot } = createStyleContext(numberInputClasses, {
 ///////////////////////////////////////////////////////////////////////////////
 /// RootProvider
 
-type NumberInputRootProviderBaseProps = Assign<
-  ArkNumberInput.RootProviderBaseProps,
-  NumberInputVariantProps
-> &
-  UnstyledProp
-
 type NumberInputRootProviderProps = Assign<
   ArkNumberInput.RootProviderProps,
-  NumberInputRootProviderBaseProps
+  NumberInputVariantProps & UnstyledProp
 >
 
 const NumberInputRootProvider = withProviderSlot<
@@ -32,15 +26,9 @@ const NumberInputRootProvider = withProviderSlot<
 ///////////////////////////////////////////////////////////////////////////////
 /// Root
 
-type NumberInputRootBaseProps = Assign<
-  ArkNumberInput.RootBaseProps,
-  NumberInputVariantProps
-> &
-  UnstyledProp
-
 type NumberInputRootProps = Assign<
   ArkNumberInput.RootProps,
-  NumberInputRootBaseProps
+  NumberInputVariantProps & UnstyledProp
 >
 
 const NumberInputRoot = withProviderSlot<HTMLDivElement, NumberInputRootProps>(

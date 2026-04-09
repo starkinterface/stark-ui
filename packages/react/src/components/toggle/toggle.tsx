@@ -13,10 +13,10 @@ const { withProviderSlot, withSlot } = createStyleContext(toggleClasses, {
 ///////////////////////////////////////////////////////////////////////////////
 /// Root
 
-type ToggleRootBaseProps = Assign<ArkToggle.RootBaseProps, ToggleVariantProps> &
-  UnstyledProp
-
-type ToggleRootProps = Assign<ArkToggle.RootProps, ToggleRootBaseProps>
+type ToggleRootProps = Assign<
+  ArkToggle.RootProps,
+  ToggleVariantProps & UnstyledProp
+>
 
 const ToggleRoot = withProviderSlot<HTMLButtonElement, ToggleRootProps>(
   ArkToggle.Root,

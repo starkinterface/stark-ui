@@ -13,15 +13,9 @@ const { withProviderSlot, withSlot } = createStyleContext(fieldClasses, {
 ///////////////////////////////////////////////////////////////////////////////
 /// RootProvider
 
-type FieldRootProviderBaseProps = Assign<
-  ArkField.RootProviderBaseProps,
-  FieldVariantProps
-> &
-  UnstyledProp
-
 type FieldRootProviderProps = Assign<
   ArkField.RootProviderProps,
-  FieldRootProviderBaseProps
+  FieldVariantProps & UnstyledProp
 >
 
 const FieldRootProvider = withProviderSlot<
@@ -32,10 +26,10 @@ const FieldRootProvider = withProviderSlot<
 ///////////////////////////////////////////////////////////////////////////////
 /// Root
 
-type FieldRootBaseProps = Assign<ArkField.RootBaseProps, FieldVariantProps> &
-  UnstyledProp
-
-type FieldRootProps = Assign<ArkField.RootProps, FieldRootBaseProps>
+type FieldRootProps = Assign<
+  ArkField.RootProps,
+  FieldVariantProps & UnstyledProp
+>
 
 const FieldRoot = withProviderSlot<HTMLDivElement, FieldRootProps>(
   ArkField.Root,
