@@ -37,7 +37,7 @@
     "lint-staged": "catalog:",
     "oxfmt": "catalog:",
     "oxlint": "catalog:",
-    "turbo": "^2.9.5",
+    "turbo": "^2.9.6",
     "typescript": "catalog:",
     "ultracite": "catalog:"
   },
