@@ -1,6 +1,6 @@
 @layer components {
   .button {
-    @apply relative inline-flex shrink-0 appearance-none items-center justify-center rounded-none border border-transparent py-0 align-middle font-mono font-medium whitespace-nowrap uppercase;
+    @apply relative inline-flex shrink-0 appearance-none items-center justify-center rounded-xs border border-transparent py-0 align-middle font-mono font-medium whitespace-nowrap uppercase;
     @apply transition-[color,background-color,border-color,translate] duration-100 ease-out;
     @apply outline-none select-none;
 
