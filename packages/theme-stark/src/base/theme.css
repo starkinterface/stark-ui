@@ -34,7 +34,7 @@
 
   --color-background-primary-hover: color-mix(
     in oklab,
-    --theme(--color-background-primary) 72%,
+    --theme(--color-background-primary) 86%,
     --theme(--color-foreground-primary)
   );
 
