@@ -1,5 +1,5 @@
+import heroBackground from "../assets/images/hero-background.webp"
 import { Button, cx } from "@stark-ui/react"
-import heroBackground from "@/assets/images/hero-background.webp"
 import InteractivePreview from "@/components/interactive-preview"
 import { FRAMEWORKS } from "@/constants/frameworks"
 import Image from "next/image"
