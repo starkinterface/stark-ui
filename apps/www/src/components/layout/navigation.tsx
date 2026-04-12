@@ -1,8 +1,7 @@
-import { Button } from "@stark-ui/react"
 import { LogoIcon, Wordmark } from "@/components/brand"
+import { GitHubLink } from "@/components/github-link"
 import SchemeSwitcher from "@/components/scheme-switcher"
 import Link from "next/link"
-import { SiGithub } from "react-icons/si"
 
 export default function Navigation() {
   return (
@@ -16,22 +15,9 @@ export default function Navigation() {
         <span className="sr-only">Stark UI</span>
       </Link>
 
-      <div className="flex items-center gap-1">
-        <Button
-          variant="ghost"
-          size="icon-md"
-          aria-label="GitHub"
-          type={undefined}
-          asChild
-        >
-          <Link
-            href="https://github.com/starkinterface/stark-ui"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SiGithub aria-hidden />
-          </Link>
-        </Button>
+      <div className="flex items-center gap-2">
+        <GitHubLink />
+        <div className="h-4 w-px bg-decoration" />
         <SchemeSwitcher />
       </div>
     </div>
