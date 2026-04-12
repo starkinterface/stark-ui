@@ -1,4 +1,5 @@
 import { Button, cx } from "@stark-ui/react"
+import heroBackground from "@/assets/images/hero-background.webp"
 import InteractivePreview from "@/components/interactive-preview"
 import { FRAMEWORKS } from "@/constants/frameworks"
 import Image from "next/image"
@@ -54,9 +55,14 @@ export default function Page() {
 
       <Frameworks />
 
-      <div className="relative mt-6 hidden rounded-md p-10 lg:flex">
+      <div className="relative mt-6 hidden overflow-clip rounded-md p-10 lg:flex">
         <div className="pointer-events-none absolute inset-0 -z-1">
-          <Image src="/hero-background.webp" alt="" fill preload />
+          <Image
+            src={heroBackground}
+            alt=""
+            preload
+            className="absolute inset-0 size-full object-cover object-center"
+          />
         </div>
         <InteractivePreview />
       </div>
