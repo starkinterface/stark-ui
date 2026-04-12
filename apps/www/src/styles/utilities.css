@@ -49,3 +49,8 @@
   grid-template-columns: var(--spacing-sidebar) 1fr var(--spacing-toc);
   grid-template-rows: min-content 1fr;
 }
+
+@utility grid-interactive-preview {
+  grid-template-areas: "preview controls";
+  grid-template-columns: 1fr auto;
+}

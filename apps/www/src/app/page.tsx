@@ -1,18 +1,20 @@
 import { Button, cx } from "@stark-ui/react"
+import InteractivePreview from "@/components/interactive-preview"
 import { FRAMEWORKS } from "@/constants/frameworks"
+import Image from "next/image"
 import Link from "next/link"
 import { LuArrowRight } from "react-icons/lu"
 
 const Frameworks = () => (
-  <section className="flex gap-2">
+  <section className="mt-4 flex gap-2">
     <h2 className="sr-only">Supported Frameworks</h2>
-    <ul className="flex items-center gap-6">
+    <ul className="flex items-center gap-4">
       {FRAMEWORKS.map((framework) => (
         <li key={framework.name}>
           <div
             data-soon={framework.ready ? undefined : ""}
             className={cx(
-              "flex items-center gap-2 whitespace-nowrap",
+              "flex items-center gap-1.5 whitespace-nowrap",
               "text-foreground",
               "data-soon:text-foreground-muted data-soon:icon:opacity-48"
             )}
@@ -28,29 +30,36 @@ const Frameworks = () => (
 
 export default function Page() {
   return (
-    <div className="content-container p-content-padding flex flex-1 flex-col justify-end gap-6">
+    <div className="content-container p-content-padding flex flex-1 flex-col justify-end">
       {/* oxfmt-ignore */}
       <h1 className="text-2xl max-w-4xl font-light tracking-tight text-pretty lg:text-4xl">
         A living user interface <span className="text-foreground-muted">— you grow your product, we grow the interface. Modern design, accessible by default.</span>
       </h1>
 
       {/* oxfmt-ignore */}
-      <p className="text-pretty text-foreground-muted lg:text-lg">
+      <p className="text-pretty text-foreground-muted mt-2 lg:text-lg">
         <strong className="font-normal">A component library</strong> with first-class support <strong className="font-normal">for React and Vue</strong>
       </p>
 
-      <div className="flex gap-2">
-        <Button className="lg:button--lg" variant="accent" asChild>
-          <Link href="/docs">Get Started</Link>
+      <div className="mt-6 flex gap-2">
+        <Button className="lg:button--lg" variant="primary" asChild>
+          <Link href="/docs">Quick Start</Link>
         </Button>
         <Button className="lg:button--lg" variant="ghost" asChild>
           <Link href="/docs/components">
-            View Components <LuArrowRight />
+            View Components <LuArrowRight data-icon="inline-end" />
           </Link>
         </Button>
       </div>
 
       <Frameworks />
+
+      <div className="relative mt-6 hidden rounded-md p-10 lg:flex">
+        <div className="pointer-events-none absolute inset-0 -z-1">
+          <Image src="/hero-background.webp" alt="" fill preload />
+        </div>
+        <InteractivePreview />
+      </div>
     </div>
   )
 }
