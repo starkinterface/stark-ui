@@ -17,20 +17,14 @@ const GitHubStarsCount = async () => {
 
   const formattedStars =
     json.stargazers_count >= 1000
-      ? `${Math.round(json.stargazers_count / 1000)}k`
+      ? `${Number.parseFloat((json.stargazers_count / 1000).toFixed(1))}k`
       : json.stargazers_count.toLocaleString()
 
   return formattedStars
 }
 
 const GitHubLink = () => (
-  <Button
-    variant="ghost"
-    size="md"
-    aria-label="GitHub"
-    type={undefined}
-    asChild
-  >
+  <Button variant="ghost" aria-label="GitHub" type={undefined} asChild>
     <Link
       href="https://github.com/starkinterface/stark-ui"
       target="_blank"
