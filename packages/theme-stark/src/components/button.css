@@ -177,7 +177,7 @@
  * ---------------------------------------------------------------------------- */
 
 @utility button--xs {
-  @apply h-6 min-w-6 gap-1 px-2 text-xs;
+  @apply h-6 min-w-6 gap-1.5 px-2 text-xs;
 
   @variant has-icon-start {
     @apply ps-1.5;
@@ -197,7 +197,7 @@
 }
 
 @utility button--sm {
-  @apply h-7 min-w-7 gap-1.5 px-2 text-xs;
+  @apply h-7 min-w-7 gap-1.75 px-2.25 text-xs;
 
   @variant has-icon-start {
     @apply ps-1.75;
@@ -217,14 +217,14 @@
 }
 
 @utility button--md {
-  @apply h-8 min-w-8 gap-1.5 px-3 text-sm;
+  @apply h-8 min-w-8 gap-2 px-2.5 text-sm;
 
   @variant has-icon-start {
-    @apply ps-2.5;
+    @apply ps-2;
   }
 
   @variant has-icon-end {
-    @apply pe-2.5;
+    @apply pe-2;
   }
 
   @variant icon {
@@ -237,14 +237,14 @@
 }
 
 @utility button--lg {
-  @apply h-9 min-w-9 gap-2 px-4 text-sm;
+  @apply h-9 min-w-9 gap-2.5 px-3 text-sm;
 
   @variant has-icon-start {
-    @apply ps-3.5;
+    @apply ps-2.5;
   }
 
   @variant has-icon-end {
-    @apply pe-3.5;
+    @apply pe-2.5;
   }
 
   @variant icon {
