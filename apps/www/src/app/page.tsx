@@ -18,7 +18,7 @@ const Framework = ({
 }) => (
   <span className="relative ps-4.5 whitespace-nowrap text-foreground-muted lg:ps-5">
     <Icon
-      className="absolute inset-y-0 inset-s-0 my-auto size-3.5 text-foreground-muted lg:size-4"
+      className="absolute inset-y-0 inset-s-0 my-auto size-3.5 text-foreground-muted! lg:size-4"
       aria-hidden
     />
     {name}
