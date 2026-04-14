@@ -1,32 +1,28 @@
-import { Button, cx } from "@stark-ui/react"
+import { Button } from "@stark-ui/react"
 import heroBackground from "@/assets/images/hero-background.webp"
+import { ReactIcon, VueIcon } from "@/components/icons"
 import InteractivePreview from "@/components/interactive-preview"
-import { FRAMEWORKS } from "@/constants/frameworks"
 import Image from "next/image"
 import Link from "next/link"
 import { LuArrowRight } from "react-icons/lu"
 
-const Frameworks = () => (
-  <section className="mt-4 flex gap-2">
-    <h2 className="sr-only">Supported Frameworks</h2>
-    <ul className="flex items-center gap-4">
-      {FRAMEWORKS.map((framework) => (
-        <li key={framework.name}>
-          <div
-            data-soon={framework.ready ? undefined : ""}
-            className={cx(
-              "flex items-center gap-1.5 whitespace-nowrap",
-              "text-foreground",
-              "data-soon:text-foreground-muted data-soon:icon:opacity-48"
-            )}
-          >
-            <framework.icon className="size-5" aria-hidden />{" "}
-            <span>{framework.name}</span>
-          </div>
-        </li>
-      ))}
-    </ul>
-  </section>
+import type { IconType } from "react-icons"
+
+const Framework = ({
+  name,
+  Icon,
+}: {
+  name: string
+  Icon: IconType
+  ready: boolean
+}) => (
+  <span className="relative ps-4.5 whitespace-nowrap text-foreground-muted lg:ps-5">
+    <Icon
+      className="absolute inset-y-0 inset-s-0 my-auto size-3.5 text-foreground-muted lg:size-4"
+      aria-hidden
+    />
+    {name}
+  </span>
 )
 
 export default function Page() {
@@ -39,7 +35,7 @@ export default function Page() {
 
       {/* oxfmt-ignore */}
       <p className="text-pretty text-foreground-muted mt-2 lg:text-lg">
-        <strong className="font-normal">A component library</strong> with first-class support <strong className="font-normal">for React and Vue</strong>
+        <strong className="font-normal">A component library</strong> with first-class support <strong className="font-normal">for <Framework name="React" Icon={ReactIcon} ready={true} /> and <Framework name="Vue" Icon={VueIcon} ready={false} /></strong>
       </p>
 
       <div className="mt-6 flex gap-2">
@@ -53,9 +49,7 @@ export default function Page() {
         </Button>
       </div>
 
-      <Frameworks />
-
-      <div className="relative mt-6 hidden overflow-clip rounded-md p-10 lg:flex">
+      <div className="relative mt-8 hidden overflow-clip rounded-md p-10 lg:mt-12 lg:flex">
         <div className="pointer-events-none absolute inset-0 -z-1">
           <Image
             src={heroBackground}
