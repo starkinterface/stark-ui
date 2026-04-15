@@ -1,10 +1,6 @@
-import base from "./../../oxlint.config.ts"
+import vue from "@stark-ui/oxc-config/oxlint/vue"
 import { defineConfig } from "oxlint"
-import vue from "ultracite/oxlint/vue"
 
 export default defineConfig({
-  extends: [base, vue],
-  rules: {
-    "vue/define-props-destructuring": "allow",
-  },
+  extends: [vue],
 })

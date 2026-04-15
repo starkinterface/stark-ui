@@ -1,0 +1,3 @@
+{
+  "extends": "@stark-ui/tsconfig/base.json"
+}

@@ -2,6 +2,7 @@
   "name": "@stark-ui/www",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev -p 6402",
@@ -20,6 +21,7 @@
     "tailwind-variants": "catalog:"
   },
   "devDependencies": {
+    "@stark-ui/oxc-config": "workspace:*",
     "@stark-ui/tsconfig": "workspace:*",
     "@tailwindcss/postcss": "catalog:",
     "@types/node": "catalog:",

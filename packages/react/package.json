@@ -43,6 +43,7 @@
     "@stark-ui/react-style-context": "workspace:*"
   },
   "devDependencies": {
+    "@stark-ui/oxc-config": "workspace:*",
     "@stark-ui/tsconfig": "workspace:*",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
