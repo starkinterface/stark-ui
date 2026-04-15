@@ -23,12 +23,13 @@ const GitHubStarsCount = async () => {
   return formattedStars
 }
 
-const GitHubLink = () => (
+const GitHubLink = ({ className }: { className?: string }) => (
   <Button variant="ghost" aria-label="GitHub" type={undefined} asChild>
     <Link
       href="https://github.com/starkinterface/stark-ui"
       target="_blank"
       rel="noopener noreferrer"
+      className={className}
     >
       <SiGithub aria-hidden data-icon="inline-start" />
       <span className="text-foreground-muted">
