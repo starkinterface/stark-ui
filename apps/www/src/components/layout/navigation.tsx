@@ -14,14 +14,19 @@ const NavigationItem = ({ label, href }: { label: string; href: string }) => (
 export default function Navigation() {
   return (
     <div className="content-container px-content-padding flex h-full items-center justify-between">
-      <Link
-        href="/"
-        className="-ml-2 flex h-8 items-center gap-2 rounded-xs border border-transparent px-2 transition-[color,background-color,border-color,translate] outline-none select-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background"
+      <Button
+        type={undefined}
+        variant="ghost"
+        size="icon-md"
+        className="icon:nth-child(2):h-4 py-0 sm:button--md icon:w-auto icon:first:h-5"
+        asChild
       >
-        <LogoIcon aria-hidden className="h-5" />
-        <Wordmark aria-hidden className="hidden h-4 sm:block" />
-        <span className="sr-only">Stark UI</span>
-      </Link>
+        <Link href="/" className="-ml-1.5 sm:-ml-2.5">
+          <LogoIcon aria-hidden className="h-5" />
+          <Wordmark aria-hidden className="hidden h-4 sm:block" />
+          <span className="sr-only">Stark UI</span>
+        </Link>
+      </Button>
 
       <div className="flex items-center gap-0">
         <div className="flex">
