@@ -15,12 +15,13 @@ export default function Page() {
 
       <div className="mt-6 flex gap-2">
         <Button className="lg:button--lg" variant="primary" asChild>
-          <Link href="/docs">Quick Start</Link>
+          <Link href="/docs">
+            Get Started
+            <LuArrowRight data-icon="inline-end" />
+          </Link>
         </Button>
         <Button className="lg:button--lg" variant="ghost" asChild>
-          <Link href="/docs/components">
-            View Components <LuArrowRight data-icon="inline-end" />
-          </Link>
+          <Link href="/docs/components">View Components</Link>
         </Button>
       </div>
 
