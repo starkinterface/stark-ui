@@ -6,7 +6,7 @@ const NpmLink = () => (
   <Button
     variant="ghost"
     size="icon-md"
-    aria-label="npm"
+    aria-label="View on npm"
     type={undefined}
     asChild
   >

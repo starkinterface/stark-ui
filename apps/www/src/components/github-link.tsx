@@ -24,7 +24,7 @@ const GitHubStarsCount = async () => {
 }
 
 const GitHubLink = ({ className }: { className?: string }) => (
-  <Button variant="ghost" aria-label="GitHub" type={undefined} asChild>
+  <Button variant="ghost" aria-label="View on GitHub" type={undefined} asChild>
     <Link
       href="https://github.com/starkinterface/stark-ui"
       target="_blank"
