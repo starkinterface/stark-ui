@@ -1,6 +1,6 @@
 import { Select } from "../"
-import { Portal } from "@ark-ui/react/portal"
-import { createListCollection } from "@ark-ui/react/select"
+import { createListCollection } from "../../../utils"
+import { Portal } from "../../portal"
 import { ChevronsUpDownIcon, XIcon } from "lucide-react"
 
 const frameworks = createListCollection({

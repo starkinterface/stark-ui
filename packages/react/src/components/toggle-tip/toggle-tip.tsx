@@ -1,6 +1,6 @@
+import { Portal } from "../../components/portal"
 import { attrValue } from "../../utils"
 import { toggleTipClasses } from "@stark-ui/classes"
-import { Portal } from "@ark-ui/react"
 import { Popover as ArkPopover } from "@ark-ui/react/popover"
 
 import type { ToggleTipVariantProps } from "@stark-ui/classes"
