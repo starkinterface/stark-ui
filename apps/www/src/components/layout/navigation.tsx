@@ -30,8 +30,8 @@ export default function Navigation() {
 
       <div className="flex items-center gap-0">
         <div className="flex">
-          <NavigationItem label="Docs" href="/docs" />
-          <NavigationItem label="Components" href="/components" />
+          <NavigationItem label="Docs" href="/docs/get-started" />
+          <NavigationItem label="Components" href="/docs/components" />
         </div>
         <div className="mx-1 h-4 w-px bg-decoration" />
         <SchemeSwitcher />
