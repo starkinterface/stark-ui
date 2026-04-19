@@ -10,7 +10,7 @@ export default function Page() {
     <div className="content-container p-content-padding flex flex-1 flex-col justify-end">
       {/* oxfmt-ignore */}
       <h1 className="text-2xl max-w-xl font-light tracking-tight text-pretty lg:text-4xl lg:max-w-4xl">
-        <em className="not-italic">Elegant component library for React and Vue.</em> <span className="text-foreground-muted">Carefully crafted themes built with Tailwind CSS. Modern design, accessible by default.</span>
+        <em className="not-italic">Beautiful component library for React and Vue.</em> <span className="text-foreground-muted">Carefully crafted themes built with Tailwind CSS—modern design, accessible by default.</span>
       </h1>
 
       <div className="mt-6 flex gap-2">

@@ -26,8 +26,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   description:
-    "Stark UI is an open-source component library for React and Vue. Carefully crafted themes built with Tailwind CSS. Modern design, accessible by default.",
-  title: "Elegant Component Library for React and Vue · Stark UI",
+    "Stark UI is an open-source component library for React and Vue, featuring carefully crafted themes using Tailwind CSS, modern design, and accessible components.",
+  title: "Beautiful Component Library for React and Vue · Stark UI",
 }
 
 const styles = tv({
