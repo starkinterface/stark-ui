@@ -12,8 +12,8 @@ catalog:
   "@commitlint/cli": ^20.5.0
   "@commitlint/config-conventional": ^20.5.0
   "@stark-loader/react": ^0.3.0
-  "@tailwindcss/postcss": ^4.2.2
-  "@tailwindcss/vite": ^4.2.2
+  "@tailwindcss/postcss": ^4.2.3
+  "@tailwindcss/vite": ^4.2.3
   "@testing-library/jest-dom": ^6.9.1
   "@testing-library/react": ^16.3.2
   "@testing-library/vue": ^8.1.0
@@ -33,13 +33,13 @@ catalog:
   next: ^16.2.4
   next-themes: ^0.4.6
   oxfmt: ^0.45.0
-  oxlint: ^1.60.0
+  oxlint: ^1.61.0
   react: ^19.2.5
   react-dom: ^19.2.5
   react-icons: ^5.6.0
   rollup-preserve-directives: ^1.1.3
   tailwind-variants: ^3.2.2
-  tailwindcss: ^4.2.2
+  tailwindcss: ^4.2.3
   typescript: ^6.0.3
   ultracite: ^7.6.0
   vite: ^8.0.9
