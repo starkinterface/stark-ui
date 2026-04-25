@@ -1,17 +1,163 @@
 @layer components {
   .switch {
-    @apply inline-flex items-center;
+    @apply flex items-center gap-2;
   }
 
   .switch-control {
-    @apply w-6 bg-white p-px;
+    @apply relative block border transition-[border-color,background-color] duration-100 ease-out;
+
+    @variant data-focus-visible {
+      @apply focus-visible;
+    }
   }
 
   .switch-thumb {
-    @apply flex size-3 bg-red-500 transition;
+    @apply block transition-[translate,background-color] duration-150 ease-out;
+  }
+
+  /* ----------------------------------------------------------------------------
+   * Default Variants
+   * ---------------------------------------------------------------------------- */
+  :where(.switch) {
+    @apply switch--primary;
+    @apply switch--md;
+  }
+}
+
+@utility switch--primary {
+  .switch-control {
+    @apply border-foreground;
 
     @variant data-[state=checked] {
-      @apply translate-x-2.5 bg-blue-500;
+      @apply border-foreground bg-foreground;
     }
+
+    @variant data-disabled {
+      @apply border-foreground-inactive;
+
+      @variant data-[state=checked] {
+        @apply bg-foreground-inactive;
+      }
+    }
+  }
+
+  .switch-thumb {
+    @apply bg-foreground;
+
+    @variant data-[state=checked] {
+      @apply bg-background;
+    }
+
+    @variant data-disabled {
+      @apply bg-foreground-inactive;
+
+      @variant data-[state=checked] {
+        @apply bg-background;
+      }
+    }
+  }
+
+  .switch-label {
+    @apply text-foreground-muted;
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+  }
+}
+
+@utility switch--accent {
+  .switch-control {
+    @apply border-foreground;
+
+    @variant data-[state=checked] {
+      @apply border-background-accent bg-background-accent;
+    }
+
+    @variant data-disabled {
+      @apply border-foreground-inactive;
+
+      @variant data-[state=checked] {
+        @apply bg-foreground-inactive;
+      }
+    }
+  }
+
+  .switch-thumb {
+    @apply bg-foreground;
+
+    @variant data-[state=checked] {
+      @apply bg-background;
+    }
+
+    @variant data-disabled {
+      @apply bg-foreground-inactive;
+
+      @variant data-[state=checked] {
+        @apply bg-background;
+      }
+    }
+  }
+
+  .switch-label {
+    @apply text-foreground-muted;
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+  }
+}
+
+@utility switch--sm {
+  .switch-control {
+    @apply h-3.5 w-5.5 rounded-xs p-0.5;
+  }
+
+  .switch-thumb {
+    @apply h-2 w-2 rounded-[1px];
+
+    @variant data-[state=checked] {
+      @apply translate-x-2;
+    }
+  }
+
+  .switch-label {
+    @apply text-xs;
+  }
+}
+
+@utility switch--md {
+  .switch-control {
+    @apply h-4 w-6.5 rounded-xs p-0.5;
+  }
+
+  .switch-thumb {
+    @apply h-2.5 w-2.5 rounded-[1px];
+
+    @variant data-[state=checked] {
+      @apply translate-x-2.5;
+    }
+  }
+
+  .switch-label {
+    @apply text-sm;
+  }
+}
+
+@utility switch--lg {
+  .switch-control {
+    @apply h-4.5 w-7.5 rounded-xs p-0.5;
+  }
+
+  .switch-thumb {
+    @apply h-3 w-3 rounded-[1px];
+
+    @variant data-[state=checked] {
+      @apply translate-x-3;
+    }
+  }
+
+  .switch-label {
+    @apply text-sm;
   }
 }
