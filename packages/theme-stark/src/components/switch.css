@@ -26,17 +26,17 @@
 
 @utility switch--primary {
   .switch-control {
-    @apply border-foreground;
+    @apply border-border;
 
     @variant data-[state=checked] {
       @apply border-foreground bg-foreground;
     }
 
     @variant data-disabled {
-      @apply border-foreground-inactive;
+      @apply border-background-inactive;
 
       @variant data-[state=checked] {
-        @apply bg-foreground-inactive;
+        @apply border-foreground-inactive bg-foreground-inactive;
       }
     }
   }
@@ -68,17 +68,17 @@
 
 @utility switch--accent {
   .switch-control {
-    @apply border-foreground;
+    @apply border-border;
 
     @variant data-[state=checked] {
       @apply border-background-accent bg-background-accent;
     }
 
     @variant data-disabled {
-      @apply border-foreground-inactive;
+      @apply border-background-inactive;
 
       @variant data-[state=checked] {
-        @apply bg-foreground-inactive;
+        @apply border-foreground-inactive bg-foreground-inactive;
       }
     }
   }
