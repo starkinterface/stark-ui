@@ -32,20 +32,6 @@
   );
 }
 
-@theme inline {
-  --color-decoration: var(--decoration);
-}
-
-@layer theme {
-  [data-scheme="white"] {
-    --decoration: oklch(0.88 0 0);
-  }
-
-  [data-scheme="black"] {
-    --decoration: oklch(0.22 0 0);
-  }
-}
-
 @layer theme {
   :root,
   :host {
