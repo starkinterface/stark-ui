@@ -156,6 +156,7 @@
 @utility button--danger-soft {
   @apply bg-background-danger-soft text-foreground-danger-soft;
   @apply hover:not-disabled:not-loading:bg-background-danger-soft-hover;
+  @apply hover:not-disabled:not-loading:text-foreground-danger-soft-hover;
 
   @variant disabled {
     @apply bg-background-inactive text-foreground-inactive;

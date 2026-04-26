@@ -15,6 +15,9 @@
   --color-background-danger: var(--background-danger);
   --color-foreground-danger: var(--foreground-danger);
 
+  --color-background-danger-soft: var(--background-danger-soft);
+  --color-foreground-danger-soft: var(--foreground-danger-soft);
+
   --color-background-inactive: var(--background-inactive);
   --color-foreground-inactive: var(--foreground-inactive);
 
@@ -50,21 +53,8 @@
     --theme(--color-foreground-danger)
   );
 
-  --color-background-danger-soft: color-mix(
-    in oklab,
-    --theme(--color-background-danger) 24%,
-    transparent
-  );
-  --color-foreground-danger-soft: color-mix(
-    in oklab,
-    --theme(--color-background-danger) 64%,
-    --theme(--color-foreground)
-  );
-  --color-background-danger-soft-hover: color-mix(
-    in oklab,
-    --theme(--color-background-danger) 36%,
-    transparent
-  );
+  --color-background-danger-soft-hover: var(--color-background-danger);
+  --color-foreground-danger-soft-hover: var(--color-foreground-danger);
 
   --opacity-decoration-corners-blur: 36%;
   --opacity-disabled: 56%;
