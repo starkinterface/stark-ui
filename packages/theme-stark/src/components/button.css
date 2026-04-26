@@ -2,7 +2,7 @@
   .button {
     @apply relative inline-flex shrink-0 appearance-none items-center justify-center rounded-xs border border-transparent py-0 align-middle font-mono font-medium whitespace-nowrap uppercase;
     @apply transition-[color,background-color,border-color,translate] duration-100 ease-out;
-    @apply outline-none select-none;
+    @apply select-none;
 
     @variant active {
       @variant not-disabled {
@@ -13,7 +13,7 @@
     }
 
     @variant focus-visible {
-      @apply ring-2 ring-ring ring-offset-1 ring-offset-background outline-none;
+      @apply outline-2 outline-offset-1;
     }
 
     @variant loading {
@@ -63,9 +63,7 @@
   }
 
   @variant focus-visible {
-    @variant not-loading {
-      @apply ring-ring/72;
-    }
+    @apply outline-ring/72;
   }
 }
 
@@ -89,9 +87,7 @@
   }
 
   @variant focus-visible {
-    @variant not-loading {
-      @apply border-ring ring-ring/56;
-    }
+    @apply border-ring outline-ring/56;
   }
 }
 
@@ -115,14 +111,12 @@
   }
 
   @variant focus-visible {
-    @variant not-loading {
-      @apply border-ring ring-ring/56;
-    }
+    @apply border-ring outline-ring/56;
   }
 }
 
 @utility button--outline {
-  @apply border border-border bg-transparent text-foreground;
+  @apply border-border bg-transparent text-foreground;
 
   @variant hover {
     @variant not-disabled {
@@ -141,9 +135,7 @@
   }
 
   @variant focus-visible {
-    @variant not-loading {
-      @apply border-ring ring-ring/56;
-    }
+    @apply border-ring outline-ring/56;
   }
 }
 
@@ -167,9 +159,7 @@
   }
 
   @variant focus-visible {
-    @variant not-loading {
-      @apply ring-background-accent/48;
-    }
+    @apply outline-background-accent/48;
   }
 }
 
@@ -193,9 +183,7 @@
   }
 
   @variant focus-visible {
-    @variant not-loading {
-      @apply ring-foreground-danger-soft/56;
-    }
+    @apply outline-foreground-danger-soft/56;
   }
 }
 
@@ -219,9 +207,7 @@
   }
 
   @variant focus-visible {
-    @variant not-loading {
-      @apply border-background-danger-soft ring-foreground-danger-soft/56;
-    }
+    @apply border-ring outline-foreground-danger-soft/56;
   }
 }
 
