@@ -28,6 +28,14 @@
   .switch-control {
     @apply border-border;
 
+    @variant data-hover {
+      @variant not-disabled {
+        @variant not-data-[state=checked] {
+          @apply border-foreground;
+        }
+      }
+    }
+
     @variant data-[state=checked] {
       @apply border-foreground bg-foreground;
     }
@@ -69,6 +77,14 @@
 @utility switch--accent {
   .switch-control {
     @apply border-border;
+
+    @variant data-hover {
+      @variant not-disabled {
+        @variant not-data-[state=checked] {
+          @apply border-foreground;
+        }
+      }
+    }
 
     @variant data-[state=checked] {
       @apply border-background-accent bg-background-accent;
