@@ -5,7 +5,11 @@
     @apply outline-none select-none;
 
     @variant active {
-      @apply translate-y-px;
+      @variant not-disabled {
+        @variant not-loading {
+          @apply translate-y-px;
+        }
+      }
     }
 
     @variant focus-visible {
