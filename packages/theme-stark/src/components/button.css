@@ -45,7 +45,14 @@
 
 @utility button--primary {
   @apply bg-background-primary text-foreground-primary;
-  @apply hover:not-disabled:not-loading:bg-background-primary-hover;
+
+  @variant hover {
+    @variant not-disabled {
+      @variant not-loading {
+        @apply bg-background-primary-hover;
+      }
+    }
+  }
 
   @variant disabled {
     @apply bg-background-inactive text-foreground-inactive;
@@ -64,7 +71,14 @@
 
 @utility button--secondary {
   @apply bg-background-secondary text-foreground-secondary;
-  @apply hover:not-disabled:not-loading:bg-background-secondary-hover;
+
+  @variant hover {
+    @variant not-disabled {
+      @variant not-loading {
+        @apply bg-background-secondary-hover;
+      }
+    }
+  }
 
   @variant disabled {
     @apply bg-background-inactive text-foreground-inactive;
@@ -83,7 +97,14 @@
 
 @utility button--ghost {
   @apply bg-transparent text-foreground;
-  @apply hover:not-disabled:not-loading:bg-background-secondary;
+
+  @variant hover {
+    @variant not-disabled {
+      @variant not-loading {
+        @apply bg-background-secondary;
+      }
+    }
+  }
 
   @variant disabled {
     @apply bg-transparent text-foreground-inactive;
@@ -102,7 +123,14 @@
 
 @utility button--outline {
   @apply border border-border bg-transparent text-foreground;
-  @apply hover:not-disabled:not-loading:bg-background-secondary;
+
+  @variant hover {
+    @variant not-disabled {
+      @variant not-loading {
+        @apply bg-background-secondary;
+      }
+    }
+  }
 
   @variant disabled {
     @apply border-background-inactive bg-transparent text-foreground-inactive;
@@ -121,7 +149,14 @@
 
 @utility button--accent {
   @apply bg-background-accent text-foreground-accent;
-  @apply hover:not-disabled:not-loading:bg-background-accent-hover;
+
+  @variant hover {
+    @variant not-disabled {
+      @variant not-loading {
+        @apply bg-background-accent-hover;
+      }
+    }
+  }
 
   @variant disabled {
     @apply bg-background-inactive text-foreground-inactive;
@@ -140,7 +175,14 @@
 
 @utility button--danger {
   @apply bg-background-danger text-foreground-danger;
-  @apply hover:not-disabled:not-loading:bg-background-danger-hover;
+
+  @variant hover {
+    @variant not-disabled {
+      @variant not-loading {
+        @apply bg-background-danger-hover;
+      }
+    }
+  }
 
   @variant disabled {
     @apply bg-background-inactive text-foreground-inactive;
@@ -159,8 +201,14 @@
 
 @utility button--danger-soft {
   @apply bg-background-danger-soft text-foreground-danger-soft;
-  @apply hover:not-disabled:not-loading:bg-background-danger-soft-hover;
-  @apply hover:not-disabled:not-loading:text-foreground-danger-soft-hover;
+
+  @variant hover {
+    @variant not-disabled {
+      @variant not-loading {
+        @apply bg-background-danger-soft-hover text-foreground-danger-soft-hover;
+      }
+    }
+  }
 
   @variant disabled {
     @apply bg-background-inactive text-foreground-inactive;
