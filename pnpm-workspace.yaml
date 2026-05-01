@@ -9,8 +9,8 @@ catalog:
   "@ark-ui/vue": ^5.36.2
   "@changesets/changelog-github": ^0.6.0
   "@changesets/cli": ^2.31.0
-  "@commitlint/cli": ^20.5.0
-  "@commitlint/config-conventional": ^20.5.0
+  "@commitlint/cli": ^20.5.3
+  "@commitlint/config-conventional": ^20.5.3
   "@stark-loader/react": ^0.3.0
   "@tailwindcss/postcss": ^4.2.4
   "@tailwindcss/vite": ^4.2.4
@@ -24,16 +24,16 @@ catalog:
   "@vercel/speed-insights": ^2.0.0
   "@vitejs/plugin-react": ^6.0.1
   "@vitejs/plugin-vue": ^6.0.6
-  "@vueuse/core": ^14.2.1
+  "@vueuse/core": ^14.3.0
   clsx: ^2.1.1
   husky: ^9.1.7
-  jsdom: ^29.0.2
+  jsdom: ^29.1.1
   lint-staged: ^16.4.0
-  lucide-react: ^1.8.0
+  lucide-react: ^1.14.0
   next: ^16.2.4
   next-themes: ^0.4.6
-  oxfmt: ^0.46.0
-  oxlint: ^1.61.0
+  oxfmt: ^0.47.0
+  oxlint: ^1.62.0
   react: ^19.2.5
   react-dom: ^19.2.5
   react-icons: ^5.6.0
@@ -41,7 +41,7 @@ catalog:
   tailwind-variants: ^3.2.2
   tailwindcss: ^4.2.4
   typescript: ^6.0.3
-  ultracite: ^7.6.1
+  ultracite: ^7.6.2
   vite: ^8.0.10
   vite-plugin-dts: ^4.5.4
   vitest: ^4.1.5
@@ -50,11 +50,11 @@ catalog:
 
 catalogs:
   storybook:
-    "@storybook/addon-a11y": ^10.3.5
-    "@storybook/addon-themes": ^10.3.5
-    "@storybook/react-vite": ^10.3.5
-    "@storybook/vue3-vite": ^10.3.5
-    storybook: ^10.3.5
+    "@storybook/addon-a11y": ^10.3.6
+    "@storybook/addon-themes": ^10.3.6
+    "@storybook/react-vite": ^10.3.6
+    "@storybook/vue3-vite": ^10.3.6
+    storybook: ^10.3.6
 
 cleanupUnusedCatalogs: true
 
