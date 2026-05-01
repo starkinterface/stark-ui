@@ -1,33 +1,172 @@
 @layer components {
   .slider {
-    @apply inline-flex w-full max-w-sm flex-col gap-2;
+    @variant data-[orientation=horizontal] {
+      @apply w-full;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply h-full;
+    }
   }
 
   .slider-control {
-    @apply relative flex items-center py-1;
+    @apply relative flex items-center justify-center;
+
+    @variant data-[orientation=horizontal] {
+      @apply h-4 w-full;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply h-full w-4;
+    }
   }
 
   .slider-track {
-    @apply relative h-2 w-full overflow-hidden rounded-full border;
+    @apply relative bg-background-secondary;
+
+    @variant data-[orientation=horizontal] {
+      @apply h-1 w-full;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply h-full w-1;
+    }
   }
 
   .slider-range {
-    @apply absolute h-full bg-black;
+    @apply absolute;
+
+    @variant data-[orientation=horizontal] {
+      @apply h-full;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply w-full;
+    }
   }
 
   .slider-thumb {
-    @apply flex size-4 items-center justify-center rounded-full border bg-white;
+    @apply relative z-2 flex h-4 w-4 items-center justify-center rounded-xs border bg-background;
+    @apply transition-[border-color] duration-150 ease-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      background-color: var(--color-foreground);
+    }
+
+    @variant focus-visible {
+      @apply focus-visible;
+    }
   }
 
   .slider-marker-group {
-    @apply flex w-full justify-between text-xs;
+    @apply absolute! text-xs;
+
+    @variant data-[orientation=horizontal] {
+      @apply inset-x-0 inset-be-0;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply inset-y-0 inset-s-4;
+    }
   }
 
   .slider-marker {
-    @apply text-current;
+    @apply relative leading-none text-foreground-muted;
+
+    @variant data-[state=at-value] {
+      @apply text-foreground;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: var(--color-background);
+    }
+
+    @variant data-[orientation=horizontal] {
+      @apply pbs-1;
+
+      &::after {
+        width: 1px;
+        height: --spacing(1);
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply ps-1;
+
+      &::after {
+        width: --spacing(1);
+        height: 1px;
+        top: 50%;
+        left: -10px;
+        transform: translateY(-50%);
+      }
+    }
   }
 
   .slider-dragging-indicator {
-    @apply inline-flex rounded border bg-white px-2 py-1 text-xs;
+    @apply inline-flex items-center rounded-xs border border-border bg-background px-1 text-sm whitespace-nowrap;
+
+    @variant data-[orientation=horizontal] {
+      @apply -inset-be-7;
+    }
+    @variant data-[orientation=vertical] {
+      @apply inset-s-5;
+    }
+  }
+
+  .slider-label {
+    @apply text-sm text-foreground-muted;
+  }
+
+  .slider-value-text {
+    @apply text-sm text-foreground;
+  }
+
+  :where(.slider) {
+    @apply slider--primary;
+  }
+}
+
+@utility slider--primary {
+  .slider-range {
+    @apply bg-foreground;
+  }
+
+  .slider-thumb {
+    @apply border-border;
+
+    @variant hover {
+      @apply border-foreground;
+    }
+
+    @variant data-dragging {
+      @apply border-foreground;
+    }
+  }
+}
+
+@utility slider--accent {
+  .slider-range {
+    @apply bg-background-accent;
+  }
+
+  .slider-thumb {
+    @apply border-border;
+
+    @variant hover {
+      @apply border-foreground;
+    }
+
+    @variant data-dragging {
+      @apply border-foreground;
+    }
   }
 }

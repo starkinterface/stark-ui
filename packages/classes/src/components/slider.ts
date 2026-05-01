@@ -16,6 +16,16 @@ export const sliderClasses = tv({
     track: "slider-track",
     valueText: "slider-value-text",
   },
+  variants: {
+    variant: {
+      accent: {
+        root: "slider--accent",
+      },
+      primary: {
+        root: "slider--primary",
+      },
+    },
+  },
 })
 
 export type SliderVariantProps = VariantProps<typeof sliderClasses>
