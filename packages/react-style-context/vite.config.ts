@@ -1,7 +1,7 @@
 import { resolve } from "node:path"
 import preserveDirectives from "rollup-preserve-directives"
+import dts from "unplugin-dts/vite"
 import { defineConfig } from "vite"
-import dts from "vite-plugin-dts"
 
 const root = import.meta.dirname
 

@@ -47,8 +47,8 @@
     "@storybook/vue3-vite": "catalog:storybook",
     "@vitejs/plugin-vue": "catalog:",
     "typescript": "catalog:",
+    "unplugin-dts": "catalog:",
     "vite": "catalog:",
-    "vite-plugin-dts": "catalog:",
     "vue": "catalog:",
     "vue-tsc": "catalog:"
   },

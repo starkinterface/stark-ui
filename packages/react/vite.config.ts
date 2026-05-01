@@ -1,8 +1,8 @@
 import { resolve } from "node:path"
 import pkg from "./package.json" with { type: "json" }
 import react from "@vitejs/plugin-react"
+import dts from "unplugin-dts/vite"
 import { defineConfig } from "vite"
-import dts from "vite-plugin-dts"
 
 const root = import.meta.dirname
 

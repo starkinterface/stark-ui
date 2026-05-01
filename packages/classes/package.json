@@ -40,7 +40,7 @@
   "devDependencies": {
     "@stark-ui/tsconfig": "workspace:*",
     "typescript": "catalog:",
-    "vite": "catalog:",
-    "vite-plugin-dts": "catalog:"
+    "unplugin-dts": "catalog:",
+    "vite": "catalog:"
   }
 }

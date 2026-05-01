@@ -52,8 +52,8 @@
     "react-dom": "catalog:",
     "rollup-preserve-directives": "catalog:",
     "typescript": "catalog:",
+    "unplugin-dts": "catalog:",
     "vite": "catalog:",
-    "vite-plugin-dts": "catalog:",
     "vitest": "catalog:"
   },
   "peerDependencies": {
