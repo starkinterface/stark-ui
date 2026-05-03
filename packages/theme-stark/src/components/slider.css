@@ -2,10 +2,18 @@
   .slider {
     @variant data-[orientation=horizontal] {
       @apply w-full;
+
+      &:has(.slider-marker-group) {
+        @apply mbe-4;
+      }
     }
 
     @variant data-[orientation=vertical] {
       @apply h-full;
+
+      &:has(.slider-marker-group) {
+        @apply me-4;
+      }
     }
   }
 
