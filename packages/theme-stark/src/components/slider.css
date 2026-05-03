@@ -31,6 +31,10 @@
     @variant data-[orientation=vertical] {
       @apply h-full w-1;
     }
+
+    @variant data-disabled {
+      @apply bg-background-inactive;
+    }
   }
 
   .slider-range {
@@ -76,8 +80,16 @@
   .slider-marker {
     @apply relative leading-none text-foreground-muted;
 
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+
     @variant data-[state=at-value] {
       @apply text-foreground;
+
+      @variant data-disabled {
+        @apply text-foreground-inactive;
+      }
     }
 
     &::after {
@@ -124,10 +136,18 @@
 
   .slider-label {
     @apply text-sm text-foreground-muted;
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
   }
 
   .slider-value-text {
     @apply text-sm text-foreground;
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
   }
 
   :where(.slider) {
@@ -138,13 +158,27 @@
 @utility slider--primary {
   .slider-range {
     @apply bg-foreground;
+
+    @variant data-disabled {
+      @apply bg-background-inactive;
+    }
   }
 
   .slider-thumb {
     @apply border-border;
 
+    @variant data-disabled {
+      @apply border-background-inactive;
+
+      &::after {
+        background-color: var(--color-background-inactive);
+      }
+    }
+
     @variant hover {
-      @apply border-foreground;
+      @variant not-data-disabled {
+        @apply border-foreground;
+      }
     }
 
     @variant data-dragging {
@@ -156,13 +190,27 @@
 @utility slider--accent {
   .slider-range {
     @apply bg-background-accent;
+
+    @variant data-disabled {
+      @apply bg-background-inactive;
+    }
   }
 
   .slider-thumb {
     @apply border-border;
 
+    @variant data-disabled {
+      @apply border-background-inactive;
+
+      &::after {
+        background-color: var(--color-background-inactive);
+      }
+    }
+
     @variant hover {
-      @apply border-foreground;
+      @variant not-data-disabled {
+        @apply border-foreground;
+      }
     }
 
     @variant data-dragging {

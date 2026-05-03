@@ -1,4 +1,5 @@
 import BasicExample from "./examples/basic"
+import DisabledExample from "./examples/disabled"
 import DraggingIndicatorExample from "./examples/dragging-indicator"
 import MarksExample from "./examples/marks"
 import OrientationExample from "./examples/orientation"
@@ -26,4 +27,8 @@ export const Marks = {
 
 export const Range = {
   render: () => <RangeExample />,
+}
+
+export const Disabled = {
+  render: () => <DisabledExample />,
 }
