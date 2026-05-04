@@ -1,0 +1,34 @@
+@layer components {
+  .input {
+    @apply h-8 w-full rounded-xs border border-border px-2 text-sm text-foreground caret-foreground;
+    @apply transition-[border-color] duration-150 ease-out;
+
+    @variant placeholder {
+      @apply text-foreground-muted;
+    }
+
+    @variant file {
+      @apply inline-flex h-7.5 items-center border-0;
+    }
+
+    @variant focus {
+      @apply border-foreground focus-visible;
+    }
+
+    @variant focus-visible {
+      @apply border-foreground focus-visible;
+    }
+
+    @variant disabled {
+      @apply border-background-inactive text-foreground-inactive placeholder:text-foreground-inactive;
+    }
+
+    @variant aria-invalid {
+      @apply border-background-danger;
+
+      @variant focus-visible {
+        @apply outline-foreground-danger-soft/56;
+      }
+    }
+  }
+}
