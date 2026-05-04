@@ -24,7 +24,7 @@
     }
 
     @variant aria-invalid {
-      @apply border-background-danger;
+      @apply border-foreground-danger-soft;
 
       @variant focus-visible {
         @apply outline-foreground-danger-soft/56;
