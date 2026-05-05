@@ -1,0 +1,9 @@
+@layer components {
+  .textarea {
+    @apply py-1.25;
+
+    @variant disabled {
+      @apply resize-none;
+    }
+  }
+}
