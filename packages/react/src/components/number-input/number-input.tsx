@@ -5,6 +5,7 @@ import { NumberInput as ArkNumberInput } from "@ark-ui/react/number-input"
 import type { NumberInputVariantProps } from "@stark-ui/classes"
 import type { UnstyledProp } from "@stark-ui/react-style-context"
 import type { Assign } from "@ark-ui/react"
+import type { ComponentPropsWithRef } from "react"
 
 const { withProviderSlot, withSlot } = createStyleContext(numberInputClasses, {
   name: "NumberInput",
@@ -80,6 +81,19 @@ const NumberInputInput = withSlot<HTMLInputElement, NumberInputInputProps>(
 )
 
 ///////////////////////////////////////////////////////////////////////////////
+/// TriggerGroup
+
+type NumberInputTriggerGroupProps = Assign<
+  ComponentPropsWithRef<"div">,
+  UnstyledProp
+>
+
+const NumberInputTriggerGroup = withSlot<
+  HTMLDivElement,
+  NumberInputTriggerGroupProps
+>("div", "triggerGroup")
+
+///////////////////////////////////////////////////////////////////////////////
 /// IncrementTrigger
 
 type NumberInputIncrementTriggerProps = Assign<
@@ -131,6 +145,7 @@ const NumberInputContext = ArkNumberInput.Context
 export {
   NumberInputContext,
   NumberInputControl,
+  NumberInputTriggerGroup,
   NumberInputDecrementTrigger,
   NumberInputIncrementTrigger,
   NumberInputInput,
@@ -143,6 +158,7 @@ export {
 export type {
   NumberInputContextProps,
   NumberInputControlProps,
+  NumberInputTriggerGroupProps,
   NumberInputDecrementTriggerProps,
   NumberInputIncrementTriggerProps,
   NumberInputInputProps,

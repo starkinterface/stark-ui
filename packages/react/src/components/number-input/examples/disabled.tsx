@@ -1,12 +1,22 @@
 import { NumberInput } from "../"
-import { MinusIcon, PlusIcon } from "lucide-react"
+import { GripIcon, MinusIcon, PlusIcon } from "lucide-react"
 
-export default function Basic() {
+export default function Disabled() {
   return (
-    <NumberInput.Root defaultValue="1" min={0}>
-      <NumberInput.Label>Quantity</NumberInput.Label>
+    <NumberInput.Root
+      defaultValue="34"
+      min={0}
+      max={1}
+      step={0.01}
+      formatOptions={{ style: "percent" }}
+      disabled
+    >
+      <NumberInput.Label>Opacity</NumberInput.Label>
       <NumberInput.Control>
-        <NumberInput.Input />
+        <NumberInput.Input data-has-scrubber />
+        <NumberInput.Scrubber>
+          <GripIcon />
+        </NumberInput.Scrubber>
         <NumberInput.TriggerGroup>
           <NumberInput.DecrementTrigger aria-label="Decrease quantity">
             <MinusIcon />

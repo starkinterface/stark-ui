@@ -1,30 +1,41 @@
 @layer components {
   .number-input {
-    @apply inline-flex flex-col;
+    @apply flex flex-col gap-1;
   }
 
   .number-input-control {
-    @apply inline-flex items-center border;
+    @apply relative;
   }
 
   .number-input-input {
-    @apply min-w-0 flex-1 px-2 py-1;
+    @apply pe-16;
+
+    @variant data-has-scrubber {
+      @apply ps-8;
+    }
   }
 
-  .number-input-decrement-trigger,
-  .number-input-increment-trigger {
-    @apply inline-flex size-8 items-center justify-center;
+  .number-input-trigger-group {
+    @apply absolute inset-y-0 inset-e-0 inline-flex h-8 items-center gap-1 p-1;
   }
 
-  .number-input-decrement-trigger {
-    @apply border-r;
-  }
+  .number-input-label {
+    @apply text-sm text-foreground-muted;
 
-  .number-input-increment-trigger {
-    @apply border-l;
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
   }
 
   .number-input-scrubber {
-    @apply inline-flex cursor-ew-resize items-center justify-center select-none;
+    @apply absolute inset-y-0 inset-s-0 inline-flex size-8 items-center justify-center text-foreground-muted;
+
+    @variant icon {
+      @apply size-4;
+    }
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
   }
 }

@@ -1,6 +1,7 @@
 export {
   NumberInputContext,
   NumberInputControl,
+  NumberInputTriggerGroup,
   NumberInputDecrementTrigger,
   NumberInputIncrementTrigger,
   NumberInputInput,
@@ -14,6 +15,7 @@ export {
 export type {
   NumberInputContextProps,
   NumberInputControlProps,
+  NumberInputTriggerGroupProps,
   NumberInputDecrementTriggerProps,
   NumberInputIncrementTriggerProps,
   NumberInputInputProps,

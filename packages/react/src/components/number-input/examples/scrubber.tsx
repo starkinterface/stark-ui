@@ -1,12 +1,15 @@
 import { NumberInput } from "../"
-import { MinusIcon, PlusIcon } from "lucide-react"
+import { MinusIcon, PlusIcon, MoveHorizontalIcon } from "lucide-react"
 
-export default function Basic() {
+export default function Scrubber() {
   return (
-    <NumberInput.Root defaultValue="1" min={0}>
-      <NumberInput.Label>Quantity</NumberInput.Label>
+    <NumberInput.Root defaultValue="100" min={0}>
+      <NumberInput.Label>Amount</NumberInput.Label>
       <NumberInput.Control>
-        <NumberInput.Input />
+        <NumberInput.Input data-has-scrubber />
+        <NumberInput.Scrubber>
+          <MoveHorizontalIcon />
+        </NumberInput.Scrubber>
         <NumberInput.TriggerGroup>
           <NumberInput.DecrementTrigger aria-label="Decrease quantity">
             <MinusIcon />
