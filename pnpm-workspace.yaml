@@ -41,12 +41,12 @@ catalog:
   tailwind-variants: ^3.2.2
   tailwindcss: ^4.2.4
   typescript: ^6.0.3
-  ultracite: ^7.6.2
+  ultracite: ^7.6.3
   unplugin-dts: ^1.0.0
   vite: ^8.0.10
   vitest: ^4.1.5
   vue: ^3.5.33
-  vue-tsc: ^3.2.7
+  vue-tsc: ^3.2.8
 
 catalogs:
   storybook:
