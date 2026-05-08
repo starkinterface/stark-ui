@@ -47,16 +47,6 @@ const FieldLabel = withSlot<HTMLLabelElement, FieldLabelProps>(
 )
 
 ///////////////////////////////////////////////////////////////////////////////
-/// Input
-
-type FieldInputProps = Assign<ArkField.InputProps, UnstyledProp>
-
-const FieldInput = withSlot<HTMLInputElement, FieldInputProps>(
-  ArkField.Input,
-  "input"
-)
-
-///////////////////////////////////////////////////////////////////////////////
 /// Select
 
 type FieldSelectProps = Assign<ArkField.SelectProps, UnstyledProp>
@@ -103,7 +93,6 @@ export {
   FieldRoot,
   FieldRootProvider,
   FieldLabel,
-  FieldInput,
   FieldSelect,
   FieldTextarea,
   FieldErrorText,
@@ -113,7 +102,6 @@ export type {
   FieldRootProps,
   FieldRootProviderProps,
   FieldLabelProps,
-  FieldInputProps,
   FieldSelectProps,
   FieldTextareaProps,
   FieldErrorTextProps,

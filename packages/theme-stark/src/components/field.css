@@ -1,9 +1,41 @@
 @layer components {
   .field {
-    @apply inline-flex flex-col;
+    @apply flex flex-col gap-1;
+
+    @variant data-invalid {
+      .field-helper-text {
+        @apply hidden;
+      }
+    }
+
+    @variant not-data-invalid {
+      .field-helper-text {
+        @apply block;
+      }
+    }
   }
 
-  .field-input {
-    @apply border;
+  .field-label {
+    @apply text-sm text-foreground-muted;
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+  }
+
+  .field-helper-text {
+    @apply block text-sm text-foreground-muted;
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+  }
+
+  .field-error-text {
+    @apply block text-sm text-foreground-danger-soft;
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
   }
 }

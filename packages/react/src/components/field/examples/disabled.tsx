@@ -1,10 +1,10 @@
 import { Field } from "../"
 import { Input } from "../../input"
 
-export default function Basic() {
+export default function Disabled() {
   return (
     <div className="flex flex-col gap-4">
-      <Field.Root>
+      <Field.Root disabled>
         <Field.Label>Your name</Field.Label>
         <Input placeholder="Enter your name" />
         <Field.HelperText>
