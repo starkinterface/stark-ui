@@ -1,13 +1,155 @@
 @layer components {
   .select {
-    @apply inline-flex flex-col;
+    @apply inline-flex flex-col gap-1;
+  }
+
+  .select-label {
+    @apply text-sm text-foreground-muted;
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
   }
 
   .select-control {
-    @apply inline-flex border;
+    @apply relative;
+  }
+
+  .select-trigger {
+    @apply inline-flex h-8 w-full items-center rounded-xs border border-border ps-2.5 pe-6 text-sm text-foreground;
+
+    @variant data-placeholder-shown {
+      @apply text-foreground-muted;
+    }
+
+    @variant data-has-clear-trigger {
+      @apply pe-12;
+    }
+
+    @variant focus-visible {
+      @apply border-foreground focus-visible;
+    }
+
+    @variant data-disabled {
+      @apply border-background-inactive text-foreground-inactive;
+    }
+  }
+
+  .select-indicator {
+    @apply pointer-events-none absolute inset-y-0 inset-e-1 my-auto flex size-6 items-center justify-center text-foreground-muted;
+
+    @variant icon {
+      @apply size-3;
+    }
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+  }
+
+  .select-value-text {
+    @apply truncate;
+  }
+
+  .select-clear-trigger {
+    @apply absolute inset-y-0 inset-e-6 my-auto;
+
+    @variant icon {
+      @apply text-foreground-muted;
+    }
+  }
+
+  .select-content {
+    @apply max-h-[min(var(--available-height,14rem),14rem)] min-w-(--reference-width);
+    @apply flex flex-col overflow-y-auto rounded-xs border border-border bg-background-surface text-sm;
+    @apply scroll-pt-8;
+
+    scrollbar-width: none;
+
+    @variant focus-visible {
+      @apply border-foreground focus-visible;
+    }
+
+    @variant data-[placement=bottom] {
+      @apply origin-top;
+    }
+
+    @variant data-[placement=bottom-start] {
+      @apply origin-top-left;
+    }
+
+    @variant data-[placement=bottom-end] {
+      @apply origin-top-right;
+    }
+
+    @variant data-[placement=top] {
+      @apply origin-bottom;
+    }
+
+    @variant data-[placement=top-start] {
+      @apply origin-bottom-left;
+    }
+
+    @variant data-[placement=top-end] {
+      @apply origin-bottom-right;
+    }
+
+    @variant data-[placement=right] {
+      @apply origin-left;
+    }
+
+    @variant data-[placement=right-start] {
+      @apply origin-top-left;
+    }
+
+    @variant data-[placement=right-end] {
+      @apply origin-bottom-left;
+    }
+
+    @variant data-[placement=left] {
+      @apply origin-right;
+    }
+
+    @variant data-[placement=left-start] {
+      @apply origin-top-right;
+    }
+
+    @variant data-[placement=left-end] {
+      @apply origin-bottom-right;
+    }
+
+    @variant data-[state=open] {
+      animation:
+        scale-in var(--duration-switch) var(--ease-switch-in),
+        fade-in var(--duration-switch) var(--ease-switch-in);
+    }
   }
 
   .select-item {
-    @apply flex items-center justify-between;
+    @apply flex items-center justify-between gap-2 px-2.5 py-1;
+
+    @variant data-highlighted {
+      @apply bg-background-secondary text-foreground-secondary;
+    }
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+  }
+
+  .select-item-indicator {
+    @apply pointer-events-none size-4;
+
+    @variant icon {
+      @apply size-4;
+    }
+  }
+
+  .select-item-group {
+    @apply relative;
+  }
+
+  .select-item-group-label {
+    @apply sticky top-0 mb-1 flex h-7 items-center border-b border-border bg-background-surface px-2.5 pt-1 text-xs text-foreground-muted;
   }
 }

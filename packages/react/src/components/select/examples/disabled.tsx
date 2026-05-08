@@ -5,19 +5,20 @@ import { ChevronsUpDownIcon, XIcon, CheckCircle2Icon } from "lucide-react"
 
 const technologies = createListCollection({
   items: [
-    { label: "Vue", value: "vue" },
+    { label: "React", value: "react" },
     { label: "Solid", value: "solid" },
-    { disabled: true, label: "React", value: "react" },
+    { label: "Vue", value: "vue" },
     { label: "Svelte", value: "svelte" },
   ],
 })
 
-export default function Basic() {
+export default function Disabled() {
   return (
     <div className="flex h-dvh items-center justify-center">
       <Select.Root
         collection={technologies}
         positioning={{ fitViewport: true, placement: "bottom" }}
+        disabled
         className="w-64"
       >
         <Select.Label>Main Technology</Select.Label>

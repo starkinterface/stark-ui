@@ -4,7 +4,7 @@ import type { VariantProps } from "tailwind-variants/lite"
 
 export const selectClasses = tv({
   slots: {
-    clearTrigger: "select-clear-trigger",
+    clearTrigger: "button button--icon-xs button--ghost select-clear-trigger",
     content: "select-content",
     control: "select-control",
     hiddenSelect: "select-hidden-select",
