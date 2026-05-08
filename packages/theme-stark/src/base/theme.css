@@ -1,6 +1,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-background-surface: var(--background-surface);
+  --color-foreground-surface: var(--foreground-surface);
+
   --color-foreground-muted: var(--foreground-muted);
 
   --color-background-accent: var(--background-accent);
@@ -87,29 +91,4 @@
     transparent 6px,
     transparent 10px
   );
-
-  --animate-pattern-slash-moving: pattern-slash-moving 320ms linear infinite;
-  --animate-text-scramble: text-scramble 160ms steps(1, end);
-
-  @keyframes pattern-slash-moving {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 6px 0;
-    }
-  }
-
-  @keyframes text-scramble {
-    0%,
-    50% {
-      color: var(--color-scrambled);
-      content: var(--c1);
-    }
-    50%,
-    100% {
-      color: var(--color-base);
-      content: var(--c2);
-    }
-  }
 }
