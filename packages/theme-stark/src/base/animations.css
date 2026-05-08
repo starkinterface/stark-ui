@@ -1,0 +1,54 @@
+@theme inline {
+  --duration-switch: 60ms;
+  --duration-snappy: 180ms;
+  --duration-smooth: 240ms;
+  --duration-extend: 360ms;
+
+  --ease-switch-in: ease-out;
+  --ease-switch-out: ease-in;
+
+  --ease-snappy-in: cubic-bezier(0.168, 0.84, 0.44, 1);
+  --ease-snappy-out: var(--ease-snappy-in);
+
+  --ease-smooth-in: var(--ease-snappy-in);
+  --ease-smooth-out: var(--ease-snappy-in);
+
+  --ease-extend-in: cubic-bezier(0.36, 0.72, 0, 1);
+  --ease-extend-out: var(--ease-extend-in);
+
+  @keyframes scale-in {
+    0% {
+      transform: scale(0.94);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scale-out {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.94);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
