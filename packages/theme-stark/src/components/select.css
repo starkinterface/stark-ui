@@ -4,7 +4,7 @@
   }
 
   .select-label {
-    @apply text-sm text-foreground-muted;
+    @apply text-sm text-foreground;
 
     @variant data-disabled {
       @apply text-foreground-inactive;
