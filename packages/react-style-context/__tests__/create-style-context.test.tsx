@@ -428,7 +428,7 @@ describe("createStyleContext()", () => {
       )
 
       expect(() => render(<BrokenRoot data-testid="root" />)).toThrow(
-        /^`createStyleContext` could not resolve slot "missing" for <Popover.missing \/>\. Ensure the slot exists in your tv\(\) slots config\.$/
+        /^`createStyleContext` could not resolve slot "missing" for <Popover.missing \/>\. Ensure the slot exists in your tv\(\) slots config\.$/u
       )
     })
   })
@@ -505,7 +505,7 @@ describe("createStyleContext()", () => {
       const { StyledLabel } = createTestStyleContext()
 
       expect(() => render(<StyledLabel data-testid="label" />)).toThrow(
-        /^<PopoverLabel \/> must be used within <PopoverRoot \/> or <PopoverRootProvider \/>\.$/
+        /^<PopoverLabel \/> must be used within <PopoverRoot \/> or <PopoverRootProvider \/>\.$/u
       )
     })
 
@@ -519,7 +519,7 @@ describe("createStyleContext()", () => {
       )
 
       expect(() => render(<StyledLabel data-testid="label" />)).toThrow(
-        /^<PopoverLabel \/> must be used within <PopoverRoot \/> or <PopoverRootProvider \/>\.$/
+        /^<PopoverLabel \/> must be used within <PopoverRoot \/> or <PopoverRootProvider \/>\.$/u
       )
     })
 
@@ -531,7 +531,7 @@ describe("createStyleContext()", () => {
       )
 
       expect(() => render(<StyledLabel data-testid="label" />)).toThrow(
-        /^<ComponentLabel \/> must be used within <ComponentRoot \/> or <ComponentRootProvider \/>\.$/
+        /^<ComponentLabel \/> must be used within <ComponentRoot \/> or <ComponentRootProvider \/>\.$/u
       )
     })
 
@@ -546,7 +546,7 @@ describe("createStyleContext()", () => {
       expect(() =>
         render(<StyledLabel data-testid="label" ref={callbackRef} />)
       ).toThrow(
-        /^<PopoverLabel \/> must be used within <PopoverRoot \/> or <PopoverRootProvider \/>\.$/
+        /^<PopoverLabel \/> must be used within <PopoverRoot \/> or <PopoverRootProvider \/>\.$/u
       )
       expect(refCalls).toStrictEqual([])
     })
@@ -567,7 +567,7 @@ describe("createStyleContext()", () => {
       )
 
       expect(() => render(<StyledRoot data-testid="root" />)).toThrow(
-        /^`createStyleContext` expected `classes` to return a slots object\.$/
+        /^`createStyleContext` expected `classes` to return a slots object\.$/u
       )
     })
   })

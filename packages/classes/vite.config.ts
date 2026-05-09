@@ -10,7 +10,7 @@ export default defineConfig({
     lib: { entry: resolve(root, "src/index.ts"), formats: ["es"] },
     minify: false,
     rollupOptions: {
-      external: [...Object.keys(pkg.dependencies ?? {}), /^tailwind-variants/],
+      external: [...Object.keys(pkg.dependencies ?? {}), /^tailwind-variants/u],
       output: {
         entryFileNames: "[name].js",
         preserveModules: true,

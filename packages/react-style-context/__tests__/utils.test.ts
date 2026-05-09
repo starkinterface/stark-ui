@@ -194,7 +194,7 @@ describe("provider-props utils", () => {
         new Set(brokenClasses.variantKeys)
       )
     ).toThrow(
-      /^`createStyleContext` expected `classes` to return a slots object\.$/
+      /^`createStyleContext` expected `classes` to return a slots object\.$/u
     )
   })
 })
@@ -218,7 +218,7 @@ describe("slot utils", () => {
     expect(() =>
       getSlotFn(slots as never, "trigger", "PopoverTrigger")
     ).toThrow(
-      /^`createStyleContext` could not resolve slot "trigger" for <PopoverTrigger \/>\. Ensure the slot exists in your tv\(\) slots config\.$/
+      /^`createStyleContext` could not resolve slot "trigger" for <PopoverTrigger \/>\. Ensure the slot exists in your tv\(\) slots config\.$/u
     )
   })
 
@@ -230,7 +230,7 @@ describe("slot utils", () => {
     expect(() =>
       getSlotFn(invalidSlots as never, "root", "PopoverRoot")
     ).toThrow(
-      /^`createStyleContext` could not resolve slot "root" for <PopoverRoot \/>\. Ensure the slot exists in your tv\(\) slots config\.$/
+      /^`createStyleContext` could not resolve slot "root" for <PopoverRoot \/>\. Ensure the slot exists in your tv\(\) slots config\.$/u
     )
   })
 })
@@ -295,7 +295,7 @@ describe("config utils", () => {
 
   it("throws when config.name is missing", () => {
     expect(() => validateStyleConfig({})).toThrow(
-      /^`createStyleContext` requires a config object with a string `name`\.$/
+      /^`createStyleContext` requires a config object with a string `name`\.$/u
     )
   })
 
@@ -304,7 +304,7 @@ describe("config utils", () => {
       validateStyleConfig({
         name: "   ",
       })
-    ).toThrow(/^`createStyleContext` requires a non-empty `config\.name`\.$/)
+    ).toThrow(/^`createStyleContext` requires a non-empty `config\.name`\.$/u)
   })
 
   it("throws when name does not start with uppercase", () => {
@@ -313,7 +313,7 @@ describe("config utils", () => {
         name: "popover",
       })
     ).toThrow(
-      /^`createStyleContext` requires `config\.name` to start with an uppercase letter\.$/
+      /^`createStyleContext` requires `config\.name` to start with an uppercase letter\.$/u
     )
   })
 })

@@ -4,7 +4,7 @@ import { cx } from "tailwind-variants/lite"
 import type { Props } from "../types"
 import type { Ref } from "react"
 
-const EVENT_HANDLER_REGEX = /^on[A-Z]/
+const EVENT_HANDLER_REGEX = /^on[A-Z]/u
 
 const assignRef = <T>(ref: Ref<T> | undefined, value: T | null): void => {
   if (typeof ref === "function") {

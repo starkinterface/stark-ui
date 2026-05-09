@@ -10,7 +10,7 @@ export default defineConfig({
     lib: { entry: resolve(root, "src/index.ts"), formats: ["es"] },
     minify: false,
     rollupOptions: {
-      external: [/^react($|\/)/, /^react-dom($|\/)/, /^tailwind-variants/],
+      external: [/^react($|\/)/u, /^react-dom($|\/)/u, /^tailwind-variants/u],
       output: {
         entryFileNames: "[name].js",
         preserveModules: true,

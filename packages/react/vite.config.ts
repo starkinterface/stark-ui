@@ -14,9 +14,9 @@ export default defineConfig({
       external: [
         ...Object.keys(pkg.dependencies ?? {}),
         ...Object.keys(pkg.peerDependencies ?? {}),
-        /^react($|\/)/,
-        /^react-dom($|\/)/,
-        /^@ark-ui/,
+        /^react($|\/)/u,
+        /^react-dom($|\/)/u,
+        /^@ark-ui/u,
       ],
       output: {
         entryFileNames: "[name].js",

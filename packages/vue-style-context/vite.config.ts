@@ -9,7 +9,7 @@ export default defineConfig({
     lib: { entry: resolve(root, "src/index.ts"), formats: ["es"] },
     minify: false,
     rollupOptions: {
-      external: [/^vue($|\/)/, /^clsx/],
+      external: [/^vue($|\/)/u, /^clsx/u],
       output: {
         entryFileNames: "[name].js",
         preserveModules: true,

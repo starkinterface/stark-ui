@@ -1,6 +1,6 @@
 import type { CreateStyleContextConfig } from "../types"
 
-const STARTS_WITH_UPPERCASE_REGEX = /^[A-Z]/
+const STARTS_WITH_UPPERCASE_REGEX = /^[A-Z]/u
 
 const validateStyleConfig = (config: unknown): CreateStyleContextConfig => {
   if (

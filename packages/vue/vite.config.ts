@@ -14,8 +14,8 @@ export default defineConfig({
       external: [
         ...Object.keys(pkg.dependencies ?? {}),
         ...Object.keys(pkg.peerDependencies ?? {}),
-        /^vue($|\/)/,
-        /^@ark-ui/,
+        /^vue($|\/)/u,
+        /^@ark-ui/u,
       ],
       output: {
         entryFileNames: "[name].js",
