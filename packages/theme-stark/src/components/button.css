@@ -4,22 +4,16 @@
     @apply transition-[color,background-color,border-color,translate] duration-100 ease-out;
     @apply select-none;
 
-    @variant active {
-      @variant not-disabled {
-        @variant not-loading {
-          @apply translate-y-px;
-        }
-      }
+    @variant active:not-disabled:not-loading {
+      @apply translate-y-px;
     }
 
     @variant focus-visible {
       @apply outline-2 outline-offset-1;
     }
 
-    @variant loading {
-      @variant loader {
-        @apply absolute inset-auto text-foreground-muted;
-      }
+    @variant loading:loader {
+      @apply absolute inset-auto text-foreground-muted;
     }
   }
 
@@ -46,12 +40,8 @@
 @utility button--primary {
   @apply border-transparent bg-background-primary text-foreground-primary;
 
-  @variant hover {
-    @variant not-disabled {
-      @variant not-loading {
-        @apply bg-background-primary-hover;
-      }
-    }
+  @variant hover:not-disabled:not-loading {
+    @apply bg-background-primary-hover;
   }
 
   @variant disabled {
@@ -70,12 +60,8 @@
 @utility button--secondary {
   @apply border-transparent bg-background-secondary text-foreground-secondary;
 
-  @variant hover {
-    @variant not-disabled {
-      @variant not-loading {
-        @apply bg-background-secondary-hover;
-      }
-    }
+  @variant hover:not-disabled:not-loading {
+    @apply bg-background-secondary-hover;
   }
 
   @variant disabled {
@@ -94,12 +80,8 @@
 @utility button--ghost {
   @apply border-transparent bg-transparent text-foreground;
 
-  @variant hover {
-    @variant not-disabled {
-      @variant not-loading {
-        @apply bg-background-secondary;
-      }
-    }
+  @variant hover:not-disabled:not-loading {
+    @apply bg-background-secondary;
   }
 
   @variant disabled {
@@ -118,12 +100,8 @@
 @utility button--outline {
   @apply border-border bg-transparent text-foreground;
 
-  @variant hover {
-    @variant not-disabled {
-      @variant not-loading {
-        @apply bg-background-secondary;
-      }
-    }
+  @variant hover:not-disabled:not-loading {
+    @apply bg-background-secondary;
   }
 
   @variant disabled {
@@ -142,12 +120,8 @@
 @utility button--accent {
   @apply border-transparent bg-background-accent text-foreground-accent;
 
-  @variant hover {
-    @variant not-disabled {
-      @variant not-loading {
-        @apply bg-background-accent-hover;
-      }
-    }
+  @variant hover:not-disabled:not-loading {
+    @apply bg-background-accent-hover;
   }
 
   @variant disabled {
@@ -166,12 +140,8 @@
 @utility button--danger {
   @apply border-transparent bg-background-danger text-foreground-danger;
 
-  @variant hover {
-    @variant not-disabled {
-      @variant not-loading {
-        @apply bg-background-danger-hover;
-      }
-    }
+  @variant hover:not-disabled:not-loading {
+    @apply bg-background-danger-hover;
   }
 
   @variant disabled {
@@ -190,12 +160,8 @@
 @utility button--danger-soft {
   @apply border-transparent bg-background-danger-soft text-foreground-danger-soft;
 
-  @variant hover {
-    @variant not-disabled {
-      @variant not-loading {
-        @apply bg-background-danger-soft-hover text-foreground-danger-soft-hover;
-      }
-    }
+  @variant hover:not-disabled:not-loading {
+    @apply bg-background-danger-soft-hover text-foreground-danger-soft-hover;
   }
 
   @variant disabled {

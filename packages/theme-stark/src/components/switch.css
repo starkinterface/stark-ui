@@ -28,12 +28,8 @@
   .switch-control {
     @apply border-border;
 
-    @variant data-hover {
-      @variant not-disabled {
-        @variant not-data-[state=checked] {
-          @apply border-foreground;
-        }
-      }
+    @variant data-hover:not-disabled:not-data-[state=checked] {
+      @apply border-foreground;
     }
 
     @variant data-[state=checked] {
@@ -78,12 +74,8 @@
   .switch-control {
     @apply border-border;
 
-    @variant data-hover {
-      @variant not-disabled {
-        @variant not-data-[state=checked] {
-          @apply border-foreground;
-        }
-      }
+    @variant data-hover:not-disabled:not-data-[state=checked] {
+      @apply border-foreground;
     }
 
     @variant data-[state=checked] {
