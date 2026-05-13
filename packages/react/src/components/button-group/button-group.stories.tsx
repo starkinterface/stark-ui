@@ -1,24 +1,19 @@
 import BasicExample from "./examples/basic"
-import DisabledExample from "./examples/disabled"
 import OrientationExample from "./examples/orientation"
 import SpacingExample from "./examples/spacing"
 
 export default {
-  title: "Components/ToggleGroup",
+  title: "Components/ButtonGroup",
 }
 
 export const Basic = {
   render: () => <BasicExample />,
 }
 
-export const Orientation = {
-  render: () => <OrientationExample />,
-}
-
 export const Spacing = {
   render: () => <SpacingExample />,
 }
 
-export const Disabled = {
-  render: () => <DisabledExample />,
+export const Orientation = {
+  render: () => <OrientationExample />,
 }

@@ -1,104 +1,26 @@
 @layer components {
-  .toggle-group {
-    @apply flex items-center;
-
-    @variant data-[orientation=horizontal] {
-      @apply flex-row;
-
-      .toggle-group-item {
-        @apply w-auto;
-      }
-    }
-
-    @variant data-[orientation=vertical] {
-      @apply flex-col;
-
-      .toggle-group-item {
-        @apply w-full;
-      }
-    }
-  }
-
   /* ----------------------------------------------------------------------------
    * Default Variants
    * ---------------------------------------------------------------------------- */
   :where(.toggle-group) {
-    @apply toggle-group--regular;
-  }
+    @apply base-group--horizontal;
+    @apply base-group--separated;
+    @apply toggle-group--active-primary;
 
-  :where(.toggle-group-item) {
-    @apply button--secondary data-[state=on]:button--primary;
-  }
-}
-
-@utility toggle-group--regular {
-  @apply gap-2;
-
-  .toggle-group-item {
-    @apply rounded-xs;
-
-    @variant data-focus {
-      @apply z-1;
-    }
-  }
-
-  @variant data-[orientation=horizontal] {
-    .toggle-group-item {
-      &:first-child {
-        @apply rounded-s-xs;
-      }
-
-      &:last-child {
-        @apply rounded-e-xs;
-      }
-    }
-  }
-
-  @variant data-[orientation=vertical] {
-    .toggle-group-item {
-      &:first-child {
-        @apply rounded-t-xs;
-      }
-
-      &:last-child {
-        @apply rounded-b-xs;
-      }
+    :where(.button) {
+      @apply button--secondary;
     }
   }
 }
 
-@utility toggle-group--compact {
-  @apply gap-px;
-
-  .toggle-group-item {
-    @apply rounded-none;
-
-    @variant data-focus {
-      @apply z-1;
-    }
+@utility toggle-group--active-primary {
+  :where(.button) {
+    @apply data-[state=on]:button--primary;
   }
+}
 
-  @variant data-[orientation=horizontal] {
-    .toggle-group-item {
-      &:first-child {
-        @apply rounded-s-xs;
-      }
-
-      &:last-child {
-        @apply rounded-e-xs;
-      }
-    }
-  }
-
-  @variant data-[orientation=vertical] {
-    .toggle-group-item {
-      &:first-child {
-        @apply rounded-t-xs;
-      }
-
-      &:last-child {
-        @apply rounded-b-xs;
-      }
-    }
+@utility toggle-group--active-accent {
+  :where(.button) {
+    @apply data-[state=on]:button--accent;
   }
 }

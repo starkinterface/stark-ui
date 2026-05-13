@@ -1,0 +1,9 @@
+@layer components {
+  /* ----------------------------------------------------------------------------
+   * Default Variants
+   * ---------------------------------------------------------------------------- */
+  :where(.button-group) {
+    @apply base-group--horizontal;
+    @apply base-group--regular;
+  }
+}

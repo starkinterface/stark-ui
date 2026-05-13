@@ -1,0 +1,161 @@
+@layer components {
+  .base-group {
+    @apply isolate flex items-center;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Orientation
+ * ---------------------------------------------------------------------------- */
+
+@utility base-group--horizontal {
+  @apply flex-row;
+
+  @variant * {
+    @apply w-auto;
+  }
+}
+
+@utility base-group--vertical {
+  @apply flex-col;
+
+  @variant * {
+    @apply w-full;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Spacing
+ * ---------------------------------------------------------------------------- */
+
+@utility base-group--regular {
+  @apply gap-2;
+
+  @variant *:disabled {
+    @apply -z-1;
+  }
+
+  @variant *:focus-visible, *:data-focus {
+    @apply z-1;
+  }
+
+  @variant data-[orientation=horizontal] {
+    @variant * {
+      @variant first {
+        @apply me-0 rounded-s-xs;
+      }
+
+      @variant not-first:not-last {
+        @apply me-0 rounded-xs;
+      }
+
+      @variant last {
+        @apply rounded-e-xs;
+      }
+    }
+  }
+
+  @variant data-[orientation=vertical] {
+    @variant * {
+      @variant first {
+        @apply mb-0 rounded-t-xs;
+      }
+
+      @variant not-first:not-last {
+        @apply mb-0 rounded-xs;
+      }
+
+      @variant last {
+        @apply rounded-b-xs;
+      }
+    }
+  }
+}
+
+@utility base-group--attached {
+  @apply gap-0;
+
+  @variant *:disabled {
+    @apply -z-1;
+  }
+
+  @variant *:focus-visible, *:data-focus {
+    @apply z-1;
+  }
+
+  @variant data-[orientation=horizontal] {
+    @variant * {
+      @variant first {
+        @apply -me-px rounded-e-none;
+      }
+
+      @variant not-first:not-last {
+        @apply -me-px rounded-none;
+      }
+
+      @variant last {
+        @apply rounded-s-none;
+      }
+    }
+  }
+
+  @variant data-[orientation=vertical] {
+    @variant * {
+      @variant first {
+        @apply -mb-px rounded-b-none;
+      }
+
+      @variant not-first:not-last {
+        @apply -mb-px rounded-none;
+      }
+
+      @variant last {
+        @apply rounded-t-none;
+      }
+    }
+  }
+}
+
+@utility base-group--separated {
+  @apply gap-px;
+
+  @variant *:disabled {
+    @apply -z-1;
+  }
+
+  @variant *:focus-visible, *:data-focus {
+    @apply z-1;
+  }
+
+  @variant data-[orientation=horizontal] {
+    @variant * {
+      @variant first {
+        @apply me-0 rounded-e-none;
+      }
+
+      @variant not-first:not-last {
+        @apply me-0 rounded-none;
+      }
+
+      @variant last {
+        @apply rounded-s-none;
+      }
+    }
+  }
+
+  @variant data-[orientation=vertical] {
+    @variant * {
+      @variant first {
+        @apply mb-0 rounded-b-none;
+      }
+
+      @variant not-first:not-last {
+        @apply mb-0 rounded-none;
+      }
+
+      @variant last {
+        @apply rounded-t-none;
+      }
+    }
+  }
+}

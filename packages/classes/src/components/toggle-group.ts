@@ -4,16 +4,16 @@ import type { VariantProps } from "tailwind-variants/lite"
 
 export const toggleGroupClasses = tv({
   slots: {
-    item: "button toggle-group-item",
-    root: "toggle-group",
+    item: "button",
+    root: "base-group toggle-group",
   },
   variants: {
-    compact: {
-      false: {
-        root: "toggle-group--regular",
+    orientation: {
+      horizontal: {
+        root: "base-group--horizontal",
       },
-      true: {
-        root: "toggle-group--compact",
+      vertical: {
+        root: "base-group--vertical",
       },
     },
     size: {
@@ -42,9 +42,23 @@ export const toggleGroupClasses = tv({
         item: "button--xs",
       },
     },
+    spacing: {
+      attached: {
+        root: "base-group--attached",
+      },
+      regular: {
+        root: "base-group--regular",
+      },
+      separated: {
+        root: "base-group--separated",
+      },
+    },
     variant: {
       ghost: {
         item: "button--ghost",
+      },
+      outline: {
+        item: "button--outline",
       },
       secondary: {
         item: "button--secondary",
@@ -52,10 +66,10 @@ export const toggleGroupClasses = tv({
     },
     variantActive: {
       accent: {
-        item: "data-[state=on]:button--accent",
+        root: "toggle-group--active-accent",
       },
       primary: {
-        item: "data-[state=on]:button--primary",
+        root: "toggle-group--active-primary",
       },
     },
   },

@@ -8,7 +8,7 @@ export default function Orientation() {
         orientation="horizontal"
         size="icon-md"
         multiple
-        compact
+        spacing="separated"
       >
         <ToggleGroup.Item aria-label="Bold" value="bold">
           <BoldIcon />
@@ -20,7 +20,12 @@ export default function Orientation() {
           <UnderlineIcon />
         </ToggleGroup.Item>
       </ToggleGroup.Root>
-      <ToggleGroup.Root orientation="vertical" size="icon-md" multiple compact>
+      <ToggleGroup.Root
+        orientation="vertical"
+        size="icon-md"
+        multiple
+        spacing="separated"
+      >
         <ToggleGroup.Item aria-label="Bold" value="bold">
           <BoldIcon />
         </ToggleGroup.Item>
