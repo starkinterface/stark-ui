@@ -12,7 +12,7 @@
     }
 
     @variant focus-visible {
-      @apply outline-2 outline-offset-1;
+      @apply focus-visible;
     }
 
     @variant loading:loader {
@@ -54,10 +54,6 @@
   @variant loading {
     @apply bg-background-inactive text-transparent;
   }
-
-  @variant focus-visible {
-    @apply outline-ring/72;
-  }
 }
 
 @utility button--secondary {
@@ -73,10 +69,6 @@
 
   @variant loading {
     @apply bg-background-inactive text-transparent;
-  }
-
-  @variant focus-visible {
-    @apply border-ring outline-ring/56;
   }
 }
 
@@ -94,10 +86,6 @@
   @variant loading {
     @apply bg-transparent text-transparent;
   }
-
-  @variant focus-visible {
-    @apply border-ring outline-ring/56;
-  }
 }
 
 @utility button--outline {
@@ -113,10 +101,6 @@
 
   @variant loading {
     @apply border-background-inactive bg-transparent text-transparent;
-  }
-
-  @variant focus-visible {
-    @apply border-ring outline-ring/56;
   }
 }
 
@@ -134,10 +118,6 @@
   @variant loading {
     @apply bg-background-inactive text-transparent;
   }
-
-  @variant focus-visible {
-    @apply outline-background-accent/48;
-  }
 }
 
 @utility button--danger {
@@ -154,10 +134,6 @@
   @variant loading {
     @apply bg-background-inactive text-transparent;
   }
-
-  @variant focus-visible {
-    @apply outline-foreground-danger-soft/56;
-  }
 }
 
 @utility button--danger-soft {
@@ -173,10 +149,6 @@
 
   @variant loading {
     @apply bg-background-inactive text-transparent;
-  }
-
-  @variant focus-visible {
-    @apply border-ring outline-foreground-danger-soft/56;
   }
 }
 

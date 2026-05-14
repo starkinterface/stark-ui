@@ -35,8 +35,12 @@
     @apply -z-1;
   }
 
-  @variant *:focus-visible, *:data-focus {
+  @variant *:data-[state=on] {
     @apply z-1;
+  }
+
+  @variant *:focus-visible, *:data-focus {
+    @apply z-2;
   }
 
   @variant data-[orientation=horizontal] {
@@ -79,8 +83,12 @@
     @apply -z-1;
   }
 
-  @variant *:focus-visible, *:data-focus {
+  @variant *:data-[state=on] {
     @apply z-1;
+  }
+
+  @variant *:focus-visible, *:data-focus {
+    @apply z-2;
   }
 
   @variant data-[orientation=horizontal] {
@@ -123,8 +131,12 @@
     @apply -z-1;
   }
 
-  @variant *:focus-visible, *:data-focus {
+  @variant *:data-[state=on] {
     @apply z-1;
+  }
+
+  @variant *:focus-visible, *:data-focus {
+    @apply z-2;
   }
 
   @variant data-[orientation=horizontal] {

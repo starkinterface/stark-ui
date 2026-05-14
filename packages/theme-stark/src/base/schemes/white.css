@@ -28,7 +28,7 @@
   --subtle: oklch(0.94 0 0);
   --border: oklch(0.84 0 0);
   --decoration: oklch(0.92 0 0);
-  --ring: oklch(0.8 0 0);
+  --ring: oklch(0.64 0 0);
 
   color-scheme: light;
 }
