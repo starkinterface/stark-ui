@@ -1,8 +1,11 @@
 @layer components {
   .button {
     @apply relative inline-flex shrink-0 appearance-none items-center justify-center rounded-xs border py-0 align-middle font-mono font-medium whitespace-nowrap uppercase;
-    @apply transition-[color,background-color,border-color,translate] duration-100 ease-out;
     @apply select-none;
+
+    @variant not-focus-visible {
+      @apply transition-[color,background-color,border-color,translate] duration-100 ease-out;
+    }
 
     @variant active:not-disabled:not-loading {
       @apply translate-y-px;

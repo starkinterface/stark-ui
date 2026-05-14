@@ -59,7 +59,10 @@
 
   .slider-thumb {
     @apply relative z-2 flex h-4 w-4 items-center justify-center rounded-xs border bg-background;
-    @apply transition-[border-color] duration-150 ease-out;
+
+    @variant not-focus-visible {
+      @apply transition-[border-color] duration-150 ease-out;
+    }
 
     &::after {
       content: "";
@@ -183,14 +186,14 @@
       }
     }
 
-    @variant hover {
+    @variant hover, data-focus {
       @variant not-data-disabled {
-        @apply border-foreground;
+        @apply border-ring;
       }
     }
 
     @variant data-dragging {
-      @apply border-foreground;
+      @apply border-ring;
     }
   }
 }
@@ -215,14 +218,14 @@
       }
     }
 
-    @variant hover {
+    @variant hover, data-focus {
       @variant not-data-disabled {
-        @apply border-foreground;
+        @apply border-ring;
       }
     }
 
     @variant data-dragging {
-      @apply border-foreground;
+      @apply border-ring;
     }
   }
 }

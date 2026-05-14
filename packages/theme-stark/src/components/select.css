@@ -27,7 +27,7 @@
     }
 
     @variant focus-visible {
-      @apply border-foreground focus-visible;
+      @apply border-ring focus-visible;
     }
 
     @variant data-disabled {
@@ -67,7 +67,7 @@
     scrollbar-width: none;
 
     @variant focus-visible {
-      @apply border-foreground focus-visible;
+      @apply border-ring focus-visible;
     }
 
     @variant data-[placement=bottom] {
@@ -118,7 +118,7 @@
       @apply origin-bottom-right;
     }
 
-    @variant data-[state=open] {
+    @variant not-focus-visible:data-[state=open] {
       animation:
         scale-in var(--duration-switch) var(--ease-switch-in),
         fade-in var(--duration-switch) var(--ease-switch-in);
@@ -127,6 +127,10 @@
 
   .select-item {
     @apply flex items-center justify-between gap-2 px-2.5 py-1;
+
+    @variant not-in-focus-visible {
+      @apply transition-[background-color,color] duration-100 ease-out;
+    }
 
     @variant data-highlighted {
       @apply bg-background-secondary text-foreground-secondary;

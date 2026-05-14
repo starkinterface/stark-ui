@@ -1,18 +1,17 @@
 @layer components {
   .base-input {
     @apply min-h-8 w-full rounded-xs border border-border px-2 text-sm text-foreground caret-foreground;
-    @apply transition-[border-color] duration-150 ease-out;
+
+    @variant not-focus-visible {
+      @apply transition-[border-color] duration-150 ease-out;
+    }
 
     @variant placeholder {
       @apply text-foreground-muted;
     }
 
-    @variant focus {
-      @apply border-foreground focus-visible;
-    }
-
-    @variant focus-visible {
-      @apply border-foreground focus-visible;
+    @variant focus, focus-visible {
+      @apply border-ring focus-visible;
     }
 
     @variant disabled {

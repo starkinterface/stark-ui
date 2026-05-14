@@ -4,7 +4,11 @@
   }
 
   .switch-control {
-    @apply relative block border transition-[border-color,background-color] duration-100 ease-out;
+    @apply relative block border;
+
+    @variant not-data-focus-visible {
+      @apply transition-[border-color,background-color] duration-100 ease-out;
+    }
 
     @variant data-focus-visible {
       @apply focus-visible;
@@ -12,7 +16,9 @@
   }
 
   .switch-thumb {
-    @apply block transition-[translate,background-color] duration-150 ease-out;
+    @apply block;
+
+    @apply transition-[translate,background-color] duration-150 ease-out;
   }
 
   /* ----------------------------------------------------------------------------
@@ -28,8 +34,8 @@
   .switch-control {
     @apply border-border;
 
-    @variant data-hover:not-disabled:not-data-[state=checked] {
-      @apply border-foreground;
+    @variant data-hover:not-disabled:not-data-[state=checked], data-focus-visible {
+      @apply border-ring;
     }
 
     @variant data-[state=checked] {
@@ -74,8 +80,8 @@
   .switch-control {
     @apply border-border;
 
-    @variant data-hover:not-disabled:not-data-[state=checked] {
-      @apply border-foreground;
+    @variant data-hover:not-disabled:not-data-[state=checked], data-focus-visible {
+      @apply border-ring;
     }
 
     @variant data-[state=checked] {
