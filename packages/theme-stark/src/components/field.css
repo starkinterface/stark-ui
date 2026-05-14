@@ -1,18 +1,6 @@
 @layer components {
   .field {
     @apply flex flex-col gap-1;
-
-    @variant data-invalid {
-      .field-helper-text {
-        @apply hidden;
-      }
-    }
-
-    @variant not-data-invalid {
-      .field-helper-text {
-        @apply block;
-      }
-    }
   }
 
   .field-label {
