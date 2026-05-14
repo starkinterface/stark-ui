@@ -2,8 +2,8 @@
   --background: oklch(0.975 0 0);
   --foreground: oklch(0.175 0 0);
 
-  --background-surface: oklch(0.94 0 0);
-  --foreground-surface: oklch(0.175 0 0);
+  --background-surface: var(--background);
+  --foreground-surface: var(--foreground);
 
   --foreground-muted: oklch(0.54 0 0);
 
