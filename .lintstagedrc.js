@@ -1,5 +1,6 @@
 const config = {
-  "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": "ultracite fix",
+  "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}":
+    "ultracite fix --no-error-on-unmatched-pattern",
 }
 
 export default config
