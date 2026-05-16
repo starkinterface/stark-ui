@@ -6,6 +6,7 @@ export const inputGroupClasses = tv({
   slots: {
     addon: "input-group-addon",
     button: "input-group-button",
+    icon: "input-group-icon",
     input: "input-group-input",
     root: "input-group",
     text: "input-group-text",

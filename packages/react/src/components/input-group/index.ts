@@ -3,6 +3,7 @@ export {
   InputGroupRoot,
   InputGroupTextarea,
   InputGroupAddon,
+  InputGroupIcon,
   InputGroupButton,
   InputGroupText,
 } from "./input-group"
@@ -13,6 +14,7 @@ export type {
   InputGroupTextareaProps,
   InputGroupAddonProps,
   InputGroupButtonProps,
+  InputGroupIconProps,
   InputGroupTextProps,
 } from "./input-group"
 

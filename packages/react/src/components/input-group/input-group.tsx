@@ -61,6 +61,25 @@ const InputGroupAddon = withSlot<HTMLDivElement, InputGroupAddonProps>(
 )
 
 ///////////////////////////////////////////////////////////////////////////////
+/// Icon
+
+type InputGroupIconProps = Assign<ComponentProps<typeof ark.div>, UnstyledProp>
+
+const InputGroupIcon = withSlot<HTMLDivElement, InputGroupIconProps>(
+  (props: InputGroupIconProps) => {
+    const field = useFieldContext()
+    return (
+      <ark.div
+        data-input-group-icon
+        data-disabled={attrValue(field?.disabled)}
+        {...props}
+      />
+    )
+  },
+  "icon"
+)
+
+///////////////////////////////////////////////////////////////////////////////
 /// Text
 
 type InputGroupTextProps = Assign<ComponentProps<typeof ark.span>, UnstyledProp>
@@ -68,7 +87,14 @@ type InputGroupTextProps = Assign<ComponentProps<typeof ark.span>, UnstyledProp>
 const InputGroupText = withSlot<HTMLSpanElement, InputGroupTextProps>(
   (props: InputGroupTextProps) => {
     const field = useFieldContext()
-    return <ark.span data-disabled={attrValue(field?.disabled)} {...props} />
+    return (
+      <ark.span
+        data-input-group-text
+        data-disabled={attrValue(field?.disabled)}
+        aria-disabled={field?.disabled}
+        {...props}
+      />
+    )
   },
   "text"
 )
@@ -81,7 +107,13 @@ type InputGroupButtonProps = Assign<ComponentProps<typeof Button>, UnstyledProp>
 const InputGroupButton = withSlot<HTMLButtonElement, InputGroupButtonProps>(
   ({ disabled, ...props }: InputGroupButtonProps) => {
     const field = useFieldContext()
-    return <Button {...props} disabled={disabled ?? field?.disabled} />
+    return (
+      <Button
+        {...props}
+        data-input-group-button
+        disabled={disabled ?? field?.disabled}
+      />
+    )
   },
   "button"
 )
@@ -94,6 +126,7 @@ export {
   InputGroupInput,
   InputGroupTextarea,
   InputGroupAddon,
+  InputGroupIcon,
   InputGroupText,
   InputGroupButton,
 }
@@ -102,6 +135,7 @@ export type {
   InputGroupInputProps,
   InputGroupTextareaProps,
   InputGroupAddonProps,
+  InputGroupIconProps,
   InputGroupTextProps,
   InputGroupButtonProps,
 }
