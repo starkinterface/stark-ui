@@ -168,11 +168,11 @@
   }
 
   @variant icon {
-    @apply size-3;
+    @apply size-4;
   }
 
   @variant loader {
-    @apply size-3;
+    @apply size-4;
   }
 }
 
@@ -188,11 +188,11 @@
   }
 
   @variant icon {
-    @apply size-3.5;
+    @apply size-4;
   }
 
   @variant loader {
-    @apply size-3.5;
+    @apply size-4;
   }
 }
 
@@ -240,11 +240,11 @@
   @apply size-6 min-w-6 px-0;
 
   @variant icon {
-    @apply size-3;
+    @apply size-4;
   }
 
   @variant loader {
-    @apply size-3;
+    @apply size-4;
   }
 }
 
@@ -252,11 +252,11 @@
   @apply size-7 min-w-7 px-0;
 
   @variant icon {
-    @apply size-3.5;
+    @apply size-4;
   }
 
   @variant loader {
-    @apply size-3.5;
+    @apply size-4;
   }
 }
 
