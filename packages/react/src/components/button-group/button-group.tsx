@@ -3,10 +3,13 @@ import { ark } from "@ark-ui/react/factory"
 
 import type { ButtonGroupVariantProps } from "@stark-ui/classes"
 import type { UnstyledProp } from "@stark-ui/react-style-context"
-import type { HTMLArkProps } from "@ark-ui/react/factory"
+import type { ComponentProps } from "react"
 
 interface ButtonGroupProps
-  extends ButtonGroupVariantProps, HTMLArkProps<"div">, UnstyledProp {}
+  extends
+    ButtonGroupVariantProps,
+    ComponentProps<typeof ark.div>,
+    UnstyledProp {}
 
 const ButtonGroup = ({
   className,

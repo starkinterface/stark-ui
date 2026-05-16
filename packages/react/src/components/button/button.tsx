@@ -4,10 +4,10 @@ import { ark } from "@ark-ui/react/factory"
 
 import type { ButtonVariantProps } from "@stark-ui/classes"
 import type { UnstyledProp } from "@stark-ui/react-style-context"
-import type { HTMLArkProps } from "@ark-ui/react/factory"
+import type { ComponentProps } from "react"
 
 interface ButtonProps
-  extends ButtonVariantProps, HTMLArkProps<"button">, UnstyledProp {
+  extends ButtonVariantProps, ComponentProps<typeof ark.button>, UnstyledProp {
   loading?: boolean
 }
 
