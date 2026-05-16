@@ -23,6 +23,10 @@
 
       @variant focus-visible {
         @apply outline-foreground-danger-soft/56;
+
+        @variant white {
+          @apply outline-foreground-danger-soft/36;
+        }
       }
     }
   }
