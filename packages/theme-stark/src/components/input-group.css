@@ -1,0 +1,105 @@
+@layer components {
+  .input-group {
+    @apply flex w-full rounded-xs border border-border;
+
+    @variant has-[input:not(:focus-visible)], has-[textarea:not(:focus-visible)] {
+      @apply transition-[border-color] duration-150 ease-out;
+    }
+
+    @variant has-[input:focus-visible], has-[textarea:focus-visible] {
+      @apply border-ring focus-visible;
+    }
+
+    @variant has-[input[aria-invalid=true]], has-[textarea[aria-invalid=true]] {
+      @apply border-foreground-danger-soft;
+
+      @variant has-[input:focus-visible], has-[textarea:focus-visible] {
+        @apply outline-foreground-danger-soft/56;
+
+        @variant white {
+          @apply outline-foreground-danger-soft/36;
+        }
+      }
+    }
+
+    @variant has-[input[disabled]], has-[textarea[disabled]] {
+      @apply border-background-inactive;
+    }
+
+    @variant has-[[data-align=inline-start]], has-[[data-align=inline-end]] {
+      @apply flex-row;
+    }
+
+    @variant has-[[data-align=block-start]], has-[[data-align=block-end]] {
+      @apply flex-col;
+    }
+  }
+
+  .input-group-input,
+  .input-group-textarea {
+    @apply min-h-8 w-full px-2 text-sm text-foreground caret-foreground outline-none;
+
+    @variant placeholder {
+      @apply text-foreground-muted;
+    }
+
+    @variant disabled {
+      @apply border-background-inactive text-foreground-inactive placeholder:text-foreground-inactive;
+    }
+  }
+
+  .input-group-textarea {
+    @apply py-1.25;
+  }
+
+  .input-group-addon {
+    @apply flex shrink-0 items-center justify-center gap-1.25 select-none;
+
+    @variant data-[align=inline-start] {
+      @apply order-first ps-2;
+
+      @variant has-[[data-button]:first-child] {
+        @apply ps-1.25;
+      }
+    }
+
+    @variant data-[align=inline-end] {
+      @apply order-last pe-2;
+
+      @variant has-[[data-button]:last-child] {
+        @apply pe-1.25;
+      }
+    }
+
+    @variant data-[align=block-start] {
+      @apply order-first justify-start px-2 py-2;
+    }
+
+    @variant data-[align=block-end] {
+      @apply order-last justify-start px-2 py-2;
+    }
+
+    /* TODO: use custom variant */
+    @variant *:[svg] {
+      @apply size-4 text-foreground-muted;
+    }
+
+    @variant data-disabled {
+      @variant *:[svg] {
+        @apply text-foreground-inactive;
+      }
+    }
+  }
+
+  .input-group-text {
+    @apply flex items-center gap-1.5 text-sm text-foreground-muted;
+
+    @variant icon {
+      @apply size-4;
+    }
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+  }
+}
