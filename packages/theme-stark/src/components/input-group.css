@@ -68,7 +68,7 @@
     @apply min-h-7.5 w-full px-2 text-sm text-foreground caret-foreground outline-none;
 
     @variant placeholder {
-      @apply text-foreground-muted;
+      @apply text-placeholder;
     }
 
     @variant disabled {

@@ -26,6 +26,8 @@
   --background-inactive: oklab(0.24 0 0);
   --foreground-inactive: oklch(0.32 0 0);
 
+  --placeholder: oklch(0.4 0 0);
+
   --subtle: oklch(0.2 0 0);
   --border: oklch(0.32 0 0);
   --decoration: oklch(0.24 0 0);

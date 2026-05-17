@@ -25,6 +25,8 @@
   --color-background-inactive: var(--background-inactive);
   --color-foreground-inactive: var(--foreground-inactive);
 
+  --color-placeholder: var(--placeholder);
+
   --color-subtle: var(--subtle);
   --color-border: var(--border);
   --color-decoration: var(--decoration);
