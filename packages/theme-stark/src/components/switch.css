@@ -4,7 +4,7 @@
   }
 
   .switch-control {
-    @apply relative block border;
+    @apply relative block border bg-background-secondary;
 
     @variant not-data-focus-visible {
       @apply transition-[border-color,background-color] duration-100 ease-out;
