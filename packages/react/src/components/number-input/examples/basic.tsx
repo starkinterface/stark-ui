@@ -1,5 +1,6 @@
 import { NumberInput } from "../"
-import { MinusIcon, PlusIcon } from "lucide-react"
+import { Button } from "../../button"
+import { MinusIcon, PlusIcon, GripIcon } from "lucide-react"
 
 export default function Basic() {
   return (
@@ -7,14 +8,33 @@ export default function Basic() {
       <NumberInput.Label>Quantity</NumberInput.Label>
       <NumberInput.Control>
         <NumberInput.Input />
-        <NumberInput.TriggerGroup>
-          <NumberInput.DecrementTrigger aria-label="Decrease quantity">
-            <MinusIcon />
+        <NumberInput.Scrubber asChild>
+          <NumberInput.Addon data-align="inline-start">
+            <NumberInput.Icon>
+              <GripIcon />
+            </NumberInput.Icon>
+          </NumberInput.Addon>
+        </NumberInput.Scrubber>
+        <NumberInput.Addon data-align="inline-end">
+          <NumberInput.DecrementTrigger asChild>
+            <Button
+              size="icon-xs"
+              aria-label="Decrease quantity"
+              variant="outline"
+            >
+              <MinusIcon />
+            </Button>
           </NumberInput.DecrementTrigger>
-          <NumberInput.IncrementTrigger aria-label="Increase quantity">
-            <PlusIcon />
+          <NumberInput.IncrementTrigger asChild>
+            <Button
+              size="icon-xs"
+              aria-label="Increase quantity"
+              variant="outline"
+            >
+              <PlusIcon />
+            </Button>
           </NumberInput.IncrementTrigger>
-        </NumberInput.TriggerGroup>
+        </NumberInput.Addon>
       </NumberInput.Control>
     </NumberInput.Root>
   )

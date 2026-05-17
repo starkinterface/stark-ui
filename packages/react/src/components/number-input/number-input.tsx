@@ -1,11 +1,16 @@
+import { attrValue } from "../../utils"
 import { numberInputClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
-import { NumberInput as ArkNumberInput } from "@ark-ui/react/number-input"
+import { ark } from "@ark-ui/react/factory"
+import {
+  NumberInput as ArkNumberInput,
+  useNumberInputContext,
+} from "@ark-ui/react/number-input"
 
 import type { NumberInputVariantProps } from "@stark-ui/classes"
 import type { UnstyledProp } from "@stark-ui/react-style-context"
 import type { Assign } from "@ark-ui/react"
-import type { ComponentPropsWithRef } from "react"
+import type { ComponentProps, ComponentPropsWithRef } from "react"
 
 const { withProviderSlot, withSlot } = createStyleContext(numberInputClasses, {
   name: "NumberInput",
@@ -81,17 +86,14 @@ const NumberInputInput = withSlot<HTMLInputElement, NumberInputInputProps>(
 )
 
 ///////////////////////////////////////////////////////////////////////////////
-/// TriggerGroup
+/// Addon
 
-type NumberInputTriggerGroupProps = Assign<
-  ComponentPropsWithRef<"div">,
-  UnstyledProp
->
+type NumberInputAddonProps = Assign<ComponentPropsWithRef<"div">, UnstyledProp>
 
-const NumberInputTriggerGroup = withSlot<
-  HTMLDivElement,
-  NumberInputTriggerGroupProps
->("div", "triggerGroup")
+const NumberInputAddon = withSlot<HTMLDivElement, NumberInputAddonProps>(
+  "div",
+  "addon"
+)
 
 ///////////////////////////////////////////////////////////////////////////////
 /// IncrementTrigger
@@ -133,6 +135,56 @@ const NumberInputValueText = withSlot<
 >(ArkNumberInput.ValueText, "valueText")
 
 ///////////////////////////////////////////////////////////////////////////////
+/// Icon
+
+type NumberInputIconProps = Assign<ComponentProps<typeof ark.div>, UnstyledProp>
+
+const NumberInputIcon = withSlot<HTMLDivElement, NumberInputIconProps>(
+  (props: NumberInputIconProps) => {
+    const numberInput = useNumberInputContext()
+    const rootProps = numberInput.getRootProps()
+    const isDisabled =
+      "data-disabled" in rootProps && rootProps["data-disabled"] !== undefined
+
+    return (
+      <ark.div
+        data-input-group-icon
+        data-disabled={attrValue(isDisabled)}
+        {...props}
+      />
+    )
+  },
+  "icon"
+)
+
+///////////////////////////////////////////////////////////////////////////////
+/// Text
+
+type NumberInputTextProps = Assign<
+  ComponentProps<typeof ark.span>,
+  UnstyledProp
+>
+
+const NumberInputText = withSlot<HTMLSpanElement, NumberInputTextProps>(
+  (props: NumberInputTextProps) => {
+    const numberInput = useNumberInputContext()
+    const rootProps = numberInput.getRootProps()
+    const isDisabled =
+      "data-disabled" in rootProps && rootProps["data-disabled"] !== undefined
+
+    return (
+      <ark.span
+        data-input-group-text
+        data-disabled={attrValue(isDisabled)}
+        aria-disabled={isDisabled}
+        {...props}
+      />
+    )
+  },
+  "text"
+)
+
+///////////////////////////////////////////////////////////////////////////////
 /// Context
 
 type NumberInputContextProps = ArkNumberInput.ContextProps
@@ -145,7 +197,8 @@ const NumberInputContext = ArkNumberInput.Context
 export {
   NumberInputContext,
   NumberInputControl,
-  NumberInputTriggerGroup,
+  NumberInputAddon,
+  NumberInputIcon,
   NumberInputDecrementTrigger,
   NumberInputIncrementTrigger,
   NumberInputInput,
@@ -154,17 +207,20 @@ export {
   NumberInputRootProvider,
   NumberInputScrubber,
   NumberInputValueText,
+  NumberInputText,
 }
 export type {
   NumberInputContextProps,
   NumberInputControlProps,
-  NumberInputTriggerGroupProps,
+  NumberInputAddonProps,
   NumberInputDecrementTriggerProps,
   NumberInputIncrementTriggerProps,
   NumberInputInputProps,
+  NumberInputIconProps,
   NumberInputLabelProps,
   NumberInputRootProps,
   NumberInputRootProviderProps,
   NumberInputScrubberProps,
   NumberInputValueTextProps,
+  NumberInputTextProps,
 }

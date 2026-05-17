@@ -1,7 +1,7 @@
 export {
   NumberInputContext as Context,
   NumberInputControl as Control,
-  NumberInputTriggerGroup as TriggerGroup,
+  NumberInputAddon as Addon,
   NumberInputDecrementTrigger as DecrementTrigger,
   NumberInputIncrementTrigger as IncrementTrigger,
   NumberInputInput as Input,
@@ -10,12 +10,14 @@ export {
   NumberInputRootProvider as RootProvider,
   NumberInputScrubber as Scrubber,
   NumberInputValueText as ValueText,
+  NumberInputText as Text,
+  NumberInputIcon as Icon,
 } from "./number-input"
 
 export type {
   NumberInputContextProps as ContextProps,
   NumberInputControlProps as ControlProps,
-  NumberInputTriggerGroupProps as TriggerGroupProps,
+  NumberInputAddonProps as AddonProps,
   NumberInputDecrementTriggerProps as DecrementTriggerProps,
   NumberInputIncrementTriggerProps as IncrementTriggerProps,
   NumberInputInputProps as InputProps,
@@ -24,4 +26,6 @@ export type {
   NumberInputRootProviderProps as RootProviderProps,
   NumberInputScrubberProps as ScrubberProps,
   NumberInputValueTextProps as ValueTextProps,
+  NumberInputTextProps as TextProps,
+  NumberInputIconProps as IconProps,
 } from "./number-input"

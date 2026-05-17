@@ -1,7 +1,7 @@
 export {
   NumberInputContext,
   NumberInputControl,
-  NumberInputTriggerGroup,
+  NumberInputAddon,
   NumberInputDecrementTrigger,
   NumberInputIncrementTrigger,
   NumberInputInput,
@@ -10,12 +10,14 @@ export {
   NumberInputRootProvider,
   NumberInputScrubber,
   NumberInputValueText,
+  NumberInputText,
+  NumberInputIcon,
 } from "./number-input"
 
 export type {
   NumberInputContextProps,
   NumberInputControlProps,
-  NumberInputTriggerGroupProps,
+  NumberInputAddonProps,
   NumberInputDecrementTriggerProps,
   NumberInputIncrementTriggerProps,
   NumberInputInputProps,
@@ -24,6 +26,8 @@ export type {
   NumberInputRootProviderProps,
   NumberInputScrubberProps,
   NumberInputValueTextProps,
+  NumberInputTextProps,
+  NumberInputIconProps,
 } from "./number-input"
 
 export * as NumberInput from "./namespace"

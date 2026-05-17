@@ -1,4 +1,5 @@
 import { NumberInput } from "../"
+import { Button } from "../../button"
 import { GripIcon, MinusIcon, PlusIcon } from "lucide-react"
 
 export default function Formatting() {
@@ -12,18 +13,34 @@ export default function Formatting() {
     >
       <NumberInput.Label>Opacity</NumberInput.Label>
       <NumberInput.Control>
-        <NumberInput.Input data-has-scrubber />
-        <NumberInput.Scrubber>
-          <GripIcon />
+        <NumberInput.Input />
+        <NumberInput.Scrubber asChild>
+          <NumberInput.Addon data-align="inline-start">
+            <NumberInput.Icon>
+              <GripIcon />
+            </NumberInput.Icon>
+          </NumberInput.Addon>
         </NumberInput.Scrubber>
-        <NumberInput.TriggerGroup>
-          <NumberInput.DecrementTrigger aria-label="Decrease quantity">
-            <MinusIcon />
+        <NumberInput.Addon data-align="inline-end">
+          <NumberInput.DecrementTrigger asChild>
+            <Button
+              size="icon-xs"
+              aria-label="Decrease quantity"
+              variant="outline"
+            >
+              <MinusIcon />
+            </Button>
           </NumberInput.DecrementTrigger>
-          <NumberInput.IncrementTrigger aria-label="Increase quantity">
-            <PlusIcon />
+          <NumberInput.IncrementTrigger asChild>
+            <Button
+              size="icon-xs"
+              aria-label="Increase quantity"
+              variant="outline"
+            >
+              <PlusIcon />
+            </Button>
           </NumberInput.IncrementTrigger>
-        </NumberInput.TriggerGroup>
+        </NumberInput.Addon>
       </NumberInput.Control>
     </NumberInput.Root>
   )

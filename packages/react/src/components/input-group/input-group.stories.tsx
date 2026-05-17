@@ -1,5 +1,6 @@
 import BasicExample from "./examples/basic"
 import DisabledExample from "./examples/disabled"
+import InputFieldExample from "./examples/input-field"
 import InvalidExample from "./examples/invalid"
 
 export default {
@@ -16,4 +17,8 @@ export const Disabled = {
 
 export const Invalid = {
   render: () => <InvalidExample />,
+}
+
+export const InputField = {
+  render: () => <InputFieldExample />,
 }

@@ -4,16 +4,16 @@ import type { VariantProps } from "tailwind-variants/lite"
 
 export const numberInputClasses = tv({
   slots: {
-    control: "number-input-control",
-    decrementTrigger:
-      "button button--icon-xs button--outline number-input-decrement-trigger",
-    incrementTrigger:
-      "button button--icon-xs button--outline number-input-increment-trigger",
-    input: "base-input number-input-input",
-    label: "number-input-label",
-    root: "number-input",
+    addon: "input-group-addon number-input-addon",
+    control: "input-group number-input-control",
+    decrementTrigger: "input-group-button number-input-decrement-trigger",
+    icon: "input-group-icon number-input-icon",
+    incrementTrigger: "input-group-button number-input-increment-trigger",
+    input: "input-group-input number-input-input",
+    label: "field-label number-input-label",
+    root: "field number-input",
     scrubber: "number-input-scrubber",
-    triggerGroup: "number-input-trigger-group",
+    text: "input-group-text number-input-text",
     valueText: "number-input-value-text",
   },
 })
