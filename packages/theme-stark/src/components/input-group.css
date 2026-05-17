@@ -72,7 +72,11 @@
     }
 
     @variant disabled {
-      @apply border-background-inactive text-foreground-inactive placeholder:text-foreground-inactive;
+      @apply border-background-inactive text-foreground-inactive;
+
+      @variant placeholder {
+        @apply text-foreground-inactive;
+      }
     }
   }
 
