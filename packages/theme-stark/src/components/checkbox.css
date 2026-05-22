@@ -1,0 +1,77 @@
+@layer components {
+  .checkbox {
+    @apply flex-row items-center gap-2;
+  }
+
+  .checkbox-control {
+    @apply flex size-4 items-center justify-center rounded-xs border border-border bg-background-secondary;
+
+    @variant not-data-focus-visible {
+      @apply transition-[color,background-color,border-color] duration-100 ease-out;
+    }
+
+    @variant data-focus-visible {
+      @apply focus-visible;
+    }
+
+    @variant data-invalid {
+      @apply border-foreground-danger-soft;
+
+      @variant data-focus-visible {
+        @apply outline-foreground-danger-soft/56;
+
+        @variant white {
+          @apply outline-foreground-danger-soft/36;
+        }
+      }
+    }
+  }
+
+  .checkbox-indicator {
+    @variant icon {
+      @apply size-3;
+    }
+  }
+
+  .checkbox-label {
+  }
+
+  .checkbox-hidden-input {
+  }
+
+  :where(.checkbox) {
+    @apply checkbox--primary;
+  }
+}
+
+@utility checkbox--primary {
+  .checkbox-control {
+    @variant data-[state=checked], data-[state=indeterminate] {
+      @apply border-foreground bg-foreground text-background;
+
+      @variant data-disabled {
+        @apply border-background-inactive bg-background-inactive text-foreground-inactive;
+      }
+    }
+
+    @variant data-disabled {
+      @apply border-background-inactive bg-transparent;
+    }
+  }
+}
+
+@utility checkbox--accent {
+  .checkbox-control {
+    @variant data-[state=checked], data-[state=indeterminate] {
+      @apply border-background-accent bg-background-accent text-foreground-accent;
+
+      @variant data-disabled {
+        @apply border-background-inactive bg-background-inactive text-foreground-inactive;
+      }
+    }
+
+    @variant data-disabled {
+      @apply border-background-inactive bg-transparent;
+    }
+  }
+}
