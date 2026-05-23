@@ -1,0 +1,112 @@
+@layer components {
+  .radio-group {
+  }
+
+  .radio-group-indicator {
+  }
+
+  .radio-group-label {
+  }
+
+  .radio-group-item {
+    @apply flex items-center gap-2;
+  }
+
+  .radio-group-item-control {
+    @apply relative size-4 rounded-full border border-border bg-background-secondary;
+
+    @variant not-data-focus-visible {
+      @apply transition-[color,background-color,border-color] duration-100 ease-out;
+
+      @variant before {
+        @apply transition-opacity duration-100 ease-out;
+      }
+    }
+
+    @variant data-focus-visible {
+      @apply focus-visible;
+    }
+
+    @variant before {
+      @apply absolute inset-0 m-auto size-2.5 rounded-full opacity-0 content-[""];
+    }
+
+    @variant data-[state=checked]:before {
+      @apply opacity-100;
+    }
+  }
+
+  .radio-group-item-text {
+  }
+
+  .radio-group-item-hidden-input {
+  }
+
+  :where(.radio-group) {
+    @apply radio-group--primary;
+  }
+}
+
+@utility radio-group--primary {
+  .radio-group-item-control {
+    @variant before {
+      @apply bg-foreground;
+    }
+
+    @variant data-invalid {
+      @apply border-foreground-danger-soft;
+
+      @variant data-focus-visible {
+        @apply outline-foreground-danger-soft/56;
+
+        @variant white {
+          @apply outline-foreground-danger-soft/36;
+        }
+      }
+    }
+
+    @variant data-[state=checked] {
+      @apply border-foreground;
+    }
+
+    @variant data-disabled {
+      @apply border-background-inactive bg-transparent;
+
+      @variant before {
+        @apply bg-background-inactive;
+      }
+    }
+  }
+}
+
+@utility radio-group--accent {
+  .radio-group-item-control {
+    @variant before {
+      @apply bg-background-accent;
+    }
+
+    @variant data-invalid {
+      @apply border-foreground-danger-soft;
+
+      @variant data-focus-visible {
+        @apply outline-foreground-danger-soft/56;
+
+        @variant white {
+          @apply outline-foreground-danger-soft/36;
+        }
+      }
+    }
+
+    @variant data-[state=checked] {
+      @apply border-background-accent;
+    }
+
+    @variant data-disabled {
+      @apply border-background-inactive bg-transparent;
+
+      @variant before {
+        @apply bg-background-inactive;
+      }
+    }
+  }
+}
