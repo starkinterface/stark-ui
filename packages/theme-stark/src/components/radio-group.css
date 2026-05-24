@@ -28,7 +28,7 @@
     }
 
     @variant before {
-      @apply absolute inset-0 m-auto size-2.5 rounded-full opacity-0 content-[""];
+      @apply absolute inset-0 m-auto size-2 rounded-full border opacity-0 content-[""];
     }
 
     @variant data-[state=checked]:before {
@@ -50,7 +50,7 @@
 @utility radio-group--primary {
   .radio-group-item-control {
     @variant before {
-      @apply bg-foreground;
+      @apply border-background bg-foreground;
     }
 
     @variant data-invalid {
@@ -66,14 +66,14 @@
     }
 
     @variant data-[state=checked] {
-      @apply border-foreground;
+      @apply border-transparent bg-foreground;
     }
 
     @variant data-disabled {
       @apply border-background-inactive bg-transparent;
 
       @variant before {
-        @apply bg-background-inactive;
+        @apply border-transparent bg-background-inactive;
       }
     }
   }
@@ -82,7 +82,7 @@
 @utility radio-group--accent {
   .radio-group-item-control {
     @variant before {
-      @apply bg-background-accent;
+      @apply border-foreground-accent bg-background-accent;
     }
 
     @variant data-invalid {
@@ -98,14 +98,14 @@
     }
 
     @variant data-[state=checked] {
-      @apply border-background-accent;
+      @apply border-transparent bg-background-accent;
     }
 
     @variant data-disabled {
       @apply border-background-inactive bg-transparent;
 
       @variant before {
-        @apply bg-background-inactive;
+        @apply border-transparent bg-background-inactive;
       }
     }
   }
