@@ -34,6 +34,10 @@
     @variant data-[state=checked]:before {
       @apply opacity-100;
     }
+
+    @variant data-hover:not-disabled:not-data-[state=checked], data-focus-visible {
+      @apply border-ring;
+    }
   }
 
   .radio-group-item-text {

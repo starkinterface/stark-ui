@@ -25,6 +25,10 @@
         }
       }
     }
+
+    @variant data-hover:not-disabled:not-data-[state=checked]:not-data-[state=indeterminate], data-focus-visible {
+      @apply border-ring;
+    }
   }
 
   .checkbox-indicator {
