@@ -58,7 +58,7 @@
   }
 
   .slider-thumb {
-    @apply relative z-2 flex h-4 w-4 items-center justify-center rounded-xs border bg-background;
+    @apply relative z-2 flex h-4 w-4 items-center justify-center rounded-xs border bg-background-secondary;
 
     @variant not-focus-visible {
       @apply transition-[border-color] duration-150 ease-out;
@@ -211,10 +211,10 @@
     @apply border-border;
 
     @variant data-disabled {
-      @apply border-background-inactive;
+      @apply border-foreground-inactive;
 
       &::after {
-        background-color: var(--color-background-inactive);
+        background-color: var(--color-foreground-inactive);
       }
     }
 
