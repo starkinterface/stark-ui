@@ -1,0 +1,137 @@
+@layer components {
+  .calendar {
+  }
+
+  .calendar-view {
+    @apply flex w-fit flex-col rounded-xs border border-border p-2;
+  }
+
+  .calendar-view-control {
+    @apply flex w-full items-center justify-between;
+  }
+
+  .calendar-prev-trigger,
+  .calendar-next-trigger,
+  .calendar-view-trigger,
+  .calendar-table-cell-trigger {
+    @apply base-button base-button--ghost;
+  }
+
+  .calendar-prev-trigger,
+  .calendar-next-trigger,
+  .calendar-table-cell-trigger {
+    @apply base-button--icon-md;
+  }
+
+  .calendar-view-trigger {
+    @apply base-button--md;
+  }
+
+  .calendar-range-text {
+  }
+
+  .calendar-table {
+    @apply w-full border-collapse;
+  }
+
+  .calendar-table-head {
+  }
+
+  .calendar-table-body {
+    @apply flex flex-col gap-1;
+  }
+
+  .calendar-table-row {
+    @apply flex flex-row gap-1;
+  }
+
+  .calendar-table-header {
+    @apply flex size-8 items-center justify-center text-xs font-normal text-foreground-muted;
+  }
+
+  .calendar-table-cell {
+    @apply flex size-8 items-center justify-center p-0;
+  }
+
+  .calendar-table-cell-trigger {
+    @variant data-focus {
+      @apply bg-background-secondary;
+    }
+
+    @variant data-in-range:not-data-unavailable {
+      @apply bg-background-secondary;
+
+      @variant not-data-range-start:not-data-range-end:not-data-hover-range-end:not-data-hover-range-start {
+        @apply rounded-none;
+      }
+
+      @variant data-range-start:not-data-range-end:not-data-hover-range-start:not-data-hover-range-end {
+        @apply rounded-r-none;
+      }
+
+      @variant data-range-end:not-data-range-start:not-data-hover-range-start:not-data-hover-range-end {
+        @apply rounded-l-none;
+      }
+
+      @variant data-hover-range-start:not-data-hover-range-end {
+        @apply rounded-r-none;
+      }
+
+      @variant data-hover-range-end:not-data-hover-range-start {
+        @apply rounded-l-none;
+      }
+
+      @variant data-disabled {
+        @apply bg-background-secondary/50;
+      }
+
+      @variant data-hover-range-end:not-data-selected, data-hover-range-start:not-data-selected {
+        @apply bg-background-secondary-hover;
+      }
+
+      @variant hover:not-disabled:not-loading:not-data-disabled {
+        @apply bg-background-secondary-hover;
+      }
+    }
+
+    @variant data-unavailable {
+      @apply cursor-not-allowed line-through;
+    }
+  }
+
+  :where(.calendar) {
+    @apply calendar--primary;
+  }
+}
+
+@utility calendar--primary {
+  .calendar-table-cell-trigger {
+    @variant data-today {
+      @apply base-button--outline;
+    }
+
+    @variant data-selected {
+      @apply base-button--primary;
+
+      @variant data-today {
+        @apply base-button--primary;
+      }
+    }
+  }
+}
+
+@utility calendar--accent {
+  .calendar-table-cell-trigger {
+    @variant data-today {
+      @apply base-button--outline;
+    }
+
+    @variant data-selected {
+      @apply base-button--accent;
+
+      @variant data-today {
+        @apply base-button--accent;
+      }
+    }
+  }
+}
