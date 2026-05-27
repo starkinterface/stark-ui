@@ -241,14 +241,9 @@ describe("display-name utils", () => {
   })
 
   it("prefers displayName over function name", () => {
-    const Named = Object.assign(
-      function Label() {
-        return null
-      },
-      {
-        displayName: "PopoverLabel",
-      }
-    )
+    const Named = Object.assign(() => null, {
+      displayName: "PopoverLabel",
+    })
 
     expect(getElementTypeName(Named)).toBe("PopoverLabel")
   })
