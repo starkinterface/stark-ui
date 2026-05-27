@@ -1,0 +1,275 @@
+@utility base-button {
+  @apply relative inline-flex shrink-0 appearance-none items-center justify-center rounded-xs border py-0 align-middle font-mono font-medium whitespace-nowrap uppercase;
+  @apply select-none;
+
+  @variant not-focus-visible {
+    @apply transition-[color,background-color,border-color,translate] duration-100 ease-out;
+  }
+
+  @variant active:not-disabled:not-loading:not-data-disabled {
+    @apply translate-y-px;
+  }
+
+  @variant focus-visible {
+    @apply focus-visible;
+  }
+
+  @variant loading:loader {
+    @apply absolute inset-auto text-foreground-muted;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Loading
+ * ---------------------------------------------------------------------------- */
+@utility base-button--loading {
+  @apply relative;
+}
+
+/* ----------------------------------------------------------------------------
+ * Variants
+ * ---------------------------------------------------------------------------- */
+
+@utility base-button--primary {
+  @apply border-transparent bg-background-primary text-foreground-primary;
+
+  @variant hover:not-disabled:not-loading:not-data-disabled {
+    @apply bg-background-primary-hover;
+  }
+
+  @variant disabled, data-disabled {
+    @apply bg-background-inactive text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-background-inactive text-transparent;
+  }
+}
+
+@utility base-button--secondary {
+  @apply border-transparent bg-background-secondary text-foreground-secondary;
+
+  @variant hover:not-disabled:not-loading:not-data-disabled {
+    @apply bg-background-secondary-hover;
+  }
+
+  @variant disabled, data-disabled {
+    @apply bg-background-inactive text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-background-inactive text-transparent;
+  }
+}
+
+@utility base-button--ghost {
+  @apply border-transparent bg-transparent text-foreground;
+
+  @variant hover:not-disabled:not-loading:not-data-disabled {
+    @apply bg-background-secondary;
+  }
+
+  @variant disabled, data-disabled {
+    @apply bg-transparent text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-transparent text-transparent;
+  }
+}
+
+@utility base-button--outline {
+  @apply border-border bg-transparent text-foreground;
+
+  @variant hover:not-disabled:not-loading:not-data-disabled {
+    @apply bg-background-secondary;
+  }
+
+  @variant disabled, data-disabled {
+    @apply border-background-inactive bg-transparent text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply border-background-inactive bg-transparent text-transparent;
+  }
+}
+
+@utility base-button--accent {
+  @apply border-transparent bg-background-accent text-foreground-accent;
+
+  @variant hover:not-disabled:not-loading:not-data-disabled {
+    @apply bg-background-accent-hover;
+  }
+
+  @variant disabled, data-disabled {
+    @apply bg-background-inactive text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-background-inactive text-transparent;
+  }
+}
+
+@utility base-button--danger {
+  @apply border-transparent bg-background-danger text-foreground-danger;
+
+  @variant hover:not-disabled:not-loading:not-data-disabled {
+    @apply bg-background-danger-hover;
+  }
+
+  @variant disabled, data-disabled {
+    @apply bg-background-inactive text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-background-inactive text-transparent;
+  }
+}
+
+@utility base-button--danger-soft {
+  @apply border-transparent bg-background-danger-soft text-foreground-danger-soft;
+
+  @variant hover:not-disabled:not-loading:not-data-disabled {
+    @apply bg-background-danger-soft-hover text-foreground-danger-soft-hover;
+  }
+
+  @variant disabled, data-disabled {
+    @apply bg-background-inactive text-foreground-inactive;
+  }
+
+  @variant loading {
+    @apply bg-background-inactive text-transparent;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Sizes
+ * ---------------------------------------------------------------------------- */
+
+@utility base-button--xs {
+  @apply h-6 w-auto min-w-6 gap-1.5 px-2 text-xs;
+
+  @variant has-icon-start {
+    @apply ps-1.5;
+  }
+
+  @variant has-icon-end {
+    @apply pe-1.5;
+  }
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
+
+@utility base-button--sm {
+  @apply h-7 w-auto min-w-7 gap-1.75 px-2.25 text-xs;
+
+  @variant has-icon-start {
+    @apply ps-1.75;
+  }
+
+  @variant has-icon-end {
+    @apply pe-1.75;
+  }
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
+
+@utility base-button--md {
+  @apply h-8 w-auto min-w-8 gap-2 px-2.5 text-sm;
+
+  @variant has-icon-start {
+    @apply ps-2;
+  }
+
+  @variant has-icon-end {
+    @apply pe-2;
+  }
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
+
+@utility base-button--lg {
+  @apply h-9 w-auto min-w-9 gap-2.5 px-3 text-sm;
+
+  @variant has-icon-start {
+    @apply ps-2.5;
+  }
+
+  @variant has-icon-end {
+    @apply pe-2.5;
+  }
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
+
+@utility base-button--icon-xs {
+  @apply size-6 min-w-6 px-0 text-xs;
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
+
+@utility base-button--icon-sm {
+  @apply size-7 min-w-7 px-0 text-xs;
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
+
+@utility base-button--icon-md {
+  @apply size-8 min-w-8 px-0 text-sm;
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}
+
+@utility base-button--icon-lg {
+  @apply size-9 min-w-9 px-0 text-sm;
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant loader {
+    @apply size-4;
+  }
+}

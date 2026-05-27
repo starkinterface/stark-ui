@@ -1,0 +1,7 @@
+@utility focus-visible {
+  @apply outline-2 outline-offset-1 outline-ring;
+
+  @variant white {
+    @apply outline-ring/48;
+  }
+}
