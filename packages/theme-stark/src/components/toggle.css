@@ -1,8 +1,82 @@
 @layer components {
+  .toggle {
+    @apply base-button;
+  }
+
   /* ----------------------------------------------------------------------------
    * Default Variants
    * ---------------------------------------------------------------------------- */
   :where(.toggle) {
-    @apply button--outline data-[state=on]:button--primary;
+    @apply base-button--md;
+    @apply toggle--outline;
+    @apply toggle--active-primary;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Sizes
+ * ---------------------------------------------------------------------------- */
+
+@utility toggle--icon-lg {
+  @apply base-button--icon-lg;
+}
+
+@utility toggle--icon-md {
+  @apply base-button--icon-md;
+}
+
+@utility toggle--icon-sm {
+  @apply base-button--icon-sm;
+}
+
+@utility toggle--icon-xs {
+  @apply base-button--icon-xs;
+}
+
+@utility toggle--lg {
+  @apply base-button--lg;
+}
+
+@utility toggle--md {
+  @apply base-button--md;
+}
+
+@utility toggle--sm {
+  @apply base-button--sm;
+}
+
+@utility toggle--xs {
+  @apply base-button--xs;
+}
+
+/* ----------------------------------------------------------------------------
+ * Variant
+ * ---------------------------------------------------------------------------- */
+
+@utility toggle--ghost {
+  @apply base-button--ghost;
+}
+
+@utility toggle--outline {
+  @apply base-button--outline;
+}
+
+@utility toggle--secondary {
+  @apply base-button--secondary;
+}
+
+/* ----------------------------------------------------------------------------
+ * Variant Active
+ * ---------------------------------------------------------------------------- */
+
+@utility toggle--active-primary {
+  @variant data-[state=on] {
+    @apply base-button--primary;
+  }
+}
+
+@utility toggle--active-accent {
+  @variant data-[state=on] {
+    @apply base-button--accent;
   }
 }

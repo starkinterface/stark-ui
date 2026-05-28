@@ -9,7 +9,7 @@ export const comboboxClasses = tv({
     control: "combobox-control",
     emptyText: "combobox-empty-text",
     indicator: "combobox-indicator",
-    input: "base-input combobox-input",
+    input: "combobox-input",
     item: "combobox-item",
     itemGroup: "combobox-item-group",
     itemGroupLabel: "combobox-item-group-label",

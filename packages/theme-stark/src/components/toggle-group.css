@@ -1,4 +1,12 @@
 @layer components {
+  .toggle-group {
+    @apply base-group;
+  }
+
+  .toggle-group-item {
+    @apply base-button base-button--md base-button--secondary;
+  }
+
   /* ----------------------------------------------------------------------------
    * Default Variants
    * ---------------------------------------------------------------------------- */
@@ -6,21 +14,127 @@
     @apply base-group--horizontal;
     @apply base-group--separated;
     @apply toggle-group--active-primary;
+  }
+}
 
-    :where(.button) {
-      @apply button--secondary;
+/* ----------------------------------------------------------------------------
+ * Spacing
+ * ---------------------------------------------------------------------------- */
+
+@utility toggle-group--attached {
+  @apply base-group--attached;
+}
+
+@utility toggle-group--regular {
+  @apply base-group--regular;
+}
+
+@utility toggle-group--separated {
+  @apply base-group--separated;
+}
+
+/* ----------------------------------------------------------------------------
+ * Sizes
+ * ---------------------------------------------------------------------------- */
+
+@utility toggle-group--icon-lg {
+  .toggle-group-item {
+    @apply base-button--icon-lg;
+  }
+}
+
+@utility toggle-group--icon-md {
+  .toggle-group-item {
+    @apply base-button--icon-md;
+  }
+}
+
+@utility toggle-group--icon-sm {
+  .toggle-group-item {
+    @apply base-button--icon-sm;
+  }
+}
+
+@utility toggle-group--icon-xs {
+  .toggle-group-item {
+    @apply base-button--icon-xs;
+  }
+}
+
+@utility toggle-group--lg {
+  .toggle-group-item {
+    @apply base-button--lg;
+  }
+}
+
+@utility toggle-group--md {
+  .toggle-group-item {
+    @apply base-button--md;
+  }
+}
+
+@utility toggle-group--sm {
+  .toggle-group-item {
+    @apply base-button--sm;
+  }
+}
+
+@utility toggle-group--xs {
+  .toggle-group-item {
+    @apply base-button--xs;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Orientation
+ * ---------------------------------------------------------------------------- */
+
+@utility toggle-group--horizontal {
+  @apply base-group--horizontal;
+}
+
+@utility toggle-group--vertical {
+  @apply base-group--vertical;
+}
+
+/* ----------------------------------------------------------------------------
+ * Variant
+ * ---------------------------------------------------------------------------- */
+
+@utility toggle-group--ghost {
+  .toggle-group-item {
+    @apply base-button--ghost;
+  }
+}
+
+@utility toggle-group--outline {
+  .toggle-group-item {
+    @apply base-button--outline;
+  }
+}
+
+@utility toggle-group--secondary {
+  .toggle-group-item {
+    @apply base-button--secondary;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Variant Active
+ * ---------------------------------------------------------------------------- */
+
+@utility toggle-group--active-primary {
+  .toggle-group-item {
+    @variant data-[state=on] {
+      @apply base-button--primary;
     }
   }
 }
 
-@utility toggle-group--active-primary {
-  :where(.button) {
-    @apply data-[state=on]:button--primary;
-  }
-}
-
 @utility toggle-group--active-accent {
-  :where(.button) {
-    @apply data-[state=on]:button--accent;
+  .toggle-group-item {
+    @variant data-[state=on] {
+      @apply base-button--accent;
+    }
   }
 }

@@ -16,6 +16,7 @@
   }
 
   .combobox-input {
+    @apply base-input;
     @apply pe-8;
 
     @variant data-has-clear-trigger {

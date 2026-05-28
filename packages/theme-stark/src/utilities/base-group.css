@@ -1,7 +1,5 @@
-@layer components {
-  .base-group {
-    @apply isolate flex items-center;
-  }
+@utility base-group {
+  @apply isolate flex items-center;
 }
 
 /* ----------------------------------------------------------------------------

@@ -1,5 +1,6 @@
 @layer components {
   .textarea {
+    @apply base-input;
     @apply py-1.25;
 
     @variant disabled {

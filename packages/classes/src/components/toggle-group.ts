@@ -4,64 +4,64 @@ import type { VariantProps } from "tailwind-variants/lite"
 
 export const toggleGroupClasses = tv({
   slots: {
-    item: "button",
-    root: "base-group toggle-group",
+    item: "toggle-group-item",
+    root: "toggle-group",
   },
   variants: {
     orientation: {
       horizontal: {
-        root: "base-group--horizontal",
+        root: "toggle-group--horizontal",
       },
       vertical: {
-        root: "base-group--vertical",
+        root: "toggle-group--vertical",
       },
     },
     size: {
       "icon-lg": {
-        item: "button--icon-lg",
+        root: "toggle-group--icon-lg",
       },
       "icon-md": {
-        item: "button--icon-md",
+        root: "toggle-group--icon-md",
       },
       "icon-sm": {
-        item: "button--icon-sm",
+        root: "toggle-group--icon-sm",
       },
       "icon-xs": {
-        item: "button--icon-xs",
+        root: "toggle-group--icon-xs",
       },
       lg: {
-        item: "button--lg",
+        root: "toggle-group--lg",
       },
       md: {
-        item: "button--md",
+        root: "toggle-group--md",
       },
       sm: {
-        item: "button--sm",
+        root: "toggle-group--sm",
       },
       xs: {
-        item: "button--xs",
+        root: "toggle-group--xs",
       },
     },
     spacing: {
       attached: {
-        root: "base-group--attached",
+        root: "toggle-group--attached",
       },
       regular: {
-        root: "base-group--regular",
+        root: "toggle-group--regular",
       },
       separated: {
-        root: "base-group--separated",
+        root: "toggle-group--separated",
       },
     },
     variant: {
       ghost: {
-        item: "button--ghost",
+        root: "toggle-group--ghost",
       },
       outline: {
-        item: "button--outline",
+        root: "toggle-group--outline",
       },
       secondary: {
-        item: "button--secondary",
+        root: "toggle-group--secondary",
       },
     },
     variantActive: {

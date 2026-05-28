@@ -7,3 +7,6 @@
  * Base component as utilities
  * ---------------------------------------------------------------------------- */
 @import "./base-button.css";
+@import "./base-input.css";
+@import "./base-group.css";
+@import "./base-input-group.css";

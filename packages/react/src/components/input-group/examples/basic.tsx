@@ -164,7 +164,7 @@ export default function Basic() {
           className="border-t border-border data-disabled:border-background-inactive"
         >
           <InputGroup.Text>0/1.200 words used</InputGroup.Text>
-          <InputGroup.Button className="ml-auto" size="sm">
+          <InputGroup.Button className="ml-auto" size="xs">
             Save
           </InputGroup.Button>
         </InputGroup.Addon>

@@ -1,9 +1,33 @@
 @layer components {
+  .button-group {
+    @apply base-group;
+  }
+
   /* ----------------------------------------------------------------------------
    * Default Variants
    * ---------------------------------------------------------------------------- */
   :where(.button-group) {
-    @apply base-group--horizontal;
-    @apply base-group--regular;
+    @apply button-group--horizontal;
+    @apply button-group--regular;
   }
+}
+
+@utility button-group--horizontal {
+  @apply base-group--horizontal;
+}
+
+@utility button-group--vertical {
+  @apply base-group--vertical;
+}
+
+@utility button-group--attached {
+  @apply base-group--attached;
+}
+
+@utility button-group--regular {
+  @apply base-group--regular;
+}
+
+@utility button-group--separated {
+  @apply base-group--separated;
 }

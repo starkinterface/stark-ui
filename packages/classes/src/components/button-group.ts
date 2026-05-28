@@ -3,16 +3,16 @@ import { tv } from "tailwind-variants/lite"
 import type { VariantProps } from "tailwind-variants/lite"
 
 export const buttonGroupClasses = tv({
-  base: "base-group button-group",
+  base: "button-group",
   variants: {
     orientation: {
-      horizontal: "base-group--horizontal",
-      vertical: "base-group--vertical",
+      horizontal: "button-group--horizontal",
+      vertical: "button-group--vertical",
     },
     spacing: {
-      attached: "base-group--attached",
-      regular: "base-group--regular",
-      separated: "base-group--separated",
+      attached: "button-group--attached",
+      regular: "button-group--regular",
+      separated: "button-group--separated",
     },
   },
 })

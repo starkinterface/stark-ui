@@ -5,52 +5,52 @@ import type { VariantProps } from "tailwind-variants/lite"
 export const toggleClasses = tv({
   slots: {
     indicator: "toggle-indicator",
-    root: "button toggle",
+    root: "toggle",
   },
   variants: {
     size: {
       "icon-lg": {
-        root: "button--icon-lg",
+        root: "toggle--icon-lg",
       },
       "icon-md": {
-        root: "button--icon-md",
+        root: "toggle--icon-md",
       },
       "icon-sm": {
-        root: "button--icon-sm",
+        root: "toggle--icon-sm",
       },
       "icon-xs": {
-        root: "button--icon-xs",
+        root: "toggle--icon-xs",
       },
       lg: {
-        root: "button--lg",
+        root: "toggle--lg",
       },
       md: {
-        root: "button--md",
+        root: "toggle--md",
       },
       sm: {
-        root: "button--sm",
+        root: "toggle--sm",
       },
       xs: {
-        root: "button--xs",
+        root: "toggle--xs",
       },
     },
     variant: {
       ghost: {
-        root: "button--ghost",
+        root: "toggle--ghost",
       },
       outline: {
-        root: "button--outline",
+        root: "toggle--outline",
       },
       secondary: {
-        root: "button--secondary",
+        root: "toggle--secondary",
       },
     },
     variantActive: {
       accent: {
-        root: "data-[state=on]:button--accent",
+        root: "toggle--active-accent",
       },
       primary: {
-        root: "data-[state=on]:button--primary",
+        root: "toggle--active-primary",
       },
     },
   },

@@ -1,5 +1,4 @@
 import { NumberInput } from "../"
-import { Button } from "../../button"
 import { GripIcon, MinusIcon, PlusIcon } from "lucide-react"
 
 export default function Formatting() {
@@ -22,23 +21,11 @@ export default function Formatting() {
           </NumberInput.Addon>
         </NumberInput.Scrubber>
         <NumberInput.Addon data-align="inline-end">
-          <NumberInput.DecrementTrigger asChild>
-            <Button
-              size="icon-xs"
-              aria-label="Decrease quantity"
-              variant="outline"
-            >
-              <MinusIcon />
-            </Button>
+          <NumberInput.DecrementTrigger aria-label="Decrease quantity">
+            <MinusIcon />
           </NumberInput.DecrementTrigger>
-          <NumberInput.IncrementTrigger asChild>
-            <Button
-              size="icon-xs"
-              aria-label="Increase quantity"
-              variant="outline"
-            >
-              <PlusIcon />
-            </Button>
+          <NumberInput.IncrementTrigger aria-label="Increase quantity">
+            <PlusIcon />
           </NumberInput.IncrementTrigger>
         </NumberInput.Addon>
       </NumberInput.Control>

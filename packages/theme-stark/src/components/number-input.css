@@ -1,2 +1,41 @@
 @layer components {
+  .number-input {
+  }
+
+  .number-input-label {
+  }
+
+  .number-input-scrubber {
+  }
+
+  .number-input-control {
+    @apply base-input-group;
+  }
+
+  .number-input-input {
+    @apply base-input-group-input;
+  }
+
+  .number-input-decrement-trigger {
+    @apply base-button base-button--icon-xs base-button--outline;
+  }
+
+  .number-input-increment-trigger {
+    @apply base-button base-button--icon-xs base-button--outline;
+  }
+
+  .number-input-value-text {
+    @apply base-input-group-text;
+  }
+
+  .number-input-addon {
+    @apply base-input-group-addon;
+  }
+
+  .number-input-text {
+  }
+
+  .number-input-icon {
+    @apply base-input-group-icon;
+  }
 }

@@ -106,7 +106,11 @@ type NumberInputIncrementTriggerProps = Assign<
 const NumberInputIncrementTrigger = withSlot<
   HTMLButtonElement,
   NumberInputIncrementTriggerProps
->(ArkNumberInput.IncrementTrigger, "incrementTrigger")
+>(ArkNumberInput.IncrementTrigger, "incrementTrigger", {
+  defaultProps: {
+    "data-button": "",
+  } as Partial<NumberInputIncrementTriggerProps>,
+})
 
 ///////////////////////////////////////////////////////////////////////////////
 /// DecrementTrigger
@@ -119,7 +123,11 @@ type NumberInputDecrementTriggerProps = Assign<
 const NumberInputDecrementTrigger = withSlot<
   HTMLButtonElement,
   NumberInputDecrementTriggerProps
->(ArkNumberInput.DecrementTrigger, "decrementTrigger")
+>(ArkNumberInput.DecrementTrigger, "decrementTrigger", {
+  defaultProps: {
+    "data-button": "",
+  } as Partial<NumberInputIncrementTriggerProps>,
+})
 
 ///////////////////////////////////////////////////////////////////////////////
 /// ValueText

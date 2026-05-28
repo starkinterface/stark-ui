@@ -1,5 +1,6 @@
 @layer components {
   .input {
+    @apply base-input;
     @apply h-8;
 
     @variant file {
