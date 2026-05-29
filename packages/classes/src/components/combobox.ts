@@ -15,9 +15,9 @@ export const comboboxClasses = tv({
     itemGroupLabel: "combobox-item-group-label",
     itemIndicator: "combobox-item-indicator",
     itemText: "combobox-item-text",
-    label: "field-label combobox-label",
+    label: "combobox-label",
     positioner: "combobox-positioner",
-    root: "field combobox",
+    root: "combobox",
     trigger: "combobox-trigger",
   },
 })

@@ -1,14 +1,10 @@
 @layer components {
   .field {
-    @apply flex flex-col gap-1;
+    @apply base-field;
   }
 
   .field-label {
-    @apply text-sm text-foreground;
-
-    @variant data-disabled {
-      @apply text-foreground-inactive;
-    }
+    @apply base-field-label;
   }
 
   .field-helper-text {

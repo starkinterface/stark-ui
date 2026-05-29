@@ -7,8 +7,8 @@ export const pinInputClasses = tv({
     control: "pin-input-control",
     hiddenInput: "pin-input-hidden-input",
     input: "pin-input-input",
-    label: "field-label pin-input-label",
-    root: "field pin-input",
+    label: "pin-input-label",
+    root: "pin-input",
   },
 })
 

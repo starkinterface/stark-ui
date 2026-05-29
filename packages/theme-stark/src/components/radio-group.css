@@ -1,11 +1,13 @@
 @layer components {
   .radio-group {
+    @apply base-field;
   }
 
   .radio-group-indicator {
   }
 
   .radio-group-label {
+    @apply base-field-label;
   }
 
   .radio-group-item {
@@ -41,6 +43,7 @@
   }
 
   .radio-group-item-text {
+    @apply base-field-label;
   }
 
   .radio-group-item-hidden-input {

@@ -1,0 +1,11 @@
+@utility base-field {
+  @apply flex flex-col gap-1;
+}
+
+@utility base-field-label {
+  @apply text-sm text-foreground;
+
+  @variant data-disabled {
+    @apply text-foreground-inactive;
+  }
+}

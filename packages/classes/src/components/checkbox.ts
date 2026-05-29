@@ -7,8 +7,8 @@ export const checkboxClasses = tv({
     control: "checkbox-control",
     hiddenInput: "checkbox-hidden-input",
     indicator: "checkbox-indicator",
-    label: "field-label checkbox-label",
-    root: "field checkbox",
+    label: "checkbox-label",
+    root: "checkbox",
   },
   variants: {
     variant: {

@@ -1,8 +1,10 @@
 @layer components {
   .number-input {
+    @apply base-field;
   }
 
   .number-input-label {
+    @apply base-field-label;
   }
 
   .number-input-scrubber {

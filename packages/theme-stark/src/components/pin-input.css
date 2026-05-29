@@ -1,8 +1,10 @@
 @layer components {
   .pin-input {
+    @apply base-field;
   }
 
   .pin-input-label {
+    @apply base-field-label;
   }
 
   .pin-input-control {

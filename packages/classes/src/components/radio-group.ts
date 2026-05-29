@@ -8,9 +8,9 @@ export const radioGroupClasses = tv({
     item: "radio-group-item",
     itemControl: "radio-group-item-control",
     itemHiddenInput: "radio-group-item-hidden-input",
-    itemText: "field-label radio-group-item-text",
-    label: "field-label radio-group-label",
-    root: "field radio-group",
+    itemText: "radio-group-item-text",
+    label: "radio-group-label",
+    root: "radio-group",
   },
   variants: {
     variant: {
