@@ -4,7 +4,7 @@ import type { VariantProps } from "tailwind-variants/lite"
 
 export const comboboxClasses = tv({
   slots: {
-    clearTrigger: "button button--icon-xs button--ghost combobox-clear-trigger",
+    clearTrigger: "combobox-clear-trigger",
     content: "combobox-content",
     control: "combobox-control",
     emptyText: "combobox-empty-text",
