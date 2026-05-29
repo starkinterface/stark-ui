@@ -23,7 +23,7 @@ export default function Disabled() {
       >
         <Select.Label>Main Technology</Select.Label>
         <Select.Control>
-          <Select.Trigger data-has-clear-trigger>
+          <Select.Trigger>
             <Select.ValueText placeholder="Technology" />
             <Select.Indicator>
               <ChevronsUpDownIcon />

@@ -13,17 +13,21 @@
 
   .select-control {
     @apply relative;
+
+    @variant has-data-[part=clear-trigger] {
+      @variant not-has-data-placeholder-shown {
+        .select-indicator {
+          @apply hidden;
+        }
+      }
+    }
   }
 
   .select-trigger {
-    @apply inline-flex h-8 w-full items-center rounded-xs border border-border ps-2.5 pe-6 text-sm text-foreground;
+    @apply inline-flex h-8 w-full items-center rounded-xs border border-border ps-2.5 pe-8 text-sm text-foreground;
 
     @variant data-placeholder-shown {
       @apply text-placeholder;
-    }
-
-    @variant data-has-clear-trigger {
-      @apply pe-12;
     }
 
     @variant focus-visible {
@@ -53,7 +57,7 @@
 
   .select-clear-trigger {
     @apply base-button base-button--icon-xs base-button--ghost;
-    @apply absolute inset-y-0 inset-e-6 my-auto;
+    @apply absolute inset-y-0 inset-e-1 my-auto;
 
     @variant icon {
       @apply text-foreground-muted;
