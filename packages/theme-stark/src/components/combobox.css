@@ -13,15 +13,17 @@
 
   .combobox-control {
     @apply relative;
+
+    @variant has-data-[part=clear-trigger] {
+      @variant *:data-[part=input] {
+        @apply pe-14;
+      }
+    }
   }
 
   .combobox-input {
     @apply base-input;
     @apply pe-8;
-
-    @variant data-has-clear-trigger {
-      @apply pe-14;
-    }
   }
 
   .combobox-trigger {
