@@ -146,19 +146,11 @@
   }
 
   .slider-label {
-    @apply text-sm text-foreground;
-
-    @variant data-disabled {
-      @apply text-foreground-inactive;
-    }
+    @apply base-field-label;
   }
 
   .slider-value-text {
-    @apply text-sm text-foreground;
-
-    @variant data-disabled {
-      @apply text-foreground-inactive;
-    }
+    @apply base-field-label;
   }
 
   :where(.slider) {
