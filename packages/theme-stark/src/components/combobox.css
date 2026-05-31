@@ -46,9 +46,7 @@
   .combobox-content {
     @apply max-h-[min(var(--available-height,14rem),14rem)] min-w-(--reference-width);
     @apply flex flex-col overflow-y-auto rounded-xs border border-border bg-background-surface text-sm;
-    @apply scroll-pt-8;
-
-    scrollbar-width: none;
+    @apply scroll-pt-8 scrollbar-none;
 
     @variant focus-visible {
       @apply border-ring focus-visible;
