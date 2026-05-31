@@ -28,7 +28,7 @@ catalog:
   clsx: ^2.1.1
   husky: ^9.1.7
   jsdom: ^29.1.1
-  lint-staged: ^17.0.5
+  lint-staged: ^17.0.6
   lucide-react: ^1.17.0
   next: ^16.2.6
   next-themes: ^0.4.6
@@ -46,7 +46,7 @@ catalog:
   vite: ^8.0.14
   vitest: ^4.1.7
   vue: ^3.5.35
-  vue-tsc: ^3.3.2
+  vue-tsc: ^3.3.3
 
 catalogs:
   storybook:
