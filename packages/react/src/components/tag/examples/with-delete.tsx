@@ -5,7 +5,7 @@ export default function WithDelete() {
   return (
     <div className="flex gap-2">
       <Tag.Root>
-        With Delete
+        <Tag.Text>With Delete</Tag.Text>
         <Tag.DeleteTrigger>
           <XIcon />
         </Tag.DeleteTrigger>

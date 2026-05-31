@@ -14,6 +14,10 @@
   }
 }
 
+@utility base-tag-text {
+  @apply select-none;
+}
+
 @utility base-tag-delete-trigger {
   @apply base-button button--icon-xs button--ghost;
   @apply size-4 min-w-4;

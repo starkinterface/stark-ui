@@ -6,6 +6,7 @@ export const tagClasses = tv({
   slots: {
     deleteTrigger: "tag-delete-trigger",
     root: "tag",
+    text: "tag-text",
   },
 })
 

@@ -35,7 +35,14 @@ const TagDeleteTrigger = withSlot<HTMLButtonElement, TagDeleteTriggerProps>(
 )
 
 ///////////////////////////////////////////////////////////////////////////////
+/// Text
+
+type TagTextProps = Assign<ComponentProps<typeof ark.span>, UnstyledProp>
+
+const TagText = withSlot<HTMLSpanElement, TagTextProps>(ark.span, "text")
+
+///////////////////////////////////////////////////////////////////////////////
 /// Exports
 
-export { TagRoot, TagDeleteTrigger }
-export type { TagRootProps, TagDeleteTriggerProps }
+export { TagRoot, TagDeleteTrigger, TagText }
+export type { TagRootProps, TagDeleteTriggerProps, TagTextProps }

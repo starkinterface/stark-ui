@@ -68,7 +68,7 @@
   }
 
   .tags-input-item-text {
-    @apply select-none;
+    @apply base-tag-text;
   }
 
   .tags-input-item-delete-trigger {

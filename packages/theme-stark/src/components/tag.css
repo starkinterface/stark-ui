@@ -3,6 +3,10 @@
     @apply base-tag;
   }
 
+  .tag-text {
+    @apply base-tag-text;
+  }
+
   .tag-delete-trigger {
     @apply base-tag-delete-trigger;
   }
