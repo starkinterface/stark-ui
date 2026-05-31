@@ -126,9 +126,7 @@ type ComboboxEmptyTextProps = Assign<
 >
 
 const ComboboxEmptyText = withSlot<HTMLSpanElement, ComboboxEmptyTextProps>(
-  (props: ComboboxEmptyTextProps) => (
-    <ark.span data-combobox-empty-text {...props} />
-  ),
+  (props: ComboboxEmptyTextProps) => <ark.span {...props} />,
   "emptyText"
 )
 

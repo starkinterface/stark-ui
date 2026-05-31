@@ -68,13 +68,7 @@ type InputGroupIconProps = Assign<ComponentProps<typeof ark.div>, UnstyledProp>
 const InputGroupIcon = withSlot<HTMLDivElement, InputGroupIconProps>(
   (props: InputGroupIconProps) => {
     const field = useFieldContext()
-    return (
-      <ark.div
-        data-input-group-icon
-        data-disabled={attrValue(field?.disabled)}
-        {...props}
-      />
-    )
+    return <ark.div data-disabled={attrValue(field?.disabled)} {...props} />
   },
   "icon"
 )
@@ -89,7 +83,6 @@ const InputGroupText = withSlot<HTMLSpanElement, InputGroupTextProps>(
     const field = useFieldContext()
     return (
       <ark.span
-        data-input-group-text
         data-disabled={attrValue(field?.disabled)}
         aria-disabled={field?.disabled}
         {...props}
@@ -107,13 +100,7 @@ type InputGroupButtonProps = Assign<ComponentProps<typeof Button>, UnstyledProp>
 const InputGroupButton = withSlot<HTMLButtonElement, InputGroupButtonProps>(
   ({ disabled, ...props }: InputGroupButtonProps) => {
     const field = useFieldContext()
-    return (
-      <Button
-        {...props}
-        data-input-group-button
-        disabled={disabled ?? field?.disabled}
-      />
-    )
+    return <Button {...props} disabled={disabled ?? field?.disabled} />
   },
   "button"
 )

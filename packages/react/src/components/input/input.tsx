@@ -1,3 +1,4 @@
+import { attrValue } from "../../utils"
 import { inputClasses, cx } from "@stark-ui/classes"
 import { FieldInput } from "@ark-ui/react/field"
 
@@ -20,6 +21,7 @@ const Input = ({
     <FieldInput
       type={type}
       {...restProps}
+      data-input={attrValue(true)}
       className={unstyled ? className : cx(baseClass, className)}
     />
   )

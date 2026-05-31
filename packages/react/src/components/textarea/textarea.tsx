@@ -1,3 +1,4 @@
+import { attrValue } from "../../utils"
 import { textareaClasses, cx } from "@stark-ui/classes"
 import { FieldTextarea } from "@ark-ui/react/field"
 
@@ -17,6 +18,7 @@ const Textarea = ({ className, unstyled, ...restProps }: TextareaProps) => {
   return (
     <FieldTextarea
       {...restProps}
+      data-textarea={attrValue(true)}
       className={unstyled ? className : cx(baseClass, className)}
     />
   )

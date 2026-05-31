@@ -108,7 +108,7 @@ const NumberInputIncrementTrigger = withSlot<
   NumberInputIncrementTriggerProps
 >(ArkNumberInput.IncrementTrigger, "incrementTrigger", {
   defaultProps: {
-    "data-button": "",
+    "data-button": attrValue(true),
   } as Partial<NumberInputIncrementTriggerProps>,
 })
 
@@ -125,7 +125,7 @@ const NumberInputDecrementTrigger = withSlot<
   NumberInputDecrementTriggerProps
 >(ArkNumberInput.DecrementTrigger, "decrementTrigger", {
   defaultProps: {
-    "data-button": "",
+    "data-button": attrValue(true),
   } as Partial<NumberInputIncrementTriggerProps>,
 })
 
@@ -156,9 +156,9 @@ const NumberInputIcon = withSlot<HTMLDivElement, NumberInputIconProps>(
 
     return (
       <ark.div
-        data-input-group-icon
         data-disabled={attrValue(isDisabled)}
         {...props}
+        data-input-group-icon={attrValue(true)}
       />
     )
   },
@@ -182,10 +182,10 @@ const NumberInputText = withSlot<HTMLSpanElement, NumberInputTextProps>(
 
     return (
       <ark.span
-        data-input-group-text
         data-disabled={attrValue(isDisabled)}
         aria-disabled={isDisabled}
         {...props}
+        data-input-group-text={attrValue(true)}
       />
     )
   },

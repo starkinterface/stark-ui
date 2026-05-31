@@ -1,3 +1,4 @@
+import { attrValue } from "../../utils"
 import { buttonGroupClasses, cx } from "@stark-ui/classes"
 import { ark } from "@ark-ui/react/factory"
 
@@ -23,8 +24,9 @@ const ButtonGroup = ({
 
   return (
     <ark.div
-      data-orientation={orientation}
       {...restProps}
+      data-button-group={attrValue(true)}
+      data-orientation={orientation}
       className={unstyled ? className : cx(baseClass, className)}
     >
       {children}
