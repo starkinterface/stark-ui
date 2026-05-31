@@ -433,6 +433,75 @@ describe("createStyleContext()", () => {
     })
   })
 
+  describe("data-{slot} attributes", () => {
+    it("adds data-{scope} to withProviderSlot root element", () => {
+      const { StyledRoot } = createTestStyleContext()
+
+      render(<StyledRoot data-testid="root" />)
+
+      expect(screen.getByTestId("root")).toHaveAttribute("data-popover")
+    })
+
+    it("adds data-{scope}-{slot} to withSlot child elements", () => {
+      const { StyledLabel, StyledRoot } = createTestStyleContext()
+
+      render(
+        <StyledRoot data-testid="root">
+          <StyledLabel data-testid="label" />
+        </StyledRoot>
+      )
+
+      expect(screen.getByTestId("root")).toHaveAttribute("data-popover")
+      expect(screen.getByTestId("label")).toHaveAttribute("data-popover-label")
+    })
+
+    it("preserves data attributes when unstyled", () => {
+      const { StyledLabel, StyledRoot } = createTestStyleContext()
+
+      render(
+        <StyledRoot data-testid="root" unstyled>
+          <StyledLabel data-testid="label" unstyled />
+        </StyledRoot>
+      )
+
+      expect(screen.getByTestId("root")).toHaveAttribute("data-popover")
+      expect(screen.getByTestId("label")).toHaveAttribute("data-popover-label")
+    })
+
+    it("uses kebab-case for multi-word scope and slot names", () => {
+      const multiClasses = tv({
+        slots: {
+          clearTrigger: "",
+          root: "",
+        },
+      })
+
+      const { withProviderSlot, withSlot } = createStyleContext(multiClasses, {
+        name: "TagsInput",
+      })
+
+      const MultiRoot = withProviderSlot<HTMLDivElement, StyledRootProps>(
+        Root,
+        "root"
+      )
+      const MultiSlot = withSlot<HTMLSpanElement, StyledLabelProps>(
+        Label,
+        "clearTrigger"
+      )
+
+      render(
+        <MultiRoot data-testid="root">
+          <MultiSlot data-testid="slot" />
+        </MultiRoot>
+      )
+
+      expect(screen.getByTestId("root")).toHaveAttribute("data-tags-input")
+      expect(screen.getByTestId("slot")).toHaveAttribute(
+        "data-tags-input-clear-trigger"
+      )
+    })
+  })
+
   describe("withProvider()", () => {
     it("provides context without classes on itself", () => {
       const { RootProvider, StyledLabel } = createTestStyleContext()

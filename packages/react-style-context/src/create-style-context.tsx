@@ -4,6 +4,7 @@ import { createContext } from "./create-context"
 import {
   resolveClassName,
   getSlotFn,
+  getSlotDataAttr,
   getElementTypeName,
   getSlotComponentName,
   setDisplayName,
@@ -100,6 +101,7 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
     options?: WithProviderSlotOptions<P>
   ): StyledRefComponent<E, P> => {
     const slotComponentName = `${scopeName}.${String(slot)}`
+    const slotDataAttr = getSlotDataAttr(scopeName, slot)
     const StyledComponent = ((props: P & RefAttributes<E>) => {
       const SuperComponent = Component as ElementType
       const { restProps, slots, unstyled } = splitProviderPropsWithDefaults(
@@ -116,6 +118,7 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
         <StyleProvider value={{ slots }}>
           <UnstyledProvider value={{ unstyled }}>
             <SuperComponent
+              {...slotDataAttr}
               {...otherProps}
               className={resolveClassName(slotFn, className, unstyled)}
             />
@@ -143,6 +146,7 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
     options?: WithSlotOptions<P>
   ): StyledRefComponent<E, P> => {
     const slotComponentName = getSlotComponentName(scopeName, slot)
+    const slotDataAttr = getSlotDataAttr(scopeName, slot)
     const StyledComponent = ((props: P & RefAttributes<E>) => {
       const SuperComponent = Component as ElementType
       const { slots } = useStyle(slotComponentName)
@@ -159,6 +163,7 @@ const createStyleContext = <VariantProps = unknown, S extends Slots = Slots>(
 
       return (
         <SuperComponent
+          {...slotDataAttr}
           {...otherProps}
           className={resolveClassName(slotFn, className, isUnstyled)}
         />
