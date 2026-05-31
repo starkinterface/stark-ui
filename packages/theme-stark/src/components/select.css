@@ -14,7 +14,7 @@
   .select-control {
     @apply relative;
 
-    @variant has-data-[part=clear-trigger] {
+    @variant has-data-select-clear-trigger {
       @variant not-has-data-placeholder-shown {
         .select-indicator {
           @apply hidden;

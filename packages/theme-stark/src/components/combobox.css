@@ -10,8 +10,8 @@
   .combobox-control {
     @apply relative;
 
-    @variant has-data-[part=clear-trigger] {
-      @variant *:data-[part=input] {
+    @variant has-data-combobox-clear-trigger {
+      .combobox-input {
         @apply pe-14;
       }
     }
@@ -84,7 +84,7 @@
       @variant has-data-combobox-empty-text {
         @apply block px-2.5 py-1;
 
-        @variant *:data-combobox-empty-text {
+        .combobox-empty-text {
           @apply block;
         }
       }

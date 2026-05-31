@@ -1,7 +1,7 @@
 @utility base-tag {
   @apply inline-flex h-6 items-center gap-1.5 rounded-xs border border-border bg-background-secondary px-1.5 align-top text-xs;
 
-  @variant has-[button] {
+  @variant has-data-tag-delete-trigger {
     @apply pe-1;
   }
 

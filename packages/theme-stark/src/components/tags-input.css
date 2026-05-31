@@ -10,10 +10,10 @@
   .tags-input-control {
     @apply flex min-h-8 w-full flex-wrap items-center gap-1 rounded-xs border border-border px-2 py-1;
 
-    @variant has-data-[part=item] {
+    @variant has-data-tags-input-item {
       @apply px-1;
 
-      @variant *:data-[part=input] {
+      .tags-input-input {
         @apply mx-1;
       }
     }
