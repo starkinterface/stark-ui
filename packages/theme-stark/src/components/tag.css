@@ -1,18 +1,9 @@
 @layer components {
   .tag {
-    @apply inline-flex h-6 items-center gap-1.5 rounded-xs border border-border px-2 text-xs;
-
-    @variant has-[button] {
-      @apply pe-1;
-    }
-
-    @variant icon {
-      @apply size-4;
-    }
+    @apply base-tag;
   }
 
   .tag-close-trigger {
-    @apply base-button button--icon-xs button--ghost;
-    @apply size-4 min-w-4;
+    @apply base-tag-delete-trigger;
   }
 }
