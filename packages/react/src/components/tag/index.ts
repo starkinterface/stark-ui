@@ -1,5 +1,5 @@
-export { TagRoot, TagCloseTrigger } from "./tag"
+export { TagRoot, TagDeleteTrigger } from "./tag"
 
-export type { TagRootProps, TagCloseTriggerProps } from "./tag"
+export type { TagRootProps, TagDeleteTriggerProps } from "./tag"
 
 export * as Tag from "./namespace"

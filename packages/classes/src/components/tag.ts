@@ -4,7 +4,7 @@ import type { VariantProps } from "tailwind-variants/lite"
 
 export const tagClasses = tv({
   slots: {
-    closeTrigger: "tag-close-trigger",
+    deleteTrigger: "tag-delete-trigger",
     root: "tag",
   },
 })

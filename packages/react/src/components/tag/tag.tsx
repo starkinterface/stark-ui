@@ -22,20 +22,20 @@ type TagRootProps = Assign<
 const TagRoot = withProviderSlot<HTMLDivElement, TagRootProps>(ark.div, "root")
 
 ///////////////////////////////////////////////////////////////////////////////
-/// CloseTrigger
+/// DeleteTrigger
 
-type TagCloseTriggerProps = Assign<
+type TagDeleteTriggerProps = Assign<
   ComponentProps<typeof ark.button>,
   UnstyledProp
 >
 
-const TagCloseTrigger = withSlot<HTMLButtonElement, TagCloseTriggerProps>(
+const TagDeleteTrigger = withSlot<HTMLButtonElement, TagDeleteTriggerProps>(
   ark.button,
-  "closeTrigger"
+  "deleteTrigger"
 )
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Exports
 
-export { TagRoot, TagCloseTrigger }
-export type { TagRootProps, TagCloseTriggerProps }
+export { TagRoot, TagDeleteTrigger }
+export type { TagRootProps, TagDeleteTriggerProps }

@@ -3,7 +3,7 @@
     @apply base-tag;
   }
 
-  .tag-close-trigger {
+  .tag-delete-trigger {
     @apply base-tag-delete-trigger;
   }
 }

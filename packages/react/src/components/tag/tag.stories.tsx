@@ -1,5 +1,5 @@
 import BasicExample from "./examples/basic"
-import ClosableExample from "./examples/closable"
+import WithDeleteExample from "./examples/with-delete"
 
 export default {
   title: "Components/Tag",
@@ -9,6 +9,6 @@ export const Basic = {
   render: () => <BasicExample />,
 }
 
-export const Closable = {
-  render: () => <ClosableExample />,
+export const WithDelete = {
+  render: () => <WithDeleteExample />,
 }
