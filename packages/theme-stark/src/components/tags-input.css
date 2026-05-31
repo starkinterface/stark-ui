@@ -1,0 +1,91 @@
+@layer components {
+  .tags-input {
+    @apply base-field;
+  }
+
+  .tags-input-label {
+    @apply base-field-label;
+  }
+
+  .tags-input-control {
+    @apply flex min-h-8 w-full flex-wrap items-center gap-1 rounded-xs border border-border px-2 py-1;
+
+    @variant has-data-[part=item] {
+      @apply px-1;
+
+      @variant *:data-[part=input] {
+        @apply mx-1;
+      }
+    }
+
+    @variant data-disabled {
+      @apply border-background-inactive;
+    }
+
+    @variant has-[input:focus-visible] {
+      @apply border-ring focus-visible;
+    }
+
+    @variant data-invalid {
+      @apply border-foreground-danger-soft;
+
+      @variant has-[input:focus-visible] {
+        @apply border-foreground-danger-soft;
+        @apply outline-foreground-danger-soft/56;
+
+        @variant white {
+          @apply outline-foreground-danger-soft/36;
+        }
+      }
+    }
+  }
+
+  .tags-input-input {
+    @apply h-6 min-w-auto flex-1 border-none bg-transparent p-0 text-sm text-foreground caret-foreground outline-none;
+
+    @variant placeholder {
+      @apply text-placeholder;
+    }
+
+    @variant disabled {
+      @apply text-foreground-inactive;
+
+      @variant placeholder {
+        @apply text-foreground-inactive;
+      }
+    }
+  }
+
+  .tags-input-item {
+  }
+
+  .tags-input-item-preview {
+    @apply base-tag;
+
+    @variant data-highlighted {
+      @apply bg-background-secondary-hover;
+    }
+  }
+
+  .tags-input-item-text {
+    @apply select-none;
+  }
+
+  .tags-input-item-delete-trigger {
+    @apply base-tag-delete-trigger;
+  }
+
+  .tags-input-item-input {
+    @apply base-tag;
+    @apply text-foreground outline-none;
+  }
+
+  .tags-input-input.combobox-input {
+    @apply h-6 min-h-6;
+  }
+
+  .tags-input-clear-trigger {
+    @apply base-button base-button--icon-xs base-button--ghost;
+    @apply ms-auto mt-auto;
+  }
+}
