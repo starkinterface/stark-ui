@@ -19,6 +19,6 @@
 }
 
 @utility base-tag-delete-trigger {
-  @apply base-button button--icon-xs button--ghost;
+  @apply base-button base-button--icon-xs base-button--ghost;
   @apply size-4 min-w-4;
 }
