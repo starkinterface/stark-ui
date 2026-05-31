@@ -1,0 +1,20 @@
+@utility base-tag {
+  @apply inline-flex h-6 items-center gap-1.5 rounded-xs border border-border bg-background-secondary px-1.5 align-top text-xs;
+
+  @variant has-[button] {
+    @apply pe-1;
+  }
+
+  @variant icon {
+    @apply size-4;
+  }
+
+  @variant data-disabled {
+    @apply border-background-inactive bg-background-inactive text-foreground-inactive;
+  }
+}
+
+@utility base-tag-delete-trigger {
+  @apply base-button button--icon-xs button--ghost;
+  @apply size-4 min-w-4;
+}
