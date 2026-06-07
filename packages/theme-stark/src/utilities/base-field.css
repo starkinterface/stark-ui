@@ -4,4 +4,8 @@
 
 @utility base-field-label {
   @apply text-sm text-foreground;
+
+  @variant data-disabled {
+    @apply text-foreground-inactive;
+  }
 }
