@@ -1,3 +1,5 @@
-html {
+:root,
+[data-scheme="black"],
+[data-scheme="white"] {
   @apply bg-background text-foreground;
 }
