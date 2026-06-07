@@ -67,7 +67,9 @@ const Group = ({
 
       <div className="flex flex-col">
         <div className="flex items-center justify-between">
-          <h2 id={id}>{title}</h2>
+          <h2 id={id} className="font-medium">
+            {title}
+          </h2>
           {exampleCount !== undefined && (
             <p className="text-sm text-foreground-muted">
               {exampleCount} {exampleCount === 1 ? "example" : "examples"}

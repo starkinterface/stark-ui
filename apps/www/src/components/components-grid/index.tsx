@@ -2,6 +2,7 @@
 
 import { Group } from "./group"
 import { Actions } from "./groups/actions"
+import { Inputs } from "./groups/inputs"
 import { tv } from "tailwind-variants/lite"
 
 import type { GroupProps } from "./group"
@@ -36,6 +37,7 @@ const groups: GroupProps[] = [
     title: "Actions",
   },
   {
+    children: <Inputs />,
     className: styles.inputs(),
     description:
       "Text fields, textareas, and specialized controls for entering data.",
