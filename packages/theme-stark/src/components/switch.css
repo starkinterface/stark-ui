@@ -68,11 +68,7 @@
   }
 
   .switch-label {
-    @apply text-foreground;
-
-    @variant data-disabled {
-      @apply text-foreground-inactive;
-    }
+    @apply base-field-label;
   }
 }
 
@@ -114,11 +110,7 @@
   }
 
   .switch-label {
-    @apply text-foreground-muted;
-
-    @variant data-disabled {
-      @apply text-foreground-inactive;
-    }
+    @apply base-field-label;
   }
 }
 
