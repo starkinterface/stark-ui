@@ -1,7 +1,6 @@
 import { Button } from "@stark-ui/react"
-import heroBackground from "@/assets/images/hero-background.webp"
-import InteractivePreview from "@/components/interactive-preview"
-import Image from "next/image"
+import { ComponentsGrid } from "@/components/components-grid"
+import DecorationLine from "@/components/decoration-line"
 import Link from "next/link"
 import { LuArrowRight } from "react-icons/lu"
 
@@ -14,7 +13,7 @@ export default function Page() {
       </h1>
 
       <div className="mt-6 flex gap-2">
-        <Button className="lg:button--lg" variant="primary" asChild>
+        <Button className="lg:button--lg" variant="accent" asChild>
           <Link href="/docs">
             Get Started
             <LuArrowRight data-icon="inline-end" />
@@ -25,16 +24,12 @@ export default function Page() {
         </Button>
       </div>
 
-      <div className="relative mt-8 hidden overflow-clip rounded-md p-10 lg:mt-12 lg:flex">
-        <div className="pointer-events-none absolute inset-0 -z-1">
-          <Image
-            src={heroBackground}
-            alt=""
-            preload
-            className="absolute inset-0 size-full object-cover object-center"
-          />
-        </div>
-        <InteractivePreview />
+      <div className="-mx-content-padding relative mt-8 hidden lg:mt-12 lg:flex">
+        <DecorationLine className="inside-container z-1" />
+        <DecorationLine className="inside-container z-1" position="end" />
+        <DecorationLine orientation="vertical" className="z-1" />
+        <DecorationLine orientation="vertical" position="end" className="z-1" />
+        <ComponentsGrid />
       </div>
     </div>
   )
