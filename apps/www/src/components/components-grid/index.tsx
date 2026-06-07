@@ -2,6 +2,7 @@
 
 import { Group } from "./group"
 import { Actions } from "./groups/actions"
+import { DateTime } from "./groups/date-time"
 import { Inputs } from "./groups/inputs"
 import { Selection } from "./groups/selection"
 import { tv } from "tailwind-variants/lite"
@@ -75,6 +76,7 @@ const groups: GroupProps[] = [
     title: "Disclosure",
   },
   {
+    children: <DateTime />,
     className: styles.dateTime(),
     description:
       "Calendars and pickers for selecting dates, times, and ranges.",
