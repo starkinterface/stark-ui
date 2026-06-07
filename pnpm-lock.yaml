@@ -276,6 +276,9 @@ importers:
 
   apps/www:
     dependencies:
+      '@stark-loader/react':
+        specifier: 'catalog:'
+        version: 0.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@stark-ui/react':
         specifier: workspace:*
         version: link:../../packages/react

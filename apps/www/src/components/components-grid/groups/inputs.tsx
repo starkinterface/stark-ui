@@ -1,5 +1,6 @@
 "use client"
 
+import { RingLoader } from "@stark-loader/react"
 import {
   Field,
   Input,
@@ -8,7 +9,7 @@ import {
   PinInput,
   Textarea,
 } from "@stark-ui/react"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import {
   LuMinus,
   LuPlus,
@@ -41,17 +42,34 @@ const FieldDisabledExample = () => (
   </Field.Root>
 )
 
+const TAKEN = new Set(["stark", "enji", "enjidev"])
+
 const InputGroupExample = () => {
   const [value, setValue] = useState("stark")
-  const taken = ["stark", "enji", "enjidev"]
+  const [loading, setLoading] = useState(false)
+  const skipInitialCheck = useRef(true)
+
+  useEffect(() => {
+    if (skipInitialCheck.current) {
+      skipInitialCheck.current = false
+
+      return
+    }
+    setLoading(true)
+
+    const id = setTimeout(() => setLoading(false), 600)
+    return () => clearTimeout(id)
+  }, [value])
+
+  const isInvalid = !loading && TAKEN.has(value)
 
   return (
-    <Field.Root invalid={taken.includes(value)}>
+    <Field.Root invalid={isInvalid}>
       <Field.Label>Project subdomain</Field.Label>
       <InputGroup.Root>
         <InputGroup.Addon data-align="inline-start">
           <InputGroup.Icon>
-            <LuGlobeLock />
+            {loading ? <RingLoader /> : <LuGlobeLock />}
           </InputGroup.Icon>
         </InputGroup.Addon>
         <InputGroup.Addon data-align="inline-start">
@@ -66,6 +84,12 @@ const InputGroupExample = () => {
           <InputGroup.Text>.stark.app</InputGroup.Text>
         </InputGroup.Addon>
       </InputGroup.Root>
+
+      {!isInvalid && (
+        <Field.HelperText>
+          Your subdomain can't be changed later.
+        </Field.HelperText>
+      )}
       <Field.ErrorText>
         This subdomain is already taken. Please choose a different one.
       </Field.ErrorText>

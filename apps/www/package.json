@@ -9,6 +9,7 @@
     "typecheck": "next typegen && tsc"
   },
   "dependencies": {
+    "@stark-loader/react": "catalog:",
     "@stark-ui/react": "workspace:*",
     "@stark-ui/theme-stark": "workspace:*",
     "@vercel/analytics": "catalog:",
