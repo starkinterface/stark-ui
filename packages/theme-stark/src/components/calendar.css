@@ -3,7 +3,7 @@
   }
 
   .calendar-view {
-    @apply flex w-fit flex-col rounded-xs border border-border p-2;
+    @apply flex w-fit flex-col;
   }
 
   .calendar-view-control {
