@@ -3,6 +3,7 @@
 import { Group } from "./group"
 import { Actions } from "./groups/actions"
 import { Inputs } from "./groups/inputs"
+import { Selection } from "./groups/selection"
 import { tv } from "tailwind-variants/lite"
 
 import type { GroupProps } from "./group"
@@ -45,10 +46,11 @@ const groups: GroupProps[] = [
     title: "Inputs",
   },
   {
+    children: <Selection />,
     className: styles.selection(),
     description:
       "Checkboxes, radios, switches, and sliders for picking options and values.",
-    exampleCount: 2,
+    exampleCount: 4,
     title: "Selection",
   },
   {
