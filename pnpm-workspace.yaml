@@ -5,8 +5,8 @@ packages:
   - apps/*
 
 catalog:
-  "@ark-ui/react": ^5.37.0
-  "@ark-ui/vue": ^5.37.0
+  "@ark-ui/react": ^5.37.1
+  "@ark-ui/vue": ^5.37.1
   "@changesets/changelog-github": ^0.7.0
   "@changesets/cli": ^2.31.0
   "@commitlint/cli": ^21.0.2
@@ -17,8 +17,8 @@ catalog:
   "@testing-library/jest-dom": ^6.9.1
   "@testing-library/react": ^16.3.2
   "@testing-library/vue": ^8.1.0
-  "@types/node": ^25.9.1
-  "@types/react": ^19.2.16
+  "@types/node": ^25.9.2
+  "@types/react": ^19.2.17
   "@types/react-dom": ^19.2.3
   "@vercel/analytics": ^2.0.1
   "@vercel/speed-insights": ^2.0.0
@@ -41,7 +41,7 @@ catalog:
   tailwind-variants: ^3.2.2
   tailwindcss: ^4.3.0
   typescript: ^6.0.3
-  ultracite: ^7.8.1
+  ultracite: ^7.8.2
   unplugin-dts: ^1.0.2
   vite: ^8.0.16
   vitest: ^4.1.8
