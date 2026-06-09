@@ -1,4 +1,4 @@
-import { resolve } from "node:path"
+import path from "node:path"
 import pkg from "./package.json" with { type: "json" }
 import react from "@vitejs/plugin-react"
 import dts from "unplugin-dts/vite"
@@ -8,14 +8,14 @@ const root = import.meta.dirname
 
 export default defineConfig({
   build: {
-    lib: { entry: resolve(root, "src/index.ts"), formats: ["es"] },
+    lib: { entry: path.resolve(root, "src/index.ts"), formats: ["es"] },
     minify: false,
     rollupOptions: {
       external: [
         ...Object.keys(pkg.dependencies ?? {}),
         ...Object.keys(pkg.peerDependencies ?? {}),
-        /^react($|\/)/u,
-        /^react-dom($|\/)/u,
+        /^react(?:$|\/)/u,
+        /^react-dom(?:$|\/)/u,
         /^@ark-ui/u,
       ],
       output: {

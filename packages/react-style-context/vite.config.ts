@@ -1,4 +1,4 @@
-import { resolve } from "node:path"
+import path from "node:path"
 import preserveDirectives from "rollup-preserve-directives"
 import dts from "unplugin-dts/vite"
 import { defineConfig } from "vite"
@@ -7,10 +7,14 @@ const root = import.meta.dirname
 
 export default defineConfig({
   build: {
-    lib: { entry: resolve(root, "src/index.ts"), formats: ["es"] },
+    lib: { entry: path.resolve(root, "src/index.ts"), formats: ["es"] },
     minify: false,
     rollupOptions: {
-      external: [/^react($|\/)/u, /^react-dom($|\/)/u, /^tailwind-variants/u],
+      external: [
+        /^react(?:$|\/)/u,
+        /^react-dom(?:$|\/)/u,
+        /^tailwind-variants/u,
+      ],
       output: {
         entryFileNames: "[name].js",
         preserveModules: true,
