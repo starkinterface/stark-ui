@@ -20,7 +20,7 @@ export default function Link() {
           <>
             <Pagination.FirstTrigger aria-label="First page" asChild>
               <a href="#page=1">
-                <ChevronsLeft className="size-4" />
+                <ChevronsLeft />
               </a>
             </Pagination.FirstTrigger>
             <Pagination.PrevTrigger aria-label="Previous page" asChild>
@@ -31,7 +31,7 @@ export default function Link() {
                     : `#page=${context.page}`
                 }
               >
-                <ChevronLeft className="size-4" />
+                <ChevronLeft />
               </a>
             </Pagination.PrevTrigger>
 
@@ -55,12 +55,12 @@ export default function Link() {
                     : `#page=${context.page}`
                 }
               >
-                <ChevronRight className="size-4" />
+                <ChevronRight />
               </a>
             </Pagination.NextTrigger>
             <Pagination.LastTrigger aria-label="Last page" asChild>
               <a href={`#page=${context.totalPages}`}>
-                <ChevronsRight className="size-4" />
+                <ChevronsRight />
               </a>
             </Pagination.LastTrigger>
           </>

@@ -167,8 +167,8 @@ const PasswordInputExample = () => (
         <PasswordInput.Input placeholder="••••••••" />
         <PasswordInput.Addon data-align="inline-end">
           <PasswordInput.VisibilityTrigger>
-            <PasswordInput.Indicator fallback={<LuEyeOff className="size-4" />}>
-              <LuEye className="size-4" />
+            <PasswordInput.Indicator fallback={<LuEyeOff />}>
+              <LuEye />
             </PasswordInput.Indicator>
           </PasswordInput.VisibilityTrigger>
         </PasswordInput.Addon>

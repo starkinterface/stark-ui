@@ -10,10 +10,10 @@ export default function Basic() {
   return (
     <Pagination.Root count={500} pageSize={10} siblingCount={1}>
       <Pagination.FirstTrigger aria-label="First page">
-        <ChevronsLeft className="size-4" />
+        <ChevronsLeft />
       </Pagination.FirstTrigger>
       <Pagination.PrevTrigger aria-label="Previous page">
-        <ChevronLeft className="size-4" />
+        <ChevronLeft />
       </Pagination.PrevTrigger>
 
       <Pagination.Context>
@@ -33,10 +33,10 @@ export default function Basic() {
       </Pagination.Context>
 
       <Pagination.NextTrigger aria-label="Next page">
-        <ChevronRight className="size-4" />
+        <ChevronRight />
       </Pagination.NextTrigger>
       <Pagination.LastTrigger aria-label="Last page">
-        <ChevronsRight className="size-4" />
+        <ChevronsRight />
       </Pagination.LastTrigger>
     </Pagination.Root>
   )

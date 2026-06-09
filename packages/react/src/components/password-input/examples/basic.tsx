@@ -9,8 +9,8 @@ export default function Basic() {
         <PasswordInput.Input placeholder="Enter your password" />
         <PasswordInput.Addon data-align="inline-end">
           <PasswordInput.VisibilityTrigger>
-            <PasswordInput.Indicator fallback={<EyeOff className="size-4" />}>
-              <Eye className="size-4" />
+            <PasswordInput.Indicator fallback={<EyeOff />}>
+              <Eye />
             </PasswordInput.Indicator>
           </PasswordInput.VisibilityTrigger>
         </PasswordInput.Addon>
