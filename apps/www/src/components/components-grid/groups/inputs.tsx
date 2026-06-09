@@ -6,6 +6,7 @@ import {
   Input,
   InputGroup,
   NumberInput,
+  PasswordInput,
   PinInput,
   Textarea,
 } from "@stark-ui/react"
@@ -16,6 +17,8 @@ import {
   LuGlobe,
   LuGlobeLock,
   LuMoveHorizontal,
+  LuEye,
+  LuEyeOff,
 } from "react-icons/lu"
 
 const FieldExample = () => (
@@ -156,6 +159,24 @@ const TextareaExample = () => (
   </Field.Root>
 )
 
+const PasswordInputExample = () => (
+  <Field.Root>
+    <PasswordInput.Root>
+      <PasswordInput.Label>Account Password</PasswordInput.Label>
+      <PasswordInput.Control>
+        <PasswordInput.Input placeholder="••••••••" />
+        <PasswordInput.Addon data-align="inline-end">
+          <PasswordInput.VisibilityTrigger>
+            <PasswordInput.Indicator fallback={<LuEyeOff className="size-4" />}>
+              <LuEye className="size-4" />
+            </PasswordInput.Indicator>
+          </PasswordInput.VisibilityTrigger>
+        </PasswordInput.Addon>
+      </PasswordInput.Control>
+    </PasswordInput.Root>
+  </Field.Root>
+)
+
 const Inputs = () => (
   <div className="flex flex-col gap-4">
     <FieldExample />
@@ -165,6 +186,7 @@ const Inputs = () => (
       <NumberInputExample />
       <PinInputExample />
     </div>
+    <PasswordInputExample />
     <TextareaExample />
   </div>
 )

@@ -4,6 +4,7 @@ import { Group } from "./group"
 import { Actions } from "./groups/actions"
 import { DateTime } from "./groups/date-time"
 import { Inputs } from "./groups/inputs"
+import { Navigation } from "./groups/navigation"
 import { Selection } from "./groups/selection"
 import { tv } from "tailwind-variants/lite"
 
@@ -43,7 +44,7 @@ const groups: GroupProps[] = [
     className: styles.inputs(),
     description:
       "Text fields, textareas, and specialized controls for entering data.",
-    exampleCount: 8,
+    exampleCount: 9,
     title: "Inputs",
   },
   {
@@ -84,10 +85,11 @@ const groups: GroupProps[] = [
     title: "Date & Time",
   },
   {
+    children: <Navigation />,
     className: styles.navigation(),
     description:
       "Breadcrumbs, pagination, and steps for guiding users through flows.",
-    exampleCount: 2,
+    exampleCount: 3,
     title: "Navigation",
   },
   {
