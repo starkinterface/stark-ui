@@ -1,0 +1,28 @@
+@layer components {
+  .pagination {
+    @apply base-group base-group--separated base-group--horizontal;
+  }
+
+  .pagination-item {
+    @apply base-button base-button--icon-md base-button--ghost;
+
+    @variant data-selected {
+      @apply base-button--outline;
+    }
+  }
+
+  .pagination-ellipsis {
+    @apply flex size-8 items-center justify-center text-foreground-muted select-none;
+  }
+
+  .pagination-prev-trigger,
+  .pagination-next-trigger,
+  .pagination-first-trigger,
+  .pagination-last-trigger {
+    @apply base-button base-button--icon-md base-button--ghost;
+
+    @variant disabled {
+      @apply pointer-events-none opacity-50;
+    }
+  }
+}
