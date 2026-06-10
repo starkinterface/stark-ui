@@ -1,9 +1,0 @@
-@layer components {
-  .toggle-tip {
-    @apply bg-red-400;
-
-    @variant aria-expanded {
-      @apply bg-blue-500;
-    }
-  }
-}
