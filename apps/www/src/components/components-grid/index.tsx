@@ -37,7 +37,7 @@ const groups: GroupProps[] = [
     className: styles.actions(),
     description:
       "Buttons and toggles for triggering events and switching states.",
-    exampleCount: 4,
+    exampleCount: 5,
     title: "Actions",
   },
   {

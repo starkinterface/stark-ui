@@ -1,6 +1,12 @@
 "use client"
 
-import { Button, Toggle, ToggleGroup, ButtonGroup } from "@stark-ui/react"
+import {
+  Button,
+  Toggle,
+  ToggleGroup,
+  ButtonGroup,
+  DownloadTrigger,
+} from "@stark-ui/react"
 import {
   LuBell,
   LuBellOff,
@@ -12,6 +18,7 @@ import {
   LuShieldOff,
   LuTerminal,
   LuUndo2,
+  LuDownload,
 } from "react-icons/lu"
 
 const ToggleExample = () => (
@@ -72,7 +79,7 @@ const Actions = () => (
       <ToggleExample />
       <ToggleGroupExample />
     </div>
-    <div className="grid grid-cols-4 gap-2">
+    <div className="grid grid-cols-3 gap-2">
       <Button variant="accent">
         <LuRocket data-icon="inline-start" />
         Deploy
@@ -89,6 +96,18 @@ const Actions = () => (
         <LuTerminal data-icon="inline-start" />
         Logs
       </Button>
+      <div />
+      <DownloadTrigger
+        fileName="stark-config.json"
+        mimeType="application/json"
+        data={JSON.stringify({ project: "stark", version: "1.0.0" }, null, 2)}
+        asChild
+      >
+        <Button variant="outline">
+          <LuDownload data-icon="inline-start" />
+          Export
+        </Button>
+      </DownloadTrigger>
     </div>
   </div>
 )
