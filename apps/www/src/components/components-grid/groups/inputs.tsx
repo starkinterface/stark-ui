@@ -9,6 +9,7 @@ import {
   PasswordInput,
   PinInput,
   Textarea,
+  TagsInput,
 } from "@stark-ui/react"
 import { useEffect, useRef, useState } from "react"
 import {
@@ -19,6 +20,7 @@ import {
   LuMoveHorizontal,
   LuEye,
   LuEyeOff,
+  LuX,
 } from "react-icons/lu"
 
 const FieldExample = () => (
@@ -177,6 +179,37 @@ const PasswordInputExample = () => (
   </Field.Root>
 )
 
+const TagsInputExample = () => {
+  const [value, setValue] = useState<string[]>(["Next.js", "Vite", "Turbopack"])
+
+  return (
+    <TagsInput.Root
+      value={value}
+      onValueChange={(details) => setValue(details.value)}
+    >
+      <TagsInput.Label>Build tools</TagsInput.Label>
+      <TagsInput.Control>
+        {value.map((val, index) => (
+          <TagsInput.Item key={index} index={index} value={val}>
+            <TagsInput.ItemPreview>
+              <TagsInput.ItemText>{val}</TagsInput.ItemText>
+              <TagsInput.ItemDeleteTrigger>
+                <LuX />
+              </TagsInput.ItemDeleteTrigger>
+            </TagsInput.ItemPreview>
+            <TagsInput.ItemInput />
+          </TagsInput.Item>
+        ))}
+        <TagsInput.Input placeholder="Add tool..." />
+        <TagsInput.ClearTrigger>
+          <LuX />
+        </TagsInput.ClearTrigger>
+      </TagsInput.Control>
+      <TagsInput.HiddenInput />
+    </TagsInput.Root>
+  )
+}
+
 const Inputs = () => (
   <div className="flex flex-col gap-4">
     <FieldExample />
@@ -188,6 +221,7 @@ const Inputs = () => (
     </div>
     <PasswordInputExample />
     <TextareaExample />
+    <TagsInputExample />
   </div>
 )
 

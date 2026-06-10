@@ -2,6 +2,7 @@
 
 import { Group } from "./group"
 import { Actions } from "./groups/actions"
+import { DataDisplay } from "./groups/data-display"
 import { DateTime } from "./groups/date-time"
 import { Inputs } from "./groups/inputs"
 import { Navigation } from "./groups/navigation"
@@ -44,7 +45,7 @@ const groups: GroupProps[] = [
     className: styles.inputs(),
     description:
       "Text fields, textareas, and specialized controls for entering data.",
-    exampleCount: 9,
+    exampleCount: 10,
     title: "Inputs",
   },
   {
@@ -99,10 +100,11 @@ const groups: GroupProps[] = [
     title: "Feedback",
   },
   {
+    children: <DataDisplay />,
     className: styles.dataDisplay(),
     description:
       "Avatars, badges, cards, and tags for presenting labeled information.",
-    exampleCount: 2,
+    exampleCount: 1,
     title: "Data Display",
   },
 ]
