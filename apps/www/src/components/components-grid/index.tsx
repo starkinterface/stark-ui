@@ -104,7 +104,7 @@ const groups: GroupProps[] = [
     className: styles.dataDisplay(),
     description:
       "Avatars, badges, cards, and tags for presenting labeled information.",
-    exampleCount: 1,
+    exampleCount: 3,
     title: "Data Display",
   },
 ]

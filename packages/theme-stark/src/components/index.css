@@ -8,6 +8,8 @@
 /* ----------------------------------------------------------------------------
  * Components
  * ---------------------------------------------------------------------------- */
+@import "./avatar.css";
+@import "./avatar-group.css";
 @import "./button-group.css";
 @import "./input.css";
 @import "./input-group.css";

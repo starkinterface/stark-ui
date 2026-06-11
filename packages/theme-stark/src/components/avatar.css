@@ -1,0 +1,116 @@
+@layer components {
+  .avatar {
+    @apply relative inline-flex shrink-0 bg-background align-middle select-none;
+
+    @variant focus-visible {
+      @apply focus-visible;
+    }
+  }
+
+  .avatar-image {
+    @apply size-full rounded-[inherit] object-cover object-center;
+  }
+
+  .avatar-fallback {
+    @apply flex size-full items-center justify-center rounded-[inherit] bg-background-secondary text-foreground-muted uppercase;
+  }
+
+  .avatar-indicator {
+    @apply absolute right-0 bottom-0 flex items-center justify-center rounded-full bg-background text-foreground ring-2 ring-background;
+
+    /* TODO: use custom variant */
+    @variant *:[svg] {
+      @apply size-full;
+    }
+  }
+
+  /* ----------------------------------------------------------------------------
+   * Default Variants
+   * ---------------------------------------------------------------------------- */
+  :where(.avatar) {
+    @apply avatar--md;
+    @apply avatar--circle;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Shapes
+ * ---------------------------------------------------------------------------- */
+@utility avatar--circle {
+  @apply rounded-full;
+}
+
+@utility avatar--square {
+  @apply rounded-xs;
+}
+
+/* ----------------------------------------------------------------------------
+ * Sizes
+ * ---------------------------------------------------------------------------- */
+@utility avatar--xs {
+  @apply size-6;
+
+  .avatar-fallback {
+    @apply text-[10px];
+  }
+
+  .avatar-indicator {
+    @apply size-2;
+
+    /* TODO: use custom variant */
+    @variant has-[>_svg] {
+      @apply size-2;
+    }
+  }
+}
+
+@utility avatar--sm {
+  @apply size-7;
+
+  .avatar-fallback {
+    @apply text-[11px];
+  }
+
+  .avatar-indicator {
+    @apply size-2;
+
+    /* TODO: use custom variant */
+    @variant has-[>_svg] {
+      @apply size-2;
+    }
+  }
+}
+
+@utility avatar--md {
+  @apply size-8;
+
+  .avatar-fallback {
+    @apply text-xs;
+  }
+
+  .avatar-indicator {
+    @apply size-2;
+
+    /* TODO: use custom variant */
+    @variant has-[>_svg] {
+      @apply size-2.5;
+    }
+  }
+}
+
+@utility avatar--lg {
+  @apply size-9;
+
+  .avatar-fallback {
+    @apply text-sm;
+  }
+
+  .avatar-indicator {
+    @apply size-2;
+
+    /* TODO: use custom variant */
+    @variant has-[>_svg] {
+      @apply size-2.5;
+    }
+  }
+}

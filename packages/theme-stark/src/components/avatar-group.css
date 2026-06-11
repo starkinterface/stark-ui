@@ -1,0 +1,39 @@
+@layer components {
+  .avatar-group {
+    @apply isolate flex items-center -space-x-2.5;
+
+    .avatar {
+      @apply ring-2 ring-background ring-offset-0;
+    }
+  }
+
+  /* ----------------------------------------------------------------------------
+   * Default Variants
+   * ---------------------------------------------------------------------------- */
+  :where(.avatar-group) {
+    @apply avatar-group--last-on-top;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Stacking
+ * ---------------------------------------------------------------------------- */
+@utility avatar-group--last-on-top {
+  .avatar {
+    z-index: var(--group-item-index);
+
+    @variant focus-visible {
+      z-index: calc(var(--group-count) + 1);
+    }
+  }
+}
+
+@utility avatar-group--first-on-top {
+  .avatar {
+    z-index: calc(var(--group-count) - var(--group-item-index));
+
+    @variant focus-visible {
+      z-index: calc(var(--group-count) + 1);
+    }
+  }
+}
