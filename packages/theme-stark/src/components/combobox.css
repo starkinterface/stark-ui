@@ -90,7 +90,7 @@
 
     @variant not-focus-visible:data-[state=open] {
       animation:
-        scale-in var(--duration-switch) var(--ease-switch-in),
+        zoom-in var(--duration-switch) var(--ease-switch-in),
         fade-in var(--duration-switch) var(--ease-switch-in);
     }
   }

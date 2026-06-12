@@ -16,7 +16,7 @@
   --ease-extend-in: cubic-bezier(0.36, 0.72, 0, 1);
   --ease-extend-out: var(--ease-extend-in);
 
-  @keyframes scale-in {
+  @keyframes zoom-in {
     0% {
       transform: scale(0.94);
     }
@@ -25,7 +25,7 @@
     }
   }
 
-  @keyframes scale-out {
+  @keyframes zoom-out {
     0% {
       transform: scale(1);
     }
