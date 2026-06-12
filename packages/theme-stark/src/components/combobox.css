@@ -48,32 +48,10 @@
     @apply flex flex-col overflow-y-auto rounded-xs border border-border bg-background-surface text-sm;
     @apply scroll-pt-8 scrollbar-none;
 
+    transform-origin: var(--transform-origin);
+
     @variant focus-visible {
       @apply border-ring focus-visible;
-    }
-
-    @variant data-[placement=bottom] {
-      @apply origin-top;
-    }
-
-    @variant data-[placement=bottom-start] {
-      @apply origin-top-left;
-    }
-
-    @variant data-[placement=bottom-end] {
-      @apply origin-top-right;
-    }
-
-    @variant data-[placement=top] {
-      @apply origin-bottom;
-    }
-
-    @variant data-[placement=top-start] {
-      @apply origin-bottom-left;
-    }
-
-    @variant data-[placement=top-end] {
-      @apply origin-bottom-right;
     }
 
     @variant data-empty {
