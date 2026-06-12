@@ -1,0 +1,55 @@
+@layer components {
+  .tooltip-trigger {
+  }
+
+  .tooltip-positioner {
+  }
+
+  .tooltip-content {
+    @apply rounded-xs bg-background-primary px-2 py-1 text-xs text-foreground-primary select-none;
+
+    transform-origin: var(--transform-origin);
+    z-index: calc(var(--z-index-tooltip) + var(--layer-index, 0));
+
+    @variant data-[state=open] {
+      @variant data-[side=left] {
+        animation:
+          zoom-in var(--duration-switch) var(--ease-switch-in),
+          slide-from-right var(--duration-switch) var(--ease-switch-in),
+          fade-in var(--duration-switch) var(--ease-switch-in);
+      }
+
+      @variant data-[side=right] {
+        animation:
+          zoom-in var(--duration-switch) var(--ease-switch-in),
+          slide-from-left var(--duration-switch) var(--ease-switch-in),
+          fade-in var(--duration-switch) var(--ease-switch-in);
+      }
+
+      @variant data-[side=top] {
+        animation:
+          zoom-in var(--duration-switch) var(--ease-switch-in),
+          slide-from-bottom var(--duration-switch) var(--ease-switch-in),
+          fade-in var(--duration-switch) var(--ease-switch-in);
+      }
+
+      @variant data-[side=bottom] {
+        animation:
+          zoom-in var(--duration-switch) var(--ease-switch-in),
+          slide-from-top var(--duration-switch) var(--ease-switch-in),
+          fade-in var(--duration-switch) var(--ease-switch-in);
+      }
+    }
+
+    @variant data-[state=closed] {
+      animation:
+        zoom-out var(--duration-switch) var(--ease-switch-in),
+        fade-out var(--duration-switch) var(--ease-switch-in);
+    }
+  }
+
+  .tooltip-arrow {
+    --arrow-size: 6px;
+    --arrow-background: var(--color-background-primary);
+  }
+}

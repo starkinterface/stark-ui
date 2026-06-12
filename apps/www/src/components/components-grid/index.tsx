@@ -6,6 +6,7 @@ import { DataDisplay } from "./groups/data-display"
 import { DateTime } from "./groups/date-time"
 import { Inputs } from "./groups/inputs"
 import { Navigation } from "./groups/navigation"
+import { Overlays } from "./groups/overlays"
 import { Selection } from "./groups/selection"
 import { tv } from "tailwind-variants/lite"
 
@@ -64,10 +65,11 @@ const groups: GroupProps[] = [
     title: "Collections",
   },
   {
+    children: <Overlays />,
     className: styles.overlays(),
     description:
       "Dialogs, drawers, popovers, and tooltips layered above the page.",
-    exampleCount: 2,
+    exampleCount: 1,
     title: "Overlays",
   },
   {
