@@ -55,7 +55,7 @@ const Group = ({
       onBlur={handleBlur}
       aria-labelledby={id}
       className={cx(
-        "group/components-group p-content-padding gap-content-padding relative isolate flex flex-col justify-between bg-background",
+        "group/components-group p-content-padding gap-content-padding relative flex flex-col justify-between bg-background",
         "data-interactive:bg-background-surface",
         className
       )}
