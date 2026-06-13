@@ -1,6 +1,6 @@
 "use client"
 
-import { Avatar, AvatarGroup, Tag } from "@stark-ui/react"
+import { Avatar, AvatarGroup, Tag, Kbd } from "@stark-ui/react"
 import { LuX } from "react-icons/lu"
 
 const AvatarExample = () => (
@@ -68,6 +68,17 @@ const TagExample = () => (
   </div>
 )
 
+const KbdExample = () => (
+  <div className="flex items-center gap-1.5 text-sm text-foreground-muted">
+    Press
+    <div className="flex items-center gap-1">
+      <Kbd>CTRL</Kbd>
+      <Kbd>K</Kbd>
+    </div>
+    to search deployments
+  </div>
+)
+
 const DataDisplay = () => (
   <div className="flex flex-col gap-4">
     <div className="flex items-center justify-between gap-4">
@@ -75,6 +86,7 @@ const DataDisplay = () => (
       <AvatarGroupExample />
     </div>
     <TagExample />
+    <KbdExample />
   </div>
 )
 

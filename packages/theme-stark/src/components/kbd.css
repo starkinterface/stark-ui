@@ -1,0 +1,26 @@
+@layer components {
+  .kbd {
+    @apply inline-flex items-center justify-center rounded-xs bg-background-secondary font-mono font-medium text-foreground-secondary select-none;
+  }
+
+  /* Default variants */
+  :where(.kbd) {
+    @apply kbd--md;
+  }
+}
+
+@utility kbd--xs {
+  @apply h-3.5 min-w-3.5 px-1 text-[10px] leading-2.5;
+}
+
+@utility kbd--sm {
+  @apply h-4 min-w-4 px-1 text-[10px] leading-2.5;
+}
+
+@utility kbd--md {
+  @apply h-5 min-w-5 px-1.5 text-[11px] leading-2.75;
+}
+
+@utility kbd--lg {
+  @apply h-5.5 min-w-5.5 px-1.75 text-xs leading-3;
+}
