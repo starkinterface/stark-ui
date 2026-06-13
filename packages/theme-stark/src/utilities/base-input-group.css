@@ -91,6 +91,10 @@
     @variant has-[[data-button]:first-child] {
       @apply ps-0.75;
     }
+
+    @variant has-[[data-kbd]:first-child] {
+      @apply ps-1.25;
+    }
   }
 
   @variant data-[align=inline-end] {
@@ -98,6 +102,10 @@
 
     @variant has-[[data-button]:last-child] {
       @apply pe-0.75;
+    }
+
+    @variant has-[[data-kbd]:last-child] {
+      @apply pe-1.25;
     }
   }
 
