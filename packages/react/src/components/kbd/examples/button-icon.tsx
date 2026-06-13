@@ -6,10 +6,10 @@ export default function ButtonIcon() {
     <div className="flex h-dvh items-center justify-center">
       <Button variant="accent">
         Search
-        <span className="flex gap-1">
-          <Kbd>CTRL</Kbd>
-          <Kbd>K</Kbd>
-        </span>
+        <Kbd.Root>
+          <Kbd.Key>CTRL</Kbd.Key>
+          <Kbd.Key>K</Kbd.Key>
+        </Kbd.Root>
       </Button>
     </div>
   )

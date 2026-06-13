@@ -71,10 +71,11 @@ const TagExample = () => (
 const KbdExample = () => (
   <div className="flex items-center gap-1.5 text-sm text-foreground-muted">
     Press
-    <div className="flex items-center gap-1">
-      <Kbd>CTRL</Kbd>
-      <Kbd>K</Kbd>
-    </div>
+    <Kbd.Root>
+      <Kbd.Key>CTRL</Kbd.Key>
+      <Kbd.Separator>+</Kbd.Separator>
+      <Kbd.Key>K</Kbd.Key>
+    </Kbd.Root>
     to search deployments
   </div>
 )

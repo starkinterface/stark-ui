@@ -3,13 +3,19 @@ import { tv } from "tailwind-variants/lite"
 import type { VariantProps } from "tailwind-variants/lite"
 
 export const kbdClasses = tv({
-  base: "kbd",
+  slots: {
+    key: "kbd-key",
+    root: "kbd",
+    separator: "kbd-separator",
+  },
   variants: {
-    size: {
-      lg: "kbd--lg",
-      md: "kbd--md",
-      sm: "kbd--sm",
-      xs: "kbd--xs",
+    spacing: {
+      attached: {
+        root: "kbd--attached",
+      },
+      separated: {
+        root: "kbd--separated",
+      },
     },
   },
 })

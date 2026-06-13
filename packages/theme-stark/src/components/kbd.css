@@ -1,26 +1,47 @@
 @layer components {
   .kbd {
-    @apply inline-flex items-center justify-center rounded-xs bg-background-secondary font-mono font-medium text-foreground-secondary select-none;
+    @apply inline-flex items-center font-mono font-medium text-foreground-secondary select-none;
+    @apply h-5 text-[11px] leading-2.75;
+  }
+
+  .kbd-key,
+  .kbd-separator {
+    @apply inline-flex h-full items-center justify-center;
+  }
+
+  .kbd-separator {
+    @apply font-sans text-foreground-muted;
   }
 
   /* Default variants */
   :where(.kbd) {
-    @apply kbd--md;
+    @apply kbd--attached;
   }
 }
 
-@utility kbd--xs {
-  @apply h-3.5 min-w-3.5 px-1 text-[10px] leading-2.5;
+/* ----------------------------------------------------------------------------
+ * Variants
+ * ---------------------------------------------------------------------------- */
+@utility kbd--attached {
+  @apply gap-1.5 rounded-xs bg-background-secondary px-1.75;
+
+  .kbd-key {
+    @apply min-w-auto rounded-none bg-transparent px-0;
+  }
+
+  .kbd-separator {
+    @apply -mx-0.5;
+  }
 }
 
-@utility kbd--sm {
-  @apply h-4 min-w-4 px-1 text-[10px] leading-2.5;
-}
+@utility kbd--separated {
+  @apply gap-1 rounded-none bg-transparent px-0;
 
-@utility kbd--md {
-  @apply h-5 min-w-5 px-1.5 text-[11px] leading-2.75;
-}
+  .kbd-key {
+    @apply min-w-5 rounded-xs bg-background-secondary px-1.75;
+  }
 
-@utility kbd--lg {
-  @apply h-5.5 min-w-5.5 px-1.75 text-xs leading-3;
+  .kbd-separator {
+    @apply mx-0;
+  }
 }

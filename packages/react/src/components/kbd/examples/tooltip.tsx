@@ -12,10 +12,10 @@ export default function TooltipUsage() {
         <Tooltip.Positioner>
           <Tooltip.Content className="flex items-center gap-2">
             Delete deployment
-            <div className="flex gap-0.5">
-              <Kbd size="xs">CTRL</Kbd>
-              <Kbd size="xs">D</Kbd>
-            </div>
+            <Kbd.Root spacing="attached">
+              <Kbd.Key>CTRL</Kbd.Key>
+              <Kbd.Key>D</Kbd.Key>
+            </Kbd.Root>
           </Tooltip.Content>
         </Tooltip.Positioner>
       </Tooltip.Root>

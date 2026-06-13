@@ -1,7 +1,8 @@
 import BasicExample from "./examples/basic"
 import ButtonIconExample from "./examples/button-icon"
 import InputAddonExample from "./examples/input-addon"
-import SizesExample from "./examples/sizes"
+import SeparatorExample from "./examples/separator"
+import SpacingExample from "./examples/spacing"
 import TooltipExample from "./examples/tooltip"
 
 export default {
@@ -12,16 +13,20 @@ export const Basic = {
   render: () => <BasicExample />,
 }
 
-export const Sizes = {
-  render: () => <SizesExample />,
+export const Separator = {
+  render: () => <SeparatorExample />,
 }
 
-export const InputAddon = {
-  render: () => <InputAddonExample />,
+export const Spacing = {
+  render: () => <SpacingExample />,
 }
 
 export const ButtonIcon = {
   render: () => <ButtonIconExample />,
+}
+
+export const InputAddon = {
+  render: () => <InputAddonExample />,
 }
 
 export const Tooltip = {
