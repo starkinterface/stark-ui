@@ -4,6 +4,7 @@ import { Group } from "./group"
 import { Actions } from "./groups/actions"
 import { DataDisplay } from "./groups/data-display"
 import { DateTime } from "./groups/date-time"
+import { Disclosure } from "./groups/disclosure"
 import { Inputs } from "./groups/inputs"
 import { Navigation } from "./groups/navigation"
 import { Overlays } from "./groups/overlays"
@@ -73,10 +74,11 @@ const groups: GroupProps[] = [
     title: "Overlays",
   },
   {
+    children: <Disclosure />,
     className: styles.disclosure(),
     description:
       "Accordions, collapsibles, and tabs for revealing and organizing content.",
-    exampleCount: 2,
+    exampleCount: 1,
     title: "Disclosure",
   },
   {

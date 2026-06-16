@@ -1,0 +1,88 @@
+@layer components {
+  .tabs {
+    @apply flex;
+
+    @variant data-[orientation=horizontal] {
+      @apply flex-col;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply flex-row;
+    }
+  }
+
+  .tabs-list {
+    @apply relative flex gap-2 border-border;
+
+    @variant data-[orientation=horizontal] {
+      @apply flex-row items-center border-b pb-2;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply flex-col items-start border-s ps-2;
+    }
+  }
+
+  .tabs-trigger {
+    @apply relative flex h-8 min-w-8 items-center gap-2 rounded-xs px-2.5 text-sm font-medium text-foreground-muted transition-colors duration-100 ease-out select-none;
+
+    @variant icon {
+      @apply size-4 shrink-0;
+    }
+
+    @variant hover, data-focus {
+      @apply text-foreground;
+    }
+
+    @variant focus-visible {
+      @apply bg-background-secondary focus-visible;
+    }
+
+    @variant data-[orientation=horizontal] {
+      @apply w-auto;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply w-full;
+    }
+
+    @variant data-selected {
+      @apply text-foreground;
+    }
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+  }
+
+  .tabs-indicator {
+    @apply pointer-events-none absolute -z-1 bg-foreground;
+    transition-property: left, top, width, height;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    @variant data-[orientation=horizontal] {
+      height: calc(var(--spacing) * 0.5);
+      width: var(--width);
+      bottom: -1px;
+      left: var(--left);
+    }
+
+    @variant data-[orientation=vertical] {
+      width: 2px;
+      height: var(--height);
+      left: -1px;
+      top: var(--top);
+    }
+  }
+
+  .tabs-content {
+    @variant data-[orientation=horizontal] {
+      @apply pt-4;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply ps-4;
+    }
+  }
+}
