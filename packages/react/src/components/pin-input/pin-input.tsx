@@ -1,10 +1,12 @@
 import { pinInputClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
+import { ark } from "@ark-ui/react/factory"
 import { PinInput as ArkPinInput } from "@ark-ui/react/pin-input"
 
 import type { PinInputVariantProps } from "@stark-ui/classes"
 import type { UnstyledProp } from "@stark-ui/react-style-context"
 import type { Assign } from "@ark-ui/react"
+import type { ComponentProps } from "react"
 
 const { withProviderSlot, withSlot } = createStyleContext(pinInputClasses, {
   name: "PinInput",
@@ -67,6 +69,19 @@ const PinInputHiddenInput = withSlot<
 >(ArkPinInput.HiddenInput, "hiddenInput")
 
 ///////////////////////////////////////////////////////////////////////////////
+/// Separator
+
+type PinInputSeparatorProps = Assign<
+  ComponentProps<typeof ark.span>,
+  UnstyledProp
+>
+
+const PinInputSeparator = withSlot<HTMLSpanElement, PinInputSeparatorProps>(
+  ark.span,
+  "separator"
+)
+
+///////////////////////////////////////////////////////////////////////////////
 /// Exports
 
 export {
@@ -75,6 +90,7 @@ export {
   PinInputControl,
   PinInputInput,
   PinInputHiddenInput,
+  PinInputSeparator,
 }
 
 export type {
@@ -83,4 +99,5 @@ export type {
   PinInputControlProps,
   PinInputInputProps,
   PinInputHiddenInputProps,
+  PinInputSeparatorProps,
 }

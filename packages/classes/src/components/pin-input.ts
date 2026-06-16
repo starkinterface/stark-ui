@@ -9,6 +9,7 @@ export const pinInputClasses = tv({
     input: "pin-input-input",
     label: "pin-input-label",
     root: "pin-input",
+    separator: "pin-input-separator",
   },
 })
 

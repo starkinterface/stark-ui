@@ -17,9 +17,11 @@ export default function Basic() {
       <PinInput.Root count={6}>
         <PinInput.Label>Backup Code</PinInput.Label>
         <PinInput.Control>
+          <PinInput.Separator>G</PinInput.Separator>
           <PinInput.Input index={0} />
           <PinInput.Input index={1} />
           <PinInput.Input index={2} />
+          <PinInput.Separator>&ndash;</PinInput.Separator>
           <PinInput.Input index={3} />
           <PinInput.Input index={4} />
           <PinInput.Input index={5} />

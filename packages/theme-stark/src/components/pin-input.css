@@ -18,4 +18,12 @@
 
   .pin-input-hidden-input {
   }
+
+  .pin-input-separator {
+    @apply mx-1.5 flex items-center justify-center text-foreground-muted;
+
+    &:first-child {
+      @apply ms-0;
+    }
+  }
 }

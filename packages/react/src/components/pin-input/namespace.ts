@@ -4,6 +4,7 @@ export {
   PinInputControl as Control,
   PinInputInput as Input,
   PinInputHiddenInput as HiddenInput,
+  PinInputSeparator as Separator,
 } from "./pin-input"
 
 export type {
@@ -12,4 +13,5 @@ export type {
   PinInputControlProps as ControlProps,
   PinInputInputProps as InputProps,
   PinInputHiddenInputProps as HiddenInputProps,
+  PinInputSeparatorProps as SeparatorProps,
 } from "./pin-input"
