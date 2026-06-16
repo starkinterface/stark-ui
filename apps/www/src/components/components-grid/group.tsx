@@ -47,6 +47,7 @@ const Group = ({
   }, [])
 
   return (
+    /* oxlint-disable jsx-a11y/no-noninteractive-element-interactions */
     <article
       data-interactive={attrValue(isActive)}
       onMouseEnter={activate}
