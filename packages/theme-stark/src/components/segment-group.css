@@ -1,0 +1,112 @@
+@layer components {
+  .segment-group {
+    @apply base-field;
+
+    @variant data-[orientation=horizontal] {
+      .segment-group-content {
+        @apply h-8 flex-row items-center;
+      }
+
+      .segment-group-item {
+        @variant has-data-segment-group-item-text {
+          @apply justify-center;
+        }
+      }
+    }
+
+    @variant data-[orientation=vertical] {
+      .segment-group-content {
+        @apply h-auto flex-col items-start;
+      }
+
+      .segment-group-item {
+        @variant has-data-segment-group-item-text {
+          @apply justify-start;
+        }
+      }
+    }
+
+    @variant data-disabled {
+      .segment-group-content {
+        @apply border-background-inactive;
+      }
+
+      .segment-group-indicator {
+        @apply bg-background-inactive;
+      }
+    }
+
+    @variant data-invalid {
+      .segment-group-content {
+        @apply border-foreground-danger-soft;
+      }
+    }
+  }
+
+  .segment-group-label {
+    @apply base-field-label;
+  }
+
+  .segment-group-content {
+    @apply relative flex w-fit rounded-xs border border-border p-0.5;
+
+    @variant has-data-focus:has-data-focus-visible {
+      @apply border-ring focus-visible;
+    }
+  }
+
+  .segment-group-item {
+    @apply flex h-6.5 w-6.5 items-center justify-center gap-1.5;
+
+    @variant has-data-segment-group-item-text {
+      @apply w-full px-2.5;
+    }
+
+    @variant icon {
+      @apply size-4 shrink-0 text-foreground-muted;
+    }
+
+    @variant data-[state=checked], data-hover {
+      @variant icon {
+        @apply text-foreground;
+      }
+    }
+  }
+
+  .segment-group-item-text {
+    @apply text-sm text-foreground-muted select-none;
+
+    @variant data-[state=checked], data-hover:not-data-disabled {
+      @apply text-foreground;
+    }
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+  }
+
+  .segment-group-indicator {
+    @apply pointer-events-none -z-1 rounded-xs bg-background-secondary;
+    transition-property: left, top, width, height;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    @variant data-[orientation=horizontal] {
+      height: auto;
+      width: var(--width);
+      top: calc(var(--spacing) * 0.5);
+      right: auto;
+      bottom: calc(var(--spacing) * 0.5);
+      left: var(--left);
+    }
+
+    @variant data-[orientation=vertical] {
+      height: var(--height);
+      width: var(--width);
+      top: var(--top);
+      right: calc(var(--spacing) * 0.5);
+      bottom: auto;
+      left: calc(var(--spacing) * 0.5);
+    }
+  }
+}

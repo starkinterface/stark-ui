@@ -1,6 +1,12 @@
 "use client"
 
-import { Checkbox, RadioGroup, Slider, Switch } from "@stark-ui/react"
+import {
+  Checkbox,
+  RadioGroup,
+  Slider,
+  Switch,
+  SegmentGroup,
+} from "@stark-ui/react"
 import { LuCheck } from "react-icons/lu"
 
 const CheckboxExample = () => (
@@ -124,12 +130,42 @@ const SliderExample = () => (
   </div>
 )
 
+const SegmentGroupExample = () => {
+  const options = [
+    { label: "Development", value: "development" },
+    { label: "Preview", value: "preview" },
+    { label: "Production", value: "production" },
+  ]
+
+  return (
+    <div className="flex w-full flex-col gap-3">
+      <SegmentGroup.Root
+        defaultValue="preview"
+        className="w-full"
+        orientation="horizontal"
+      >
+        <SegmentGroup.Label>Target Stage</SegmentGroup.Label>
+        <div className="segment-group-content w-full">
+          <SegmentGroup.Indicator />
+          {options.map((option) => (
+            <SegmentGroup.Item key={option.value} value={option.value}>
+              <SegmentGroup.ItemText>{option.label}</SegmentGroup.ItemText>
+              <SegmentGroup.ItemHiddenInput />
+            </SegmentGroup.Item>
+          ))}
+        </div>
+      </SegmentGroup.Root>
+    </div>
+  )
+}
+
 const Selection = () => (
   <div className="flex flex-col gap-4">
     <RadioGroupExample />
     <SliderExample />
     <SwitchExample />
     <CheckboxExample />
+    <SegmentGroupExample />
   </div>
 )
 

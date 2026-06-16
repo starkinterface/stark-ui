@@ -54,7 +54,7 @@ const groups: GroupProps[] = [
     className: styles.selection(),
     description:
       "Checkboxes, radios, switches, and sliders for picking options and values.",
-    exampleCount: 4,
+    exampleCount: 5,
     title: "Selection",
   },
   {
