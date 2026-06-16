@@ -20,10 +20,14 @@
   }
 
   .pin-input-separator {
-    @apply mx-1.5 flex items-center justify-center text-foreground-muted;
+    @apply mx-1.5 flex items-center justify-center text-sm text-foreground-muted;
 
     &:first-child {
       @apply ms-0;
+    }
+
+    @variant icon {
+      @apply size-4;
     }
   }
 }
