@@ -142,12 +142,13 @@ const PinInputExample = () => (
     <PinInput.Root count={6}>
       <PinInput.Label>Authentication Code</PinInput.Label>
       <PinInput.Control>
-        <PinInput.Input index={0} placeholder="-" />
-        <PinInput.Input index={1} placeholder="-" />
-        <PinInput.Input index={2} placeholder="-" />
-        <PinInput.Input index={3} placeholder="-" />
-        <PinInput.Input index={4} placeholder="-" />
-        <PinInput.Input index={5} placeholder="-" />
+        <PinInput.Input index={0} placeholder="•" />
+        <PinInput.Input index={1} placeholder="•" />
+        <PinInput.Input index={2} placeholder="•" />
+        <PinInput.Separator>-</PinInput.Separator>
+        <PinInput.Input index={3} placeholder="•" />
+        <PinInput.Input index={4} placeholder="•" />
+        <PinInput.Input index={5} placeholder="•" />
       </PinInput.Control>
       <PinInput.HiddenInput />
     </PinInput.Root>
