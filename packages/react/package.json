@@ -51,6 +51,7 @@
     "lucide-react": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
+    "react-icons": "catalog:",
     "typescript": "catalog:",
     "unplugin-dts": "catalog:",
     "vite": "catalog:"
