@@ -78,7 +78,7 @@ const groups: GroupProps[] = [
     className: styles.disclosure(),
     description:
       "Accordions, collapsibles, and tabs for revealing and organizing content.",
-    exampleCount: 1,
+    exampleCount: 2,
     title: "Disclosure",
   },
   {

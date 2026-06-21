@@ -1,0 +1,179 @@
+@layer components {
+  .accordion {
+    @apply flex;
+
+    @variant data-[orientation=horizontal] {
+      @apply flex-row;
+
+      .accordion-item-body {
+        @apply p-2;
+      }
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply flex-col;
+
+      .accordion-item-body {
+        @apply p-2;
+      }
+    }
+  }
+
+  .accordion-item {
+    @apply border-border;
+
+    @variant data-[orientation=horizontal] {
+      @apply flex border-e;
+
+      @variant last {
+        @apply border-transparent;
+      }
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply block border-b;
+
+      @variant last {
+        @apply border-none;
+      }
+    }
+  }
+
+  .accordion-item-trigger-overlay {
+    @apply absolute inset-0 z-0 h-full w-full opacity-0 outline-none;
+  }
+
+  .accordion-item-trigger,
+  .accordion-item-trigger-action {
+    @apply relative flex items-center justify-between gap-2.5 rounded-xs px-2 py-2.5 text-sm;
+
+    @variant has-data-accordion-item-subtitle {
+      @apply items-start;
+    }
+
+    @variant data-[orientation=horizontal] {
+      @apply h-full min-w-10;
+
+      writing-mode: sideways-lr;
+
+      .accordion-item-icon,
+      .accordion-item-indicator {
+        @variant icon {
+          @apply -rotate-90;
+        }
+      }
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply min-h-10 w-full;
+    }
+
+    @variant focus-visible, has-[[data-accordion-item-trigger-overlay]:focus-visible] {
+      @apply focus-visible;
+    }
+
+    @variant disabled, has-[[data-accordion-item-trigger-overlay]:disabled] {
+      .accordion-item-icon,
+      .accordion-item-indicator {
+        @variant icon {
+          @apply text-foreground-inactive;
+        }
+      }
+
+      .accordion-item-title,
+      .accordion-item-subtitle {
+        @apply text-foreground-inactive;
+      }
+    }
+  }
+
+  .accordion-item-title {
+    @apply flex-1 text-start;
+  }
+
+  .accordion-item-subtitle {
+    @apply text-foreground-muted;
+  }
+
+  .accordion-item-icon,
+  .accordion-item-indicator {
+    @apply flex min-h-5 items-center justify-center text-foreground-muted;
+
+    @variant icon {
+      @apply size-4 shrink-0;
+    }
+  }
+
+  .accordion-item-addon {
+    @apply relative z-1 flex shrink-0 items-center gap-1.5;
+    @apply pointer-events-none;
+
+    > * {
+      @apply pointer-events-auto;
+    }
+
+    @variant data-[align=inline-start], data-[align=block-start] {
+      @apply order-first;
+    }
+
+    @variant data-[align=inline-end], data-[align=block-end] {
+      @apply order-last;
+    }
+  }
+
+  .accordion-item-indicator {
+    @variant icon {
+      @apply origin-center transition-transform duration-200 ease-snappy-in;
+    }
+
+    @variant data-[orientation=horizontal] {
+      @variant data-[state=open] {
+        @variant icon {
+          @apply rotate-0;
+        }
+      }
+    }
+
+    @variant data-[orientation=vertical] {
+      @variant data-[state=open] {
+        @variant icon {
+          @apply rotate-90;
+        }
+      }
+    }
+  }
+
+  .accordion-item-content {
+    @apply overflow-hidden text-sm text-foreground-muted;
+
+    @variant data-[state=open] {
+      animation-duration: var(--duration-smooth);
+      animation-timing-function: var(--ease-smooth-in);
+
+      @variant data-[orientation=horizontal] {
+        animation-name: expand-width, fade-in;
+        will-change: width;
+      }
+
+      @variant data-[orientation=vertical] {
+        animation-name: expand-height, fade-in;
+        will-change: height;
+      }
+    }
+
+    @variant data-[state=closed] {
+      animation-duration: var(--duration-smooth);
+      animation-timing-function: var(--ease-smooth-out);
+
+      @variant data-[orientation=horizontal] {
+        animation-name: collapse-width, fade-out;
+        will-change: width;
+      }
+
+      @variant data-[orientation=vertical] {
+        animation-name: collapse-height, fade-out;
+        will-change: height;
+      }
+    }
+  }
+}
