@@ -6,7 +6,7 @@
   }
 
   @variant icon {
-    @apply size-4;
+    @apply size-3;
   }
 
   @variant data-disabled {
