@@ -1,7 +1,7 @@
 "use client"
 
-import { Accordion, Tabs } from "@stark-ui/react"
-import { LuChevronRight, LuFiles, LuCpu, LuSettings } from "react-icons/lu"
+import { Accordion, Collapsible, Tabs } from "@stark-ui/react"
+import { LuChevronRight, LuCpu, LuFiles, LuSettings } from "react-icons/lu"
 
 const TabsExample = () => (
   <Tabs.Root defaultValue="deployments">
@@ -24,7 +24,7 @@ const TabsExample = () => (
 )
 
 const AccordionExample = () => (
-  <Accordion.Root defaultValue={["faq-1"]}>
+  <Accordion.Root defaultValue={[""]} collapsible>
     <Accordion.Item value="faq-1">
       <Accordion.ItemTrigger>
         <Accordion.ItemTitle>What is Stark UI?</Accordion.ItemTitle>
@@ -56,10 +56,29 @@ const AccordionExample = () => (
   </Accordion.Root>
 )
 
+const CollapsibleExample = () => (
+  <Collapsible.Root>
+    <Collapsible.Trigger asChild>
+      <button className="flex items-center gap-1.5 rounded-xs pe-1 text-sm text-foreground-muted focus-visible:focus-visible">
+        <Collapsible.Indicator>
+          <LuChevronRight />
+        </Collapsible.Indicator>
+        Changelog
+      </button>
+    </Collapsible.Trigger>
+    <Collapsible.Content>
+      <Collapsible.Body className="mt-2 text-sm">
+        Introduces Collapsible, Accordion, and improved theming support.
+      </Collapsible.Body>
+    </Collapsible.Content>
+  </Collapsible.Root>
+)
+
 const Disclosure = () => (
   <div className="flex flex-col gap-4">
     <TabsExample />
     <AccordionExample />
+    <CollapsibleExample />
   </div>
 )
 

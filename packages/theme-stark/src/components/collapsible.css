@@ -1,0 +1,50 @@
+@layer components {
+  .collapsible {
+    @apply w-full;
+  }
+
+  .collapsible-trigger {
+  }
+
+  .collapsible-indicator {
+    @variant icon {
+      @apply size-4 shrink-0 origin-center text-current transition-transform duration-200 ease-out;
+    }
+
+    @variant data-[state=open] {
+      @variant icon {
+        @apply rotate-90;
+      }
+    }
+  }
+
+  .collapsible-content {
+    @apply overflow-hidden;
+
+    @variant data-[state=open] {
+      animation-duration: var(--duration-smooth);
+      animation-timing-function: var(--ease-smooth-in);
+      animation-name: expand-height, fade-in;
+      will-change: height;
+    }
+
+    @variant data-[state=closed] {
+      animation-duration: var(--duration-smooth);
+      animation-timing-function: var(--ease-smooth-out);
+      animation-name: collapse-height, fade-out;
+      will-change: height;
+    }
+
+    @variant data-has-collapsed-size {
+      @variant data-[state=open] {
+        animation-name: expand-height;
+      }
+      @variant data-[state=closed] {
+        animation-name: collapse-height;
+      }
+    }
+  }
+
+  .collapsible-body {
+  }
+}
