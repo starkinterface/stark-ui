@@ -1,7 +1,7 @@
 "use client"
 
 import { Accordion, Tabs } from "@stark-ui/react"
-import { LuChevronDown, LuFiles, LuCpu, LuSettings } from "react-icons/lu"
+import { LuChevronRight, LuFiles, LuCpu, LuSettings } from "react-icons/lu"
 
 const TabsExample = () => (
   <Tabs.Root defaultValue="deployments">
@@ -29,7 +29,7 @@ const AccordionExample = () => (
       <Accordion.ItemTrigger>
         <Accordion.ItemTitle>What is Stark UI?</Accordion.ItemTitle>
         <Accordion.ItemIndicator>
-          <LuChevronDown />
+          <LuChevronRight />
         </Accordion.ItemIndicator>
       </Accordion.ItemTrigger>
       <Accordion.ItemContent>
@@ -43,7 +43,7 @@ const AccordionExample = () => (
       <Accordion.ItemTrigger>
         <Accordion.ItemTitle>Can I use it with Next.js?</Accordion.ItemTitle>
         <Accordion.ItemIndicator>
-          <LuChevronDown />
+          <LuChevronRight />
         </Accordion.ItemIndicator>
       </Accordion.ItemTrigger>
       <Accordion.ItemContent>
