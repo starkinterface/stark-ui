@@ -12,6 +12,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { tv } from "tailwind-variants/lite"
 
 import type { Metadata } from "next"
+import type { WithContext, WebSite } from "schema-dts"
 import "@/styles/globals.css"
 
 const geistSans = Geist({
@@ -24,10 +25,29 @@ const geistMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+const TITLE = "Beautiful component library for React and Vue"
+const DESCRIPTION =
+  "Stark UI is a component library for React and Vue with carefully crafted themes, modern design, and accessible components."
+const URL = "https://stark-ui.com"
+const NAME = "Stark UI"
+
 export const metadata: Metadata = {
-  description:
-    "Stark UI is an open-source component library for React and Vue, featuring carefully crafted themes using Tailwind CSS, modern design, and accessible components.",
-  title: "Beautiful Component Library for React and Vue · Stark UI",
+  description: DESCRIPTION,
+  openGraph: {
+    description: DESCRIPTION,
+    siteName: NAME,
+    title: TITLE,
+    type: "website",
+    url: URL,
+  },
+  title: TITLE,
+}
+
+const webSiteJsonLd: WithContext<WebSite> = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: NAME,
+  url: URL,
 }
 
 const styles = tv({
@@ -90,6 +110,12 @@ export default function RootLayout({
               console.log("Failed to read banner from localStorage", e)
             }
           `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(webSiteJsonLd).replaceAll("<", "\\u003c"),
           }}
         />
       </head>
