@@ -1,0 +1,121 @@
+@layer components {
+  .swap {
+  }
+
+  .swap-indicator {
+    @variant data-[state=open] {
+      animation-duration: var(--duration-smooth);
+      animation-timing-function: var(--ease-smooth-in);
+    }
+
+    @variant data-[state=closed] {
+      animation-duration: var(--duration-switch);
+      animation-timing-function: var(--ease-switch-out);
+    }
+  }
+
+  /* ----------------------------------------------------------------------------
+   * Default Variants
+   * ---------------------------------------------------------------------------- */
+  :where(.swap) {
+    @apply swap--fade;
+  }
+}
+
+@utility swap--fade {
+  .swap-indicator {
+    @variant data-[state=open] {
+      animation-name: fade-in, blur-in;
+    }
+
+    @variant data-[state=closed] {
+      animation-name: fade-out, blur-out;
+    }
+  }
+}
+
+@utility swap--flip {
+  .swap-indicator {
+    backface-visibility: hidden;
+
+    @variant data-[state=open] {
+      animation-name: flip-in, blur-in;
+    }
+
+    @variant data-[state=closed] {
+      animation-name: flip-out, blur-out;
+    }
+  }
+}
+
+@utility swap--rotate {
+  .swap-indicator {
+    @variant data-[state=open] {
+      animation-name: rotate-in, fade-in, blur-in;
+    }
+
+    @variant data-[state=closed] {
+      animation-name: rotate-out, fade-out, blur-out;
+    }
+  }
+}
+
+@utility swap--scale {
+  .swap-indicator {
+    @variant data-[state=open] {
+      animation-name: scale-in, fade-in, blur-in;
+    }
+
+    @variant data-[state=closed] {
+      animation-name: scale-out, fade-out, blur-out;
+    }
+  }
+}
+
+@utility swap--move-top {
+  .swap-indicator {
+    @variant data-[state=open] {
+      animation-name: slide-from-top, fade-in, blur-in;
+    }
+
+    @variant data-[state=closed] {
+      animation-name: slide-to-top, fade-out, blur-out;
+    }
+  }
+}
+
+@utility swap--move-bottom {
+  .swap-indicator {
+    @variant data-[state=open] {
+      animation-name: slide-from-bottom, fade-in, blur-in;
+    }
+
+    @variant data-[state=closed] {
+      animation-name: slide-to-bottom, fade-out, blur-out;
+    }
+  }
+}
+
+@utility swap--move-left {
+  .swap-indicator {
+    @variant data-[state=open] {
+      animation-name: slide-from-left, fade-in, blur-in;
+    }
+
+    @variant data-[state=closed] {
+      animation-name: slide-to-left, fade-out, blur-out;
+    }
+  }
+}
+
+@utility swap--move-right {
+  .swap-indicator {
+    @variant data-[state=open] {
+      animation-name: slide-from-right, fade-in, blur-in;
+    }
+
+    @variant data-[state=closed] {
+      animation-name: slide-to-right, fade-out, blur-out;
+    }
+  }
+}
