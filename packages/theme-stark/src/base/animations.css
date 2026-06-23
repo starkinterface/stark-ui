@@ -53,39 +53,147 @@
   }
 }
 
+@keyframes blur-in {
+  from {
+    filter: blur(2px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+@keyframes blur-out {
+  from {
+    filter: blur(0);
+  }
+  to {
+    filter: blur(2px);
+  }
+}
+
+@keyframes rotate-in {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate-out {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-out {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes flip-in {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes flip-out {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
 @keyframes slide-from-right {
   0% {
-    translate: 8px 0px;
+    translate: var(--distance, 8px) 0px;
   }
   100% {
     translate: 0px 0px;
+  }
+}
+
+@keyframes slide-to-right {
+  0% {
+    translate: 0px 0px;
+  }
+  100% {
+    translate: var(--distance, 8px) 0px;
   }
 }
 
 @keyframes slide-from-left {
   0% {
-    translate: -8px 0px;
+    translate: calc(var(--distance, 8px) * -1) 0px;
   }
   100% {
     translate: 0px 0px;
+  }
+}
+
+@keyframes slide-to-left {
+  0% {
+    translate: 0px 0px;
+  }
+  100% {
+    translate: calc(var(--distance, 8px) * -1) 0px;
   }
 }
 
 @keyframes slide-from-bottom {
   0% {
-    translate: 0px 8px;
+    translate: 0px var(--distance, 8px);
   }
   100% {
     translate: 0px 0px;
   }
 }
 
+@keyframes slide-to-bottom {
+  0% {
+    translate: 0px 0px;
+  }
+  100% {
+    translate: 0px var(--distance, 8px);
+  }
+}
+
 @keyframes slide-from-top {
   0% {
-    translate: 0px -8px;
+    translate: 0px calc(var(--distance, 8px) * -1);
   }
   100% {
     translate: 0px 0px;
+  }
+}
+
+@keyframes slide-to-top {
+  0% {
+    translate: 0px 0px;
+  }
+  100% {
+    translate: 0px calc(var(--distance, 8px) * -1);
   }
 }
 
