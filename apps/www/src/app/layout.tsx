@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
   variable: "--font-mono",
 })
 
-const TITLE = "Beautiful component library for React and Vue"
+const TITLE = "Beautiful component library for React and Vue | Stark UI"
 const DESCRIPTION =
   "Stark UI is a component library for React and Vue with carefully crafted themes, modern design, and accessible components."
 const URL = "https://stark-ui.com"
