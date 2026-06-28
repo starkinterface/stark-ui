@@ -37,7 +37,9 @@ export default function Navigation() {
         <SchemeSwitcher />
         <div className="mx-1 h-4 w-px bg-decoration" />
         <NpmLink />
-        <GitHubLink className="-mr-2.5" />
+        <div className="-mr-2.5">
+          <GitHubLink />
+        </div>
       </div>
     </div>
   )
