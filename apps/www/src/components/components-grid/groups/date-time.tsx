@@ -1,10 +1,15 @@
 "use client"
 
-import { Calendar } from "@stark-ui/react"
+import { Calendar, parseDate } from "@stark-ui/react"
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
 
 const CalendarExample = () => (
-  <Calendar.Root variant="accent" startOfWeek={1}>
+  <Calendar.Root
+    variant="accent"
+    startOfWeek={1}
+    defaultFocusedValue={parseDate("2026-07-01")}
+    defaultValue={[parseDate("2026-07-01")]}
+  >
     <Calendar.View view="day">
       <Calendar.Context>
         {(calendar) => (
