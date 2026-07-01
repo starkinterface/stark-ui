@@ -1,7 +1,8 @@
 import { Accordion } from "../"
 import { Button } from "../../button"
 import { ChevronRightIcon, ZapIcon } from "lucide-react"
-import { SiGithub, SiSlack, SiTelegram } from "react-icons/si"
+import { FaSlack } from "react-icons/fa"
+import { SiGithub, SiTelegram } from "react-icons/si"
 
 export default function Multiple() {
   const integrations = [
@@ -10,7 +11,7 @@ export default function Multiple() {
         "Send push alerts for failed deployments directly to team channels.",
       details:
         "Configured channel: #engineering-alerts. Currently listening for event triggers: deployment_failed, release_created.",
-      icon: SiSlack,
+      icon: FaSlack,
       status: "connected",
       title: "Slack Notifications",
       value: "slack",
