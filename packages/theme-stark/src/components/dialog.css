@@ -1,0 +1,150 @@
+@layer components {
+  .dialog-backdrop {
+    @apply fixed top-0 left-0 h-dvh w-dvw bg-backdrop;
+
+    z-index: calc(var(--z-index-overlay) + var(--layer-index, 0) - 1);
+
+    @variant data-[state=open] {
+      animation: fade-in var(--duration-smooth) var(--ease-smooth-in);
+    }
+
+    @variant data-[state=closed] {
+      animation: fade-out var(--duration-smooth) var(--ease-smooth-in);
+    }
+  }
+
+  .dialog-positioner {
+    --content-margin: --spacing(10);
+
+    @apply fixed top-0 left-0 flex h-dvh w-dvw justify-center p-(--content-margin);
+
+    z-index: calc(var(--z-index-overlay) + var(--layer-index, 0));
+
+    /* ----------------------------------------------------------------------------
+     * Default Variants
+     * ---------------------------------------------------------------------------- */
+    @apply dialog-positioner--scroll-inside;
+    @apply dialog-positioner--center;
+  }
+
+  .dialog-content {
+    @apply pointer-events-auto relative flex w-full flex-col rounded-md border border-border bg-background outline-none;
+
+    transition: transform var(--duration-snappy) var(--ease-snappy-in);
+    z-index: calc(var(--z-index-overlay) + var(--layer-index, 0));
+
+    &[data-has-nested] {
+      transform: scale(calc(1 - var(--nested-layer-count) * 0.04));
+    }
+
+    --entry-animation: zoom-in;
+    --exit-animation: zoom-out;
+
+    @variant data-[state=open] {
+      animation:
+        var(--entry-animation) var(--duration-snappy) var(--ease-snappy-in),
+        fade-in var(--duration-snappy) var(--ease-snappy-in);
+    }
+
+    @variant data-[state=closed] {
+      animation:
+        var(--exit-animation) var(--duration-snappy) var(--ease-snappy-out),
+        fade-out var(--duration-snappy) var(--ease-snappy-out);
+    }
+
+    /* ----------------------------------------------------------------------------
+     * Default Variants
+     * ---------------------------------------------------------------------------- */
+    @apply dialog-content--md;
+  }
+
+  .dialog-header {
+    @apply flex flex-col gap-1 px-4 pt-4 pb-2;
+  }
+
+  .dialog-title {
+  }
+
+  .dialog-description {
+    @apply text-sm text-foreground-muted;
+  }
+
+  .dialog-close-trigger {
+  }
+
+  .dialog-body {
+    @apply flex-1 px-4 pt-2 pb-4 text-sm;
+    @apply scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent;
+  }
+
+  .dialog-footer {
+    @apply flex justify-end gap-2 px-4 pt-2 pb-4;
+  }
+}
+
+@utility dialog-positioner--scroll-inside {
+  @apply pointer-events-none overflow-x-hidden overflow-y-hidden;
+
+  .dialog-content {
+    max-height: calc(100dvh - var(--content-margin) * 2);
+  }
+
+  .dialog-body {
+    @apply overflow-y-auto;
+  }
+}
+
+@utility dialog-positioner--scroll-outside {
+  @apply pointer-events-auto overflow-x-hidden overflow-y-auto;
+
+  .dialog-content {
+    @apply max-h-none;
+  }
+
+  .dialog-body {
+    @apply overflow-y-visible;
+  }
+}
+
+@utility dialog-positioner--center {
+  .dialog-content {
+    @apply mt-auto mb-auto;
+
+    --entry-animation: zoom-in;
+    --exit-animation: zoom-out;
+  }
+}
+
+@utility dialog-positioner--top {
+  .dialog-content {
+    @apply mt-0 mb-auto;
+
+    --entry-animation: slide-from-top;
+    --exit-animation: slide-to-top;
+  }
+}
+
+@utility dialog-positioner--bottom {
+  .dialog-content {
+    @apply mt-auto mb-0;
+
+    --entry-animation: slide-from-bottom;
+    --exit-animation: slide-to-bottom;
+  }
+}
+
+@utility dialog-content--sm {
+  @apply h-auto max-w-xs;
+}
+
+@utility dialog-content--md {
+  @apply h-auto max-w-sm;
+}
+
+@utility dialog-content--lg {
+  @apply h-auto max-w-lg;
+}
+
+@utility dialog-content--full {
+  @apply h-full max-w-full;
+}
