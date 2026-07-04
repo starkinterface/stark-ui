@@ -23,7 +23,7 @@
   --background-danger-soft: var(--background-secondary);
   --foreground-danger-soft: oklch(0.75 0.2 30);
 
-  --background-inactive: oklab(0.24 0 0);
+  --background-inactive: oklch(0.24 0 0);
   --foreground-inactive: oklch(0.32 0 0);
 
   --placeholder: oklch(0.4 0 0);
