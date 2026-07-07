@@ -70,7 +70,7 @@ const groups: GroupProps[] = [
     className: styles.overlays(),
     description:
       "Dialogs, drawers, popovers, and tooltips layered above the page.",
-    exampleCount: 2,
+    exampleCount: 3,
     title: "Overlays",
   },
   {

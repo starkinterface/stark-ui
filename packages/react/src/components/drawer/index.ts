@@ -1,0 +1,41 @@
+export {
+  DrawerRootProvider,
+  DrawerRoot,
+  DrawerTrigger,
+  DrawerBackdrop,
+  DrawerPositioner,
+  DrawerContent,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerCloseTrigger,
+  DrawerGrabber,
+  DrawerGrabberIndicator,
+  DrawerSwipeArea,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerBody,
+  DrawerContext,
+  useDrawer,
+  useDrawerContext,
+} from "./drawer"
+
+export type {
+  DrawerRootProviderProps,
+  DrawerRootProps,
+  DrawerTriggerProps,
+  DrawerBackdropProps,
+  DrawerPositionerProps,
+  DrawerContentProps,
+  DrawerTitleProps,
+  DrawerDescriptionProps,
+  DrawerCloseTriggerProps,
+  DrawerGrabberProps,
+  DrawerGrabberIndicatorProps,
+  DrawerSwipeAreaProps,
+  DrawerHeaderProps,
+  DrawerFooterProps,
+  DrawerBodyProps,
+  DrawerContextProps,
+} from "./drawer"
+
+export * as Drawer from "./namespace"

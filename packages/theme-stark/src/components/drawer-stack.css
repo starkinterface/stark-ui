@@ -1,0 +1,25 @@
+@layer components {
+  .drawer-stack-content-background {
+    @apply absolute inset-0 z-0 bg-background-surface;
+  }
+
+  .drawer-stack-content {
+    --stack-content-transition: calc(
+      1 - clamp(0, calc(var(--drawer-swipe-progress, 0) * 100000), 1)
+    );
+
+    transform-origin: center;
+    transition: transform var(--ease-smooth-in);
+    transition-duration: calc(
+      var(--duration-smooth) * var(--stack-content-transition)
+    );
+
+    @apply relative z-1 will-change-transform;
+
+    @variant data-active {
+      transform: scale(calc(0.94 + (0.06 * var(--drawer-swipe-progress, 0))));
+
+      @apply overflow-hidden;
+    }
+  }
+}

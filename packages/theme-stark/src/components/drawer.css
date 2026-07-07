@@ -1,0 +1,271 @@
+@layer components {
+  .drawer-backdrop {
+    @apply fixed top-0 left-0 h-dvh w-dvw bg-backdrop;
+
+    z-index: calc(var(--z-index-overlay) + var(--layer-index, 0) - 1);
+
+    @variant data-[state=open] {
+      animation: fade-in var(--duration-smooth) var(--ease-smooth-in);
+    }
+
+    @variant data-[state=closed] {
+      animation: fade-out var(--duration-smooth) var(--ease-smooth-in);
+    }
+  }
+
+  .drawer-positioner {
+    @apply fixed top-0 left-0 flex h-dvh w-dvw;
+
+    z-index: calc(var(--z-index-overlay) + var(--layer-index, 0));
+
+    /* ----------------------------------------------------------------------------
+     * Default Variants
+     * ---------------------------------------------------------------------------- */
+    @apply drawer-positioner--right;
+  }
+
+  .drawer-content {
+    @apply pointer-events-auto relative flex max-h-dvh w-full flex-col border-border bg-background outline-none;
+
+    --distance: 100%;
+    --bleed: --spacing(20);
+    transition: transform var(--duration-snappy) var(--ease-snappy-in);
+    z-index: calc(var(--z-index-overlay) + var(--layer-index, 0));
+
+    &[data-has-nested] {
+      transform: scale(calc(1 - var(--nested-layer-count) * 0.04));
+    }
+
+    @variant after {
+      @apply pointer-events-none absolute inset-0 bg-inherit content-[''];
+    }
+
+    /* ----------------------------------------------------------------------------
+     * Default Variants
+     * ---------------------------------------------------------------------------- */
+    @apply drawer-content--md;
+  }
+
+  .drawer-grabber {
+  }
+
+  .drawer-grabber-indicator {
+    @apply absolute z-1 flex items-center justify-center;
+
+    @variant after {
+      @apply block rounded-full bg-background-secondary transition content-[''];
+    }
+
+    @variant hover:after {
+      @apply bg-background-secondary-hover;
+    }
+  }
+
+  .drawer-header {
+    @apply relative flex flex-col gap-1 px-4 pt-4 pb-2;
+  }
+
+  .drawer-title {
+    @apply flex items-center gap-2;
+
+    @variant icon {
+      @apply size-5 text-foreground-muted;
+    }
+  }
+
+  .drawer-description {
+    @apply text-sm text-foreground-muted;
+  }
+
+  .drawer-body {
+    @apply flex-1 overflow-y-auto px-4 pt-2 pb-4 text-sm;
+    @apply scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent;
+  }
+
+  .drawer-footer {
+    @apply flex justify-end gap-2 px-4 pt-2 pb-4;
+  }
+
+  .drawer-close-trigger {
+  }
+
+  .drawer-swipe-area {
+    @apply fixed z-40 transition-colors duration-200;
+
+    &[data-swipe-direction="left"] {
+      @apply top-0 right-0 bottom-0 w-4 cursor-w-resize hover:bg-foreground/5;
+    }
+
+    &[data-swipe-direction="right"] {
+      @apply top-0 bottom-0 left-0 w-4 cursor-e-resize hover:bg-foreground/5;
+    }
+
+    &[data-swipe-direction="up"] {
+      @apply right-0 bottom-0 left-0 h-4 cursor-n-resize hover:bg-foreground/5;
+    }
+
+    &[data-swipe-direction="down"] {
+      @apply top-0 right-0 left-0 h-4 cursor-s-resize hover:bg-foreground/5;
+    }
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Placements
+ * ---------------------------------------------------------------------------- */
+
+@utility drawer-positioner--left {
+  @apply items-stretch justify-start;
+
+  .drawer-content {
+    @apply border-0 border-e;
+
+    @variant after {
+      @apply inset-auto -left-(--bleed) h-full w-(--bleed);
+    }
+
+    @variant data-[state=open] {
+      animation:
+        slide-from-left var(--duration-smooth) var(--ease-smooth-in),
+        fade-in var(--duration-snappy) var(--ease-snappy-in);
+    }
+
+    @variant data-[state=closed] {
+      animation:
+        slide-to-left var(--duration-smooth) var(--ease-smooth-out),
+        fade-out var(--duration-snappy) var(--ease-snappy-out);
+    }
+  }
+
+  @variant has-[[data-drawer-grabber]] {
+    .drawer-grabber-indicator {
+      @apply top-0 right-0 bottom-0 left-auto h-auto w-4;
+
+      @variant after {
+        @apply h-8 w-1;
+      }
+    }
+  }
+}
+
+@utility drawer-positioner--right {
+  @apply items-stretch justify-end;
+
+  .drawer-content {
+    @apply border-0 border-s;
+
+    @variant after {
+      @apply inset-auto -right-(--bleed) h-full w-(--bleed);
+    }
+
+    @variant data-[state=open] {
+      animation:
+        slide-from-right var(--duration-smooth) var(--ease-smooth-in),
+        fade-in var(--duration-snappy) var(--ease-snappy-in);
+    }
+
+    @variant data-[state=closed] {
+      animation:
+        slide-to-right var(--duration-smooth) var(--ease-smooth-out),
+        fade-out var(--duration-snappy) var(--ease-snappy-out);
+    }
+  }
+
+  @variant has-[[data-drawer-grabber]] {
+    .drawer-grabber-indicator {
+      @apply top-0 right-auto bottom-0 left-0 h-auto w-4;
+
+      @variant after {
+        @apply h-8 w-1;
+      }
+    }
+  }
+}
+
+@utility drawer-positioner--top {
+  @apply items-start justify-stretch;
+
+  .drawer-content {
+    @apply max-w-full border-0 border-b;
+
+    @variant after {
+      @apply inset-auto -top-(--bleed) h-(--bleed) w-full;
+    }
+
+    @variant data-[state=open] {
+      animation:
+        slide-from-top var(--duration-smooth) var(--ease-smooth-in),
+        fade-in var(--duration-snappy) var(--ease-snappy-in);
+    }
+
+    @variant data-[state=closed] {
+      animation:
+        slide-to-top var(--duration-smooth) var(--ease-smooth-out),
+        fade-out var(--duration-snappy) var(--ease-snappy-out);
+    }
+  }
+
+  @variant has-[[data-drawer-grabber]] {
+    .drawer-grabber-indicator {
+      @apply top-auto right-0 bottom-0 left-0 h-4 w-auto;
+
+      @variant after {
+        @apply h-1 w-8;
+      }
+    }
+  }
+}
+
+@utility drawer-positioner--bottom {
+  @apply items-end justify-stretch;
+
+  .drawer-content {
+    @apply max-w-full border-0 border-t;
+
+    @variant after {
+      @apply inset-auto -bottom-(--bleed) h-(--bleed) w-full;
+    }
+
+    @variant data-[state=open] {
+      animation:
+        slide-from-bottom var(--duration-smooth) var(--ease-smooth-in),
+        fade-in var(--duration-snappy) var(--ease-snappy-in);
+    }
+
+    @variant data-[state=closed] {
+      animation:
+        slide-to-bottom var(--duration-smooth) var(--ease-smooth-out),
+        fade-out var(--duration-snappy) var(--ease-snappy-out);
+    }
+  }
+
+  @variant has-[[data-drawer-grabber]] {
+    .drawer-grabber-indicator {
+      @apply top-0 right-0 bottom-auto left-0 h-4 w-auto;
+
+      @variant after {
+        @apply h-1 w-8;
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Sizes
+ * ---------------------------------------------------------------------------- */
+
+@utility drawer-content--sm {
+  @apply h-auto max-w-xs;
+}
+
+@utility drawer-content--md {
+  @apply h-auto max-w-sm;
+}
+
+@utility drawer-content--lg {
+  @apply h-auto max-w-lg;
+}
+
+@utility drawer-content--full {
+  @apply h-full max-w-full;
+}
