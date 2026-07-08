@@ -1,6 +1,13 @@
 "use client"
 
-import { Tooltip, Button, Dialog, Drawer, Portal } from "@stark-ui/react"
+import {
+  Tooltip,
+  Button,
+  Dialog,
+  Drawer,
+  Popover,
+  Portal,
+} from "@stark-ui/react"
 import { LuTrash2, LuX } from "react-icons/lu"
 
 const TooltipExample = () => (
@@ -98,11 +105,40 @@ const DrawerExample = () => (
   </Drawer.Root>
 )
 
+const PopoverExample = () => (
+  <Popover.Root>
+    <Popover.Trigger asChild>
+      <Button variant="outline">View Info</Button>
+    </Popover.Trigger>
+    <Portal>
+      <Popover.Positioner>
+        <Popover.Content>
+          <Popover.Arrow>
+            <Popover.ArrowTip />
+          </Popover.Arrow>
+          <Popover.Header>
+            <Popover.Title>Deployment Status</Popover.Title>
+            <Popover.Description>
+              Your project was last deployed 2 minutes ago.
+            </Popover.Description>
+          </Popover.Header>
+          <Popover.CloseTrigger className="absolute top-4 right-4" asChild>
+            <Button variant="ghost" aria-label="Close" size="icon-xs">
+              <LuX />
+            </Button>
+          </Popover.CloseTrigger>
+        </Popover.Content>
+      </Popover.Positioner>
+    </Portal>
+  </Popover.Root>
+)
+
 const Overlays = () => (
   <div className="flex flex-wrap gap-2">
     <TooltipExample />
     <DialogExample />
     <DrawerExample />
+    <PopoverExample />
   </div>
 )
 
