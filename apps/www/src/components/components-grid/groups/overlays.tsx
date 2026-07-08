@@ -47,8 +47,10 @@ const DialogExample = () => (
             </Dialog.CloseTrigger>
             <Button variant="danger">Confirm</Button>
           </Dialog.Footer>
-          <Dialog.CloseTrigger className="absolute top-4 right-4 cursor-pointer text-foreground-muted transition-colors outline-none hover:text-foreground-primary">
-            <LuX className="size-4" />
+          <Dialog.CloseTrigger className="absolute top-4 right-4" asChild>
+            <Button variant="ghost" aria-label="Close" size="icon-xs">
+              <LuX />
+            </Button>
           </Dialog.CloseTrigger>
         </Dialog.Content>
       </Dialog.Positioner>
