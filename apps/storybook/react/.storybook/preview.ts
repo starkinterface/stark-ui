@@ -15,5 +15,7 @@ export default definePreview({
       },
     }),
   ],
-  parameters: {},
+  parameters: {
+    layout: "centered",
+  },
 })
