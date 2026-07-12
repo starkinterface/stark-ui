@@ -50,7 +50,7 @@
     },
     "runtime": {
       "name": "node",
-      "version": ">=25.x",
+      "version": ">=26.x",
       "onFail": "warn"
     }
   },
