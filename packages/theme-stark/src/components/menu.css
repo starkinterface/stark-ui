@@ -1,0 +1,100 @@
+@layer components {
+  .menu-trigger {
+  }
+
+  .menu-context-trigger {
+  }
+
+  .menu-positioner {
+  }
+
+  .menu-content {
+    @apply max-h-(--available-height) w-(--reference-width) min-w-36 shadow outline-none;
+    @apply flex flex-col overflow-y-auto rounded-md border border-border bg-background-surface p-1 text-sm;
+    @apply scroll-pt-8 scrollbar-none;
+
+    transform-origin: var(--transform-origin);
+    z-index: calc(var(--z-index-overlay) + var(--layer-index, 0));
+
+    @variant data-[state=open] {
+      animation:
+        zoom-in var(--duration-snappy) var(--ease-snappy-in),
+        fade-in var(--duration-snappy) var(--ease-snappy-in);
+    }
+  }
+
+  .menu-item,
+  .menu-checkbox-item,
+  .menu-radio-item,
+  .menu-trigger-item {
+    @apply relative z-1 flex items-center gap-2 rounded-xs px-2 py-1 select-none;
+
+    @variant data-indent {
+      @apply ps-8;
+    }
+
+    @variant icon {
+      @apply size-4;
+    }
+
+    @variant not-in-focus-visible {
+      @apply transition-[background-color,color] duration-100 ease-out;
+    }
+
+    @variant data-highlighted {
+      @apply bg-background-secondary text-foreground-secondary;
+    }
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+
+      .menu-item-shortcut {
+        @apply text-foreground-inactive;
+      }
+    }
+  }
+
+  .menu-item-text {
+    @apply flex-1 truncate;
+  }
+
+  .menu-item-shortcut {
+    @apply ml-auto font-sans text-xs tracking-widest text-foreground-muted;
+  }
+
+  .menu-item-indicator {
+    @apply pointer-events-none flex size-4 items-center justify-center;
+
+    @variant icon {
+      @apply size-3.5;
+    }
+  }
+
+  .menu-item-group {
+    @apply relative;
+  }
+
+  .menu-item-group-label {
+    @apply flex items-center px-2 py-1 text-xs text-foreground-muted;
+  }
+
+  .menu-separator {
+    @apply -mx-1 my-1 h-px shrink-0 border-0 bg-border;
+  }
+
+  .menu-arrow {
+    --arrow-size: --spacing(2.5);
+    --arrow-background: var(--color-background-surface);
+    --arrow-shadow-color: var(--color-border);
+
+    z-index: 0;
+  }
+
+  .menu-arrow-tip {
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .menu-indicator {
+  }
+}
