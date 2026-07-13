@@ -2,6 +2,7 @@
 
 import { Group } from "./group"
 import { Actions } from "./groups/actions"
+import { Collections } from "./groups/collections"
 import { DataDisplay } from "./groups/data-display"
 import { DateTime } from "./groups/date-time"
 import { Disclosure } from "./groups/disclosure"
@@ -59,10 +60,11 @@ const groups: GroupProps[] = [
     title: "Selection",
   },
   {
+    children: <Collections />,
     className: styles.collections(),
     description:
       "Dropdowns, menus, and tree views that render from dynamic lists of items.",
-    exampleCount: 2,
+    exampleCount: 1,
     title: "Collections",
   },
   {
