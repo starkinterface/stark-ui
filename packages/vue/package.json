@@ -44,7 +44,6 @@
   "devDependencies": {
     "@stark-ui/oxc-config": "workspace:*",
     "@stark-ui/tsconfig": "workspace:*",
-    "@storybook/vue3-vite": "catalog:storybook",
     "@vitejs/plugin-vue": "catalog:",
     "typescript": "catalog:",
     "unplugin-dts": "catalog:",
