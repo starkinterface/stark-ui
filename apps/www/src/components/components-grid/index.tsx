@@ -6,6 +6,7 @@ import { Collections } from "./groups/collections"
 import { DataDisplay } from "./groups/data-display"
 import { DateTime } from "./groups/date-time"
 import { Disclosure } from "./groups/disclosure"
+import { Feedback } from "./groups/feedback"
 import { Inputs } from "./groups/inputs"
 import { Navigation } from "./groups/navigation"
 import { Overlays } from "./groups/overlays"
@@ -100,9 +101,10 @@ const groups: GroupProps[] = [
     title: "Navigation",
   },
   {
+    children: <Feedback />,
     className: styles.feedback(),
     description: "Alerts, toasts, progress indicators, and loading states.",
-    exampleCount: 1,
+    exampleCount: 2,
     title: "Feedback",
   },
   {

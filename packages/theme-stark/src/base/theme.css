@@ -22,6 +22,12 @@
   --color-background-danger-soft: var(--background-danger-soft);
   --color-foreground-danger-soft: var(--foreground-danger-soft);
 
+  --color-background-warning-soft: var(--background-warning-soft);
+  --color-foreground-warning-soft: var(--foreground-warning-soft);
+
+  --color-background-success-soft: var(--background-success-soft);
+  --color-foreground-success-soft: var(--foreground-success-soft);
+
   --color-background-inactive: var(--background-inactive);
   --color-foreground-inactive: var(--foreground-inactive);
 
