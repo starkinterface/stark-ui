@@ -1,7 +1,14 @@
 "use client"
 
-import { Avatar, AvatarGroup, Tag, Kbd } from "@stark-ui/react"
-import { LuX } from "react-icons/lu"
+import {
+  Avatar,
+  AvatarGroup,
+  Tag,
+  Kbd,
+  Clipboard,
+  Button,
+} from "@stark-ui/react"
+import { LuX, LuClipboard, LuCheck } from "react-icons/lu"
 
 const AvatarExample = () => (
   <div className="flex items-center gap-4">
@@ -80,6 +87,22 @@ const KbdExample = () => (
   </div>
 )
 
+const ClipboardExample = () => (
+  <Clipboard.Root value="https://stark-ui.com/docs/components/clipboard">
+    <Clipboard.Label>Page Link</Clipboard.Label>
+    <Clipboard.Control>
+      <Clipboard.Input />
+      <Clipboard.Trigger asChild>
+        <Button size="icon-md" variant="outline">
+          <Clipboard.Indicator copied={<LuCheck />}>
+            <LuClipboard />
+          </Clipboard.Indicator>
+        </Button>
+      </Clipboard.Trigger>
+    </Clipboard.Control>
+  </Clipboard.Root>
+)
+
 const DataDisplay = () => (
   <div className="flex flex-col gap-4">
     <div className="flex items-center justify-between gap-4">
@@ -88,6 +111,7 @@ const DataDisplay = () => (
     </div>
     <TagExample />
     <KbdExample />
+    <ClipboardExample />
   </div>
 )
 

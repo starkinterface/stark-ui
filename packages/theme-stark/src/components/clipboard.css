@@ -1,0 +1,26 @@
+@layer components {
+  .clipboard {
+    @apply base-field;
+  }
+
+  .clipboard-label {
+    @apply base-field-label;
+  }
+
+  .clipboard-control {
+    @apply flex items-center gap-2;
+  }
+
+  .clipboard-input {
+    @apply base-input;
+  }
+
+  .clipboard-trigger {
+  }
+
+  .clipboard-indicator {
+  }
+
+  .clipboard-value-text {
+  }
+}
