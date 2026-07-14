@@ -1,6 +1,13 @@
 "use client"
 
-import { Button, Toast, Toaster, createToaster, Portal } from "@stark-ui/react"
+import {
+  Button,
+  Toast,
+  Toaster,
+  createToaster,
+  Portal,
+  ProgressBar,
+} from "@stark-ui/react"
 import { LuCheck, LuX } from "react-icons/lu"
 
 import type { ToastRootProps } from "@stark-ui/react"
@@ -22,10 +29,24 @@ const Feedback = () => {
   }
 
   return (
-    <div className="flex flex-wrap gap-2">
-      <Button variant="outline" onClick={triggerSuccess}>
-        Show Toast
-      </Button>
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-wrap gap-2">
+        <Button variant="outline" onClick={triggerSuccess}>
+          Show Toast
+        </Button>
+      </div>
+
+      <div className="w-64">
+        <ProgressBar.Root defaultValue={64}>
+          <div className="flex justify-between gap-2">
+            <ProgressBar.Label>Uploading file...</ProgressBar.Label>
+            <ProgressBar.ValueText />
+          </div>
+          <ProgressBar.Track>
+            <ProgressBar.Range />
+          </ProgressBar.Track>
+        </ProgressBar.Root>
+      </div>
 
       <Portal>
         <Toaster toaster={toaster}>

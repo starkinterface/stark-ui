@@ -103,7 +103,7 @@ const groups: GroupProps[] = [
   {
     children: <Feedback />,
     className: styles.feedback(),
-    description: "Alerts, toasts, progress indicators, and loading states.",
+    description: "Alerts, toasts, progress bars, and loading states.",
     exampleCount: 2,
     title: "Feedback",
   },

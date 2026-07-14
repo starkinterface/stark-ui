@@ -1,0 +1,95 @@
+@layer components {
+  .progress-bar {
+    --size: --spacing(1);
+  }
+
+  .progress-bar {
+    @apply flex flex-col;
+
+    @variant data-[orientation=horizontal] {
+      @apply w-full gap-1.5;
+
+      align-items: normal;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply h-full items-center gap-1;
+    }
+  }
+
+  .progress-bar-label {
+    @apply base-field-label;
+  }
+
+  .progress-bar-value-text {
+    @apply base-field-label;
+  }
+
+  .progress-bar-track {
+    @apply relative overflow-hidden bg-background-secondary;
+
+    @variant data-[orientation=horizontal] {
+      @apply h-(--size) w-full;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply h-full w-(--size);
+    }
+  }
+
+  .progress-bar-range {
+    @apply absolute bg-(--range-color) transition-[width,height] duration-200 ease-out;
+
+    @variant data-[orientation=horizontal] {
+      @apply bottom-auto left-0 h-full;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply bottom-0 left-auto w-full;
+    }
+
+    @variant data-[state=indeterminate] {
+      @variant data-[orientation=horizontal] {
+        @apply w-1/2;
+        animation: progress-bar-indeterminate-horizontal 1.24s infinite
+          ease-in-out;
+      }
+
+      @variant data-[orientation=vertical] {
+        @apply h-1/2;
+        animation: progress-bar-indeterminate-vertical 1.24s infinite
+          ease-in-out;
+      }
+    }
+  }
+
+  :where(.progress-bar) {
+    @apply progress-bar--primary;
+  }
+}
+
+@utility progress-bar--primary {
+  --range-color: var(--color-foreground);
+}
+
+@utility progress-bar--accent {
+  --range-color: var(--color-background-accent);
+}
+
+@keyframes progress-bar-indeterminate-horizontal {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(200%, 0, 0);
+  }
+}
+
+@keyframes progress-bar-indeterminate-vertical {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, -200%, 0);
+  }
+}
