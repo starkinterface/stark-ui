@@ -7,6 +7,7 @@ import {
   createToaster,
   Portal,
   ProgressBar,
+  ProgressCircle,
 } from "@stark-ui/react"
 import { LuCheck, LuX } from "react-icons/lu"
 
@@ -30,7 +31,18 @@ const Feedback = () => {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-6">
+        <ProgressCircle.Root defaultValue={42}>
+          <ProgressCircle.Circle>
+            <ProgressCircle.CircleTrack />
+            <ProgressCircle.CircleRange />
+          </ProgressCircle.Circle>
+          <ProgressCircle.ValueText>
+            <ProgressCircle.Context>
+              {(context) => context.value}
+            </ProgressCircle.Context>
+          </ProgressCircle.ValueText>
+        </ProgressCircle.Root>
         <Button variant="outline" onClick={triggerSuccess}>
           Show Toast
         </Button>

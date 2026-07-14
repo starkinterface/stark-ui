@@ -1,0 +1,146 @@
+@layer components {
+  .progress-circle {
+    @apply relative inline-flex items-center justify-center;
+  }
+
+  .progress-circle-circle {
+    width: var(--size);
+    height: var(--size);
+
+    &[data-state="indeterminate"] {
+      animation: progress-circle-circle-spin 1.5s linear infinite;
+    }
+  }
+
+  .progress-circle-track {
+    stroke-width: var(--thickness);
+
+    @apply stroke-background-secondary;
+  }
+
+  .progress-circle-range {
+    stroke-width: var(--thickness);
+    stroke-linecap: round;
+
+    @apply stroke-(--range-color) transition-[stroke-dashoffset] duration-200 ease-out;
+
+    @variant data-[state=indeterminate] {
+      @apply transition-none;
+    }
+
+    @variant data-[state=indeterminate] {
+      animation: progress-circle-range-indeterminate 1.5s ease-in-out infinite;
+    }
+  }
+
+  .progress-circle-value-text {
+    @apply absolute font-medium text-foreground;
+  }
+
+  .progress-circle-icon {
+    @apply absolute inline-flex items-center justify-center text-foreground;
+  }
+
+  :where(.progress-circle) {
+    @apply progress-circle--md;
+    @apply progress-circle--primary;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Variants
+ * ---------------------------------------------------------------------------- */
+@utility progress-circle--primary {
+  --range-color: var(--color-foreground);
+}
+
+@utility progress-circle--accent {
+  --range-color: var(--color-background-accent);
+}
+
+/* ----------------------------------------------------------------------------
+ * Sizes
+ * ---------------------------------------------------------------------------- */
+@utility progress-circle--xs {
+  --size: --spacing(4);
+  --thickness: 1.5px;
+
+  .progress-circle-value-text {
+    @apply text-[6px];
+  }
+
+  .progress-circle-icon {
+    @variant icon {
+      @apply size-2;
+    }
+  }
+}
+
+@utility progress-circle--sm {
+  --size: --spacing(5);
+  --thickness: 2px;
+
+  .progress-circle-value-text {
+    @apply text-[8px];
+  }
+
+  .progress-circle-icon {
+    @variant icon {
+      @apply size-2.5;
+    }
+  }
+}
+
+@utility progress-circle--md {
+  --size: --spacing(8);
+  --thickness: 2px;
+
+  .progress-circle-value-text {
+    @apply text-xs;
+  }
+
+  .progress-circle-icon {
+    @variant icon {
+      @apply size-4;
+    }
+  }
+}
+
+@utility progress-circle--lg {
+  --size: --spacing(10);
+  --thickness: 3px;
+
+  .progress-circle-value-text {
+    @apply text-sm;
+  }
+
+  .progress-circle-icon {
+    @variant icon {
+      @apply size-5;
+    }
+  }
+}
+
+@keyframes progress-circle-circle-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes progress-circle-range-indeterminate {
+  0% {
+    stroke-dasharray: 0 var(--circumference);
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: calc(0.75 * var(--circumference)) var(--circumference);
+    stroke-dashoffset: calc(-0.12 * var(--circumference));
+  }
+  100% {
+    stroke-dasharray: 0 var(--circumference);
+    stroke-dashoffset: calc(-1 * var(--circumference));
+  }
+}
