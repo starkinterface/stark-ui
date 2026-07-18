@@ -69,7 +69,7 @@
 }
 
 @utility progress-bar--primary {
-  --range-color: var(--color-foreground);
+  --range-color: var(--color-background-primary);
 }
 
 @utility progress-bar--accent {
