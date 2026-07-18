@@ -3,7 +3,7 @@ const getWeeklyDownloads = async (
   version: string
 ): Promise<number | undefined> => {
   try {
-    const encodedPkg = pkg.replace("/", "%2F")
+    const encodedPkg = encodeURIComponent(pkg)
 
     const res = await fetch(
       `https://api.npmjs.org/versions/${encodedPkg}/last-week`,
@@ -31,11 +31,11 @@ const getWeeklyDownloads = async (
 
 const formatWeeklyDownloads = (downloads: number) => {
   if (downloads >= 1_000_000) {
-    return `${(downloads / 1_000_000).toFixed(1)}M/week`
+    return `${Number.parseFloat((downloads / 1_000_000).toFixed(1))}M/week`
   }
 
   if (downloads >= 1000) {
-    return `${(downloads / 1000).toFixed(1)}k/week`
+    return `${Number.parseFloat((downloads / 1000).toFixed(1))}k/week`
   }
 
   return `${downloads.toLocaleString()}/week`
