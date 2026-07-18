@@ -1,7 +1,13 @@
 "use client"
 
-import { Pagination } from "@stark-ui/react"
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
+import { Pagination, Steps } from "@stark-ui/react"
+import {
+  LuChevronLeft,
+  LuChevronRight,
+  LuSettings,
+  LuPackage,
+  LuRocket,
+} from "react-icons/lu"
 
 const PaginationExample = () => (
   <Pagination.Root count={100} pageSize={10} siblingCount={1} defaultPage={5}>
@@ -33,9 +39,49 @@ const PaginationExample = () => (
   </Pagination.Root>
 )
 
+const StepsExample = () => {
+  const items = [
+    {
+      description: "Environment",
+      icon: LuSettings,
+      title: "Configure",
+    },
+
+    { description: "Assets", icon: LuPackage, title: "Build" },
+    { description: "Push to edge", icon: LuRocket, title: "Deploy" },
+  ]
+
+  return (
+    <Steps.Root count={items.length} defaultStep={1}>
+      <Steps.List>
+        {items.map((item, index) => {
+          const IconComponent = item.icon
+          return (
+            <Steps.Item key={index} index={index}>
+              <Steps.Trigger>
+                <Steps.Indicator>
+                  <IconComponent />
+                </Steps.Indicator>
+                <Steps.Header>
+                  <Steps.Title>{item.title}</Steps.Title>
+                  <Steps.Description>{item.description}</Steps.Description>
+                </Steps.Header>
+              </Steps.Trigger>
+              <Steps.Separator />
+            </Steps.Item>
+          )
+        })}
+      </Steps.List>
+    </Steps.Root>
+  )
+}
+
 const Navigation = () => (
   <div className="flex flex-col gap-4">
-    <PaginationExample />
+    <div className="flex items-center gap-12">
+      <PaginationExample />
+      <StepsExample />
+    </div>
   </div>
 )
 

@@ -97,7 +97,7 @@ const groups: GroupProps[] = [
     className: styles.navigation(),
     description:
       "Breadcrumbs, pagination, and steps for guiding users through flows.",
-    exampleCount: 3,
+    exampleCount: 4,
     title: "Navigation",
   },
   {

@@ -1,0 +1,33 @@
+export {
+  StepsRoot as Root,
+  StepsList as List,
+  StepsItem as Item,
+  StepsTrigger as Trigger,
+  StepsIndicator as Indicator,
+  StepsSeparator as Separator,
+  StepsContent as Content,
+  StepsCompletedContent as CompletedContent,
+  StepsPrevTrigger as PrevTrigger,
+  StepsNextTrigger as NextTrigger,
+  StepsHeader as Header,
+  StepsTitle as Title,
+  StepsDescription as Description,
+  StepsContext as Context,
+} from "./steps"
+
+export type {
+  StepsRootProps as RootProps,
+  StepsListProps as ListProps,
+  StepsItemProps as ItemProps,
+  StepsTriggerProps as TriggerProps,
+  StepsIndicatorProps as IndicatorProps,
+  StepsSeparatorProps as SeparatorProps,
+  StepsContentProps as ContentProps,
+  StepsCompletedContentProps as CompletedContentProps,
+  StepsPrevTriggerProps as PrevTriggerProps,
+  StepsNextTriggerProps as NextTriggerProps,
+  StepsHeaderProps as HeaderProps,
+  StepsTitleProps as TitleProps,
+  StepsDescriptionProps as DescriptionProps,
+  StepsContextProps as ContextProps,
+} from "./steps"

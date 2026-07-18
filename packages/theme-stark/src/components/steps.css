@@ -1,0 +1,137 @@
+@layer components {
+  .steps {
+    --steps-size: --spacing(8);
+    --steps-icon-size: --spacing(4);
+    --steps-thickness: 1px;
+    --steps-gutter: --spacing(2);
+
+    @apply flex w-full;
+
+    @variant data-[orientation=horizontal] {
+      @apply flex-col gap-4;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply flex-row gap-8;
+    }
+  }
+
+  :where(.steps) {
+    @apply steps--primary;
+  }
+
+  .steps-list {
+    @apply flex justify-between;
+
+    @variant data-[orientation=horizontal] {
+      @apply w-full flex-row items-center;
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply h-full flex-col items-start;
+    }
+  }
+
+  .steps-item {
+    @apply relative flex flex-1 items-center;
+
+    @variant last-of-type {
+      @apply flex-none;
+
+      .steps-separator {
+        @apply hidden;
+      }
+    }
+
+    @variant data-[orientation=vertical] {
+      @apply items-start;
+    }
+  }
+
+  .steps-trigger {
+    @apply flex items-center gap-2 outline-none;
+
+    @variant focus-visible {
+      .steps-indicator {
+        @apply focus-visible;
+      }
+    }
+  }
+
+  .steps-prev-trigger,
+  .steps-next-trigger {
+  }
+
+  .steps-header {
+    @apply flex flex-1 flex-col items-start text-start;
+  }
+
+  .steps-title {
+    @apply text-sm;
+  }
+
+  .steps-description {
+    @apply text-xs text-foreground-muted;
+  }
+
+  .steps-indicator {
+    @apply flex size-(--steps-size) shrink-0 items-center justify-center rounded-full border text-sm font-semibold;
+
+    @variant icon {
+      @apply size-(--steps-icon-size) shrink-0;
+    }
+
+    @variant data-incomplete {
+      @apply border-border bg-transparent text-foreground-muted;
+    }
+
+    @variant data-current {
+      @apply border-(--steps-background) bg-(--steps-background) text-(--steps-foreground);
+    }
+
+    @variant data-complete {
+      @apply border-(--steps-background) bg-(--steps-background) text-(--steps-foreground);
+    }
+  }
+
+  .steps-separator {
+    @apply flex-1;
+    background: var(--color-border);
+
+    @variant data-complete {
+      @apply bg-(--steps-background);
+    }
+
+    @variant data-[orientation=horizontal] {
+      height: var(--steps-thickness);
+      margin-inline: var(--steps-gutter);
+    }
+
+    @variant data-[orientation=vertical] {
+      position: absolute;
+      width: var(--steps-thickness);
+      height: 100%;
+      max-height: calc(100% - var(--steps-size) - var(--steps-gutter) * 2);
+      top: calc(var(--steps-size) + var(--steps-gutter));
+      left: calc(var(--steps-size) / 2 - 1px);
+      margin-inline: 0;
+    }
+  }
+
+  .steps-content,
+  .steps-completed-content {
+    @variant focus-visible {
+      @apply focus-visible;
+    }
+  }
+}
+
+@utility steps--primary {
+  --steps-background: var(--color-background-primary);
+  --steps-foreground: var(--color-foreground-primary);
+}
+
+@utility steps--accent {
+  --steps-background: var(--color-background-accent);
+  --steps-foreground: var(--color-foreground-accent);
+}
