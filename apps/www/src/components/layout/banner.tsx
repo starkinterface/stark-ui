@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@stark-ui/react"
-import { BANNER_ID } from "@/constants/features"
+import { BANNER_ID } from "@/config/features"
 
 const handleClose = () => {
   delete document.documentElement.dataset.bannerVisible
