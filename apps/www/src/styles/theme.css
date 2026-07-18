@@ -30,6 +30,19 @@
     transparent 6px,
     transparent 10px
   );
+
+  --color-accent-as-foreground: var(--accent-as-foreground);
+}
+
+@layer theme {
+  :root,
+  [data-scheme="black"] {
+    --accent-as-foreground: oklch(68.026% 0.21435 39.79);
+  }
+
+  [data-scheme="white"] {
+    --accent-as-foreground: oklch(55.661% 0.17256 40.595);
+  }
 }
 
 @layer theme {

@@ -1,0 +1,42 @@
+@layer components {
+  .docs-navigation-item-primary,
+  .docs-navigation-item-secondary {
+    @apply flex appearance-none items-center gap-2.5 rounded-xs px-3 text-sm whitespace-nowrap text-foreground-muted select-none;
+
+    @variant hover {
+      @apply text-foreground/80;
+    }
+
+    @variant focus-visible {
+      @apply z-1 focus-visible;
+    }
+
+    @variant not-focus-visible {
+      @apply transition-[color,background-color,border-color,translate] duration-100 ease-out;
+    }
+
+    @variant icon {
+      @apply size-4;
+    }
+  }
+
+  .docs-navigation-item-primary {
+    @apply h-9;
+
+    @variant hover {
+      @apply bg-background-secondary/40;
+    }
+
+    @variant aria-[current=page] {
+      @apply bg-background-secondary text-foreground;
+    }
+  }
+
+  .docs-navigation-item-secondary {
+    @apply h-8;
+
+    @variant aria-[current=page] {
+      @apply text-accent-as-foreground;
+    }
+  }
+}
