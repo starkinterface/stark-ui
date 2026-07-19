@@ -30,7 +30,10 @@ export default function PartialCollapse() {
         <Collapsible.Context>
           {(context) => (
             <Collapsible.Trigger asChild>
-              <button className="flex mt-1 items-center text-sm text-foreground-muted gap-1.5 focus-visible:focus-visible rounded-xs pe-1">
+              <button
+                type="button"
+                className="flex mt-1 items-center text-sm text-foreground-muted gap-1.5 focus-visible:focus-visible rounded-xs pe-1"
+              >
                 {context.open ? "See less" : "See more"}
               </button>
             </Collapsible.Trigger>

@@ -59,7 +59,10 @@ const AccordionExample = () => (
 const CollapsibleExample = () => (
   <Collapsible.Root>
     <Collapsible.Trigger asChild>
-      <button className="flex items-center gap-1.5 rounded-xs pe-1 text-sm text-foreground-muted focus-visible:focus-visible">
+      <button
+        type="button"
+        className="flex items-center gap-1.5 rounded-xs pe-1 text-sm text-foreground-muted focus-visible:focus-visible"
+      >
         <Collapsible.Indicator>
           <LuChevronRight />
         </Collapsible.Indicator>

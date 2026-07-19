@@ -22,6 +22,7 @@ const App = () => {
 }
 
 export default function Basic() {
+  // oxlint-disable-next-line react/hook-use-state
   const [currentLocale] = useState("en-US")
 
   return (

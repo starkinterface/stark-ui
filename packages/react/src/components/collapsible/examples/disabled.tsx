@@ -7,6 +7,7 @@ export default function Disabled() {
       <Collapsible.Root disabled>
         <Collapsible.Trigger asChild>
           <button
+            type="button"
             disabled
             className="flex items-center text-sm text-foreground-muted gap-1.5 focus-visible:focus-visible rounded-xs pe-1 data-disabled:text-foreground-inactive"
           >

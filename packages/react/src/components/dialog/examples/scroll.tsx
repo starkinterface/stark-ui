@@ -42,7 +42,7 @@ export default function Scroll() {
               <Dialog.Body>
                 <div className="flex flex-col gap-4">
                   <p>
-                    When scroll is set to `inside`, the dialog's content
+                    When scroll is set to `inside`, the dialog&apos;s content
                     container is constrained in height (e.g. max 85vh) and only
                     the dialog body scrolls vertically.
                   </p>

@@ -1,10 +1,6 @@
 import { drawerClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
-import {
-  Drawer as ArkDrawer,
-  useDrawer,
-  useDrawerContext,
-} from "@ark-ui/react/drawer"
+import { Drawer as ArkDrawer } from "@ark-ui/react/drawer"
 import { ark } from "@ark-ui/react/factory"
 
 import type { DrawerVariantProps } from "@stark-ui/classes"
@@ -199,8 +195,6 @@ export {
   DrawerFooter,
   DrawerBody,
   DrawerContext,
-  useDrawer,
-  useDrawerContext,
 }
 export type {
   DrawerRootProviderProps,
@@ -220,3 +214,8 @@ export type {
   DrawerBodyProps,
   DrawerContextProps,
 }
+
+///////////////////////////////////////////////////////////////////////////////
+/// Re-exports
+
+export { useDrawer, useDrawerContext } from "@ark-ui/react/drawer"

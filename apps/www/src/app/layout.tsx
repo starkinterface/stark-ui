@@ -165,6 +165,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
+          // oxlint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(webSiteJsonLd).replaceAll("<", "\\u003c"),
           }}

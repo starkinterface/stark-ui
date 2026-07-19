@@ -1,6 +1,6 @@
 import { swapClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
-import { Swap as ArkSwap, useSwap } from "@ark-ui/react/swap"
+import { Swap as ArkSwap } from "@ark-ui/react/swap"
 
 import type { SwapVariantProps } from "@stark-ui/classes"
 import type { UnstyledProp } from "@stark-ui/react-style-context"
@@ -46,5 +46,10 @@ const SwapIndicator = withSlot<HTMLSpanElement, SwapIndicatorProps>(
 ///////////////////////////////////////////////////////////////////////////////
 /// Exports
 
-export { SwapIndicator, SwapRoot, SwapRootProvider, useSwap }
+export { SwapIndicator, SwapRoot, SwapRootProvider }
 export type { SwapIndicatorProps, SwapRootProps, SwapRootProviderProps }
+
+///////////////////////////////////////////////////////////////////////////////
+/// Re-exports
+
+export { useSwap } from "@ark-ui/react/swap"

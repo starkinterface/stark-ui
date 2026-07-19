@@ -92,7 +92,7 @@ const InputGroupExample = () => {
 
       {!isInvalid && (
         <Field.HelperText>
-          Your subdomain can't be changed later.
+          Your subdomain can&apos;t be changed later.
         </Field.HelperText>
       )}
       <Field.ErrorText>

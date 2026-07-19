@@ -6,7 +6,10 @@ export default function Basic() {
     <div className="flex flex-col gap-4 h-dvh items-center justify-center w-full max-w-sm mx-auto">
       <Collapsible.Root>
         <Collapsible.Trigger asChild>
-          <button className="flex items-center text-sm text-foreground-muted gap-1.5 focus-visible:focus-visible rounded-xs pe-1">
+          <button
+            type="button"
+            className="flex items-center text-sm text-foreground-muted gap-1.5 focus-visible:focus-visible rounded-xs pe-1"
+          >
             <Collapsible.Indicator>
               <ChevronRightIcon />
             </Collapsible.Indicator>

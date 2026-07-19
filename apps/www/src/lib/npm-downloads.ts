@@ -31,11 +31,11 @@ const getWeeklyDownloads = async (
 
 const formatWeeklyDownloads = (downloads: number) => {
   if (downloads >= 1_000_000) {
-    return `${Number.parseFloat((downloads / 1_000_000).toFixed(1))}M/week`
+    return `${Number((downloads / 1_000_000).toFixed(1))}M/week`
   }
 
   if (downloads >= 1000) {
-    return `${Number.parseFloat((downloads / 1000).toFixed(1))}k/week`
+    return `${Number((downloads / 1000).toFixed(1))}k/week`
   }
 
   return `${downloads.toLocaleString()}/week`

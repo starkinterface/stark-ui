@@ -1,10 +1,6 @@
 import { dialogClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
-import {
-  Dialog as ArkDialog,
-  useDialog,
-  useDialogContext,
-} from "@ark-ui/react/dialog"
+import { Dialog as ArkDialog } from "@ark-ui/react/dialog"
 import { ark } from "@ark-ui/react/factory"
 
 import type { DialogVariantProps } from "@stark-ui/classes"
@@ -163,8 +159,6 @@ export {
   DialogFooter,
   DialogBody,
   DialogContext,
-  useDialog,
-  useDialogContext,
 }
 export type {
   DialogRootProviderProps,
@@ -181,3 +175,8 @@ export type {
   DialogBodyProps,
   DialogContextProps,
 }
+
+///////////////////////////////////////////////////////////////////////////////
+/// Re-exports
+
+export { useDialog, useDialogContext } from "@ark-ui/react/dialog"
