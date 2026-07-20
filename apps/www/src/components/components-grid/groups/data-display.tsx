@@ -3,11 +3,13 @@
 import {
   Avatar,
   AvatarGroup,
-  Tag,
-  Kbd,
-  Clipboard,
   Button,
+  Clipboard,
+  Kbd,
+  QrCode,
+  Tag,
 } from "@stark-ui/react"
+import { LogoIcon } from "@/components/brand"
 import { LuX, LuClipboard, LuCheck } from "react-icons/lu"
 
 const AvatarExample = () => (
@@ -55,6 +57,17 @@ const AvatarGroupExample = () => {
   )
 }
 
+const QrCodeExample = () => (
+  <QrCode.Root defaultValue="https://stark-ui.com">
+    <QrCode.Frame>
+      <QrCode.Pattern />
+    </QrCode.Frame>
+    <QrCode.Overlay>
+      <LogoIcon className="text-background-accent" />
+    </QrCode.Overlay>
+  </QrCode.Root>
+)
+
 const TagExample = () => (
   <div className="flex flex-wrap gap-2">
     <Tag.Root>
@@ -62,12 +75,6 @@ const TagExample = () => (
     </Tag.Root>
     <Tag.Root>
       <Tag.Text>Deployment</Tag.Text>
-      <Tag.DeleteTrigger>
-        <LuX />
-      </Tag.DeleteTrigger>
-    </Tag.Root>
-    <Tag.Root>
-      <Tag.Text>Web App</Tag.Text>
       <Tag.DeleteTrigger>
         <LuX />
       </Tag.DeleteTrigger>
@@ -105,12 +112,17 @@ const ClipboardExample = () => (
 
 const DataDisplay = () => (
   <div className="flex flex-col gap-4">
-    <div className="flex items-center justify-between gap-4">
-      <AvatarExample />
-      <AvatarGroupExample />
+    <div className="flex items-center gap-4">
+      <QrCodeExample />
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center justify-between gap-4">
+          <AvatarExample />
+          <AvatarGroupExample />
+        </div>
+        <TagExample />
+        <KbdExample />
+      </div>
     </div>
-    <TagExample />
-    <KbdExample />
     <ClipboardExample />
   </div>
 )

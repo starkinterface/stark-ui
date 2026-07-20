@@ -1,0 +1,47 @@
+@layer components {
+  .qr-code {
+    @apply relative flex w-fit flex-col gap-2;
+  }
+
+  :where(.qr-code) {
+    @apply qr-code--md;
+  }
+
+  .qr-code-frame {
+    @apply size-(--qr-code-size) border border-border text-foreground;
+  }
+
+  .qr-code-pattern {
+    @apply fill-current;
+  }
+
+  .qr-code-overlay {
+    @apply size-(--qr-code-overlay-size) p-(--qr-code-overlay-padding);
+    @apply bg-background;
+
+    @variant icon, [img] {
+      @apply size-full rounded-xs object-contain object-center;
+    }
+  }
+
+  .qr-code-download-trigger {
+  }
+}
+
+@utility qr-code--sm {
+  --qr-code-size: --spacing(24);
+  --qr-code-overlay-size: --spacing(6);
+  --qr-code-overlay-padding: --spacing(1);
+}
+
+@utility qr-code--md {
+  --qr-code-size: --spacing(36);
+  --qr-code-overlay-size: --spacing(8);
+  --qr-code-overlay-padding: --spacing(1);
+}
+
+@utility qr-code--lg {
+  --qr-code-size: --spacing(48);
+  --qr-code-overlay-size: --spacing(12);
+  --qr-code-overlay-padding: --spacing(1.5);
+}
