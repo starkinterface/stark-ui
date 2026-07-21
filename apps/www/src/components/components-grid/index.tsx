@@ -80,8 +80,8 @@ const groups: GroupProps[] = [
     children: <Disclosure />,
     className: styles.disclosure(),
     description:
-      "Accordions, collapsibles, and tabs for revealing and organizing content.",
-    exampleCount: 3,
+      "Accordions, collapsibles, scroll areas, and tabs for revealing and organizing content.",
+    exampleCount: 4,
     title: "Disclosure",
   },
   {

@@ -1,0 +1,92 @@
+@layer components {
+  .scroll-area {
+    --track-color: var(--color-scrollbar-track);
+    --thumb-color: var(--color-scrollbar-thumb);
+    --thumb-hover-color: var(--color-scrollbar-thumb-hover);
+    --corner-color: transparent;
+    --scrollbar-width: --spacing(1);
+    --fade-size: --spacing(8);
+  }
+
+  .scroll-area-viewport {
+    @apply h-full scrollbar-none outline-none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .scroll-area-viewport--fade {
+    --mask-top: black;
+    --mask-bottom: black;
+    --mask-left: black;
+    --mask-right: black;
+
+    &[data-overflow-y] {
+      --mask-top: transparent 0%, black var(--fade-size);
+      --mask-bottom: black calc(100% - var(--fade-size)), transparent 100%;
+    }
+    &[data-overflow-y][data-at-top] {
+      --mask-top: black 0%;
+    }
+    &[data-overflow-y][data-at-bottom] {
+      --mask-bottom: black 100%;
+    }
+    &[data-overflow-x] {
+      --mask-left: transparent 0%, black var(--fade-size);
+      --mask-right: black calc(100% - var(--fade-size)), transparent 100%;
+    }
+    &[data-overflow-x][data-at-left] {
+      --mask-left: black 0%;
+    }
+    &[data-overflow-x][data-at-right] {
+      --mask-right: black 100%;
+    }
+
+    mask-image:
+      linear-gradient(to bottom, var(--mask-top), var(--mask-bottom)),
+      linear-gradient(to right, var(--mask-left), var(--mask-right));
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
+  }
+
+  .scroll-area-content {
+  }
+
+  .scroll-area-scrollbar {
+    @apply pointer-events-none m-1 flex rounded-full bg-(--track-color) opacity-0 transition-opacity duration-100 ease-out;
+
+    &[data-hover],
+    &[data-scrolling] {
+      @apply pointer-events-auto opacity-100;
+    }
+
+    &[data-orientation="vertical"] {
+      @apply w-(--scrollbar-width) flex-row;
+
+      @variant not-[[data-overflow-y]] {
+        @apply hidden;
+      }
+    }
+
+    &[data-orientation="horizontal"] {
+      @apply h-(--scrollbar-width) flex-col;
+
+      @variant not-[[data-overflow-x]] {
+        @apply hidden;
+      }
+    }
+  }
+
+  .scroll-area-thumb {
+    @apply relative flex-1 rounded-full bg-(--thumb-color) transition-colors duration-100 ease-out;
+
+    @variant hover {
+      @apply bg-(--thumb-hover-color);
+    }
+  }
+
+  .scroll-area-corner {
+    @apply m-1 bg-(--corner-color);
+  }
+}

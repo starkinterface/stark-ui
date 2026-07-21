@@ -1,6 +1,6 @@
 "use client"
 
-import { Accordion, Collapsible, Tabs } from "@stark-ui/react"
+import { Accordion, Collapsible, ScrollArea, Tabs } from "@stark-ui/react"
 import { LuChevronRight, LuCpu, LuFiles, LuSettings } from "react-icons/lu"
 
 const TabsExample = () => (
@@ -77,11 +77,40 @@ const CollapsibleExample = () => (
   </Collapsible.Root>
 )
 
+const ScrollAreaExample = () => (
+  <ScrollArea.Root
+    className="h-32 w-full rounded-xs border border-border bg-background"
+    scrollFade
+  >
+    <ScrollArea.Viewport>
+      <ScrollArea.Content className="p-3">
+        <div className="flex flex-col gap-2">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-2 rounded-xs bg-background-secondary p-2 text-xs"
+            >
+              <time className="font-mono text-foreground-muted">
+                [12:00:0{i}]
+              </time>
+              <span>Deployment finished successfully.</span>
+            </div>
+          ))}
+        </div>
+      </ScrollArea.Content>
+    </ScrollArea.Viewport>
+    <ScrollArea.Scrollbar orientation="vertical">
+      <ScrollArea.Thumb />
+    </ScrollArea.Scrollbar>
+  </ScrollArea.Root>
+)
+
 const Disclosure = () => (
   <div className="flex flex-col gap-4">
     <TabsExample />
     <AccordionExample />
     <CollapsibleExample />
+    <ScrollAreaExample />
   </div>
 )
 

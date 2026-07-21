@@ -39,6 +39,10 @@
   --color-decoration: var(--decoration);
   --color-ring: var(--ring);
 
+  --color-scrollbar-track: var(--scrollbar-track);
+  --color-scrollbar-thumb: var(--scrollbar-thumb);
+  --color-scrollbar-thumb-hover: var(--scrollbar-thumb-hover);
+
   /* ----------------------------------------------------------------------------
    * Derived Colors
    * ---------------------------------------------------------------------------- */

@@ -40,5 +40,9 @@
   --decoration: oklch(0.24 0 0);
   --ring: oklch(0.56 0 0);
 
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: oklch(0.44 0 0);
+  --scrollbar-thumb-hover: oklch(0.56 0 0);
+
   color-scheme: dark;
 }
