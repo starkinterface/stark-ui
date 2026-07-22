@@ -1,6 +1,6 @@
 @layer components {
   .radio-group {
-    @apply base-field;
+    @apply flex flex-col gap-2;
   }
 
   .radio-group-indicator {
