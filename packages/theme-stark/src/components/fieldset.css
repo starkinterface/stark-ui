@@ -1,0 +1,31 @@
+@layer components {
+  .fieldset {
+    @apply flex w-full flex-col gap-4 bg-background;
+  }
+
+  .fieldset-legend {
+    @apply text-base text-foreground;
+
+    &:has(+ [data-fieldset-content]) {
+      @apply mb-2;
+    }
+  }
+
+  .fieldset-content {
+    @apply flex w-full flex-col gap-4;
+
+    &:has(> [data-checkbox]):not(:has(> :not([data-checkbox]))),
+    &:has(> [data-slider]):not(:has(> :not([data-slider]))),
+    &:has(> [data-switch]):not(:has(> :not([data-switch]))) {
+      @apply gap-2;
+    }
+  }
+
+  .fieldset-helper-text {
+    @apply block text-sm text-foreground-muted;
+  }
+
+  .fieldset-error-text {
+    @apply block text-sm text-foreground-danger-soft;
+  }
+}
