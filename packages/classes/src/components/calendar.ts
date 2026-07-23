@@ -22,10 +22,10 @@ export const calendarClasses = tv({
   variants: {
     variant: {
       accent: {
-        root: "calendar--accent",
+        view: "calendar-view--accent",
       },
       primary: {
-        root: "calendar--primary",
+        view: "calendar-view--primary",
       },
     },
   },

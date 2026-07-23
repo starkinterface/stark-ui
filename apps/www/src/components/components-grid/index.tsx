@@ -89,7 +89,7 @@ const groups: GroupProps[] = [
     className: styles.dateTime(),
     description:
       "Calendars and pickers for selecting dates, times, and ranges.",
-    exampleCount: 1,
+    exampleCount: 2,
     title: "Date & Time",
   },
   {

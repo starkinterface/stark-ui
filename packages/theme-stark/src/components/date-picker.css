@@ -1,0 +1,49 @@
+@layer components {
+  .date-picker {
+    @apply base-field;
+  }
+
+  .date-picker-label {
+    @apply base-field-label;
+  }
+
+  .date-picker-control {
+    @apply flex items-center gap-2;
+  }
+
+  .date-picker-input {
+    @apply base-input flex-1;
+  }
+
+  .date-picker-trigger {
+  }
+
+  .date-picker-clear-trigger {
+  }
+
+  .date-picker-positioner {
+    @apply z-overlay;
+  }
+
+  .date-picker-content {
+    @apply pointer-events-auto relative flex w-full max-w-none flex-col items-center gap-2 rounded-xs border border-border bg-background-surface p-2.5 outline-none;
+
+    transform-origin: var(--transform-origin);
+    z-index: calc(var(--z-index-overlay) + var(--layer-index, 0));
+
+    @variant data-[state=open] {
+      animation:
+        zoom-in var(--duration-snappy) var(--ease-snappy-in),
+        fade-in var(--duration-snappy) var(--ease-snappy-in);
+    }
+
+    @variant data-[state=closed] {
+      animation:
+        zoom-out var(--duration-snappy) var(--ease-snappy-out),
+        fade-out var(--duration-snappy) var(--ease-snappy-out);
+    }
+  }
+
+  .date-picker-preset-trigger {
+  }
+}

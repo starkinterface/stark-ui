@@ -99,12 +99,12 @@
     }
   }
 
-  :where(.calendar) {
-    @apply calendar--primary;
+  .calendar-view {
+    @apply calendar-view--primary;
   }
 }
 
-@utility calendar--primary {
+@utility calendar-view--primary {
   .calendar-table-cell-trigger {
     @variant data-today {
       @apply base-button--outline;
@@ -120,7 +120,7 @@
   }
 }
 
-@utility calendar--accent {
+@utility calendar-view--accent {
   .calendar-table-cell-trigger {
     @variant data-today {
       @apply base-button--outline;
