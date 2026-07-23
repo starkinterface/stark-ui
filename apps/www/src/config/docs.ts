@@ -23,7 +23,8 @@ const NAVIGATION_ITEMS = {
           label: "Skills",
         },
       ],
-      title: "Agents",
+      shimmer: true,
+      title: "AI Agents",
     },
     {
       items: [

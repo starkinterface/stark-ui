@@ -1,7 +1,7 @@
 @layer components {
   .docs-navigation-item-primary,
   .docs-navigation-item-secondary {
-    @apply flex appearance-none items-center gap-2.5 rounded-xs px-3 text-sm whitespace-nowrap text-foreground-muted select-none;
+    @apply flex appearance-none items-center gap-2.5 rounded-xs px-2.5 text-sm whitespace-nowrap text-foreground-muted select-none;
 
     @variant hover {
       @apply text-foreground/80;

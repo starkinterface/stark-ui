@@ -54,3 +54,27 @@
   grid-template-areas: "preview controls";
   grid-template-columns: 1fr auto;
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@utility shimmer {
+  --shimmer-spread: 32px;
+
+  background-image: linear-gradient(
+    90deg,
+    var(--color-foreground, currentColor) calc(50% - var(--shimmer-spread)),
+    var(--color-accent-as-foreground, currentColor) 50%,
+    var(--color-foreground, currentColor) calc(50% + var(--shimmer-spread))
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s 2 linear;
+}
