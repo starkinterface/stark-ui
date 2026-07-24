@@ -4,8 +4,13 @@
     --thumb-color: var(--color-scrollbar-thumb);
     --thumb-hover-color: var(--color-scrollbar-thumb-hover);
     --corner-color: transparent;
-    --scrollbar-width: --spacing(1);
+    --scrollbar-width: --spacing(0.5);
+    --scrollbar-width-hover: --spacing(1.5);
     --fade-size: --spacing(8);
+
+    &:has([data-dragging]) {
+      @apply select-none;
+    }
   }
 
   .scroll-area-viewport {
@@ -54,7 +59,7 @@
   }
 
   .scroll-area-scrollbar {
-    @apply pointer-events-none m-1 flex rounded-full bg-(--track-color) opacity-0 transition-opacity duration-100 ease-out;
+    @apply pointer-events-none flex rounded-full bg-(--track-color) p-1 opacity-0 select-none;
 
     &[data-hover],
     &[data-scrolling] {
@@ -62,7 +67,7 @@
     }
 
     &[data-orientation="vertical"] {
-      @apply w-(--scrollbar-width) flex-row;
+      @apply w-fit;
 
       @variant not-[[data-overflow-y]] {
         @apply hidden;
@@ -70,18 +75,30 @@
     }
 
     &[data-orientation="horizontal"] {
-      @apply h-(--scrollbar-width) flex-col;
+      @apply h-fit;
 
       @variant not-[[data-overflow-x]] {
         @apply hidden;
       }
     }
+
+    @variant hover, data-dragging {
+      --scrollbar-width: var(--scrollbar-width-hover);
+    }
   }
 
   .scroll-area-thumb {
-    @apply relative flex-1 rounded-full bg-(--thumb-color) transition-colors duration-100 ease-out;
+    @apply relative rounded-full bg-(--thumb-color) select-none;
 
-    @variant hover {
+    &[data-orientation="vertical"] {
+      @apply w-(--scrollbar-width);
+    }
+
+    &[data-orientation="horizontal"] {
+      @apply h-(--scrollbar-width);
+    }
+
+    @variant hover, data-dragging {
       @apply bg-(--thumb-hover-color);
     }
   }
