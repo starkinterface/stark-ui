@@ -1,5 +1,6 @@
 import {
   Calendar,
+  DateInput,
   DatePicker,
   InputGroup,
   parseDate,
@@ -12,6 +13,20 @@ import {
   LuChevronRight,
   LuX,
 } from "react-icons/lu"
+
+const DateInputExample = () => (
+  <DateInput.Root className="w-full" defaultValue={[parseDate("2026-07-26")]}>
+    <DateInput.Label>Segmented Date Input</DateInput.Label>
+    <DateInput.Control>
+      <DateInput.SegmentGroup>
+        <DateInput.SegmentContext>
+          {(segment) => <DateInput.Segment segment={segment} />}
+        </DateInput.SegmentContext>
+      </DateInput.SegmentGroup>
+    </DateInput.Control>
+    <DateInput.HiddenInput />
+  </DateInput.Root>
+)
 
 const CalendarExample = () => (
   <Calendar.Root
@@ -155,6 +170,7 @@ const DatePickerExample = () => (
 
 const DateTime = () => (
   <div className="flex flex-col gap-4">
+    <DateInputExample />
     <DatePickerExample />
     <CalendarExample />
   </div>

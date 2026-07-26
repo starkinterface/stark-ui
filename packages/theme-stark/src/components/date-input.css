@@ -1,0 +1,52 @@
+@layer components {
+  .date-input {
+    @apply base-field;
+  }
+
+  .date-input-label {
+    @apply base-field-label;
+  }
+
+  .date-input-control {
+    @apply flex w-full items-center gap-2;
+  }
+
+  .date-input-segment-group {
+    @apply flex items-center font-mono;
+
+    [data-input-group] & {
+      @apply px-2 text-sm;
+    }
+
+    &:not([data-input-group] *) {
+      @apply base-input;
+    }
+  }
+
+  .date-input-segment {
+    @apply rounded-xs text-center font-mono outline-none select-none;
+
+    @variant focus, data-focus, data-focused {
+      @apply bg-background-secondary text-foreground;
+    }
+
+    @variant data-placeholder-shown {
+      @apply text-foreground-muted;
+    }
+
+    @variant not-data-[type=literal] {
+      @apply px-1;
+    }
+
+    @variant data-[type=literal] {
+      @apply px-0 text-placeholder;
+    }
+
+    @variant data-disabled {
+      @apply text-foreground-inactive;
+    }
+  }
+
+  .date-input-hidden-input {
+  }
+}
