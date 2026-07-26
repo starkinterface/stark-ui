@@ -5,7 +5,7 @@
     @apply transition-[border-color] duration-150 ease-out;
   }
 
-  @variant has-[input:focus-visible], has-[textarea:focus-visible] {
+  @variant has-[input:focus-visible], has-[textarea:focus-visible], has-[[data-date-input-segment-group][data-focus]] {
     @apply border-ring focus-visible;
   }
 
@@ -13,10 +13,10 @@
     @apply h-auto;
   }
 
-  @variant has-[input[aria-invalid=true]], has-[textarea[aria-invalid=true]] {
+  @variant has-[input[aria-invalid=true]], has-[textarea[aria-invalid=true]], has-[[data-date-input-segment-group][data-invalid]] {
     @apply border-foreground-danger-soft;
 
-    @variant has-[input:focus-visible], has-[textarea:focus-visible] {
+    @variant has-[input:focus-visible], has-[textarea:focus-visible], has-[[data-date-input-segment-group][data-focus]] {
       @apply outline-foreground-danger-soft/56;
 
       @variant white {
@@ -25,7 +25,7 @@
     }
   }
 
-  @variant has-[input[disabled]], has-[textarea[disabled]] {
+  @variant has-[input[disabled]], has-[textarea[disabled]], has-[[data-date-input-segment-group][data-disabled]] {
     @apply border-background-inactive;
   }
 
@@ -69,7 +69,7 @@
     @apply text-placeholder;
   }
 
-  @variant disabled {
+  @variant disabled, data-disabled {
     @apply border-background-inactive text-foreground-inactive;
 
     @variant placeholder {
