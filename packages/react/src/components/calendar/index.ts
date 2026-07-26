@@ -1,5 +1,6 @@
 export {
   CalendarRoot,
+  CalendarRootProvider,
   CalendarView,
   CalendarViewControl,
   CalendarPrevTrigger,
@@ -19,6 +20,7 @@ export {
 
 export type {
   CalendarRootProps,
+  CalendarRootProviderProps,
   CalendarViewProps,
   CalendarViewControlProps,
   CalendarPrevTriggerProps,

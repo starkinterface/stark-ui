@@ -1,5 +1,6 @@
 export {
   CalendarRoot as Root,
+  CalendarRootProvider as RootProvider,
   CalendarView as View,
   CalendarViewControl as ViewControl,
   CalendarPrevTrigger as PrevTrigger,
@@ -18,6 +19,7 @@ export {
 
 export type {
   CalendarRootProps as RootProps,
+  CalendarRootProviderProps as RootProviderProps,
   CalendarViewProps as ViewProps,
   CalendarViewControlProps as ViewControlProps,
   CalendarPrevTriggerProps as PrevTriggerProps,

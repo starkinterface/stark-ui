@@ -28,6 +28,19 @@ const CalendarRoot = withProviderSlot<HTMLDivElement, CalendarRootProps>(
 )
 
 ///////////////////////////////////////////////////////////////////////////////
+/// RootProvider
+
+type CalendarRootProviderProps = Assign<
+  ArkDatePicker.RootProviderProps,
+  CalendarVariantProps & UnstyledProp
+>
+
+const CalendarRootProvider = withProviderSlot<
+  HTMLDivElement,
+  CalendarRootProviderProps
+>(ArkDatePicker.RootProvider, "root")
+
+///////////////////////////////////////////////////////////////////////////////
 /// View
 
 type CalendarViewProps = Assign<ArkDatePicker.ViewProps, UnstyledProp>
@@ -192,6 +205,7 @@ const parseDate = arkParseDate
 
 export {
   CalendarRoot,
+  CalendarRootProvider,
   CalendarView,
   CalendarViewControl,
   CalendarPrevTrigger,
@@ -211,6 +225,7 @@ export {
 
 export type {
   CalendarRootProps,
+  CalendarRootProviderProps,
   CalendarViewProps,
   CalendarViewControlProps,
   CalendarPrevTriggerProps,
