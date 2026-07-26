@@ -9,11 +9,11 @@
     @apply text-placeholder;
   }
 
-  @variant focus, focus-visible {
+  @variant focus, focus-visible, data-focus {
     @apply border-ring focus-visible;
   }
 
-  @variant disabled {
+  @variant disabled, data-disabled {
     @apply border-background-inactive text-foreground-inactive;
 
     @variant placeholder {
@@ -21,10 +21,10 @@
     }
   }
 
-  @variant aria-invalid {
+  @variant aria-invalid, data-invalid {
     @apply border-foreground-danger-soft;
 
-    @variant focus-visible {
+    @variant focus-visible, data-focus {
       @apply outline-foreground-danger-soft/56;
 
       @variant white {
