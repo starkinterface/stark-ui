@@ -1,4 +1,4 @@
-import { CalendarRoot } from "../calendar"
+import { CalendarRoot, CalendarRootProvider } from "../calendar"
 import { datePickerClasses } from "@stark-ui/classes"
 import { createStyleContext } from "@stark-ui/react-style-context"
 import {
@@ -36,7 +36,10 @@ type DatePickerRootProviderProps = Assign<
 const DatePickerRootProvider = withProviderSlot<
   HTMLDivElement,
   DatePickerRootProviderProps
->(ArkDatePicker.RootProvider, "root")
+>(
+  (props: DatePickerRootProviderProps) => <CalendarRootProvider {...props} />,
+  "root"
+)
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Label
