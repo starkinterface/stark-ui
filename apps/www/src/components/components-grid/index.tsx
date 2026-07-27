@@ -72,8 +72,8 @@ const groups: GroupProps[] = [
     children: <Overlays />,
     className: styles.overlays(),
     description:
-      "Dialogs, drawers, popovers, and tooltips layered above the page.",
-    exampleCount: 4,
+      "Dialogs, drawers, tooltips, and popover overlays for contextual UI actions.",
+    exampleCount: 5,
     title: "Overlays",
   },
   {

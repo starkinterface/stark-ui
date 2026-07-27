@@ -1,0 +1,41 @@
+@layer components {
+  .hover-card {
+  }
+
+  .hover-card-trigger {
+  }
+
+  .hover-card-positioner {
+    @apply z-overlay;
+  }
+
+  .hover-card-content {
+    @apply pointer-events-auto relative max-w-80 rounded-md border border-border bg-background-surface p-4 outline-none;
+
+    transform-origin: var(--transform-origin);
+    z-index: calc(var(--z-index-overlay) + var(--layer-index, 0));
+
+    @variant data-[state=open] {
+      animation:
+        zoom-in var(--duration-snappy) var(--ease-snappy-in),
+        fade-in var(--duration-snappy) var(--ease-snappy-in);
+    }
+
+    @variant data-[state=closed] {
+      animation:
+        zoom-out var(--duration-snappy) var(--ease-snappy-out),
+        fade-out var(--duration-snappy) var(--ease-snappy-out);
+    }
+  }
+
+  .hover-card-arrow {
+    --arrow-size: --spacing(2.5);
+    --arrow-background: var(--color-background-surface);
+    --arrow-shadow-color: var(--color-border);
+  }
+
+  .hover-card-arrow-tip {
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+}

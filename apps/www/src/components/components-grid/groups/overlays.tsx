@@ -1,14 +1,65 @@
-"use client"
-
 import {
-  Tooltip,
+  Avatar,
   Button,
   Dialog,
   Drawer,
+  HoverCard,
   Popover,
   Portal,
+  Tooltip,
 } from "@stark-ui/react"
+import Link from "next/link"
 import { LuTrash2, LuX } from "react-icons/lu"
+import { SiX } from "react-icons/si"
+
+const HoverCardExample = () => (
+  <HoverCard.Root openDelay={0} closeDelay={150}>
+    <HoverCard.Trigger asChild>
+      <span className="text-sm font-semibold underline decoration-border">
+        @enjidev
+      </span>
+    </HoverCard.Trigger>
+    <Portal>
+      <HoverCard.Positioner>
+        <HoverCard.Content>
+          <HoverCard.Arrow>
+            <HoverCard.ArrowTip />
+          </HoverCard.Arrow>
+          <div className="flex gap-2.5">
+            <Avatar.Root>
+              <Avatar.Image
+                src="https://github.com/enjidev.png"
+                alt="Enji Kusnadi"
+              />
+              <Avatar.Fallback>EK</Avatar.Fallback>
+            </Avatar.Root>
+            <div className="flex flex-col">
+              <h4 className="text-sm font-semibold text-foreground">
+                Enji Kusnadi
+              </h4>
+              <p className="text-sm text-foreground-muted">
+                Front-End developer / Stark UI core maintainer.
+              </p>
+              <div className="mt-2 flex gap-4 text-sm">
+                <Link
+                  href="https://x.com/enjidev"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                  className="flex items-center gap-1.5"
+                >
+                  <SiX className="size-3" />
+                  <strong className="font-semibold text-foreground">
+                    @enjidev
+                  </strong>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </HoverCard.Content>
+      </HoverCard.Positioner>
+    </Portal>
+  </HoverCard.Root>
+)
 
 const TooltipExample = () => (
   <Tooltip.Root
@@ -134,11 +185,14 @@ const PopoverExample = () => (
 )
 
 const Overlays = () => (
-  <div className="flex flex-wrap gap-2">
-    <TooltipExample />
-    <DialogExample />
-    <DrawerExample />
-    <PopoverExample />
+  <div className="flex flex-col items-start gap-4">
+    <HoverCardExample />
+    <div className="flex flex-wrap gap-2">
+      <TooltipExample />
+      <DialogExample />
+      <DrawerExample />
+      <PopoverExample />
+    </div>
   </div>
 )
 
