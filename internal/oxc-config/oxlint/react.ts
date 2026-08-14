@@ -4,4 +4,7 @@ import react from "ultracite/oxlint/react"
 
 export default defineConfig({
   extends: [base, react],
+  rules: {
+    "react/function-component-definition": "off",
+  },
 })
