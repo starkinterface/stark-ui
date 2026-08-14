@@ -18,6 +18,8 @@ export type {
   ToastContextProps,
   ToasterProps,
   ToastOptions,
+  CreateToasterProps,
+  CreateToasterReturn,
 } from "./toast"
 
 export * as Toast from "./namespace"

@@ -89,4 +89,9 @@ export type {
 }
 
 export { Toaster, createToaster } from "@ark-ui/react/toast"
-export type { ToasterProps, ToastOptions } from "@ark-ui/react/toast"
+export type {
+  ToasterProps,
+  ToastOptions,
+  CreateToasterProps,
+  CreateToasterReturn,
+} from "@ark-ui/react/toast"

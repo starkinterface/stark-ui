@@ -1,7 +1,7 @@
 import { Button, Toast, Toaster, createToaster, Portal } from "../../"
 import { LuX, LuInfo } from "react-icons/lu"
 
-import type { ToastRootProps } from "../../"
+import type { ToastRootProps, CreateToasterReturn } from "../../"
 
 const topStartToaster = createToaster({ gap: 16, placement: "top-start" })
 const topToaster = createToaster({ gap: 16, placement: "top" })
@@ -19,7 +19,7 @@ const toasterMap = {
   "top-start": topStartToaster,
 }
 
-const renderToaster = (toaster: ReturnType<typeof createToaster>) => (
+const renderToaster = (toaster: CreateToasterReturn) => (
   <Portal>
     <Toaster toaster={toaster}>
       {(toast) => (
